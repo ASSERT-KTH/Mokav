@@ -127,13 +127,17 @@ class CodeRunner:
 
 if __name__ == '__main__':
     
-    df = pd.read_csv('data/2acc/cb_submission_res_2acc_alt.csv')
-    df = df[(df['failed_tests_ratio'] < 0.9)]
-    grouped = df.groupby(['author', 'problems_id'])['diff_ratio'].mean().reset_index()
-    grouped = grouped.sort_values('diff_ratio', ascending=False)
-    top_10_percent = int(len(grouped) * 0.1)
-    result = grouped.iloc[:top_10_percent][['author', 'problems_id']].values.tolist()
+    # df = pd.read_csv('data/2acc/cb_submission_res_2acc_alt.csv')
+    # df = df[(df['failed_tests_ratio'] < 0.9)]
+    # grouped = df.groupby(['author', 'problems_id'])['diff_ratio'].mean().reset_index()
+    # grouped = grouped.sort_values('diff_ratio', ascending=False)
+    # top_10_percent = int(len(grouped) * 0.1)
+    # result = grouped.iloc[5 * top_10_percent: 6 * top_10_percent][['author', 'problems_id']].values.tolist()
 
-    for i in result:
-        code_runner = CodeRunner(i[1], i[0])
-        code_runner.run()
+    # for i in result:
+    #     code_runner = CodeRunner(i[1], i[0])
+    #     code_runner.run()
+
+    df = pd.read_csv('data/2acc_copy/cb_submission_res_2acc_alt.csv')
+    code_runner = CodeRunner(df['problems_id'][5], df['author'][5])
+    code_runner.run()
