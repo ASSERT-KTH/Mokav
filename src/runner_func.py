@@ -69,11 +69,6 @@ class TestFunctions(unittest.TestCase):
 
         for i,test_case in enumerate(test_cases):
             input_data = test_case['inputdata']
-            # if not isinstance(input_data, list):
-            #     try:
-            #         input_data = list(input_data.split())
-            #     except:
-            #         continue
             if '\n' in input_data:
                 input_data = list(input_data.split('\n'))
 
@@ -156,11 +151,3 @@ if __name__ == '__main__':
     for i in result:
         code_runner = CodeRunner(i[1], i[0])
         code_runner.run()
-
-    # df = pd.read_csv('data/2acc_copy/cb_submission_res_2acc_alt.csv')
-    # code_runner = CodeRunner(df['problems_id'][5], df['author'][5])
-    # code_runner.run()
-    # df = df[:40]
-    # for i in range(len(df)):
-    #     code_runner = CodeRunner(df['problems_id'][i], df['author'][0])
-    #     code_runner.run()

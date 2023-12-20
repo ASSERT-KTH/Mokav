@@ -19,11 +19,6 @@ class TestGenerator:
         pattern = r"\{'inputdata': '[^']*'\}"
         matches = re.findall(pattern, string)
         return [block.strip() for block in matches]
-    
-    # def extract_regex(self, string):
-    #     pattern = r"\{'inputdata': '.*?'\}"
-    #     matches = re.findall(pattern, string)
-    #     return [block.strip() for block in matches]
 
     def code_description(self, buggy_code):
         description_prompt = f"What is the intention of this code?  {buggy_code}"
@@ -41,8 +36,6 @@ class TestGenerator:
         responses = []
         if retry:
             prompt = f"both versions give us {retry} as output. The output should be different. Please generate again"
-            # chatgpt_resp = self.chatgpt.get_response(new_question=prompt, previous_questions_and_answers=self.prompt_history)
-            # print('print chat reps', chatgpt_resp)
             chatgpt_resp = self.chatgpt.get_response(
                 new_question=prompt, previous_questions_and_answers=self.prompt_history)
             for i in range(10):
@@ -72,7 +65,6 @@ class TestGenerator:
                 chatgpt_resp = self.chatgpt.get_response(new_question=prompt)
                 for i in range(10):
                     responses.append(chatgpt_resp[i])
-            # for response in responses:
             self.prompt_history.append((prompt, responses[-1]))
         print("###CHATRESP###", responses)
         return [self.extract_regex(str(response)) for response in responses]
@@ -110,11 +102,8 @@ class TestGenerator:
                 chatgpt_resp = self.chatgpt.get_response(new_question=prompt)
                 for i in range(10):
                     responses.append(chatgpt_resp[i])
-            # for response in responses:
             self.prompt_history.append((prompt, responses[-1]))
-        # print("###CHATRESP###", responses)
-        # return [self.extract_regex(str(response)) for response in responses]
-        # responses = [self.extract_regex(str(response)) for response in responses]
+
         print('###RESPONSES###: \n', responses)
         message = f'''
 1. the following test cases are: {responses} for all of them generate test function give them as input

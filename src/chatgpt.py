@@ -50,10 +50,6 @@ class ChatGPT_2():
             model="gpt-3.5-turbo",
             messages=messages,
             temperature=0.7,
-            # max_tokens=MAX_TOKENS,
-            # top_p=1,
-            # frequency_penalty=FREQUENCY_PENALTY,
             n=10,
-            # presence_penalty=0.6,
         )
         return [choice['message']['content'] for choice in completion['choices']]
