@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+collected 4 items
+
+pynguin-res/reverse_linked_list/4/test_transformed_reverse_linked_list.py . [ 25%]
+...                                                                      [100%]
+
+============================== 4 passed in 0.01s ===============================

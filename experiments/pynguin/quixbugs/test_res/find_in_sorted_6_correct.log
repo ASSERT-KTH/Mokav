@@ -1,0 +1,8 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+collected 5 items
+
+pynguin-res/find_in_sorted/6/test_transformed_find_in_sorted.py .....    [100%]
+
+============================== 5 passed in 0.01s ===============================

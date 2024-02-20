@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+collected 3 items
+
+pynguin-res/find_in_sorted/5/test_transformed_find_in_sorted.py ..F      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "\x0cr(N-|U.>"
+>       var_0 = module_0.find_in_sorted(str_0, str_0)
+
+pynguin-res/find_in_sorted/5/test_transformed_find_in_sorted.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pynguin-res/find_in_sorted/5/find_in_sorted.py:13: in find_in_sorted
+    return binsearch(0, len(arr))
+pynguin-res/find_in_sorted/5/find_in_sorted.py:7: in binsearch
+    return binsearch(start, mid)
+pynguin-res/find_in_sorted/5/find_in_sorted.py:7: in binsearch
+    return binsearch(start, mid)
+pynguin-res/find_in_sorted/5/find_in_sorted.py:7: in binsearch
+    return binsearch(start, mid)
+pynguin-res/find_in_sorted/5/find_in_sorted.py:9: in binsearch
+    return binsearch(mid, end)
+pynguin-res/find_in_sorted/5/find_in_sorted.py:9: in binsearch
+    return binsearch(mid, end)
+E   RecursionError: maximum recursion depth exceeded in comparison
+!!! Recursion detected (same locals & position)
+=========================== short test summary info ============================
+FAILED pynguin-res/find_in_sorted/5/test_transformed_find_in_sorted.py::test_case_2
+========================= 1 failed, 2 passed in 0.04s ==========================
