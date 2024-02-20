@@ -1,3 +1,4 @@
+import sys
 import os
 import glob
 
@@ -27,14 +28,14 @@ def log_test_res(quixbugs_dir, test_file, test_res_dir, program, test_gen_ind):
 
     os.system(f'cp {buggy_code} {generated_test_dir}/{program}.py')
     test_log_file = f'{test_res_dir}/{program}_{test_gen_ind}_buggy.log'
-    os.system(f'pytest {test_file} > {test_log_file}')
-    failed, passed, xfailed = extract_test_res('tmp.log')
+    os.system(f'timeout 30 pytest {test_file} > {test_log_file}')
+    failed, passed, xfailed = extract_test_res(f'{test_log_file}')
     os.system(f'echo "{program},buggy,{test_gen_ind},{failed},{passed},{xfailed}" >> {test_res_dir}/results.csv')
 
     os.system(f'cp {correct_code} {generated_test_dir}/{program}.py')
     test_log_file = f'{test_res_dir}/{program}_{test_gen_ind}_correct.log'
-    os.system(f'pytest {test_file} > {test_log_file}')
-    failed, passed, xfailed = extract_test_res('tmp.log')
+    os.system(f'timeout 30 pytest {test_file} > {test_log_file}')
+    failed, passed, xfailed = extract_test_res(f'{test_log_file}')
     os.system(f'echo "{program},correct,{test_gen_ind},{failed},{passed},{xfailed}" >> {test_res_dir}/results.csv')
 
 def main(argv):
