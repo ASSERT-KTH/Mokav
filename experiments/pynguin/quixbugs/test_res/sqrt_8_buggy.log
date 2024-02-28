@@ -1,0 +1,43 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+collected 3 items
+
+pynguin-res/sqrt/8/test_transformed_sqrt.py FF.                          [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        int_0 = 207
+        var_0 = module_0.sqrt(int_0, int_0)
+>       assert var_0 == pytest.approx(17.821000162443127, abs=0.01, rel=0.01)
+E       assert 103.5 == 17.821000162443127 ± 1.8e-01
+E         comparison failed
+E         Obtained: 103.5
+E         Expected: 17.821000162443127 ± 1.8e-01
+
+pynguin-res/sqrt/8/test_transformed_sqrt.py:11: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bool_0 = False
+        var_0 = module_0.sqrt(bool_0, bool_0)
+        assert var_0 == pytest.approx(0.0, abs=0.01, rel=0.01)
+        var_1 = module_0.sqrt(bool_0, bool_0)
+        float_0 = 2152.1849
+        var_2 = module_0.sqrt(var_0, float_0)
+        assert var_2 == pytest.approx(0.0, abs=0.01, rel=0.01)
+        int_0 = 1562
+        var_3 = module_0.sqrt(int_0, int_0)
+>       assert var_3 == pytest.approx(42.739119022760676, abs=0.01, rel=0.01)
+E       assert 781.0 == 42.739119022760676 ± 4.3e-01
+E         comparison failed
+E         Obtained: 781.0
+E         Expected: 42.739119022760676 ± 4.3e-01
+
+pynguin-res/sqrt/8/test_transformed_sqrt.py:28: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-res/sqrt/8/test_transformed_sqrt.py::test_case_0 - assert 103....
+FAILED pynguin-res/sqrt/8/test_transformed_sqrt.py::test_case_1 - assert 781....
+========================= 2 failed, 1 passed in 0.03s ==========================

@@ -1,0 +1,8 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+collected 6 items
+
+pynguin-res/shortest_paths/7/test_transformed_shortest_paths.py ......   [100%]
+
+============================== 6 passed in 0.02s ===============================

@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+collected 4 items
+
+pynguin-res/lcs_length/1/test_transformed_lcs_length.py FF..             [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bool_0 = False
+        int_0 = 3029
+        tuple_0 = (bool_0, bool_0, int_0, int_0)
+        list_0 = [int_0, tuple_0]
+        var_0 = module_0.lcs_length(tuple_0, list_0)
+>       assert var_0 == 1
+E       assert 2 == 1
+
+pynguin-res/lcs_length/1/test_transformed_lcs_length.py:14: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "5cMr"
+        tuple_0 = ()
+        var_0 = module_0.lcs_length(tuple_0, tuple_0)
+        assert var_0 == 0
+        str_1 = "Xu+4f\x0bv,KF"
+        var_1 = module_0.lcs_length(str_0, str_1)
+        assert var_1 == 0
+        var_2 = module_0.lcs_length(str_0, str_0)
+>       assert var_2 == 4
+E       assert 1 == 4
+
+pynguin-res/lcs_length/1/test_transformed_lcs_length.py:26: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-res/lcs_length/1/test_transformed_lcs_length.py::test_case_0
+FAILED pynguin-res/lcs_length/1/test_transformed_lcs_length.py::test_case_1
+========================= 2 failed, 2 passed in 0.04s ==========================

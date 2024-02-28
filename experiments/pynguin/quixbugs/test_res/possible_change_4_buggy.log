@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+collected 5 items
+
+pynguin-res/possible_change/4/test_transformed_possible_change.py ....F  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        int_0 = 235
+        tuple_0 = (int_0, int_0)
+        int_1 = 81
+>       var_0 = module_0.possible_change(tuple_0, int_1)
+
+pynguin-res/possible_change/4/test_transformed_possible_change.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pynguin-res/possible_change/4/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-res/possible_change/4/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+coins = [], total = 81
+
+    def possible_change(coins, total):
+        if total == 0:
+            return 1
+        if total < 0:
+            return 0
+    
+>       first, *rest = coins
+E       ValueError: not enough values to unpack (expected at least 1, got 0)
+
+pynguin-res/possible_change/4/possible_change.py:8: ValueError
+=========================== short test summary info ============================
+FAILED pynguin-res/possible_change/4/test_transformed_possible_change.py::test_case_4
+========================= 1 failed, 4 passed in 0.04s ==========================
