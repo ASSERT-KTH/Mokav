@@ -1,6 +1,5 @@
 from test_generator import TestGenerator
 import pandas as pd
-import random
 import subprocess
 import ast
 
@@ -30,31 +29,35 @@ def retry_decorator(max_retries=3, delay=1):
 
 
 class CodeRunner:
-    def __init__(self, problem_id, author_id):
-        self.problem_id = problem_id
-        self.author_id = author_id
+    def __init__(self, is_func, is_qb, is_iterative, meta_data_config) -> None:
+        self.is_func = is_func
+        self.is_qb = is_qb
+        self.is_iteravtive = is_iterative
+        # self.meta_data_config = meta_data_config
+        self.test_generator = TestGenerator(config=meta_data_config)
 
-    def prepare_data(self):
-        df_submissions = pd.read_csv(
-            "data2/2acc_copy/cb_submission_res_2acc_alt.csv"
-        )
-        df_testcases = pd.read_csv("data2/2acc_copy/cb_testcase_res_2acc.csv")
+        if is_func:
+            self.df_submissions = pd.read_csv(
+                "data2/2acc_copy/cb_submission_res_2acc_alt.csv"
+            )
+            self.df_testcases = pd.read_csv("data2/2acc_copy/cb_testcase_res_2acc.csv")
 
-        df = df_submissions[
-            (df_submissions["problems_id"] == self.problem_id)
-            & (df_submissions["author"] == self.author_id)
+    def prepare_data(self, problem_id, author_id) -> tuple:
+        df = self.df_submissions[
+            (self.df_submissions["problems_id"] == problem_id)
+            & (self.df_submissions["author"] == author_id)
         ]["func_sourceCode_yield"]
-        df_acc_other = df_submissions[
-            (df_submissions["verdicts_id"] == 1)
-            & (df_submissions["problems_id"] == self.problem_id)
-            & (df_submissions["author"] != self.author_id)
+        df_acc_other = self.df_submissions[
+            (self.df_submissions["verdicts_id"] == 1)
+            & (self.df_submissions["problems_id"] == problem_id)
+            & (self.df_submissions["author"] != author_id)
         ]["func_sourceCode_yield"]
         acc1 = df.values.tolist()[0]
         rej = df.values.tolist()[1]
         acc2 = df_acc_other.values.tolist()[0]
 
-        df_testcases = df_testcases[df_testcases["problems_id"] == self.problem_id]
-        test_cases = df_testcases[["inputdata"]].to_dict("records")
+        df_testcase = self.df_testcases[self.df_testcases["problems_id"] == problem_id]
+        test_cases = df_testcase[["inputdata"]].to_dict("records")
 
         return acc1, acc2, rej, test_cases[0]
 
@@ -99,32 +102,30 @@ if __name__ == '__main__':
         with open(f"temp_test_case.py", "w") as f:
             f.write(unittest_str)
 
-    # @retry_decorator(max_retries=3, delay=1)
-    def run(self):
-        print(f"###PROBLEM_ID###: {self.problem_id}")
-        print(f"###AUTHOR###: {self.author_id}")
-        config = "BADT"
-        test_generator = TestGenerator(config)
-        df = pd.read_csv("data2/2acc_copy/cb_submission_res_2acc_alt.csv")
-        acc_code1, acc_code2, buggy_code, existing_test = self.prepare_data()
+    def generate_bet_test(self, problem_id, author_id) -> list:
+        acc1, _, rej, test_case = self.prepare_data(problem_id, author_id)
+        test_cases = self.test_generator.generate_test(rej, acc1, test_case, None)
+        return test_cases
 
-        fault_inducing_test = test_generator.generate_test(
-            buggy_code, acc_code1, existing_test, None
-        )
-        fault_inducing_test = [
-            item for sublist in fault_inducing_test for item in sublist
-        ]
-        print("###FAULTIND###\n\n", fault_inducing_test)
+    def change_test_to_dict(test_case) -> list:
         data_list = []
-        for fault_test in fault_inducing_test:
+        for fault_test in test_case:
             if fault_test:
                 try:
                     data_list.append(ast.literal_eval(fault_test.replace("python", "")))
                 except Exception as e:
                     print(e)
                     continue
-        print("###DATALIST###\n\n", data_list)
-        self.create_unnitest(buggy_code, acc_code1, data_list)
+        return data_list
+
+    def check_test(self, problem_id, author_id):
+
+        acc1, _, rej, test_case = self.prepare_data(problem_id, author_id)
+        test_case = self.test_generator.generate_test(rej, acc1, test_case, None)
+
+        data_list = self.change_test_to_dict(test_case)
+
+        self.create_unnitest(rej, acc1, data_list)
         try:
             process = subprocess.run(
                 ["python", f"temp_test_case.py"], capture_output=True, timeout=5
@@ -132,10 +133,9 @@ if __name__ == '__main__':
         except subprocess.TimeoutExpired:
             process = "Timeout"
         output = str(process)
-        print("###OUTPUT###", output)
         if ("AssertionError" not in output) and ("temp_bug_qb.py" not in output):
             for i in range(10):
-                self.create_unnitest(buggy_code, acc_code1, data_list)
+                self.create_unnitest(rej, acc1, data_list)
                 try:
                     process = subprocess.run(
                         ["python", f"temp_test_case.py"], capture_output=True, timeout=1
@@ -144,24 +144,27 @@ if __name__ == '__main__':
                     process = "Timeout"
                 output = str(process)
                 if ("AssertionError" in output) or ("temp_bug_qb.py" in output):
-                    print("Found1")
-                    break
-            print(str(process))
+                    return "Found1"
+            return str(process)
         else:
-            print("Found1")
+            return "Found1"
 
+    @retry_decorator(max_retries=3, delay=1)
+    def run(self):
+        if self.is_func:
+            grouped = (
+                self.df_submissions.groupby(["author", "problems_id"])["diff_ratio"]
+                .mean()
+                .reset_index()
+            )
+            grouped = grouped.sort_values("diff_ratio", ascending=False)
+            top_10_percent = int(len(grouped) * 0.1)
+            result = grouped.iloc[2 * top_10_percent : 3 * top_10_percent][
+                ["author", "problems_id"]
+            ].values.tolist()
 
-if __name__ == "__main__":
-
-    df = pd.read_csv("data2/2acc_copy/cb_submission_res_2acc_alt.csv")
-    df = df[(df["failed_tests_ratio"] < 0.9)]
-    grouped = df.groupby(["author", "problems_id"])["diff_ratio"].mean().reset_index()
-    grouped = grouped.sort_values("diff_ratio", ascending=False)
-    top_10_percent = int(len(grouped) * 0.1)
-    result = grouped.iloc[2 * top_10_percent : 3 * top_10_percent][
-        ["author", "problems_id"]
-    ].values.tolist()
-
-    for i in result:
-        code_runner = CodeRunner(i[1], i[0])
-        code_runner.run()
+            for i in result:
+                self.check_test(i[1], i[0])
+        else:
+            self.check_test(1, 1)
+        return "Done"

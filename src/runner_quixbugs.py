@@ -84,7 +84,7 @@ if __name__ == '__main__':
     def run(self, acc_code, buggy_code, sample_test, function_name):
         config = 'BADT'
         test_generator = TestGenerator(config)
-        fault_inducing_test = test_generator.generate_test3(
+        fault_inducing_test = test_generator.generate_test(
             buggy_code, acc_code, sample_test, None)
         print("###FAULTIND###\n\n", fault_inducing_test)
         data_list = []

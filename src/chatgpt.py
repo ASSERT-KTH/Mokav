@@ -1,4 +1,5 @@
 import json
+# from openai import OpenAI
 import openai
 import re
 import os
@@ -6,6 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 openai.api_key = os.getenv("API_KEY")
+# client = OpenAI(api_key=os.getenv("API_KEY"))
 
 
 class ChatGPT_2():

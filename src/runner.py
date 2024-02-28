@@ -94,7 +94,7 @@ class CodeRunner:
         df = pd.read_csv('data/2acc/cb_submission_res_2acc.csv')
         acc_code1, acc_code2, buggy_code, existing_test = self.prepare_data()
 
-        fault_inducing_test = test_generator.generate_test3(
+        fault_inducing_test = test_generator.generate_test(
             buggy_code, acc_code1, existing_test, None)
         fault_inducing_test = [
             item for sublist in fault_inducing_test for item in sublist]
@@ -110,7 +110,7 @@ class CodeRunner:
 
         if res == 'InsufficientTestException' or res == 'TestValidationException':
             for i in range(10):
-                fault_inducing_test = test_generator.generate_test3(
+                fault_inducing_test = test_generator.generate_test(
                     buggy_code, acc_code1, existing_test, out)
                 fault_inducing_test = [
                     item for sublist in fault_inducing_test for item in sublist]
