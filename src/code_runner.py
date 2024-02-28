@@ -1,4 +1,4 @@
-from test_generator import TestGenerator
+from src.test_generator import TestGenerator
 import pandas as pd
 import subprocess
 import ast
@@ -33,7 +33,6 @@ class CodeRunner:
         self.is_func = is_func
         self.is_qb = is_qb
         self.is_iteravtive = is_iterative
-        # self.meta_data_config = meta_data_config
         self.test_generator = TestGenerator(config=meta_data_config)
 
         if is_func:
@@ -107,12 +106,12 @@ if __name__ == '__main__':
         test_cases = self.test_generator.generate_test(rej, acc1, test_case, None)
         return test_cases
 
-    def change_test_to_dict(test_case) -> list:
+    def change_test_to_dict(self, test_case) -> list:
         data_list = []
         for fault_test in test_case:
             if fault_test:
                 try:
-                    data_list.append(ast.literal_eval(fault_test.replace("python", "")))
+                    data_list.append(ast.literal_eval(fault_test[0].replace("python", "")))
                 except Exception as e:
                     print(e)
                     continue
@@ -164,7 +163,7 @@ if __name__ == '__main__':
             ].values.tolist()
 
             for i in result:
-                self.check_test(i[1], i[0])
+                print(self.check_test(i[1], i[0]))
         else:
             self.check_test(1, 1)
         return "Done"

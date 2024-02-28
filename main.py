@@ -35,7 +35,7 @@ def get_args():
         choices=["BA", "BAD", "BADT"],
         default="BADT",
         help="Config for meta data",
-        required=True,
+        required=False,
     )
 
     args = parser.parse_args()

@@ -1,4 +1,4 @@
-from chatgpt import ChatGPT_2
+from src.chatgpt import ChatGPT_2
 import re
 
 
