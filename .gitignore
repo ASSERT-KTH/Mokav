@@ -166,3 +166,7 @@ cython_debug/
 temp*.py
 
 log*.txt
+
+data
+
+data2
