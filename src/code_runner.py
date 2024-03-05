@@ -132,8 +132,9 @@ if __name__ == '__main__':
         except subprocess.TimeoutExpired:
             process = "Timeout"
         output = str(process)
+        print("###TEMP_TEST_PY_OUTPUT", output)
         if ("AssertionError" not in output) and ("temp_bug_qb.py" not in output):
-            for i in range(10):
+            for _ in range(10):
                 self.create_unnitest(rej, acc1, data_list)
                 try:
                     process = subprocess.run(
@@ -142,6 +143,8 @@ if __name__ == '__main__':
                 except subprocess.TimeoutExpired:
                     process = "Timeout"
                 output = str(process)
+                print("####OUTPUT####")
+                print(output)
                 if ("AssertionError" in output) or ("temp_bug_qb.py" in output):
                     return "Found1"
             return str(process)

@@ -170,3 +170,5 @@ log*.txt
 data
 
 data2
+
+cache.json
