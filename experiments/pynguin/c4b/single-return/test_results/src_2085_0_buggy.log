@@ -1,0 +1,36 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_2085/0/test_transformed_src_2085.py F..                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bool_0 = True
+        tuple_0 = (bool_0, bool_0)
+        list_0 = [tuple_0, tuple_0]
+        list_1 = [list_0, tuple_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_bak/src_2085/0/test_transformed_src_2085.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([(True, True), (True, True)], (True, True))
+s = [(True, True), (True, True)], result = '', x = (True, True)
+
+    def func(*args):
+    
+    	s = args[0]
+    	result = ''
+    	for x in s:
+>   	    if (x in 'HQ9+'):
+E        TypeError: 'in <string>' requires string as left operand, not tuple
+
+c4b_bak/src_2085/0/src_2085.py:6: TypeError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2085/0/test_transformed_src_2085.py::test_case_1 - TypeErr...
+========================= 1 failed, 2 passed in 0.03s ==========================

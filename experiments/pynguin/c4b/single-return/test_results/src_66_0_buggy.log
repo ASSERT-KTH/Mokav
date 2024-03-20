@@ -1,0 +1,50 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_66/0/test_transformed_src_66.py FF                           [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "6J9A"
+>       var_0 = module_0.func(*str_0)
+
+c4b_bak/src_66/0/test_transformed_src_66.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('6', 'J', '9', 'A'), l = [6]
+
+    def func(*args):
+    
+    	l = [int(x) for x in args[0].split()]
+>   	(a, b, c, d) = map(int, l)
+E    ValueError: not enough values to unpack (expected 4, got 1)
+
+c4b_bak/src_66/0/src_66.py:4: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "6\x0b6"
+        list_0 = [str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_66/0/test_transformed_src_66.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('6\x0b6',), l = [6, 6]
+
+    def func(*args):
+    
+    	l = [int(x) for x in args[0].split()]
+>   	(a, b, c, d) = map(int, l)
+E    ValueError: not enough values to unpack (expected 4, got 2)
+
+c4b_bak/src_66/0/src_66.py:4: ValueError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_66/0/test_transformed_src_66.py::test_case_0 - ValueError:...
+FAILED c4b_bak/src_66/0/test_transformed_src_66.py::test_case_2 - ValueError:...
+============================== 2 failed in 0.03s ===============================

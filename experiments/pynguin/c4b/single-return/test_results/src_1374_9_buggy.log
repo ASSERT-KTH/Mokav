@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_1374/9/test_transformed_src_1374.py F.F                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        float_0 = 324.73
+        str_0 = ""
+        dict_0 = {float_0: str_0}
+        tuple_0 = (str_0, dict_0)
+        dict_1 = {float_0: float_0, float_0: float_0, float_0: float_0, float_0: tuple_0}
+        var_0 = module_0.func(*dict_1)
+>       assert var_0 == 80
+E       assert 79 == 80
+
+c4b_bak/src_1374/9/test_transformed_src_1374.py:16: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        float_0 = 310.8910392261637
+        str_0 = ""
+        dict_0 = {float_0: str_0}
+        tuple_0 = (str_0, dict_0)
+        dict_1 = {float_0: float_0, float_0: float_0, float_0: float_0, float_0: tuple_0}
+        var_0 = module_0.func(*dict_1)
+>       assert var_0 == 77
+E       assert 76 == 77
+
+c4b_bak/src_1374/9/test_transformed_src_1374.py:45: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1374/9/test_transformed_src_1374.py::test_case_0 - assert ...
+FAILED c4b_bak/src_1374/9/test_transformed_src_1374.py::test_case_3 - assert ...
+========================= 2 failed, 1 passed in 0.03s ==========================

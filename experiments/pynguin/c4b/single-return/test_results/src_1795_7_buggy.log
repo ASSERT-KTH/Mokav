@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+c4b_bak/src_1795/7/test_transformed_src_1795.py FFF.FF.                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        float_0 = -3523.392989
+        list_0 = [float_0]
+        list_1 = [list_0, float_0, list_0]
+        var_0 = module_0.func(*list_1)
+>       assert var_0 == 2
+E       assert 0 == 2
+
+c4b_bak/src_1795/7/test_transformed_src_1795.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "8E#:'N$"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 6
+E       assert 2 == 6
+
+c4b_bak/src_1795/7/test_transformed_src_1795.py:26: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "^,A%7<zNtN%ovH"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 12
+E       assert 3 == 12
+
+c4b_bak/src_1795/7/test_transformed_src_1795.py:36: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        str_0 = "IR+c\t&\x0cXofS"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 11
+E       assert 1 == 11
+
+c4b_bak/src_1795/7/test_transformed_src_1795.py:55: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "\x0cU,I&?K"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 4
+E       assert 2 == 4
+
+c4b_bak/src_1795/7/test_transformed_src_1795.py:66: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1795/7/test_transformed_src_1795.py::test_case_0 - assert ...
+FAILED c4b_bak/src_1795/7/test_transformed_src_1795.py::test_case_2 - assert ...
+FAILED c4b_bak/src_1795/7/test_transformed_src_1795.py::test_case_3 - assert ...
+FAILED c4b_bak/src_1795/7/test_transformed_src_1795.py::test_case_5 - assert ...
+FAILED c4b_bak/src_1795/7/test_transformed_src_1795.py::test_case_6 - assert ...
+========================= 5 failed, 2 passed in 0.05s ==========================

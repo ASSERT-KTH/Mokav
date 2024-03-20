@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 8 items
+
+c4b_bak/src_2491/4/test_transformed_src_2491.py ......F.                 [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "|Bt"
+        var_0 = module_0.func(*str_0)
+        assert var_0 == -1
+        str_1 = "693807061"
+        var_1 = module_0.func(*str_1)
+        assert var_1 == -1
+        list_0 = [str_1, var_1, var_1, str_1]
+        var_2 = module_0.func(*list_0)
+>       assert var_2 == 938137
+E       assert 1000015 == 938137
+
+c4b_bak/src_2491/4/test_transformed_src_2491.py:64: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2491/4/test_transformed_src_2491.py::test_case_6 - assert ...
+========================= 1 failed, 7 passed in 0.05s ==========================

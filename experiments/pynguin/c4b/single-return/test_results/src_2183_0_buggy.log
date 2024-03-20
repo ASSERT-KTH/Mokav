@@ -1,0 +1,80 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_bak/src_2183/0/test_transformed_src_2183.py ..FFF                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "73"
+        list_0 = [str_0, str_0, str_0, str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_2183/0/test_transformed_src_2183.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+c4b_bak/src_2183/0/src_2183.py:22: in func
+    if (half(z, n) == (sd(x) // 2)):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = '73', n = 73
+
+    def half(z, n):
+        x = 0
+        for i in range((n // 2)):
+>           x = (x + int(z[i]))
+E           IndexError: string index out of range
+
+c4b_bak/src_2183/0/src_2183.py:10: IndexError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "43"
+        list_0 = [str_0, str_0, str_0, str_0, str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_2183/0/test_transformed_src_2183.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+c4b_bak/src_2183/0/src_2183.py:22: in func
+    if (half(z, n) == (sd(x) // 2)):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = '43', n = 43
+
+    def half(z, n):
+        x = 0
+        for i in range((n // 2)):
+>           x = (x + int(z[i]))
+E           IndexError: string index out of range
+
+c4b_bak/src_2183/0/src_2183.py:10: IndexError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        str_0 = "41"
+        list_0 = [str_0, str_0, str_0, str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_2183/0/test_transformed_src_2183.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+c4b_bak/src_2183/0/src_2183.py:22: in func
+    if (half(z, n) == (sd(x) // 2)):
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+z = '41', n = 41
+
+    def half(z, n):
+        x = 0
+        for i in range((n // 2)):
+>           x = (x + int(z[i]))
+E           IndexError: string index out of range
+
+c4b_bak/src_2183/0/src_2183.py:10: IndexError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2183/0/test_transformed_src_2183.py::test_case_3 - IndexEr...
+FAILED c4b_bak/src_2183/0/test_transformed_src_2183.py::test_case_4 - IndexEr...
+FAILED c4b_bak/src_2183/0/test_transformed_src_2183.py::test_case_5 - IndexEr...
+========================= 3 failed, 2 passed in 0.05s ==========================

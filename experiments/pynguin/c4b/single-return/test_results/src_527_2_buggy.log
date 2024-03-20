@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_527/2/test_transformed_src_527.py FFFF                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"\xb2\xe8.\x1e\x15\x1d\x9c\xefP"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 0
+E       assert 1 == 0
+
+c4b_bak/src_527/2/test_transformed_src_527.py:17: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\xef\xba|\xce\x82m\xde\x9e\xe1M\xdf"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 1
+E       assert 2 == 1
+
+c4b_bak/src_527/2/test_transformed_src_527.py:25: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bytes_0 = b"\xef\xb5\xba|\xce\x82\x9e\xe1M\xdf"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 3
+E       assert 4 == 3
+
+c4b_bak/src_527/2/test_transformed_src_527.py:33: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bytes_0 = b"/B\xa8\xd0\xf8A\xb1L\x9d,U\xc8f\xb4\xc7"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 10
+E       assert 11 == 10
+
+c4b_bak/src_527/2/test_transformed_src_527.py:41: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_527/2/test_transformed_src_527.py::test_case_1 - assert 1 ...
+FAILED c4b_bak/src_527/2/test_transformed_src_527.py::test_case_2 - assert 2 ...
+FAILED c4b_bak/src_527/2/test_transformed_src_527.py::test_case_3 - assert 4 ...
+FAILED c4b_bak/src_527/2/test_transformed_src_527.py::test_case_4 - assert 11...
+============================== 4 failed in 0.04s ===============================

@@ -1,0 +1,26 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_bak/src_1928/4/test_transformed_src_1928.py F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bool_0 = True
+        list_0 = [bool_0]
+        list_1 = [list_0]
+        var_0 = module_0.func(*list_1)
+>       assert var_0 == "IGNORE HIM!"
+E       AssertionError: assert 'IGNORE HIM' == 'IGNORE HIM!'
+E         - IGNORE HIM!
+E         ?           -
+E         + IGNORE HIM
+
+c4b_bak/src_1928/4/test_transformed_src_1928.py:13: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1928/4/test_transformed_src_1928.py::test_case_0 - Asserti...
+============================== 1 failed in 0.03s ===============================

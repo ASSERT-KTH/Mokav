@@ -1,0 +1,40 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 10 items
+
+c4b_bak/src_906/5/test_transformed_src_906.py .......F.F                 [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        str_0 = "zK9C$Rl^pYht="
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".z.k.9.c.$.r.l.^.p.h.t.="
+E       AssertionError: assert '.z.k.9.c.$.r.l.^.p.y.h.t.=' == '.z.k.9.c.$.r.l.^.p.h.t.='
+E         - .z.k.9.c.$.r.l.^.p.h.t.=
+E         + .z.k.9.c.$.r.l.^.p.y.h.t.=
+E         ?                    ++
+
+c4b_bak/src_906/5/test_transformed_src_906.py:93: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        str_0 = "By?jI{[ZvT{\n@P<g"
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".b.?.j.{.[.z.v.t.{.\n.@.p.<.g"
+E       AssertionError: assert '.b.y.?.j.{.[....{.\n.@.p.<.g' == '.b.?.j.{.[.z....{.\n.@.p.<.g'
+E         - .b.?.j.{.[.z.v.t.{.
+E         + .b.y.?.j.{.[.z.v.t.{.
+E         ?   ++
+E           .@.p.<.g
+
+c4b_bak/src_906/5/test_transformed_src_906.py:115: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_906/5/test_transformed_src_906.py::test_case_8 - Assertion...
+FAILED c4b_bak/src_906/5/test_transformed_src_906.py::test_case_10 - Assertio...
+========================= 2 failed, 8 passed in 0.06s ==========================

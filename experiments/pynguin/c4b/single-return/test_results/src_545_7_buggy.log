@@ -1,0 +1,68 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_545/7/test_transformed_src_545.py FF                         [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        float_0 = 2501.17444
+        tuple_0 = (float_0,)
+        set_0 = {float_0, tuple_0}
+        complex_0 = 5052.4215 + 2202.91311j
+        tuple_1 = (float_0, set_0, set_0, complex_0)
+>       var_0 = module_0.func(*tuple_1)
+
+c4b_bak/src_545/7/test_transformed_src_545.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (2501.17444, {(2501.17444,), 2501.17444}, {(2501.17444,), 2501.17444}, (5052.4215+2202.91311j))
+n = 2501, x = [], the_stack = [2501.17444]
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	x = [i for i in args[1]]
+    	the_stack = [x[0]]
+    	del x[0]
+    	d_max = (n - 1)
+    	for i in range(1, n):
+>   	    if (the_stack[(- 1)] == x[0]):
+E        IndexError: list index out of range
+
+c4b_bak/src_545/7/src_545.py:9: IndexError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        float_0 = 2501.17
+        set_0 = {float_0, float_0}
+        complex_0 = 5052.4215 + 2187.337407749482j
+        tuple_0 = (float_0, set_0, set_0, complex_0)
+>       var_0 = module_0.func(*tuple_0)
+
+c4b_bak/src_545/7/test_transformed_src_545.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (2501.17, {2501.17}, {2501.17}, (5052.4215+2187.337407749482j)), n = 2501
+x = [], the_stack = [2501.17]
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	x = [i for i in args[1]]
+    	the_stack = [x[0]]
+    	del x[0]
+    	d_max = (n - 1)
+    	for i in range(1, n):
+>   	    if (the_stack[(- 1)] == x[0]):
+E        IndexError: list index out of range
+
+c4b_bak/src_545/7/src_545.py:9: IndexError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_545/7/test_transformed_src_545.py::test_case_1 - IndexErro...
+FAILED c4b_bak/src_545/7/test_transformed_src_545.py::test_case_2 - IndexErro...
+============================== 2 failed in 0.05s ===============================

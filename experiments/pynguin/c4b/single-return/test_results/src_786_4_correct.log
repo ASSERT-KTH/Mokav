@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_bak/src_786/4/test_transformed_src_786.py .                          [100%]
+
+=============================== warnings summary ===============================
+c4b_bak/src_786/4/src_786.py:6
+  /home/khashayar/projs/det-gen/c4b_bak/src_786/4/src_786.py:6: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+    if ((n & (1 << i)) is not 0):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 1 passed, 1 warning in 0.02s =========================

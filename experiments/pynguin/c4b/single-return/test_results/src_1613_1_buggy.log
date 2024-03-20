@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_bak/src_1613/1/test_transformed_src_1613.py F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"\x06\xde\xe8G\xa3\xf4\x95S\x8ahU\x9b\xdd3b\x9b"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 4
+E       assert 0 == 4
+
+c4b_bak/src_1613/1/test_transformed_src_1613.py:11: AssertionError
+=============================== warnings summary ===============================
+c4b_bak/src_1613/1/src_1613.py:9
+  /home/khashayar/projs/det-gen/c4b_bak/src_1613/1/src_1613.py:9: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if (((val - 1) % p) is 0):
+
+c4b_bak/src_1613/1/src_1613.py:16
+  /home/khashayar/projs/det-gen/c4b_bak/src_1613/1/src_1613.py:16: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if (((val - 1) % p) is 0):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1613/1/test_transformed_src_1613.py::test_case_0 - assert ...
+======================== 1 failed, 2 warnings in 0.05s =========================

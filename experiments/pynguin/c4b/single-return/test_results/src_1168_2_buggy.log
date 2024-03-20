@@ -1,0 +1,43 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_bak/src_1168/2/test_transformed_src_1168.py ...FF                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bytes_0 = b"\x9dt\xf6\xfeWo`\xcf\xd1\xbeH2\xc1"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 406
+E       assert 427 == 406
+
+c4b_bak/src_1168/2/test_transformed_src_1168.py:48: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        int_0 = 116
+        list_0 = [int_0, int_0, int_0]
+        var_0 = module_0.func(*list_0)
+        assert var_0 == 203
+        var_1 = module_0.func(*list_0)
+        assert var_1 == 203
+        list_1 = [int_0, var_1, int_0, var_0, int_0, list_0]
+        var_2 = module_0.func(*list_1)
+        assert var_2 == 203
+        var_3 = module_0.func(*list_0)
+        assert var_3 == 203
+        bool_0 = True
+        list_2 = [bool_0, bool_0, var_2]
+        var_4 = module_0.func(*list_2)
+>       assert var_4 == 0
+E       assert 7 == 0
+
+c4b_bak/src_1168/2/test_transformed_src_1168.py:68: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1168/2/test_transformed_src_1168.py::test_case_4 - assert ...
+FAILED c4b_bak/src_1168/2/test_transformed_src_1168.py::test_case_5 - assert ...
+========================= 2 failed, 3 passed in 0.04s ==========================

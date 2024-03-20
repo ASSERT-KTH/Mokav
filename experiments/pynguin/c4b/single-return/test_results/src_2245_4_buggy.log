@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+c4b_bak/src_2245/4/test_transformed_src_2245.py ......F                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = 'W!?cBOKJa09z"iZ'
+        var_0 = module_0.func(*str_0)
+>       assert var_0 == "w"
+E       AssertionError: assert 'W' == 'w'
+E         - w
+E         + W
+
+c4b_bak/src_2245/4/test_transformed_src_2245.py:61: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2245/4/test_transformed_src_2245.py::test_case_6 - Asserti...
+========================= 1 failed, 6 passed in 0.03s ==========================

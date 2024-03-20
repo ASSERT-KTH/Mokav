@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_558/3/test_transformed_src_558.py FFFF                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"\xdaK\rvPD\xa5\x891\xc5Df\xb6\xae\x0f"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 7
+E       assert 8 == 7
+
+c4b_bak/src_558/3/test_transformed_src_558.py:17: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\xda\xc5K\rvPD\xa5\x891\xd0\xc5TDf\xb6\xae\x0f"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 10
+E       assert 11 == 10
+
+c4b_bak/src_558/3/test_transformed_src_558.py:25: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bytes_0 = b"\x075\xcc\xac\x88C"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 21
+E       assert 22 == 21
+
+c4b_bak/src_558/3/test_transformed_src_558.py:33: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bytes_0 = b"\xf3\xfaD\xe9B\x0b)\xd9"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 0
+E       assert 1 == 0
+
+c4b_bak/src_558/3/test_transformed_src_558.py:41: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_558/3/test_transformed_src_558.py::test_case_1 - assert 8 ...
+FAILED c4b_bak/src_558/3/test_transformed_src_558.py::test_case_2 - assert 11...
+FAILED c4b_bak/src_558/3/test_transformed_src_558.py::test_case_3 - assert 22...
+FAILED c4b_bak/src_558/3/test_transformed_src_558.py::test_case_4 - assert 1 ...
+============================== 4 failed in 0.05s ===============================

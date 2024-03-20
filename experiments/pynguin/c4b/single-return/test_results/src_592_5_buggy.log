@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_bak/src_592/5/test_transformed_src_592.py ..FFF                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "&c2da$W7+"
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".&.c.2.d.$.w.7.+"
+E       AssertionError: assert '.&.c.2.d.$.W.7.+' == '.&.c.2.d.$.w.7.+'
+E         - .&.c.2.d.$.w.7.+
+E         ?            ^
+E         + .&.c.2.d.$.W.7.+
+E         ?            ^
+
+c4b_bak/src_592/5/test_transformed_src_592.py:33: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "y#F($kJ_CMNuy"
+        list_0 = [str_0, str_0, str_0, str_0]
+        list_1 = [str_0, str_0, list_0, str_0]
+        var_0 = module_0.func(*list_1)
+>       assert var_0 == ".#.f.(.$.k.j._.c.m.n"
+E       AssertionError: assert '.#.F.(.$.k.J._.C.M.N.y' == '.#.f.(.$.k.j._.c.m.n'
+E         - .#.f.(.$.k.j._.c.m.n
+E         + .#.F.(.$.k.J._.C.M.N.y
+
+c4b_bak/src_592/5/test_transformed_src_592.py:45: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        str_0 = "{E6[J^A;iOi8)``X"
+        list_0 = [str_0, str_0, str_0, str_0]
+        list_1 = [str_0, str_0, list_0, str_0]
+        var_0 = module_0.func(*list_1)
+>       assert var_0 == ".{.6.[.j.^.;.8.).`.`.x"
+E       AssertionError: assert '.{.E.6.[.J.^.A.;.O.8.).`.`.X' == '.{.6.[.j.^.;.8.).`.`.x'
+E         - .{.6.[.j.^.;.8.).`.`.x
+E         ?        ^             ^
+E         + .{.E.6.[.J.^.A.;.O.8.).`.`.X
+E         ?   ++     ^   ++ ++         ^
+
+c4b_bak/src_592/5/test_transformed_src_592.py:55: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_592/5/test_transformed_src_592.py::test_case_3 - Assertion...
+FAILED c4b_bak/src_592/5/test_transformed_src_592.py::test_case_4 - Assertion...
+FAILED c4b_bak/src_592/5/test_transformed_src_592.py::test_case_5 - Assertion...
+========================= 3 failed, 2 passed in 0.05s ==========================

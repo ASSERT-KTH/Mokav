@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_2346/7/test_transformed_src_2346.py .F                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        float_0 = 1730.38
+        list_0 = [float_0, float_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ""
+E       AssertionError: assert '.1.7.3.0...3.8' == ''
+E         + .1.7.3.0...3.8
+
+c4b_bak/src_2346/7/test_transformed_src_2346.py:26: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2346/7/test_transformed_src_2346.py::test_case_2 - Asserti...
+========================= 1 failed, 1 passed in 0.04s ==========================

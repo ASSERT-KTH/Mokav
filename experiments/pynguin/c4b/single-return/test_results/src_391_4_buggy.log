@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_391/4/test_transformed_src_391.py FF                         [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"OM\x9b\xb2\x84L\x0b8"
+        list_0 = [bytes_0, bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_391/4/test_transformed_src_391.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'OM\x9b\xb2\x84L\x0b8', b'OM\x9b\xb2\x84L\x0b8')
+string = b'OM\x9b\xb2\x84L\x0b8', numbers = [b'OM\x9b\xb2\x84L', b'8']
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+>   	a = int(numbers[0])
+E    ValueError: invalid literal for int() with base 10: b'OM\x9b\xb2\x84L'
+
+c4b_bak/src_391/4/src_391.py:5: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"OM\x9b\xb2\x84L\x0b5"
+        object_0 = module_1.object()
+        list_0 = [bytes_0, bytes_0, bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_391/4/test_transformed_src_391.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'OM\x9b\xb2\x84L\x0b5', b'OM\x9b\xb2\x84L\x0b5', b'OM\x9b\xb2\x84L\x0b5')
+string = b'OM\x9b\xb2\x84L\x0b5', numbers = [b'OM\x9b\xb2\x84L', b'5']
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+>   	a = int(numbers[0])
+E    ValueError: invalid literal for int() with base 10: b'OM\x9b\xb2\x84L'
+
+c4b_bak/src_391/4/src_391.py:5: ValueError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_391/4/test_transformed_src_391.py::test_case_1 - ValueErro...
+FAILED c4b_bak/src_391/4/test_transformed_src_391.py::test_case_2 - ValueErro...
+============================== 2 failed in 0.03s ===============================

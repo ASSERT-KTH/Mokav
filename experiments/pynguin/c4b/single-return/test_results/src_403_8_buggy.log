@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_403/8/test_transformed_src_403.py FF                         [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"[\xb2\xce\xf9\xe1\xbd\xfa\x98\xdf\x8d\xc4-\xae\x8eT;\xb1"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 4
+E       assert 3 == 4
+
+c4b_bak/src_403/8/test_transformed_src_403.py:16: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"[\xb2\xce\x97\xf9\x12\xf9\xe1\xbd\xfa\x98\xdf\x8d\xc4-\xae\x8eT;\xb1"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 5
+E       assert 4 == 5
+
+c4b_bak/src_403/8/test_transformed_src_403.py:24: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_403/8/test_transformed_src_403.py::test_case_1 - assert 3 ...
+FAILED c4b_bak/src_403/8/test_transformed_src_403.py::test_case_2 - assert 4 ...
+============================== 2 failed in 0.03s ===============================

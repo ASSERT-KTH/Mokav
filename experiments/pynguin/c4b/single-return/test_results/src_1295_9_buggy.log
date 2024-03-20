@@ -1,0 +1,37 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_1295/9/test_transformed_src_1295.py .FF.                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "Fr*'aXO\\^yMReLoH2m"
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "YES"
+E       AssertionError: assert 'NO' == 'YES'
+E         - YES
+E         + NO
+
+c4b_bak/src_1295/9/test_transformed_src_1295.py:26: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "7iQ-,;A5?]S<\x0c'\""
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "YES"
+E       AssertionError: assert 'NO' == 'YES'
+E         - YES
+E         + NO
+
+c4b_bak/src_1295/9/test_transformed_src_1295.py:35: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1295/9/test_transformed_src_1295.py::test_case_2 - Asserti...
+FAILED c4b_bak/src_1295/9/test_transformed_src_1295.py::test_case_3 - Asserti...
+========================= 2 failed, 2 passed in 0.06s ==========================

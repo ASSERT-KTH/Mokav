@@ -1,0 +1,34 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_bak/src_463/7/test_transformed_src_463.py .....F                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "hJ7F*"
+        var_0 = module_0.func(*str_0)
+        assert var_0 == "H"
+        float_0 = 1333.838
+        list_0 = [str_0, float_0, float_0, var_0]
+        var_1 = module_0.func(*list_0)
+        assert var_1 == "Hj7f*"
+        var_2 = module_1.object()
+        str_1 = "uT\x0cZLz9W4YPkbR"
+        list_1 = [str_1, str_1, str_1]
+        var_3 = module_0.func(*list_1)
+>       assert var_3 == "uT\x0cZLz9W4YPkbR"
+E       AssertionError: assert 'Ut\x0czlz9w4ypkbr' == 'uT\x0cZLz9W4YPkbR'
+E         - uT
+E         - ZLz9W4YPkbR
+E         + Ut
+E         + zlz9w4ypkbr
+
+c4b_bak/src_463/7/test_transformed_src_463.py:68: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_463/7/test_transformed_src_463.py::test_case_6 - Assertion...
+========================= 1 failed, 5 passed in 0.06s ==========================

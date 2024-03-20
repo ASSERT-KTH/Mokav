@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+c4b_bak/src_1018/0/test_transformed_src_1018.py ...FFF.                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "c;$J{P]6n*:oY\x0b "
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 662535
+E       assert 515943 == 662535
+
+c4b_bak/src_1018/0/test_transformed_src_1018.py:36: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        str_0 = "9D1l\rg$(0[~qT{\x0c<9"
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 10615527
+E       assert 8257383 == 10615527
+
+c4b_bak/src_1018/0/test_transformed_src_1018.py:44: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "91l\r$(0[~qT9"
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 314455
+E       assert 241519 == 314455
+
+c4b_bak/src_1018/0/test_transformed_src_1018.py:53: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1018/0/test_transformed_src_1018.py::test_case_4 - assert ...
+FAILED c4b_bak/src_1018/0/test_transformed_src_1018.py::test_case_5 - assert ...
+FAILED c4b_bak/src_1018/0/test_transformed_src_1018.py::test_case_6 - assert ...
+========================= 3 failed, 4 passed in 0.05s ==========================

@@ -1,0 +1,74 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_592/8/test_transformed_src_592.py FFFF                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "A]u\n,+S:BV<h"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".].\n.,.+.s.:.b.v.<.h"
+E       AssertionError: assert '.A.].\n.,.+.S.:.B.V.<.h' == '.].\n.,.+.s.:.b.v.<.h'
+E         - .].
+E         + .A.].
+E         ? ++
+E         - .,.+.s.:.b.v.<.h
+E         ?      ^   ^ ^
+E         + .,.+.S.:.B.V.<.h
+E         ?      ^   ^ ^
+
+c4b_bak/src_592/8/test_transformed_src_592.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "8kHNGIw"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".8.k.h.n.g.w"
+E       AssertionError: assert '.8.k.H.N.G.I.w' == '.8.k.h.n.g.w'
+E         - .8.k.h.n.g.w
+E         + .8.k.H.N.G.I.w
+
+c4b_bak/src_592/8/test_transformed_src_592.py:27: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "S\"^#y'MOf^jW4\r[<"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".s.\".^.#.'.m.f.^.j.w.4.\r.[.<"
+E       assert '.S.".^.#.\'.....j.W.4.\r.[.<' == '.s.".^.#.\'.....j.w.4.\r.[.<'
+E         - .s.".^.#.'.m.f.^.j.w.4.
+E         ?  ^         ^       ^
+E         + .S.".^.#.'.M.O.f.^.j.W.4.
+E         ?  ^         ^^^       ^
+E           .[.<
+
+c4b_bak/src_592/8/test_transformed_src_592.py:36: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = '$ON@Z7#/ZBEY-nmwhM9"'
+        str_1 = "a\x0bJ"
+        list_0 = [str_0, str_1, str_0, str_0, str_1, str_0, str_1]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == '.$.n.@.z.7.#./.z.b.-.n.m.w.h.m.9."'
+E       assert '.$.O.N.@.Z.7...n.m.w.h.M.9."' == '.$.n.@.z.7.#...n.m.w.h.m.9."'
+E         - .$.n.@.z.7.#./.z.b.-.n.m.w.h.m.9."
+E         ?    ^   ^       ^ ^           ^
+E         + .$.O.N.@.Z.7.#./.Z.B.E.Y.-.n.m.w.h.M.9."
+E         ?    ^^^   ^       ^ ^^^^^           ^
+
+c4b_bak/src_592/8/test_transformed_src_592.py:46: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_592/8/test_transformed_src_592.py::test_case_0 - Assertion...
+FAILED c4b_bak/src_592/8/test_transformed_src_592.py::test_case_2 - Assertion...
+FAILED c4b_bak/src_592/8/test_transformed_src_592.py::test_case_3 - assert '....
+FAILED c4b_bak/src_592/8/test_transformed_src_592.py::test_case_4 - assert '....
+============================== 4 failed in 0.05s ===============================

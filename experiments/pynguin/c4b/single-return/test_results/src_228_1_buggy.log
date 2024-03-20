@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_228/1/test_transformed_src_228.py FF                         [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        float_0 = 1224.83321
+        str_0 = "\x0c\rd,\npIoZo6^J]p-"
+        bytes_0 = b"\xb1uub\xfa\xfe\xba\xc1"
+        tuple_0 = (float_0, str_0, float_0, bytes_0)
+        var_0 = module_0.func(*tuple_0)
+>       assert var_0 == "Howard"
+E       AssertionError: assert 'Rajesh' == 'Howard'
+E         - Howard
+E         + Rajesh
+
+c4b_bak/src_228/1/test_transformed_src_228.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bool_0 = True
+        list_0 = [bool_0]
+        var_0 = module_0.func(*list_0)
+        assert var_0 == "Sheldon"
+        float_0 = 1224.83321
+        bytes_0 = b"\x1euub\xfa\xfe\xba\xc1"
+        tuple_0 = (float_0, bytes_0, float_0, bytes_0)
+        var_1 = module_0.func(*tuple_0)
+>       assert var_1 == "Howard"
+E       AssertionError: assert 'Rajesh' == 'Howard'
+E         - Howard
+E         + Rajesh
+
+c4b_bak/src_228/1/test_transformed_src_228.py:30: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_228/1/test_transformed_src_228.py::test_case_0 - Assertion...
+FAILED c4b_bak/src_228/1/test_transformed_src_228.py::test_case_2 - Assertion...
+============================== 2 failed in 0.03s ===============================

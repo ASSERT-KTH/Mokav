@@ -1,0 +1,124 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_bak/src_2183/5/test_transformed_src_2183.py ..FFFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        float_0 = 1243.9519
+        bytes_0 = b"\x97\xff\x8a\x05d]11\x10\x85\xb1\xbdz\xb7\xb8f"
+        list_0 = [float_0, bytes_0, float_0, float_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_2183/5/test_transformed_src_2183.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1243.9519, b'\x97\xff\x8a\x05d]11\x10\x85\xb1\xbdz\xb7\xb8f', 1243.9519, 1243.9519)
+n = 1243, z = b'\x97\xff\x8a\x05d]11\x10\x85\xb1\xbdz\xb7\xb8f'
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	z = args[1]
+>   	x = int(z)
+E    ValueError: invalid literal for int() with base 10: b'\x97\xff\x8a\x05d]11\x10\x85\xb1\xbdz\xb7\xb8f'
+
+c4b_bak/src_2183/5/src_2183.py:5: ValueError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        float_0 = 1244.1267847626773
+        bytes_0 = b"\x04\xe0\xcdE\xc6;um\xe6\xc2\xb0\x9d3\xef(\x8e\xfd"
+        list_0 = [float_0, bytes_0, float_0, float_0]
+        object_0 = module_1.object()
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_2183/5/test_transformed_src_2183.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1244.1267847626773, b'\x04\xe0\xcdE\xc6;um\xe6\xc2\xb0\x9d3\xef(\x8e\xfd', 1244.1267847626773, 1244.1267847626773)
+n = 1244, z = b'\x04\xe0\xcdE\xc6;um\xe6\xc2\xb0\x9d3\xef(\x8e\xfd'
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	z = args[1]
+>   	x = int(z)
+E    ValueError: invalid literal for int() with base 10: b'\x04\xe0\xcdE\xc6;um\xe6\xc2\xb0\x9d3\xef(\x8e\xfd'
+
+c4b_bak/src_2183/5/src_2183.py:5: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        float_0 = 1177.785092708148
+        bytes_0 = b"\x07L\xb8"
+        list_0 = [float_0, bytes_0, float_0, float_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_2183/5/test_transformed_src_2183.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1177.785092708148, b'\x07L\xb8', 1177.785092708148, 1177.785092708148)
+n = 1177, z = b'\x07L\xb8'
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	z = args[1]
+>   	x = int(z)
+E    ValueError: invalid literal for int() with base 10: b'\x07L\xb8'
+
+c4b_bak/src_2183/5/src_2183.py:5: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0]
+        var_0 = module_0.func(*list_0)
+        assert var_0 == "YES"
+        list_1 = [bool_0, bool_0]
+        var_1 = module_0.func(*list_1)
+        assert var_1 == "YES"
+        float_0 = 1.8957100408323404
+        bytes_0 = b"\x04\t\x01\x1cE\xc6u\xfe\xb0x\xf7$\x99\x8e_"
+        list_2 = [
+            float_0,
+            bytes_0,
+            var_1,
+            float_0,
+            bool_0,
+            bool_0,
+            float_0,
+            bytes_0,
+            var_0,
+            bytes_0,
+            float_0,
+            float_0,
+        ]
+>       var_2 = module_0.func(*list_2)
+
+c4b_bak/src_2183/5/test_transformed_src_2183.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1.8957100408323404, b'\x04\t\x01\x1cE\xc6u\xfe\xb0x\xf7$\x99\x8e_', 'YES', 1.8957100408323404, False, False, ...)
+n = 1, z = b'\x04\t\x01\x1cE\xc6u\xfe\xb0x\xf7$\x99\x8e_'
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	z = args[1]
+>   	x = int(z)
+E    ValueError: invalid literal for int() with base 10: b'\x04\t\x01\x1cE\xc6u\xfe\xb0x\xf7$\x99\x8e_'
+
+c4b_bak/src_2183/5/src_2183.py:5: ValueError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2183/5/test_transformed_src_2183.py::test_case_3 - ValueEr...
+FAILED c4b_bak/src_2183/5/test_transformed_src_2183.py::test_case_4 - ValueEr...
+FAILED c4b_bak/src_2183/5/test_transformed_src_2183.py::test_case_5 - ValueEr...
+FAILED c4b_bak/src_2183/5/test_transformed_src_2183.py::test_case_6 - ValueEr...
+========================= 4 failed, 2 passed in 0.05s ==========================

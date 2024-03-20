@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+c4b_bak/src_252/3/test_transformed_src_252.py FFF..FF                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "`Y)\rhh\x0b"
+        list_0 = [str_0]
+        object_0 = module_0.object()
+        var_0 = module_1.func(*list_0)
+>       assert var_0 == 6
+E       assert 2 == 6
+
+c4b_bak/src_252/3/test_transformed_src_252.py:14: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = ">ADC[n~D]%:_X\t?"
+        list_0 = [str_0]
+        var_0 = module_1.func(*list_0)
+>       assert var_0 == 14
+E       assert 2 == 14
+
+c4b_bak/src_252/3/test_transformed_src_252.py:28: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = ".>EPakL;\n}dt`\x0ben"
+        list_0 = [str_0]
+        var_0 = module_1.func(*list_0)
+>       assert var_0 == 14
+E       assert 3 == 14
+
+c4b_bak/src_252/3/test_transformed_src_252.py:41: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "Ym:tPU{{Y:@f9tR"
+        list_0 = [str_0]
+        var_0 = module_1.func(*list_0)
+>       assert var_0 == 7
+E       assert 5 == 7
+
+c4b_bak/src_252/3/test_transformed_src_252.py:75: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = "`I\x0c\rh\x0b%"
+        list_0 = [str_0]
+        var_0 = module_1.func(*list_0)
+>       assert var_0 == 6
+E       assert 2 == 6
+
+c4b_bak/src_252/3/test_transformed_src_252.py:88: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_252/3/test_transformed_src_252.py::test_case_0 - assert 2 ...
+FAILED c4b_bak/src_252/3/test_transformed_src_252.py::test_case_2 - assert 2 ...
+FAILED c4b_bak/src_252/3/test_transformed_src_252.py::test_case_3 - assert 3 ...
+FAILED c4b_bak/src_252/3/test_transformed_src_252.py::test_case_6 - assert 5 ...
+FAILED c4b_bak/src_252/3/test_transformed_src_252.py::test_case_7 - assert 2 ...
+========================= 5 failed, 2 passed in 0.05s ==========================

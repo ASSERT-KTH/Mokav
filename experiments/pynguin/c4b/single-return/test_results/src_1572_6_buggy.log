@@ -1,0 +1,52 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_1572/6/test_transformed_src_1572.py FF                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        float_0 = 1171.3
+        bytes_0 = b'\xaf\xd9\x1aF\x11_r2\x99"'
+        dict_0 = {float_0: float_0, bytes_0: float_0, float_0: bytes_0}
+        list_0 = [float_0, dict_0, float_0, float_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_1572/6/test_transformed_src_1572.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1171.3, {1171.3: b'\xaf\xd9\x1aF\x11_r2\x99"', b'\xaf\xd9\x1aF\x11_r2\x99"': 1171.3}, 1171.3, 1171.3)
+num = 1171
+stones = {1171.3: b'\xaf\xd9\x1aF\x11_r2\x99"', b'\xaf\xd9\x1aF\x11_r2\x99"': 1171.3}
+l = []
+
+    def func(*args):
+    
+    	num = int(args[0])
+    	stones = args[1]
+    	l = []
+>   	first = stones[0]
+E    KeyError: 0
+
+c4b_bak/src_1572/6/src_1572.py:6: KeyError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bool_0 = False
+        tuple_0 = (bool_0, bool_0, bool_0)
+        list_0 = [tuple_0, tuple_0]
+        bool_1 = False
+        tuple_1 = (bool_1, list_0, bool_0)
+        var_0 = module_0.func(*tuple_1)
+>       assert var_0 == 1
+E       assert 0 == 1
+
+c4b_bak/src_1572/6/test_transformed_src_1572.py:29: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1572/6/test_transformed_src_1572.py::test_case_0 - KeyErro...
+FAILED c4b_bak/src_1572/6/test_transformed_src_1572.py::test_case_2 - assert ...
+============================== 2 failed in 0.06s ===============================

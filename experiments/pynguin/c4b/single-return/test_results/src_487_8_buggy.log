@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+c4b_bak/src_487/8/test_transformed_src_487.py ..F...F                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "xTQc??e>#tp9k?ai6OS`"
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+        assert var_0 == "xTQc??e>#tp9k?ai6OS`"
+        var_1 = module_0.func(*var_0)
+        assert var_1 == "X"
+        var_2 = module_0.func(*var_1)
+>       assert var_2 == "x"
+E       AssertionError: assert 'X' == 'x'
+E         - x
+E         + X
+
+c4b_bak/src_487/8/test_transformed_src_487.py:30: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "lG"
+        list_0 = [str_0, str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+        assert var_0 == "Lg"
+        object_0 = module_1.object()
+        var_1 = module_0.func(*var_0)
+>       assert var_1 == "l"
+E       AssertionError: assert 'L' == 'l'
+E         - l
+E         + L
+
+c4b_bak/src_487/8/test_transformed_src_487.py:79: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_487/8/test_transformed_src_487.py::test_case_2 - Assertion...
+FAILED c4b_bak/src_487/8/test_transformed_src_487.py::test_case_6 - Assertion...
+========================= 2 failed, 5 passed in 0.06s ==========================

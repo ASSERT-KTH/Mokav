@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_bak/src_1537/6/test_transformed_src_1537.py F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "@3XM':T\"6d\x0bg\r[gUZv*g"
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".@.3.x.m.'.:.t.\".6.d.\x0b.g.\r.[.g.z.v.*.g"
+E       assert ".@.3.x.m.'.:...[.g.u.z.v.*.g" == ".@.3.x.m.'.:...r.[.g.z.v.*.g"
+E           .@.3.x.m.'.:.t.".6.d.
+E           .g.
+E         - .[.g.z.v.*.g
+E         + .[.g.u.z.v.*.g
+E         ?     ++
+
+c4b_bak/src_1537/6/test_transformed_src_1537.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1537/6/test_transformed_src_1537.py::test_case_0 - assert ...
+============================== 1 failed in 0.03s ===============================

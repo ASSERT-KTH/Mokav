@@ -1,0 +1,25 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_bak/src_917/5/test_transformed_src_917.py F                          [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "61`=#55OPyR5<lG*"
+        var_0 = module_0.func(*str_0)
+        assert var_0 == "1/6"
+        var_1 = module_0.func(*var_0)
+>       assert var_1 == "1/1"
+E       AssertionError: assert '6/6' == '1/1'
+E         - 1/1
+E         + 6/6
+
+c4b_bak/src_917/5/test_transformed_src_917.py:18: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_917/5/test_transformed_src_917.py::test_case_1 - Assertion...
+============================== 1 failed in 0.03s ===============================

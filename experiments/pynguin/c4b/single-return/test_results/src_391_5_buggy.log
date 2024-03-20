@@ -1,0 +1,75 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_391/5/test_transformed_src_391.py FFF                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "}\\q|P\x0c2"
+        list_0 = [str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_391/5/test_transformed_src_391.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('}\\q|P\x0c2', '}\\q|P\x0c2', '}\\q|P\x0c2'), string = '}\\q|P\x0c2'
+numbers = ['}\\q|P', '2']
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+>   	a = int(numbers[0])
+E    ValueError: invalid literal for int() with base 10: '}\\q|P'
+
+c4b_bak/src_391/5/src_391.py:5: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "}@))\x0c8"
+        list_0 = [str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_391/5/test_transformed_src_391.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('}@))\x0c8', '}@))\x0c8'), string = '}@))\x0c8', numbers = ['}@))', '8']
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+>   	a = int(numbers[0])
+E    ValueError: invalid literal for int() with base 10: '}@))'
+
+c4b_bak/src_391/5/src_391.py:5: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "P@))\x0c1"
+        list_0 = [str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_391/5/test_transformed_src_391.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('P@))\x0c1', 'P@))\x0c1'), string = 'P@))\x0c1', numbers = ['P@))', '1']
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+>   	a = int(numbers[0])
+E    ValueError: invalid literal for int() with base 10: 'P@))'
+
+c4b_bak/src_391/5/src_391.py:5: ValueError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_391/5/test_transformed_src_391.py::test_case_1 - ValueErro...
+FAILED c4b_bak/src_391/5/test_transformed_src_391.py::test_case_2 - ValueErro...
+FAILED c4b_bak/src_391/5/test_transformed_src_391.py::test_case_3 - ValueErro...
+============================== 3 failed in 0.04s ===============================

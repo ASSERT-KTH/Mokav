@@ -1,0 +1,41 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_1843/2/test_transformed_src_1843.py FFF                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"bq\xe8cW"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 0
+E       assert 1 == 0
+
+c4b_bak/src_1843/2/test_transformed_src_1843.py:17: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"bq\x16\xe8+W"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 1
+E       assert 2 == 1
+
+c4b_bak/src_1843/2/test_transformed_src_1843.py:25: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bytes_0 = b"\x18\xaa\xdaw\xfc\x1f\x93g\xa2"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 14
+E       assert 15 == 14
+
+c4b_bak/src_1843/2/test_transformed_src_1843.py:33: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1843/2/test_transformed_src_1843.py::test_case_1 - assert ...
+FAILED c4b_bak/src_1843/2/test_transformed_src_1843.py::test_case_2 - assert ...
+FAILED c4b_bak/src_1843/2/test_transformed_src_1843.py::test_case_3 - assert ...
+============================== 3 failed in 0.06s ===============================

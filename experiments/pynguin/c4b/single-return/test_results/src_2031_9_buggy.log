@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_bak/src_2031/9/test_transformed_src_2031.py F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"r<\xca\\|mc\x9c\xe4"
+        var_0 = module_0.func(*bytes_0)
+>       assert (
+            var_0
+            == "aabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaa"
+        )
+E       AssertionError: assert 'aabbcaabbcaa...abbcaabbcaabb' == 'aabbaabbaabb...abbaabbaabbaa'
+E         - aabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaa
+E         ?                                                                                             ----------------------
+E         + aabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabbcaabb
+E         ?     +    +    +    +    +    +    +    +    +    +    +    +    +    +    +    +    +    +    +    +    +    +
+
+c4b_bak/src_2031/9/test_transformed_src_2031.py:16: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2031/9/test_transformed_src_2031.py::test_case_1 - Asserti...
+============================== 1 failed in 0.04s ===============================

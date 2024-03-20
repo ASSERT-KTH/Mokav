@@ -1,0 +1,64 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_bak/src_1705/1/test_transformed_src_1705.py F.FFF                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bool_0 = True
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 1
+E       assert 0 == 1
+
+c4b_bak/src_1705/1/test_transformed_src_1705.py:12: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bytes_0 = b"\x1a\\n\x85\xa7\xd7\xe0CdH\xdf"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 0
+E       assert 235 == 0
+
+c4b_bak/src_1705/1/test_transformed_src_1705.py:34: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bool_0 = True
+        bool_1 = False
+        list_0 = [bool_0, bool_0, bool_1, bool_1]
+        var_0 = module_0.func(*list_0)
+        assert var_0 == 1
+        bool_2 = True
+        list_1 = [bool_2, bool_2, bool_2, bool_2, bool_2]
+        var_1 = module_0.func(*list_1)
+>       assert var_1 == 1
+E       assert 0 == 1
+
+c4b_bak/src_1705/1/test_transformed_src_1705.py:48: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        bool_0 = True
+        bool_1 = False
+        list_0 = [bool_0, bool_1, bool_1, bool_1, bool_1]
+        var_0 = module_0.func(*list_0)
+        assert var_0 == 1
+        bool_2 = True
+        list_1 = [bool_2, bool_2, bool_2, bool_2, bool_2]
+        var_1 = module_0.func(*list_1)
+>       assert var_1 == 1
+E       assert 0 == 1
+
+c4b_bak/src_1705/1/test_transformed_src_1705.py:65: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1705/1/test_transformed_src_1705.py::test_case_0 - assert ...
+FAILED c4b_bak/src_1705/1/test_transformed_src_1705.py::test_case_3 - assert ...
+FAILED c4b_bak/src_1705/1/test_transformed_src_1705.py::test_case_4 - assert ...
+FAILED c4b_bak/src_1705/1/test_transformed_src_1705.py::test_case_5 - assert ...
+========================= 4 failed, 1 passed in 0.05s ==========================

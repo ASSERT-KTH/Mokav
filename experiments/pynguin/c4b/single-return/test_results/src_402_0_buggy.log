@@ -1,0 +1,55 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_402/0/test_transformed_src_402.py F.F.                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"\xae\x83\x0eyJ\x00<:W\xbc\x9d\x96<\x1c\x98\xb5\xc0\xa12"
+        bool_0 = True
+        tuple_0 = (bool_0, bytes_0, bool_0)
+>       var_0 = module_0.func(*tuple_0)
+
+c4b_bak/src_402/0/test_transformed_src_402.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (True, b'\xae\x83\x0eyJ\x00<:W\xbc\x9d\x96<\x1c\x98\xb5\xc0\xa12', True)
+n = True
+
+    def func(*args):
+    
+    	n = args[0]
+>   	a = (len(n) // 2)
+E    TypeError: object of type 'bool' has no len()
+
+c4b_bak/src_402/0/src_402.py:4: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        int_0 = -83
+        bytes_0 = b""
+        bool_0 = False
+        tuple_0 = (int_0, bytes_0, bool_0)
+>       var_0 = module_0.func(*tuple_0)
+
+c4b_bak/src_402/0/test_transformed_src_402.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (-83, b'', False), n = -83
+
+    def func(*args):
+    
+    	n = args[0]
+>   	a = (len(n) // 2)
+E    TypeError: object of type 'int' has no len()
+
+c4b_bak/src_402/0/src_402.py:4: TypeError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_402/0/test_transformed_src_402.py::test_case_1 - TypeError...
+FAILED c4b_bak/src_402/0/test_transformed_src_402.py::test_case_3 - TypeError...
+========================= 2 failed, 2 passed in 0.03s ==========================

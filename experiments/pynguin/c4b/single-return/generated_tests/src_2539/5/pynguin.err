@@ -1,0 +1,109 @@
+╭─────────────────────────────── Traceback (most recent call last) ────────────────────────────────╮
+│ /home/khashayar/projs/det-gen/.venv/bin/pynguin:8 in <module>                                    │
+│                                                                                                  │
+│   5 from pynguin.cli import main                                                                 │
+│   6 if __name__ == '__main__':                                                                   │
+│   7 │   sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])                         │
+│ ❱ 8 │   sys.exit(main())                                                                         │
+│   9                                                                                              │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/cli.py:196 in main      │
+│                                                                                                  │
+│   193 │   set_configuration(parsed.config)                                                       │
+│   194 │   if console is not None:                                                                │
+│   195 │   │   with console.status("Running Pynguin..."):                                         │
+│ ❱ 196 │   │   │   return run_pynguin().value                                                     │
+│   197 │   else:                                                                                  │
+│   198 │   │   return run_pynguin().value                                                         │
+│   199                                                                                            │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/generator.py:108 in     │
+│ run_pynguin                                                                                      │
+│                                                                                                  │
+│   105 │   """                                                                                    │
+│   106 │   try:                                                                                   │
+│   107 │   │   _LOGGER.info("Start Pynguin Test Generation…")                                     │
+│ ❱ 108 │   │   return _run()                                                                      │
+│   109 │   finally:                                                                               │
+│   110 │   │   _LOGGER.info("Stop Pynguin Test Generation…")                                      │
+│   111                                                                                            │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/generator.py:506 in     │
+│ _run                                                                                             │
+│                                                                                                  │
+│   503                                                                                            │
+│   504                                                                                            │
+│   505 def _run() -> ReturnCode:                                                                  │
+│ ❱ 506 │   if (setup_result := _setup_and_check()) is None:                                       │
+│   507 │   │   return ReturnCode.SETUP_FAILED                                                     │
+│   508 │   executor, test_cluster, constant_provider = setup_result                               │
+│   509 │   # traces slices for test cases after execution                                         │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/generator.py:251 in     │
+│ _setup_and_check                                                                                 │
+│                                                                                                  │
+│   248 │   │   set(config.configuration.statistics_output.coverage_metrics),                      │
+│   249 │   │   dynamic_constant_provider,                                                         │
+│   250 │   )                                                                                      │
+│ ❱ 251 │   if not _load_sut(tracer):                                                              │
+│   252 │   │   return None                                                                        │
+│   253 │   if not _setup_report_dir():                                                            │
+│   254 │   │   return None                                                                        │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/generator.py:164 in     │
+│ _load_sut                                                                                        │
+│                                                                                                  │
+│   161 │   try:                                                                                   │
+│   162 │   │   # We need to set the current thread ident so the import trace is recorded.         │
+│   163 │   │   tracer.current_thread_identifier = threading.current_thread().ident                │
+│ ❱ 164 │   │   importlib.import_module(config.configuration.module_name)                          │
+│   165 │   except ImportError as ex:                                                              │
+│   166 │   │   # A module could not be imported because some dependencies                         │
+│   167 │   │   # are missing or it is malformed                                                   │
+│                                                                                                  │
+│ /usr/lib/python3.10/importlib/__init__.py:126 in import_module                                   │
+│                                                                                                  │
+│   123 │   │   │   if character != '.':                                                           │
+│   124 │   │   │   │   break                                                                      │
+│   125 │   │   │   level += 1                                                                     │
+│ ❱ 126 │   return _bootstrap._gcd_import(name[level:], package, level)                            │
+│   127                                                                                            │
+│   128                                                                                            │
+│   129 _RELOADING = {}                                                                            │
+│ in _gcd_import:1050                                                                              │
+│ in _find_and_load:1027                                                                           │
+│ in _find_and_load_unlocked:1006                                                                  │
+│ in _load_unlocked:688                                                                            │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/instrumentation/machine │
+│ ry.py:59 in exec_module                                                                          │
+│                                                                                                  │
+│    56 │                                                                                          │
+│    57 │   def exec_module(self, module):  # noqa: D102                                           │
+│    58 │   │   self._tracer.reset()                                                               │
+│ ❱  59 │   │   super().exec_module(module)                                                        │
+│    60 │   │   self._tracer.store_import_trace()                                                  │
+│    61 │                                                                                          │
+│    62 │   def get_code(self, fullname) -> CodeType:                                              │
+│ in exec_module:879                                                                               │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/instrumentation/machine │
+│ ry.py:73 in get_code                                                                             │
+│                                                                                                  │
+│    70 │   │   Returns:                                                                           │
+│    71 │   │   │   The modules code blocks                                                        │
+│    72 │   │   """                                                                                │
+│ ❱  73 │   │   to_instrument = cast(CodeType, super().get_code(fullname))                         │
+│    74 │   │   assert to_instrument is not None, "Failed to get code object of module."           │
+│    75 │   │   return self._transformer.instrument_module(to_instrument)                          │
+│    76                                                                                            │
+│ in get_code:1017                                                                                 │
+│ in source_to_code:947                                                                            │
+│ in _call_with_frames_removed:241                                                                 │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│  /home/khashayar/projs/det-gen/c4b/src_2539/5/src_2539.py:20                                     │
+│         return(*best, sep='/')                                                                   │
+│                ▲                                                                                 │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
+SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?

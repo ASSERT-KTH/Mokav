@@ -1,0 +1,49 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_bak/src_1895/0/test_transformed_src_1895.py FF...                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"\xaa\xcfE\x7f\x90\xea\x04"
+        set_0 = {bytes_0, bytes_0}
+        var_0 = module_0.func(*set_0)
+>       assert var_0 == 127
+E       assert 111175 == 127
+
+c4b_bak/src_1895/0/test_transformed_src_1895.py:12: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        dict_0 = {}
+        list_0 = [dict_0, dict_0, dict_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_1895/0/test_transformed_src_1895.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({}, {}, {}), n = {}, ans = 0.5, n1 = ''
+
+    def func(*args):
+    
+    	n = args[0]
+    	ans = (2 ** (len(n) - 1))
+    	n1 = ''
+    	for i in range(1, len(n)):
+    	    if (int(n[i]) > 0):
+    	        n1 += '1'
+    	    else:
+    	        n1 += '0'
+>   	n1 = (0 + int(n1))
+E    ValueError: invalid literal for int() with base 10: ''
+
+c4b_bak/src_1895/0/src_1895.py:11: ValueError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1895/0/test_transformed_src_1895.py::test_case_0 - assert ...
+FAILED c4b_bak/src_1895/0/test_transformed_src_1895.py::test_case_1 - ValueEr...
+========================= 2 failed, 3 passed in 0.04s ==========================

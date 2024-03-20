@@ -1,0 +1,59 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_1875/0/test_transformed_src_1875.py FF                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"\x8cy\xaf\xc9v"
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_1875/0/test_transformed_src_1875.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'\x8cy\xaf\xc9v', b'\x8cy\xaf\xc9v', b'\x8cy\xaf\xc9v', b'\x8cy\xaf\xc9v')
+s = b'\x8cy\xaf\xc9v', l = 'a', n = 1
+
+    def func(*args):
+    
+    	s = args[0]
+    	l = 'a'
+    	n = 1
+    	for i in s:
+>   	    if (i > l):
+E        TypeError: '>' not supported between instances of 'int' and 'str'
+
+c4b_bak/src_1875/0/src_1875.py:7: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\xd8\xd9<\xd9_&`?:\n\xfc+B\xc4\xe1r\xbf["
+        list_0 = [bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_1875/0/test_transformed_src_1875.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'\xd8\xd9<\xd9_&`?:\n\xfc+B\xc4\xe1r\xbf[',)
+s = b'\xd8\xd9<\xd9_&`?:\n\xfc+B\xc4\xe1r\xbf[', l = 'a', n = 1
+
+    def func(*args):
+    
+    	s = args[0]
+    	l = 'a'
+    	n = 1
+    	for i in s:
+>   	    if (i > l):
+E        TypeError: '>' not supported between instances of 'int' and 'str'
+
+c4b_bak/src_1875/0/src_1875.py:7: TypeError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1875/0/test_transformed_src_1875.py::test_case_0 - TypeErr...
+FAILED c4b_bak/src_1875/0/test_transformed_src_1875.py::test_case_2 - TypeErr...
+============================== 2 failed in 0.05s ===============================

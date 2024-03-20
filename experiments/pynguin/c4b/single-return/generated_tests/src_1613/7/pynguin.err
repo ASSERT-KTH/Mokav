@@ -1,0 +1,37 @@
+/home/khashayar/projs/det-gen/c4b/src_1613/7/src_1613.py:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if (a is 0):
+/home/khashayar/projs/det-gen/c4b/src_1613/7/src_1613.py:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if (hcf(i, p) is 1):
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:12: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_1613:6: SyntaxWarning: "is" with a literal. Did you mean "=="?

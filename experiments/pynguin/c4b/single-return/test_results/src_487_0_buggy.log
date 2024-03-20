@@ -1,0 +1,37 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_bak/src_487/0/test_transformed_src_487.py F.F...                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "Z"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "z"
+E       AssertionError: assert 'Z' == 'z'
+E         - z
+E         + Z
+
+c4b_bak/src_487/0/test_transformed_src_487.py:13: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "Z"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "z"
+E       AssertionError: assert 'Z' == 'z'
+E         - z
+E         + Z
+
+c4b_bak/src_487/0/test_transformed_src_487.py:34: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_487/0/test_transformed_src_487.py::test_case_0 - Assertion...
+FAILED c4b_bak/src_487/0/test_transformed_src_487.py::test_case_3 - Assertion...
+========================= 2 failed, 4 passed in 0.04s ==========================

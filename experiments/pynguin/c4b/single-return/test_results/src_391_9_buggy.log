@@ -1,0 +1,81 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_391/9/test_transformed_src_391.py FFF                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '0 3\r"!ppcnPk4bFu'
+        list_0 = [str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_391/9/test_transformed_src_391.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('0 3\r"!ppcnPk4bFu', '0 3\r"!ppcnPk4bFu'), string = '0 3\r"!ppcnPk4bFu'
+numbers = ['0', '3', '"!ppcnPk4bFu'], a = 0
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+    	a = int(numbers[0])
+    	b = int(numbers[1])
+    	sequence = []
+    	for x in range(a):
+    	    sequence += ([(x + 1)] + sequence)
+>   	return(sequence[(b - 1)])
+E    IndexError: list index out of range
+
+c4b_bak/src_391/9/src_391.py:10: IndexError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = ">\r2\tF"
+        list_0 = [str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_391/9/test_transformed_src_391.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('>\r2\tF', '>\r2\tF'), string = '>\r2\tF', numbers = ['>', '2', 'F']
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+>   	a = int(numbers[0])
+E    ValueError: invalid literal for int() with base 10: '>'
+
+c4b_bak/src_391/9/src_391.py:5: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = ">\r92\tF"
+        list_0 = [str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_391/9/test_transformed_src_391.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('>\r92\tF', '>\r92\tF', '>\r92\tF'), string = '>\r92\tF'
+numbers = ['>', '92', 'F']
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+>   	a = int(numbers[0])
+E    ValueError: invalid literal for int() with base 10: '>'
+
+c4b_bak/src_391/9/src_391.py:5: ValueError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_391/9/test_transformed_src_391.py::test_case_1 - IndexErro...
+FAILED c4b_bak/src_391/9/test_transformed_src_391.py::test_case_2 - ValueErro...
+FAILED c4b_bak/src_391/9/test_transformed_src_391.py::test_case_3 - ValueErro...
+============================== 3 failed in 0.05s ===============================

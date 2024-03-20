@@ -23,6 +23,8 @@ def main(argv):
                             if i == len(lines) - 1 or lines[i + 1] == "\n":
                                 f.write('#' + line)
                                 is_xfail = False
+                            elif (i == len(lines) - 2 or lines[i + 2] == '\n') and line.startswith("def "):
+                                f.write('#' + line)
                             else:
                                 f.write(line)
                         else:
