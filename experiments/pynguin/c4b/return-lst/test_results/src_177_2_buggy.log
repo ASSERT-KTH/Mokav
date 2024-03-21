@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_177/2/test_transformed_src_177.py .F                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "Xfwlpd+IW*~4vy"
+        str_1 = "kSM$n'oVXy'-t\\wZ:uU/"
+        list_0 = [str_0, str_1, str_1]
+        var_0 = module_0.func(*list_0)
+        bool_0 = False
+        list_1 = [var_0, bool_0]
+>       var_1 = module_0.func(*list_1)
+
+c4b_ret_list_bak/src_177/2/test_transformed_src_177.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (8, False), s_v = {'A', 'E', 'I', 'O', 'U', 'Y'}, s = 8, p = -1
+
+    def func(*args):
+    
+    	s_v = set()
+    	s_v.add('A')
+    	s_v.add('E')
+    	s_v.add('I')
+    	s_v.add('O')
+    	s_v.add('U')
+    	s_v.add('Y')
+    	s = args[0]
+    	p = (- 1)
+    	m = (- 1)
+>   	for i in range(len(s)):
+E    TypeError: object of type 'int' has no len()
+
+c4b_ret_list_bak/src_177/2/src_177.py:13: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_177/2/test_transformed_src_177.py::test_case_2 - ...
+========================= 1 failed, 1 passed in 0.08s ==========================

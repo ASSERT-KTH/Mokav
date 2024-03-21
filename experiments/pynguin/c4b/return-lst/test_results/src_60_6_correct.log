@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_ret_list_bak/src_60/6/test_transformed_src_60.py ...F.               [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "=g*e&Gw7 \x0ca\t"
+        tuple_0 = (str_0,)
+        var_0 = module_0.func(*tuple_0)
+        list_0 = [var_0, var_0]
+>       var_1 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_60/6/test_transformed_src_60.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (7, 7), a = 7
+
+    def func(*args):
+    
+    	a = args[0]
+>   	x = a.count('4')
+E    AttributeError: 'int' object has no attribute 'count'
+
+c4b_ret_list_bak/src_60/6/src_60.py:4: AttributeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_60/6/test_transformed_src_60.py::test_case_3 - At...
+========================= 1 failed, 4 passed in 0.07s ==========================

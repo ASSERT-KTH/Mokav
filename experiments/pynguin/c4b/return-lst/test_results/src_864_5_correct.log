@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_864/5/test_transformed_src_864.py ...F              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bytes_0 = b"\xd4f N~\xa2\x96\xb5\x04 l\x80\xa9\xa6"
+        list_0 = [bytes_0]
+        var_0 = module_0.func(*list_0)
+>       var_1 = module_0.func(*var_0)
+
+c4b_ret_list_bak/src_864/5/test_transformed_src_864.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (212, 102, 32, 78, 126, 162, ...), word = 212
+
+    def func(*args):
+    
+    	word = args[0]
+>   	if (word == (word[:1].lower() + word[1:].upper())):
+E    TypeError: 'int' object is not subscriptable
+
+c4b_ret_list_bak/src_864/5/src_864.py:4: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_864/5/test_transformed_src_864.py::test_case_3 - ...
+========================= 1 failed, 3 passed in 0.06s ==========================

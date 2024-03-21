@@ -1,0 +1,52 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_951/3/test_transformed_src_951.py F...              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_951/3/test_transformed_src_951.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (False, False, False), f = <function func.<locals>.f at 0x7f4eabec8a60>
+x = 0, s_x = 0
+
+    def func(*args):
+    
+    
+    	def f(a):
+    	    s = 0
+    	    k = 0
+    	    while (a > 0):
+    	        k += 1
+    	        s += (a % 10)
+    	        a //= 10
+    	    return (s, k)
+    	x = int(args[0])
+    	(s_x, k) = f(x)
+    	if (k == 1):
+    	    return(x)
+    	    exit()
+    	arr = []
+    	for current_k in range(1, k):
+    	    y = (str(((x // (10 ** current_k)) - 1)) + ('9' * current_k))
+    	    y = int(y.strip('0'))
+    	    s_y = f(y)[0]
+    	    if (s_y > s_x):
+    	        arr.append((y, s_y))
+>   	max_pair = max(arr, key=(lambda x: x[1]))
+E    ValueError: max() arg is an empty sequence
+
+c4b_ret_list_bak/src_951/3/src_951.py:24: ValueError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_951/3/test_transformed_src_951.py::test_case_0 - ...
+========================= 1 failed, 3 passed in 0.08s ==========================

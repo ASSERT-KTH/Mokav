@@ -1,0 +1,69 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_2063/5/test_transformed_src_2063.py .F.F            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "Km0[IT\x0cf}}"
+>       var_0 = module_0.func(*str_0)
+
+c4b_ret_list_bak/src_2063/5/test_transformed_src_2063.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('K', 'm', '0', '[', 'I', 'T', ...), input_str = 'K', first_case = True
+second_case = False
+
+    def func(*args):
+    
+    	input_str = args[0]
+    	first_case = True
+    	second_case = True
+    	if input_str[0].isupper():
+    	    second_case = False
+    	for (i, letter) in enumerate(input_str[1:]):
+    	    if letter.islower():
+    	        first_case = False
+    	        second_case = False
+    	if first_case:
+>   	    return(input_str.tolower())
+E        AttributeError: 'str' object has no attribute 'tolower'. Did you mean: 'islower'?
+
+c4b_ret_list_bak/src_2063/5/src_2063.py:13: AttributeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "Km0[IT\x0cf}Q"
+>       var_0 = module_0.func(*str_0)
+
+c4b_ret_list_bak/src_2063/5/test_transformed_src_2063.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('K', 'm', '0', '[', 'I', 'T', ...), input_str = 'K', first_case = True
+second_case = False
+
+    def func(*args):
+    
+    	input_str = args[0]
+    	first_case = True
+    	second_case = True
+    	if input_str[0].isupper():
+    	    second_case = False
+    	for (i, letter) in enumerate(input_str[1:]):
+    	    if letter.islower():
+    	        first_case = False
+    	        second_case = False
+    	if first_case:
+>   	    return(input_str.tolower())
+E        AttributeError: 'str' object has no attribute 'tolower'. Did you mean: 'islower'?
+
+c4b_ret_list_bak/src_2063/5/src_2063.py:13: AttributeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2063/5/test_transformed_src_2063.py::test_case_1
+FAILED c4b_ret_list_bak/src_2063/5/test_transformed_src_2063.py::test_case_4
+========================= 2 failed, 2 passed in 0.07s ==========================

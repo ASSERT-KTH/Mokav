@@ -1,0 +1,49 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_710/3/test_transformed_src_710.py .FFF              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        float_0 = 300.0
+        float_1 = 2123.9725859859814
+        list_0 = [float_1, float_1, float_1, float_0, float_1]
+        var_0 = module_0.func(*list_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_710.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_710/3/test_transformed_src_710.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        float_0 = 2140.169
+        list_0 = [float_0, float_0, float_0, float_0]
+        var_0 = module_0.func(*list_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_710.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_710/3/test_transformed_src_710.py:36: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        float_0 = -4099.986255918604
+        float_1 = 2163.2276589240755
+        list_0 = [float_1, float_0, float_1]
+        var_0 = module_0.func(*list_0)
+        var_1 = module_0.func(*list_0)
+        list_1 = [float_0, float_0, float_0, float_0]
+        var_2 = module_0.func(*list_1)
+>       var_3 = module_0.func(*var_2)
+E       TypeError: src_710.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_710/3/test_transformed_src_710.py:49: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_710/3/test_transformed_src_710.py::test_case_2 - ...
+FAILED c4b_ret_list_bak/src_710/3/test_transformed_src_710.py::test_case_3 - ...
+FAILED c4b_ret_list_bak/src_710/3/test_transformed_src_710.py::test_case_4 - ...
+========================= 3 failed, 1 passed in 0.08s ==========================

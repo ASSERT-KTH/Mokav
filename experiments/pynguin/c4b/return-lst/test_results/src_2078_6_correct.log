@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_2078/6/test_transformed_src_2078.py ....            [100%]
+
+=============================== warnings summary ===============================
+c4b_ret_list_bak/src_2078/6/src_2078.py:4
+  /home/khashayar/projs/det-gen/c4b_ret_list_bak/src_2078/6/src_2078.py:4: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if (w is 2):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 4 passed, 1 warning in 0.06s =========================

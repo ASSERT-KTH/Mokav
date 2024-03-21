@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_ret_list_bak/src_522/0/test_transformed_src_522.py .F.               [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b";0\xbc\x08m\xe4\x06\xb4\xb5\xd1\x9c\xba\xdd,\x8c\xaf\xc0\x89\x0fP"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_522.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_522/0/test_transformed_src_522.py:25: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_522/0/test_transformed_src_522.py::test_case_2 - ...
+========================= 1 failed, 2 passed in 0.05s ==========================

@@ -1,0 +1,65 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 9 items
+
+c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py .F.FFFF..       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        var_0 = module_0.func(*list_0)
+        bytes_0 = b"O'\x9b\xa8\x05/\x07\x86\x97\x1d\xf7\xf8"
+        var_1 = module_0.func(*bytes_0)
+>       var_2 = module_0.func(*var_1)
+E       TypeError: src_2508.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py:25: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bytes_0 = b'x\r3{"\x92\xb8\xb2\xd8'
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_2508.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py:39: TypeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        bytes_0 = b"2\xd2l\xbe\xdc\x02(\xb7"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_2508.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py:46: TypeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bytes_0 = b"O'\x9b\xa8\x05/\x07\x86\x97\x1d\xf7\xf8"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_2508.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py:54: TypeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        float_0 = 626.9
+        list_0 = [float_0, float_0, float_0, float_0]
+        var_0 = module_0.func(*list_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_2508.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py:65: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py::test_case_2
+FAILED c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py::test_case_4
+FAILED c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py::test_case_5
+FAILED c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py::test_case_6
+FAILED c4b_ret_list_bak/src_2508/9/test_transformed_src_2508.py::test_case_7
+========================= 5 failed, 4 passed in 0.09s ==========================

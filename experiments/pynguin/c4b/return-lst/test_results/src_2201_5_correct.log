@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_2201/5/test_transformed_src_2201.py F.              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bool_0 = True
+        list_0 = [bool_0]
+        var_0 = module_0.func(*list_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_2201.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2201/5/test_transformed_src_2201.py:12: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2201/5/test_transformed_src_2201.py::test_case_0
+========================= 1 failed, 1 passed in 0.08s ==========================

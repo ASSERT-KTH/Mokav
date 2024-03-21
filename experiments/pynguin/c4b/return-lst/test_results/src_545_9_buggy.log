@@ -1,0 +1,63 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_545/9/test_transformed_src_545.py FF                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        int_0 = 235
+        dict_0 = {int_0: int_0}
+        list_0 = [int_0, dict_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_545/9/test_transformed_src_545.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (235, {235: 235}), n = 235, x = [], the_stack = [235]
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	x = [i for i in args[1]]
+    	the_stack = [x[0]]
+    	del x[0]
+    	d_max = (n - 1)
+    	for i in range(1, n):
+>   	    if (the_stack[(- 1)] == x[0]):
+E        IndexError: list index out of range
+
+c4b_ret_list_bak/src_545/9/src_545.py:9: IndexError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        int_0 = 846
+        str_0 = "|znoP\rNK;|Xe"
+        list_0 = [int_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_545/9/test_transformed_src_545.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (846, '|znoP\rNK;|Xe'), n = 846, x = [], the_stack = ['e']
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	x = [i for i in args[1]]
+    	the_stack = [x[0]]
+    	del x[0]
+    	d_max = (n - 1)
+    	for i in range(1, n):
+>   	    if (the_stack[(- 1)] == x[0]):
+E        IndexError: list index out of range
+
+c4b_ret_list_bak/src_545/9/src_545.py:9: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_545/9/test_transformed_src_545.py::test_case_0 - ...
+FAILED c4b_ret_list_bak/src_545/9/test_transformed_src_545.py::test_case_2 - ...
+============================== 2 failed in 0.08s ===============================

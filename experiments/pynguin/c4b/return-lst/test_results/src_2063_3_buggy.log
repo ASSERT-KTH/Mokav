@@ -1,0 +1,40 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_2063/3/test_transformed_src_2063.py F.              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "s\n0mS9JI\\^`\\4&P?*\nw>"
+>       var_0 = module_0.func(*str_0)
+
+c4b_ret_list_bak/src_2063/3/test_transformed_src_2063.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('s', '\n', '0', 'm', 'S', '9', ...), input_str = 's', first_case = True
+second_case = True
+
+    def func(*args):
+    
+    	input_str = args[0]
+    	first_case = True
+    	second_case = True
+    	if input_str[0].isupper():
+    	    second_case = False
+    	for (i, letter) in enumerate(input_str[1:]):
+    	    if letter.islower():
+    	        first_case = False
+    	        second_case = False
+    	if first_case:
+>   	    return(input_str.tolower())
+E        AttributeError: 'str' object has no attribute 'tolower'. Did you mean: 'islower'?
+
+c4b_ret_list_bak/src_2063/3/src_2063.py:13: AttributeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2063/3/test_transformed_src_2063.py::test_case_0
+========================= 1 failed, 1 passed in 0.06s ==========================

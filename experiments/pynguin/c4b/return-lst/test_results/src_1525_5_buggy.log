@@ -1,0 +1,37 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_ret_list_bak/src_1525/5/test_transformed_src_1525.py ..F             [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        int_0 = -240
+        dict_0 = {}
+        set_0 = set()
+        list_0 = [set_0, int_0]
+        tuple_0 = (list_0,)
+        tuple_1 = (dict_0, set_0, dict_0, tuple_0)
+        list_1 = [int_0, tuple_1, dict_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_ret_list_bak/src_1525/5/test_transformed_src_1525.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (-240, ({}, set(), {}, ([set(), -240],)), {}), x = -240
+
+    def func(*args):
+    
+    	x = int(args[0])
+    	if ((x % 5) == 0):
+>   	    Print((x // 5))
+E        NameError: name 'Print' is not defined
+
+c4b_ret_list_bak/src_1525/5/src_1525.py:5: NameError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1525/5/test_transformed_src_1525.py::test_case_2
+========================= 1 failed, 2 passed in 0.07s ==========================

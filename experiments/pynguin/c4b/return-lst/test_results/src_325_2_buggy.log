@@ -1,0 +1,40 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_ret_list_bak/src_325/2/test_transformed_src_325.py F                 [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        float_0 = 1244.4866
+        int_0 = 798
+        list_0 = [int_0, float_0, float_0]
+        list_1 = [float_0, list_0, int_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_ret_list_bak/src_325/2/test_transformed_src_325.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1244.4866, [798, 1244.4866, 1244.4866], 798), times = 1244
+getted = [798, 1244.4866, 1244.4866], token = [798, 1244.4866, 1244.4866]
+
+    def func(*args):
+    
+    	times = int(args[0])
+    	getted = args[1]
+    	token = list(getted)
+    	counter1 = 0
+    	counter2 = 0
+    	counter3 = 0
+    	for i in range(1, (times - 1)):
+>   	    if ((token[(i - 1)] == token[i]) or (token[(i + 1)] == token[i])):
+E        IndexError: list index out of range
+
+c4b_ret_list_bak/src_325/2/src_325.py:10: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_325/2/test_transformed_src_325.py::test_case_1 - ...
+============================== 1 failed in 0.05s ===============================

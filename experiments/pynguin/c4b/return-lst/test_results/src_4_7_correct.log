@@ -1,0 +1,41 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_ret_list_bak/src_4/7/test_transformed_src_4.py ..FFF                 [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bytes_0 = b"\xf73\x0c?\x06\x93\x93\xe3\x8b\xef\xdfEi;~"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_4.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_4/7/test_transformed_src_4.py:30: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bytes_0 = b"3\x0c?\x06\x93\x93\xe3\x8b\xef\xdfEi;~"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_4.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_4/7/test_transformed_src_4.py:40: TypeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        bytes_0 = b"\x11l\xd3\x1cf"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_4.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_4/7/test_transformed_src_4.py:50: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_4/7/test_transformed_src_4.py::test_case_3 - Type...
+FAILED c4b_ret_list_bak/src_4/7/test_transformed_src_4.py::test_case_4 - Type...
+FAILED c4b_ret_list_bak/src_4/7/test_transformed_src_4.py::test_case_5 - Type...
+========================= 3 failed, 2 passed in 0.09s ==========================

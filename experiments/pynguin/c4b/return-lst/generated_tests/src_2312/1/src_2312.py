@@ -1,0 +1,12 @@
+def func(*args):
+	ret_values = []
+	
+	s = args[0]
+	vowels = ['a', 'i', 'u', 'e', 'o', 'y']
+	res = ''
+	for c in s:
+	    if (c.lower() not in vowels):
+	        res += ('.' + c.lower())
+	ret_values.append(res)
+
+	return ret_values

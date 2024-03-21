@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_2230/4/test_transformed_src_2230.py F.              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"w~\x86`+?.R"
+        int_0 = -661
+        list_0 = [bytes_0, int_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_2230/4/test_transformed_src_2230.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'w~\x86`+?.R', -661), a = b'w~\x86`+?.R'
+
+    def func(*args):
+    
+    	a = args[0]
+    	if (1 <= len(a) <= 100):
+>   	    if ('H' in a):
+E        TypeError: a bytes-like object is required, not 'str'
+
+c4b_ret_list_bak/src_2230/4/src_2230.py:5: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2230/4/test_transformed_src_2230.py::test_case_0
+========================= 1 failed, 1 passed in 0.05s ==========================

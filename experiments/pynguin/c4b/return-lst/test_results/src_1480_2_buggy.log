@@ -1,0 +1,47 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_ret_list_bak/src_1480/2/test_transformed_src_1480.py ..F             [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        int_0 = 1043
+        bool_0 = False
+        set_0 = {int_0, bool_0, bool_0}
+        list_0 = [set_0, set_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_1480/2/test_transformed_src_1480.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ({False, 1043}, {False, 1043}), s = {False, 1043}, li = ['H', 'Q', '9']
+flag = True
+
+    def func(*args):
+    
+    	s = args[0]
+    	li = ['H', 'Q', '9']
+    	flag = True
+    	for i in li:
+    	    if (i in s):
+    	        return('YES')
+    	        flag = False
+    	        break
+>   	if ((len(s) > 1) and (s[(- 1)] is '+')):
+E    TypeError: 'set' object is not subscriptable
+
+c4b_ret_list_bak/src_1480/2/src_1480.py:11: TypeError
+=============================== warnings summary ===============================
+c4b_ret_list_bak/src_1480/2/src_1480.py:11
+  /home/khashayar/projs/det-gen/c4b_ret_list_bak/src_1480/2/src_1480.py:11: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if ((len(s) > 1) and (s[(- 1)] is '+')):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1480/2/test_transformed_src_1480.py::test_case_3
+==================== 1 failed, 2 passed, 1 warning in 0.08s ====================

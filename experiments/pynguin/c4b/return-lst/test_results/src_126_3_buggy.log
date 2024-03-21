@@ -1,0 +1,60 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_ret_list_bak/src_126/3/test_transformed_src_126.py .FF               [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"\xf5I\x9cql\xb7;d]\x8b8\x89.zT8;\xec"
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_126/3/test_transformed_src_126.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'\xf5I\x9cql\xb7;d]\x8b8\x89.zT8;\xec', b'\xf5I\x9cql\xb7;d]\x8b8\x89.zT8;\xec', b'\xf5I\x9cql\xb7;d]\x8b8\x89.zT8;\xec', b'\xf5I\x9cql\xb7;d]\x8b8\x89.zT8;\xec')
+a = b'\xf5I\x9cql\xb7;d]\x8b8\x89.zT8;\xec'
+b = b'\xf5I\x9cql\xb7;d]\x8b8\x89.zT8;\xec'
+c = b'\xf5I\x9cql\xb7;d]\x8b8\x89.zT8;\xec'
+
+    def func(*args):
+    
+    	a = args[0]
+    	b = args[1]
+    	c = args[2]
+    	d = ((a + b) + c)
+>   	if ('X' in d):
+E    TypeError: a bytes-like object is required, not 'str'
+
+c4b_ret_list_bak/src_126/3/src_126.py:7: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"a"
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_126/3/test_transformed_src_126.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'a', b'a', b'a', b'a'), a = b'a', b = b'a', c = b'a'
+
+    def func(*args):
+    
+    	a = args[0]
+    	b = args[1]
+    	c = args[2]
+    	d = ((a + b) + c)
+>   	if ('X' in d):
+E    TypeError: a bytes-like object is required, not 'str'
+
+c4b_ret_list_bak/src_126/3/src_126.py:7: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_126/3/test_transformed_src_126.py::test_case_1 - ...
+FAILED c4b_ret_list_bak/src_126/3/test_transformed_src_126.py::test_case_2 - ...
+========================= 2 failed, 1 passed in 0.09s ==========================

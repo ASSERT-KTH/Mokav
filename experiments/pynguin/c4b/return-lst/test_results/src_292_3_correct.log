@@ -1,0 +1,49 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_292/3/test_transformed_src_292.py .FFF              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b":\x17uO\xc0\xe6\xf4C\xd2\x0f?{9\r&\x08B\xa0\x0c."
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_292.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_292/3/test_transformed_src_292.py:22: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        int_0 = 100000
+        list_0 = [int_0, int_0, int_0, int_0]
+        var_0 = module_0.func(*list_0)
+        bytes_0 = b":\x17u\xe6\xf4C\xd2\x0f?{9\r\x0c."
+        var_1 = module_0.func(*bytes_0)
+        object_0 = module_1.object()
+>       var_2 = module_0.func(*var_1)
+E       TypeError: src_292.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_292/3/test_transformed_src_292.py:34: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        int_0 = 99987
+        list_0 = [int_0, int_0, int_0, int_0]
+        var_0 = module_0.func(*list_0)
+        bytes_0 = b":\x17u\xe6\xf4C\xd2\x0f?{9\r\x0c."
+        var_1 = module_0.func(*bytes_0)
+        object_0 = module_1.object()
+>       var_2 = module_0.func(*var_1)
+E       TypeError: src_292.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_292/3/test_transformed_src_292.py:46: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_292/3/test_transformed_src_292.py::test_case_2 - ...
+FAILED c4b_ret_list_bak/src_292/3/test_transformed_src_292.py::test_case_3 - ...
+FAILED c4b_ret_list_bak/src_292/3/test_transformed_src_292.py::test_case_4 - ...
+========================= 3 failed, 1 passed in 0.09s ==========================

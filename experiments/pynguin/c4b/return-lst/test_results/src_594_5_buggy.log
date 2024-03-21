@@ -1,0 +1,81 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_594/5/test_transformed_src_594.py FFF.              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "]9*bxX<0jO4y0nSu"
+        tuple_0 = (str_0, str_0)
+>       var_0 = module_0.func(*tuple_0)
+
+c4b_ret_list_bak/src_594/5/test_transformed_src_594.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (']9*bxX<0jO4y0nSu', ']9*bxX<0jO4y0nSu'), string = ']9*bxX<0jO4y0nSu'
+t = 0
+
+    def func(*args):
+    
+    	string = args[0]
+    	t = 0
+    	if (len(string) < 7):
+    	    return('NO')
+>   	elif ((string.find('1111111') > (- 1)) or string.find(('0000000' > (- 1)))):
+E    TypeError: '>' not supported between instances of 'str' and 'int'
+
+c4b_ret_list_bak/src_594/5/src_594.py:7: TypeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "kY:iOh:"
+        list_0 = [str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_594/5/test_transformed_src_594.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('kY:iOh:', 'kY:iOh:'), string = 'kY:iOh:', t = 0
+
+    def func(*args):
+    
+    	string = args[0]
+    	t = 0
+    	if (len(string) < 7):
+    	    return('NO')
+>   	elif ((string.find('1111111') > (- 1)) or string.find(('0000000' > (- 1)))):
+E    TypeError: '>' not supported between instances of 'str' and 'int'
+
+c4b_ret_list_bak/src_594/5/src_594.py:7: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "0000000"
+        tuple_0 = (str_0, str_0)
+>       var_0 = module_0.func(*tuple_0)
+
+c4b_ret_list_bak/src_594/5/test_transformed_src_594.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('0000000', '0000000'), string = '0000000', t = 0
+
+    def func(*args):
+    
+    	string = args[0]
+    	t = 0
+    	if (len(string) < 7):
+    	    return('NO')
+>   	elif ((string.find('1111111') > (- 1)) or string.find(('0000000' > (- 1)))):
+E    TypeError: '>' not supported between instances of 'str' and 'int'
+
+c4b_ret_list_bak/src_594/5/src_594.py:7: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_594/5/test_transformed_src_594.py::test_case_0 - ...
+FAILED c4b_ret_list_bak/src_594/5/test_transformed_src_594.py::test_case_1 - ...
+FAILED c4b_ret_list_bak/src_594/5/test_transformed_src_594.py::test_case_3 - ...
+========================= 3 failed, 1 passed in 0.09s ==========================

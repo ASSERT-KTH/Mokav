@@ -1,0 +1,62 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_951/5/test_transformed_src_951.py .FF.              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        int_0 = -2642
+        list_0 = [int_0, int_0, int_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_951/5/test_transformed_src_951.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (-2642, -2642, -2642), f = <function func.<locals>.f at 0x7f34c6c10a60>
+x = -2642, s_x = 0
+
+    def func(*args):
+    
+    
+    	def f(a):
+    	    s = 0
+    	    k = 0
+    	    while (a > 0):
+    	        k += 1
+    	        s += (a % 10)
+    	        a //= 10
+    	    return (s, k)
+    	x = int(args[0])
+    	(s_x, k) = f(x)
+    	if (k == 1):
+    	    return(x)
+    	    exit()
+    	arr = []
+    	for current_k in range(1, k):
+    	    y = (str(((x // (10 ** current_k)) - 1)) + ('9' * current_k))
+    	    y = int(y.strip('0'))
+    	    s_y = f(y)[0]
+    	    if (s_y > s_x):
+    	        arr.append((y, s_y))
+>   	max_pair = max(arr, key=(lambda x: x[1]))
+E    ValueError: max() arg is an empty sequence
+
+c4b_ret_list_bak/src_951/5/src_951.py:24: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bytes_0 = b"\x17a\x98_\xd4\xbc\x19\xe7\xdb\xccQ/of"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_951.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_951/5/test_transformed_src_951.py:30: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_951/5/test_transformed_src_951.py::test_case_2 - ...
+FAILED c4b_ret_list_bak/src_951/5/test_transformed_src_951.py::test_case_3 - ...
+========================= 2 failed, 2 passed in 0.08s ==========================

@@ -1,0 +1,61 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_1875/7/test_transformed_src_1875.py FF              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"B\xd7\x01\\f\xe4\xb3\xf7\xac$\xe3r\xf87+\xb8\xbf"
+        list_0 = [bytes_0, bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_1875/7/test_transformed_src_1875.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'B\xd7\x01\\f\xe4\xb3\xf7\xac$\xe3r\xf87+\xb8\xbf', b'B\xd7\x01\\f\xe4\xb3\xf7\xac$\xe3r\xf87+\xb8\xbf')
+s = b'B\xd7\x01\\f\xe4\xb3\xf7\xac$\xe3r\xf87+\xb8\xbf', l = 'a', n = 1
+
+    def func(*args):
+    
+    	s = args[0]
+    	l = 'a'
+    	n = 1
+    	for i in s:
+>   	    if (i > l):
+E        TypeError: '>' not supported between instances of 'int' and 'str'
+
+c4b_ret_list_bak/src_1875/7/src_1875.py:7: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\x077\xcf\x94\x97GuqCA\xea\x96"
+        list_0 = [bytes_0, bytes_0, bytes_0, bytes_0]
+        list_1 = [list_0, list_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_ret_list_bak/src_1875/7/test_transformed_src_1875.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([b'\x077\xcf\x94\x97GuqCA\xea\x96', b'\x077\xcf\x94\x97GuqCA\xea\x96', b'\x077\xcf\x94\x97GuqCA\xea\x96', b'\x077\xcf...qCA\xea\x96', b'\x077\xcf\x94\x97GuqCA\xea\x96', b'\x077\xcf\x94\x97GuqCA\xea\x96', b'\x077\xcf\x94\x97GuqCA\xea\x96'])
+s = [b'\x077\xcf\x94\x97GuqCA\xea\x96', b'\x077\xcf\x94\x97GuqCA\xea\x96', b'\x077\xcf\x94\x97GuqCA\xea\x96', b'\x077\xcf\x94\x97GuqCA\xea\x96']
+l = 'a', n = 1
+
+    def func(*args):
+    
+    	s = args[0]
+    	l = 'a'
+    	n = 1
+    	for i in s:
+>   	    if (i > l):
+E        TypeError: '>' not supported between instances of 'bytes' and 'str'
+
+c4b_ret_list_bak/src_1875/7/src_1875.py:7: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1875/7/test_transformed_src_1875.py::test_case_0
+FAILED c4b_ret_list_bak/src_1875/7/test_transformed_src_1875.py::test_case_2
+============================== 2 failed in 0.08s ===============================

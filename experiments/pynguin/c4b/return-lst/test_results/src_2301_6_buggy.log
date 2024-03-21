@@ -1,0 +1,90 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_2301/6/test_transformed_src_2301.py FFFF            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "~i)ja-W02iX#A\r"
+>       var_0 = module_0.func(*str_0)
+
+c4b_ret_list_bak/src_2301/6/test_transformed_src_2301.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('~', 'i', ')', 'j', 'a', '-', ...)
+
+    def func(*args):
+    
+>   	n = int(args[0])
+E    ValueError: invalid literal for int() with base 10: '~'
+
+c4b_ret_list_bak/src_2301/6/src_2301.py:3: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bool_0 = False
+        list_0 = [bool_0, bool_0]
+        list_1 = [list_0, list_0, list_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_ret_list_bak/src_2301/6/test_transformed_src_2301.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([False, False], [False, False], [False, False])
+
+    def func(*args):
+    
+>   	n = int(args[0])
+E    TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
+c4b_ret_list_bak/src_2301/6/src_2301.py:3: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bool_0 = True
+        list_0 = [bool_0, bool_0]
+        list_1 = [list_0, list_0, list_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_ret_list_bak/src_2301/6/test_transformed_src_2301.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([True, True], [True, True], [True, True])
+
+    def func(*args):
+    
+>   	n = int(args[0])
+E    TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
+c4b_ret_list_bak/src_2301/6/src_2301.py:3: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0, bool_0, bool_0, bool_0]
+        object_0 = module_1.object()
+        list_1 = [list_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_ret_list_bak/src_2301/6/test_transformed_src_2301.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([False, False, False, False, False, False, ...],)
+
+    def func(*args):
+    
+>   	n = int(args[0])
+E    TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
+c4b_ret_list_bak/src_2301/6/src_2301.py:3: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2301/6/test_transformed_src_2301.py::test_case_0
+FAILED c4b_ret_list_bak/src_2301/6/test_transformed_src_2301.py::test_case_1
+FAILED c4b_ret_list_bak/src_2301/6/test_transformed_src_2301.py::test_case_3
+FAILED c4b_ret_list_bak/src_2301/6/test_transformed_src_2301.py::test_case_4
+============================== 4 failed in 0.09s ===============================
