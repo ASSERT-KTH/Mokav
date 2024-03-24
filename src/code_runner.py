@@ -6,6 +6,10 @@ import ast
 
 import time
 from functools import wraps
+import logging
+
+from temp_acc_qb import func as accepted_source
+
 
 
 def retry_decorator(max_retries=3, delay=1):
@@ -18,10 +22,15 @@ def retry_decorator(max_retries=3, delay=1):
                     return func(*args, **kwargs)
                 except Exception as e:
                     print(f"Exception occurred: {e}")
+                    logging.info(f"Exception occurred: {e}")
                     retry_count += 1
                     print(f"Retrying... (Attempt {retry_count} of {max_retries})")
+                    logging.info(
+                        f"Retrying... (Attempt {retry_count} of {max_retries})"
+                    )
                     time.sleep(delay)
             print(f"Max retries reached. Giving up.")
+            logging.info(f"Max retries reached. Giving up.")
 
         return wrapper
 
@@ -37,7 +46,7 @@ class CodeRunner:
 
         if is_func:
             self.df_submissions = pd.read_csv(
-                "data2/2acc_copy/cb_submission_res_2acc_alt.csv"
+                "data2/2acc_copy/cb_submission_res_2acc_alt_new.csv"
             )
             self.df_testcases = pd.read_csv("data2/2acc_copy/cb_testcase_res_2acc.csv")
 
@@ -114,6 +123,7 @@ if __name__ == '__main__':
                     data_list.append(ast.literal_eval(fault_test[0].replace("python", "")))
                 except Exception as e:
                     print(e)
+                    logging.info(f"ast.literal_eval error: {e}")
                     continue
         return data_list
 
@@ -133,25 +143,34 @@ if __name__ == '__main__':
             process = "Timeout"
         output = str(process)
         print("###TEMP_TEST_PY_OUTPUT", output)
+        logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
         if ("AssertionError" not in output) and ("temp_bug_qb.py" not in output):
-            for _ in range(10):
-                self.create_unnitest(rej, acc1, data_list)
-                try:
-                    process = subprocess.run(
-                        ["python", f"temp_test_case.py"], capture_output=True, timeout=1
-                    )
-                except subprocess.TimeoutExpired:
-                    process = "Timeout"
-                output = str(process)
-                print("####OUTPUT####")
-                print(output)
-                if ("AssertionError" in output) or ("temp_bug_qb.py" in output):
-                    return "Found1"
+            if self.is_iteravtive:
+                for _ in range(10):
+                    input_data = data_list[0]["inputdata"]
+                    if "\n" in input_data:
+                        input_data = list(input_data.split("\n"))
+
+                    output_code = accepted_source(input_data)
+                    test_case = self.test_generator.generate_test(rej, acc1, test_case, list(output_code)[0])
+                    data_list = self.change_test_to_dict(test_case)
+                    self.create_unnitest(rej, acc1, data_list)
+                    try:
+                        process = subprocess.run(
+                            ["python", f"temp_test_case.py"], capture_output=True, timeout=1
+                        )
+                    except subprocess.TimeoutExpired:
+                        process = "Timeout"
+                    output = str(process)
+                    print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
+                    logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n{output}")
+                    if ("AssertionError" in output) or ("temp_bug_qb.py" in output):
+                        return "Found1"
             return str(process)
         else:
             return "Found1"
 
-    @retry_decorator(max_retries=3, delay=1)
+    # @retry_decorator(max_retries=3, delay=1)
     def run(self):
         if self.is_func:
             grouped = (
@@ -164,9 +183,10 @@ if __name__ == '__main__':
             result = grouped.iloc[2 * top_10_percent : 3 * top_10_percent][
                 ["author", "problems_id"]
             ].values.tolist()
-
+            
             for i in result:
                 print(self.check_test(i[1], i[0]))
+                logging.info(f"###CHECK_TEST###:\n\n{self.check_test(i[1], i[0])}")
         else:
             self.check_test(1, 1)
         return "Done"

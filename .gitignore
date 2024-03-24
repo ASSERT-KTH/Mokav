@@ -172,3 +172,5 @@ data
 data2
 
 cache.json
+
+logging*.log

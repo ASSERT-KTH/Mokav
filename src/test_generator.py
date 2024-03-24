@@ -1,5 +1,6 @@
 from src.chatgpt import ChatGPT_2
 import re
+import logging
 
 
 class TestGenerator:
@@ -35,7 +36,7 @@ class TestGenerator:
     def generate_test(self, buggy_code, accepted_code, existing_test=None, retry=False):
         responses = []
         if retry:
-            prompt = f"both versions give us {retry} as output. The output should be different. Please generate again"
+            prompt = f"Both versions give us {retry} as output. The output should be different. Please generate again"
             chatgpt_resp = self.chatgpt.get_response(
                 new_question=prompt, previous_questions_and_answers=self.prompt_history
             )
@@ -80,4 +81,5 @@ Generate a test input in Python dict format as follows:
                     responses.append(chatgpt_resp[i])
             self.prompt_history.append((prompt, responses[-1]))
         print("###CHATRESP###", responses)
+        logging.info(f"###CHATRESP###\n\n {responses}")
         return [self.extract_regex(str(response)) for response in responses]

@@ -2,6 +2,7 @@ import openai
 import os
 import json
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
 openai.api_key = os.getenv("API_KEY")
@@ -36,6 +37,7 @@ class ChatGPT_2():
             messages = [{"role": "user", "content": prompt}]
         try:
             print("###Messages###\n\n", messages)
+            logging.info(f"###CHATGPT_INITIAL_PROMPT###\n\n {messages}")
             response = openai.ChatCompletion.create(
                 model='gpt-3.5-turbo',
                 messages=messages,
@@ -47,6 +49,7 @@ class ChatGPT_2():
             return message
         except Exception as e:
             print("Error:", str(e))
+            logging.info(f"###CHATGPT_ERROR###\n\n {str(e)}")
 
     def get_response(self, new_question, previous_questions_and_answers=None):
         instruction = self.instruction
@@ -60,6 +63,7 @@ class ChatGPT_2():
         messages.append({"role": "user", "content": new_question})
 
         print("###Messages###\n\n", messages)
+        logging.info(f"###CHATGPT_INITIAL_PROMPT###\n\n {messages}")
 
         prompt = "\n".join([msg['content'] for msg in messages])
         
@@ -69,10 +73,12 @@ class ChatGPT_2():
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=messages,
-            temperature=0.7,
+            temperature=1,
             n=10,
         )
         responses = [choice['message']['content'] for choice in completion['choices']]
         self.cache[prompt] = responses
         self.save_cache()  # Save cache to file
         return responses
+
+
