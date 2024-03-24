@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_ret_list_bak/src_2183/8/test_transformed_src_2183.py ..F...          [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bool_0 = True
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        list_1 = [bool_0, list_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_ret_list_bak/src_2183/8/test_transformed_src_2183.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (True, [True, True, True, True]), n = 1, z = [True, True, True, True]
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	z = args[1]
+>   	x = int(z)
+E    TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
+c4b_ret_list_bak/src_2183/8/src_2183.py:5: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2183/8/test_transformed_src_2183.py::test_case_3
+========================= 1 failed, 5 passed in 0.07s ==========================

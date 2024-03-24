@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_153/3/test_transformed_src_153.py FF                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        int_0 = -2277
+        list_0 = [int_0, int_0, int_0, int_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_153/3/test_transformed_src_153.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (-2277, -2277, -2277, -2277), log = <built-in function log>, k = -2277
+l = -2277
+
+    def func(*args):
+    
+    	'input\n581\n196122941\n'
+    	from math import log
+    	(k, l) = (int(args[0]), int(args[1]))
+>   	if (log(l, k) == float(log(l, k))):
+E    ValueError: math domain error
+
+c4b_ret_list_bak/src_153/3/src_153.py:6: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_153/3/test_transformed_src_153.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (False, False, False, False), log = <built-in function log>, k = 0, l = 0
+
+    def func(*args):
+    
+    	'input\n581\n196122941\n'
+    	from math import log
+    	(k, l) = (int(args[0]), int(args[1]))
+>   	if (log(l, k) == float(log(l, k))):
+E    ValueError: math domain error
+
+c4b_ret_list_bak/src_153/3/src_153.py:6: ValueError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_153/3/test_transformed_src_153.py::test_case_0 - ...
+FAILED c4b_ret_list_bak/src_153/3/test_transformed_src_153.py::test_case_2 - ...
+============================== 2 failed in 0.06s ===============================

@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_bak/src_786/7/test_transformed_src_786.py F                          [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        int_0 = 118
+        bytes_0 = b"3?L\xae\xb9EgR\xb0\xd1_-\x90,\r\x17\xd1\xea"
+        list_0 = [int_0, bytes_0, int_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "7 6 5 3 2 "
+E       AssertionError: assert '76532' == '7 6 5 3 2 '
+E         - 7 6 5 3 2 
+E         + 76532
+
+c4b_bak/src_786/7/test_transformed_src_786.py:13: AssertionError
+=============================== warnings summary ===============================
+c4b_bak/src_786/7/src_786.py:6
+  /home/khashayar/projs/det-gen/c4b_bak/src_786/7/src_786.py:6: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+    if ((n & (1 << i)) is not 0):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED c4b_bak/src_786/7/test_transformed_src_786.py::test_case_0 - Assertion...
+========================= 1 failed, 1 warning in 0.04s =========================

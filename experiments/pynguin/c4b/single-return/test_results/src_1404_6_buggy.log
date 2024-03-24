@@ -1,0 +1,35 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_1404/6/test_transformed_src_1404.py FF                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bool_0 = True
+        bytes_0 = b"\x8b\x00q\xb8\xbc"
+        list_0 = [bool_0, bool_0, bytes_0, bool_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 0
+E       AssertionError: assert '0' == 0
+
+c4b_bak/src_1404/6/test_transformed_src_1404.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bool_0 = False
+        bytes_0 = b"\x8b\x00q\xb8\xbc"
+        list_0 = [bool_0, bool_0, bytes_0, bool_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 0
+E       AssertionError: assert '0' == 0
+
+c4b_bak/src_1404/6/test_transformed_src_1404.py:32: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1404/6/test_transformed_src_1404.py::test_case_0 - Asserti...
+FAILED c4b_bak/src_1404/6/test_transformed_src_1404.py::test_case_2 - Asserti...
+============================== 2 failed in 0.03s ===============================

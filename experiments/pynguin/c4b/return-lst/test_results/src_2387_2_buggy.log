@@ -1,0 +1,64 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_ret_list_bak/src_2387/2/test_transformed_src_2387.py F...F.          [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        list_0 = []
+        list_1 = [list_0, list_0, list_0]
+        str_0 = "z"
+        list_2 = [list_1, list_0, str_0, list_0]
+>       var_0 = module_0.func(*list_2)
+
+c4b_ret_list_bak/src_2387/2/test_transformed_src_2387.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([[], [], []], [], 'z', []), d = [[], [], []], p = True, i = 0
+
+    def func(*args):
+    
+    	d = args[0]
+    	p = True
+    	for i in range((len(d) - 1)):
+    	    m = i
+    	    j = 0
+>   	    while (d[m] == d[(m + 1)]):
+E        IndexError: list index out of range
+
+c4b_ret_list_bak/src_2387/2/src_2387.py:8: IndexError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        list_0 = []
+        list_1 = [list_0, list_0, list_0, list_0, list_0, list_0, list_0, list_0]
+        str_0 = "/#R!MwbS"
+        list_2 = [list_1, list_0, str_0]
+>       var_0 = module_0.func(*list_2)
+
+c4b_ret_list_bak/src_2387/2/test_transformed_src_2387.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([[], [], [], [], [], [], ...], [], '/#R!MwbS')
+d = [[], [], [], [], [], [], ...], p = True, i = 0
+
+    def func(*args):
+    
+    	d = args[0]
+    	p = True
+    	for i in range((len(d) - 1)):
+    	    m = i
+    	    j = 0
+>   	    while (d[m] == d[(m + 1)]):
+E        IndexError: list index out of range
+
+c4b_ret_list_bak/src_2387/2/src_2387.py:8: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2387/2/test_transformed_src_2387.py::test_case_0
+FAILED c4b_ret_list_bak/src_2387/2/test_transformed_src_2387.py::test_case_4
+========================= 2 failed, 4 passed in 0.08s ==========================

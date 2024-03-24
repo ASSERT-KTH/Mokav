@@ -1,0 +1,42 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 8 items
+
+c4b_bak/src_1914/0/test_transformed_src_1914.py .....F..                 [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "\n\\bos4^LJVV"
+        list_0 = [str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_1914/0/test_transformed_src_1914.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('\n\\bos4^LJVV', '\n\\bos4^LJVV', '\n\\bos4^LJVV')
+s = ['\n', '\\', 'b', 'o', 's', '4', ...], ans = 0, i = 10
+
+    def func(*args):
+    
+    	s = list(args[0])
+    	ans = 0
+    	i = 1
+    	while (i < len(s)):
+    	    if ((s[i] == 'K') and (s[(i - 1)] == 'V')):
+    	        ans += 1
+    	        i += 2
+    	    else:
+    	        i += 1
+    	i = 2
+    	while (i < len(s)):
+>   	    if (((s[i] == 'K') and (s[(i - 1)] == 'K') and (s[(i - 2)] != 'V')) or ((s[i] == 'V') and (s[(i - 1)] == 'V') and (s[(i + 1)] != 'K'))):
+E        IndexError: list index out of range
+
+c4b_bak/src_1914/0/src_1914.py:14: IndexError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1914/0/test_transformed_src_1914.py::test_case_6 - IndexEr...
+========================= 1 failed, 7 passed in 0.04s ==========================

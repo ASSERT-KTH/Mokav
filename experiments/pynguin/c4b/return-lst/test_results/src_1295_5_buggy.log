@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_ret_list_bak/src_1295/5/test_transformed_src_1295.py .F...           [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        tuple_0 = ()
+        list_0 = [tuple_0, tuple_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_1295/5/test_transformed_src_1295.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+c4b_ret_list_bak/src_1295/5/src_1295.py:10: in func
+    return(ch(a))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = ()
+
+    def ch(a):
+        for i in range(0, 1):
+>           if ((a[i] == 'H') or (a[i] == 'Q') or (a[i] == '9')):
+E           IndexError: tuple index out of range
+
+c4b_ret_list_bak/src_1295/5/src_1295.py:6: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1295/5/test_transformed_src_1295.py::test_case_1
+========================= 1 failed, 4 passed in 0.07s ==========================

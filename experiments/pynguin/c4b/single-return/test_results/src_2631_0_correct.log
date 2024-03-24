@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_2631/0/test_transformed_src_2631.py .F.                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\xa9\xe9a\x91\xf0\x15\xac\xbc\x89\xeb\xc4i\x1c\x07\xe5\xcf["
+        var_0 = module_0.func(*bytes_0)
+>       assert (
+            var_0
+            == "711111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+        )
+E       AssertionError: assert '111111111111...1111111111117' == '711111111111...1111111111111'
+E         - 711111111111111111111111111111111111111111111111111111111111111111111111111111111111
+E         ? -
+E         + 111111111111111111111111111111111111111111111111111111111111111111111111111111111117
+E         ?                                                                                    +
+
+c4b_bak/src_2631/0/test_transformed_src_2631.py:24: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2631/0/test_transformed_src_2631.py::test_case_2 - Asserti...
+========================= 1 failed, 2 passed in 0.04s ==========================

@@ -1,0 +1,62 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_2267/6/test_transformed_src_2267.py F.F.                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "lgEmf"
+        list_0 = [str_0, str_0, str_0]
+        list_1 = [list_0, list_0, list_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_bak/src_2267/6/test_transformed_src_2267.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (['lgEmf', 'lgEmf', 'lgEmf'], ['lgEmf', 'lgEmf', 'lgEmf'], ['lgEmf', 'lgEmf', 'lgEmf'])
+word = ['lgEmf', 'lgEmf', 'lgEmf'], n = 3, b = 'true'
+
+    def func(*args):
+    
+    	word = args[0]
+    	n = len(word)
+    	b = 'true'
+    	if (n != 1):
+    	    for i in range(1, n):
+    	        if word[i].islower():
+    	            b = 'false'
+    	            break
+    	if ((b == 'true') and word[0].islower()):
+    	    word = (word[0].upper() + word[1:].lower())
+    	else:
+>   	    word = word.lower()
+E        AttributeError: 'list' object has no attribute 'lower'
+
+c4b_bak/src_2267/6/src_2267.py:14: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = ":4~dl,gIuBaM\n~E?bm"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ":4~dl,gIuBaM\n~E?bm"
+E       AssertionError: assert ':4~dl,giubam\n~e?bm' == ':4~dl,gIuBaM\n~E?bm'
+E         - :4~dl,gIuBaM
+E         ?        ^ ^ ^
+E         + :4~dl,giubam
+E         ?        ^ ^ ^
+E         - ~E?bm
+E         ?  ^
+E         + ~e?bm
+E         ?  ^
+
+c4b_bak/src_2267/6/test_transformed_src_2267.py:35: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2267/6/test_transformed_src_2267.py::test_case_0 - Attribu...
+FAILED c4b_bak/src_2267/6/test_transformed_src_2267.py::test_case_3 - Asserti...
+========================= 2 failed, 2 passed in 0.04s ==========================

@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_1572/1/test_transformed_src_1572.py FF                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "?2O:"
+        tuple_0 = ()
+        int_0 = 1816
+        tuple_1 = (str_0, tuple_0, int_0)
+        set_0 = {tuple_1, int_0, int_0, int_0}
+>       var_0 = module_0.func(*set_0)
+
+c4b_bak/src_1572/1/test_transformed_src_1572.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1816, ('?2O:', (), 1816)), num = 1816, stones = ('?2O:', (), 1816)
+l = [0, 0]
+
+    def func(*args):
+    
+    	num = int(args[0])
+    	stones = args[1]
+    	l = []
+    	first = stones[0]
+    	n = 0
+    	for i in range(1, num):
+>   	    if (first == stones[i]):
+E        IndexError: tuple index out of range
+
+c4b_bak/src_1572/1/src_1572.py:9: IndexError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        tuple_0 = ()
+        int_0 = 1816
+        tuple_1 = (tuple_0, tuple_0, int_0)
+        set_0 = {tuple_1, int_0, int_0, int_0}
+>       var_0 = module_0.func(*set_0)
+
+c4b_bak/src_1572/1/test_transformed_src_1572.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1816, ((), (), 1816)), num = 1816, stones = ((), (), 1816), l = [1]
+
+    def func(*args):
+    
+    	num = int(args[0])
+    	stones = args[1]
+    	l = []
+    	first = stones[0]
+    	n = 0
+    	for i in range(1, num):
+>   	    if (first == stones[i]):
+E        IndexError: tuple index out of range
+
+c4b_bak/src_1572/1/src_1572.py:9: IndexError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1572/1/test_transformed_src_1572.py::test_case_1 - IndexEr...
+FAILED c4b_bak/src_1572/1/test_transformed_src_1572.py::test_case_2 - IndexEr...
+============================== 2 failed in 0.03s ===============================

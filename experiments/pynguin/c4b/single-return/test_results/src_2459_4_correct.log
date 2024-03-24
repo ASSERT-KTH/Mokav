@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_2459/4/test_transformed_src_2459.py FF                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"\x04C\xc2\\~\x84;\x95)\x7fX\xc6\xd8\x8d5\x8a\xc2"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 32
+E       assert 33 == 32
+
+c4b_bak/src_2459/4/test_transformed_src_2459.py:16: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\xc7p\x8f\x93\xb9\xc5\xd3\xd2d\n\x9a\xda\xcd+/>\x87\x84\xf3"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 3
+E       assert 4 == 3
+
+c4b_bak/src_2459/4/test_transformed_src_2459.py:24: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2459/4/test_transformed_src_2459.py::test_case_1 - assert ...
+FAILED c4b_bak/src_2459/4/test_transformed_src_2459.py::test_case_2 - assert ...
+============================== 2 failed in 0.04s ===============================

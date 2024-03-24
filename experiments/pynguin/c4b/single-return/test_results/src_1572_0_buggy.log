@@ -1,0 +1,65 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_1572/0/test_transformed_src_1572.py FF                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "m`fU '\x0c;(BGV|v=Y5`"
+        float_0 = 2196.732
+        list_0 = [float_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_1572/0/test_transformed_src_1572.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (2196.732, "m`fU '\x0c;(BGV|v=Y5`"), num = 2196
+stones = "m`fU '\x0c;(BGV|v=Y5`", l = [0, 0, 0, 0, 0, 0, ...]
+
+    def func(*args):
+    
+    	num = int(args[0])
+    	stones = args[1]
+    	l = []
+    	first = stones[0]
+    	n = 0
+    	for i in range(1, num):
+>   	    if (first == stones[i]):
+E        IndexError: string index out of range
+
+c4b_bak/src_1572/0/src_1572.py:9: IndexError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "Hq;/#iOTT+oX6,"
+        float_0 = 2171.74
+        list_0 = [float_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_1572/0/test_transformed_src_1572.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (2171.74, 'Hq;/#iOTT+oX6,'), num = 2171, stones = 'Hq;/#iOTT+oX6,'
+l = [0, 0, 0, 0, 0, 0, ...]
+
+    def func(*args):
+    
+    	num = int(args[0])
+    	stones = args[1]
+    	l = []
+    	first = stones[0]
+    	n = 0
+    	for i in range(1, num):
+>   	    if (first == stones[i]):
+E        IndexError: string index out of range
+
+c4b_bak/src_1572/0/src_1572.py:9: IndexError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1572/0/test_transformed_src_1572.py::test_case_1 - IndexEr...
+FAILED c4b_bak/src_1572/0/test_transformed_src_1572.py::test_case_2 - IndexEr...
+============================== 2 failed in 0.06s ===============================

@@ -1,0 +1,35 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_ret_list_bak/src_283/9/test_transformed_src_283.py ..F               [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "z|h\ne\nlloe#"
+        list_0 = [str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_283/9/test_transformed_src_283.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('z|h\ne\nlloe#', 'z|h\ne\nlloe#', 'z|h\ne\nlloe#'), s = 'z|h\ne\nlloe#'
+counter = 5, hi = 'hello'
+
+    def func(*args):
+    
+    	s = args[0]
+    	counter = 0
+    	hi = 'hello'
+    	for i in range(len(s)):
+>   	    if (s[i] == hi[counter]):
+E        IndexError: string index out of range
+
+c4b_ret_list_bak/src_283/9/src_283.py:7: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_283/9/test_transformed_src_283.py::test_case_3 - ...
+========================= 1 failed, 2 passed in 0.08s ==========================

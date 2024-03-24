@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_bak/src_2383/7/test_transformed_src_2383.py ..FFFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "qYXw_mV:1mn\\S"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".q.x.w._.m.v.:.1.m.n.\\.s"
+E       AssertionError: assert '.q.y.x.w._.m.v.:.1.m.n.\\.s' == '.q.x.w._.m.v.:.1.m.n.\\.s'
+E         - .q.x.w._.m.v.:.1.m.n.\.s
+E         + .q.y.x.w._.m.v.:.1.m.n.\.s
+E         ?   ++
+
+c4b_bak/src_2383/7/test_transformed_src_2383.py:36: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "qYXw_mV:imn\\S"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".q.x.w._.m.v.:.m.n.\\.s"
+E       AssertionError: assert '.q.y.x.w._.m.v.:.m.n.\\.s' == '.q.x.w._.m.v.:.m.n.\\.s'
+E         - .q.x.w._.m.v.:.m.n.\.s
+E         + .q.y.x.w._.m.v.:.m.n.\.s
+E         ?   ++
+
+c4b_bak/src_2383/7/test_transformed_src_2383.py:45: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        str_0 = "{ERB+Y"
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".{.r.b.+"
+E       AssertionError: assert '.{.r.b.+.y' == '.{.r.b.+'
+E         - .{.r.b.+
+E         + .{.r.b.+.y
+E         ?         ++
+
+c4b_bak/src_2383/7/test_transformed_src_2383.py:54: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "qYXw_ma:1mn\\S"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".q.x.w._.m.:.1.m.n.\\.s"
+E       AssertionError: assert '.q.y.x.w._.m.:.1.m.n.\\.s' == '.q.x.w._.m.:.1.m.n.\\.s'
+E         - .q.x.w._.m.:.1.m.n.\.s
+E         + .q.y.x.w._.m.:.1.m.n.\.s
+E         ?   ++
+
+c4b_bak/src_2383/7/test_transformed_src_2383.py:65: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2383/7/test_transformed_src_2383.py::test_case_3 - Asserti...
+FAILED c4b_bak/src_2383/7/test_transformed_src_2383.py::test_case_4 - Asserti...
+FAILED c4b_bak/src_2383/7/test_transformed_src_2383.py::test_case_5 - Asserti...
+FAILED c4b_bak/src_2383/7/test_transformed_src_2383.py::test_case_6 - Asserti...
+========================= 4 failed, 2 passed in 0.04s ==========================

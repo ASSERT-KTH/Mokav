@@ -1,0 +1,24 @@
+/home/khashayar/projs/det-gen/c4b_ret_list/src_786/8/src_786.py:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if ((n & (1 << i)) is not 0):
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is" with a literal. Did you mean "=="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+src_786:7: SyntaxWarning: "is not" with a literal. Did you mean "!="?

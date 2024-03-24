@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_bak/src_1045/3/test_transformed_src_1045.py F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "5hZ=>\rU+$Q\naOmN+Xjs"
+>       var_0 = module_0.func(*str_0)
+
+c4b_bak/src_1045/3/test_transformed_src_1045.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('5', 'h', 'Z', '=', '>', '\r', ...), s = [5], dict = {}
+
+    def func(*args):
+    
+    	s = list(map(int, args[0].split()))
+    	dict = {}
+>   	if (s[0] == s[1] == s[2] == s[3]):
+E    IndexError: list index out of range
+
+c4b_bak/src_1045/3/src_1045.py:5: IndexError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1045/3/test_transformed_src_1045.py::test_case_1 - IndexEr...
+============================== 1 failed in 0.02s ===============================

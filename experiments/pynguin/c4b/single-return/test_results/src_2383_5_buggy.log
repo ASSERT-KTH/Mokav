@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_bak/src_2383/5/test_transformed_src_2383.py ....F                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        str_0 = "_G8U\x0b\rndyht~*\nk>P="
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "._.g.8.\x0b.\r.n.d.h.t.~.*.\n.k.>.p.="
+E       AssertionError: assert '._.g.8.\x0b.....*.\n.k.>.p.=' == '._.g.8.\x0b.....*.\n.k.>.p.='
+E           ._.g.8.
+E           .
+E         - .n.d.h.t.~.*.
+E         + .n.d.y.h.t.~.*.
+E         ?     ++
+E           .k.>.p.=
+
+c4b_bak/src_2383/5/test_transformed_src_2383.py:53: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2383/5/test_transformed_src_2383.py::test_case_5 - Asserti...
+========================= 1 failed, 4 passed in 0.04s ==========================

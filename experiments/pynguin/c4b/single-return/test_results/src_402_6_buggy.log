@@ -1,0 +1,76 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_402/6/test_transformed_src_402.py FF.F                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bool_0 = True
+        str_0 = "4"
+        list_0 = [bool_0, str_0, bool_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_402/6/test_transformed_src_402.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (True, '4', True), n = True
+
+    def func(*args):
+    
+    	n = args[0]
+>   	a = (len(n) // 2)
+E    TypeError: object of type 'bool' has no len()
+
+c4b_bak/src_402/6/src_402.py:4: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bool_0 = False
+        list_0 = []
+        bytes_0 = b"g\xde\xb1\x0b\xeey9\xdc\xbd\x14M\xd6\x12\xcf'3"
+        tuple_0 = (bool_0, list_0, list_0, bytes_0)
+>       var_0 = module_0.func(*tuple_0)
+
+c4b_bak/src_402/6/test_transformed_src_402.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (False, [], [], b"g\xde\xb1\x0b\xeey9\xdc\xbd\x14M\xd6\x12\xcf'3")
+n = False
+
+    def func(*args):
+    
+    	n = args[0]
+>   	a = (len(n) // 2)
+E    TypeError: object of type 'bool' has no len()
+
+c4b_bak/src_402/6/src_402.py:4: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bool_0 = True
+        str_0 = "7"
+        list_0 = [bool_0, str_0, bool_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_402/6/test_transformed_src_402.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (True, '7', True), n = True
+
+    def func(*args):
+    
+    	n = args[0]
+>   	a = (len(n) // 2)
+E    TypeError: object of type 'bool' has no len()
+
+c4b_bak/src_402/6/src_402.py:4: TypeError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_402/6/test_transformed_src_402.py::test_case_1 - TypeError...
+FAILED c4b_bak/src_402/6/test_transformed_src_402.py::test_case_2 - TypeError...
+FAILED c4b_bak/src_402/6/test_transformed_src_402.py::test_case_4 - TypeError...
+========================= 3 failed, 1 passed in 0.03s ==========================

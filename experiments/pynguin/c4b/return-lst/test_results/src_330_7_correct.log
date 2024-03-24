@@ -1,0 +1,37 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_330/7/test_transformed_src_330.py FF                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        int_0 = -142
+        list_0 = [int_0]
+        var_0 = module_0.func(*list_0)
+        tuple_0 = (int_0, list_0, var_0, var_0)
+        list_1 = [tuple_0, tuple_0, list_0]
+        object_0 = module_1.object()
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_330.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_330/7/test_transformed_src_330.py:21: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        int_0 = -142
+        list_0 = [int_0, int_0, int_0]
+        list_1 = module_0.func(*list_0)
+        var_0 = module_0.func(*list_0)
+>       var_1 = module_0.func(*list_1)
+E       TypeError: src_330.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_330/7/test_transformed_src_330.py:32: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_330/7/test_transformed_src_330.py::test_case_1 - ...
+FAILED c4b_ret_list_bak/src_330/7/test_transformed_src_330.py::test_case_2 - ...
+============================== 2 failed in 0.05s ===============================

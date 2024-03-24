@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_ret_list_bak/src_1492/9/test_transformed_src_1492.py F.....          [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "9x.j *OXYBsplG{lH"
+        list_0 = [str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_1492/9/test_transformed_src_1492.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('9x.j *OXYBsplG{lH', '9x.j *OXYBsplG{lH'), s = ['h', 'e', 'l', 'l', 'o']
+a = '9x.j *OXYBsplG{lH', c = []
+
+    def func(*args):
+    
+    	s = ['h', 'e', 'l', 'l', 'o']
+    	a = args[0]
+    	c = []
+    	for i in range(len(a)):
+    	    if (a[i] in s):
+    	        c.append(a[i])
+    	x = 1
+    	while True:
+>   	    if (c[0] != 'h'):
+E        IndexError: list index out of range
+
+c4b_ret_list_bak/src_1492/9/src_1492.py:11: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1492/9/test_transformed_src_1492.py::test_case_0
+========================= 1 failed, 5 passed in 0.08s ==========================

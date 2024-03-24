@@ -1,0 +1,37 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_ret_list_bak/src_87/3/test_transformed_src_87.py F                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        int_0 = 1625
+        bool_0 = True
+        dict_0 = {int_0: int_0, int_0: bool_0}
+>       var_0 = module_0.func(*dict_0)
+
+c4b_ret_list_bak/src_87/3/test_transformed_src_87.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1625,), n = 1625
+s = '123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263...0161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199'
+i = 199
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	s = ''
+    	for i in range(1, 200):
+    	    s += str(i)
+>   	return(s[(n - 1)])
+E    IndexError: string index out of range
+
+c4b_ret_list_bak/src_87/3/src_87.py:7: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_87/3/test_transformed_src_87.py::test_case_0 - In...
+============================== 1 failed in 0.09s ===============================

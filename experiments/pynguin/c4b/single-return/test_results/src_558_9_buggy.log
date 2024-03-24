@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_558/9/test_transformed_src_558.py FF.                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"k\xd1\xdaWpu"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 2
+E       assert 3 == 2
+
+c4b_bak/src_558/9/test_transformed_src_558.py:11: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\x83*\x13\x18B\xed3\xb3\xe6\xcf\x8f\x08\xde\xbd\x84\xb3\xd9\x0b\xbe\xac"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 6
+E       assert 7 == 6
+
+c4b_bak/src_558/9/test_transformed_src_558.py:24: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_558/9/test_transformed_src_558.py::test_case_0 - assert 3 ...
+FAILED c4b_bak/src_558/9/test_transformed_src_558.py::test_case_2 - assert 7 ...
+========================= 2 failed, 1 passed in 0.04s ==========================

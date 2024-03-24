@@ -1,0 +1,89 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_ret_list_bak/src_321/1/test_transformed_src_321.py FFF               [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "ve(X7_7t~%7\x0co,_z"
+        list_0 = [str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_321/1/test_transformed_src_321.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('ve(X7_7t~%7\x0co,_z', 've(X7_7t~%7\x0co,_z')
+numb = 've(X7_7t~%7\x0co,_z', luck = 0, notluck = 0
+
+    def func(*args):
+    
+    	numb = args[0]
+    	luck = 0
+    	notluck = 0
+    	seven = 0
+    	four = 0
+    	for i in range(len(numb)):
+>   	    if ((int(numb[i]) == 4) or (int(numb[i]) == 7)):
+E        ValueError: invalid literal for int() with base 10: 'v'
+
+c4b_ret_list_bak/src_321/1/src_321.py:9: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "veB(X7_7zth~%77\x0co,=x"
+        list_0 = [str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_321/1/test_transformed_src_321.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('veB(X7_7zth~%77\x0co,=x', 'veB(X7_7zth~%77\x0co,=x', 'veB(X7_7zth~%77\x0co,=x')
+numb = 'veB(X7_7zth~%77\x0co,=x', luck = 0, notluck = 0
+
+    def func(*args):
+    
+    	numb = args[0]
+    	luck = 0
+    	notluck = 0
+    	seven = 0
+    	four = 0
+    	for i in range(len(numb)):
+>   	    if ((int(numb[i]) == 4) or (int(numb[i]) == 7)):
+E        ValueError: invalid literal for int() with base 10: 'v'
+
+c4b_ret_list_bak/src_321/1/src_321.py:9: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "<ve(77n_7zth~777<o=4"
+        list_0 = [str_0, str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_321/1/test_transformed_src_321.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('<ve(77n_7zth~777<o=4', '<ve(77n_7zth~777<o=4', '<ve(77n_7zth~777<o=4', '<ve(77n_7zth~777<o=4')
+numb = '<ve(77n_7zth~777<o=4', luck = 0, notluck = 0
+
+    def func(*args):
+    
+    	numb = args[0]
+    	luck = 0
+    	notluck = 0
+    	seven = 0
+    	four = 0
+    	for i in range(len(numb)):
+>   	    if ((int(numb[i]) == 4) or (int(numb[i]) == 7)):
+E        ValueError: invalid literal for int() with base 10: '<'
+
+c4b_ret_list_bak/src_321/1/src_321.py:9: ValueError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_321/1/test_transformed_src_321.py::test_case_1 - ...
+FAILED c4b_ret_list_bak/src_321/1/test_transformed_src_321.py::test_case_2 - ...
+FAILED c4b_ret_list_bak/src_321/1/test_transformed_src_321.py::test_case_3 - ...
+============================== 3 failed in 0.08s ===============================

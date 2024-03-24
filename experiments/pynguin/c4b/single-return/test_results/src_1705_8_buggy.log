@@ -1,0 +1,42 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_1705/8/test_transformed_src_1705.py FF.F                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b'O\xe2\x04\x07\xf5R_\x93\xcfZ"\x01'
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 0
+E       assert 3 == 0
+
+c4b_bak/src_1705/8/test_transformed_src_1705.py:11: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bool_0 = True
+        list_0 = [bool_0, bool_0, bool_0, bool_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 1
+E       assert 0 == 1
+
+c4b_bak/src_1705/8/test_transformed_src_1705.py:20: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bytes_0 = b"\x8f\xde\x005\x97\xda\xe8o}$z\xc3\xf3\xbb\x08\xe2\x043"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 143
+E       assert 53 == 143
+
+c4b_bak/src_1705/8/test_transformed_src_1705.py:42: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1705/8/test_transformed_src_1705.py::test_case_0 - assert ...
+FAILED c4b_bak/src_1705/8/test_transformed_src_1705.py::test_case_1 - assert ...
+FAILED c4b_bak/src_1705/8/test_transformed_src_1705.py::test_case_4 - assert ...
+========================= 3 failed, 1 passed in 0.04s ==========================

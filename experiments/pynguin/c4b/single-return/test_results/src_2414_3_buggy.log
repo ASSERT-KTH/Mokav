@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_2414/3/test_transformed_src_2414.py .F.                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = '0;"cHQ>QI=H'
+>       var_0 = module_0.func(*str_0)
+
+c4b_bak/src_2414/3/test_transformed_src_2414.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('0', ';', '"', 'c', 'H', 'Q', ...), deque = <class 'collections.deque'>
+l = ['Sheldon', 'Leonard', 'Penny', 'Rajesh', 'Howard']
+dq = deque([0, 1, 2, 3, 4])
+
+    def func(*args):
+    
+    	from collections import deque
+    	l = ['Sheldon', 'Leonard', 'Penny', 'Rajesh', 'Howard']
+    	dq = deque([0, 1, 2, 3, 4])
+    	n = int(args[0].strip())
+    	e = ''
+    	for _ in range(n):
+    	    e = dq.popleft()
+    	    dq.extend([e, e])
+>   	return(l[e])
+E    TypeError: list indices must be integers or slices, not str
+
+c4b_bak/src_2414/3/src_2414.py:11: TypeError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2414/3/test_transformed_src_2414.py::test_case_2 - TypeErr...
+========================= 1 failed, 2 passed in 0.03s ==========================

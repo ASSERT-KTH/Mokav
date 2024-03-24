@@ -1,0 +1,61 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_bak/src_1311/3/test_transformed_src_1311.py FFFFF                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"\xf0\xdc\xcb\xb8b\xc3\x08\xf4\xf1A\xe8\x08\xf7\xcc\x02\xa7"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 0
+E       assert 1 == 0
+
+c4b_bak/src_1311/3/test_transformed_src_1311.py:16: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\xf0\xdc\xb8bh\xc3\x08\xf4A\xe8\x08\xf7\x02\xa7"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 1
+E       assert 2 == 1
+
+c4b_bak/src_1311/3/test_transformed_src_1311.py:23: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bytes_0 = b"\x820\xd8\x83W\x8f`\x1b\x80\xab\xdf\xeec\x0fN\xe5"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 1
+E       assert 2 == 1
+
+c4b_bak/src_1311/3/test_transformed_src_1311.py:31: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bytes_0 = b"\xea]\x06\xe4\xca\xb9\xe9\x8cUrw\xb3^\xe0\x0f\xbf?]^\x0e"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 34
+E       assert 35 == 34
+
+c4b_bak/src_1311/3/test_transformed_src_1311.py:39: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        bytes_0 = b"Q\xdc\xb8bh\xc3\x08\xf4A\xe8\x08\xf7\x02\xa7"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 2
+E       assert 3 == 2
+
+c4b_bak/src_1311/3/test_transformed_src_1311.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1311/3/test_transformed_src_1311.py::test_case_1 - assert ...
+FAILED c4b_bak/src_1311/3/test_transformed_src_1311.py::test_case_2 - assert ...
+FAILED c4b_bak/src_1311/3/test_transformed_src_1311.py::test_case_3 - assert ...
+FAILED c4b_bak/src_1311/3/test_transformed_src_1311.py::test_case_4 - assert ...
+FAILED c4b_bak/src_1311/3/test_transformed_src_1311.py::test_case_5 - assert ...
+============================== 5 failed in 0.04s ===============================

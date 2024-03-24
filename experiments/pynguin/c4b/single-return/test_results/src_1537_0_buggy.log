@@ -1,0 +1,29 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_1537/0/test_transformed_src_1537.py ...F                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "9Yd7;Otj \x0cAPB\\^T#p\nw"
+        list_0 = [str_0]
+        var_0 = module_1.func(*list_0)
+>       assert var_0 == ".9.d.7.;.t.j. .\x0c.p.b.\\.^.t.#.p.\n.w"
+E       AssertionError: assert '.9.y.d.7.;.o....^.t.#.p.\n.w' == '.9.d.7.;.t.j....^.t.#.p.\n.w'
+E         - .9.d.7.;.t.j. .
+E         + .9.y.d.7.;.o.t.j. .
+E         ?   ++       ++
+E         - .p.b.\.^.t.#.p.
+E         + .a.p.b.\.^.t.#.p.
+E         ? ++
+E           .w
+
+c4b_bak/src_1537/0/test_transformed_src_1537.py:50: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1537/0/test_transformed_src_1537.py::test_case_4 - Asserti...
+========================= 1 failed, 3 passed in 0.03s ==========================

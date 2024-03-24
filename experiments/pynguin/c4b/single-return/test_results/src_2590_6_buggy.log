@@ -1,0 +1,54 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_2590/6/test_transformed_src_2590.py .FF                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bool_0 = True
+        list_0 = [bool_0, bool_0]
+        var_0 = module_0.func(*list_0)
+        assert var_0 == "7"
+        var_1 = module_0.func(*list_0)
+        assert var_1 == "7"
+        var_2 = module_0.func(*var_1)
+>       assert var_2 == "711"
+E       AssertionError: assert '117' == '711'
+E         - 711
+E         + 117
+
+c4b_bak/src_2590/6/test_transformed_src_2590.py:29: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        int_0 = 936
+        dict_0 = {int_0: int_0, int_0: int_0}
+        set_0 = {int_0, int_0, int_0}
+        list_0 = [int_0, dict_0, dict_0, set_0]
+        var_0 = module_0.func(*list_0)
+        assert (
+            var_0
+            == "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+        )
+        bool_0 = True
+        list_1 = [bool_0, bool_0]
+        var_1 = module_0.func(*list_1)
+        assert var_1 == "7"
+        var_2 = module_0.func(*list_1)
+        assert var_2 == "7"
+        var_3 = module_0.func(*var_2)
+>       assert var_3 == "711"
+E       AssertionError: assert '117' == '711'
+E         - 711
+E         + 117
+
+c4b_bak/src_2590/6/test_transformed_src_2590.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2590/6/test_transformed_src_2590.py::test_case_2 - Asserti...
+FAILED c4b_bak/src_2590/6/test_transformed_src_2590.py::test_case_3 - Asserti...
+========================= 2 failed, 1 passed in 0.04s ==========================

@@ -1,0 +1,78 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+c4b_bak/src_2330/2/test_transformed_src_2330.py .FFF..F                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "o[o\x0c6!a4\x0bjBYS(Z"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "o[o\x0c6!a4\x0bjBYS(Z"
+E       AssertionError: assert 'O[O\x0c6!A4\x0bJbys(Z' == 'o[o\x0c6!a4\x0bjBYS(Z'
+E         - o[o
+E         + O[O
+E         - 6!a4
+E         ?   ^
+E         + 6!A4
+E         ?   ^
+E         - jBYS(Z
+E         + Jbys(Z
+
+c4b_bak/src_2330/2/test_transformed_src_2330.py:24: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "o[o\x0c6!a4\x0bjBYS(Z"
+        var_0 = module_0.func(*str_0)
+        assert var_0 == "O"
+        list_0 = [str_0, str_0, str_0]
+        var_1 = module_0.func(*list_0)
+>       assert var_1 == "o[o\x0c6!a4\x0bjBYS(Z"
+E       AssertionError: assert 'O[O\x0c6!A4\x0bJbys(Z' == 'o[o\x0c6!a4\x0bjBYS(Z'
+E         - o[o
+E         + O[O
+E         - 6!a4
+E         ?   ^
+E         + 6!A4
+E         ?   ^
+E         - jBYS(Z
+E         + Jbys(Z
+
+c4b_bak/src_2330/2/test_transformed_src_2330.py:35: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "o[o\x0c6!a4\x0bjBYS(Z"
+        var_0 = module_0.func(*str_0)
+        assert var_0 == "O"
+        list_0 = [str_0, str_0, str_0]
+        var_1 = module_0.func(*var_0)
+>       assert var_1 == "o"
+E       AssertionError: assert 'O' == 'o'
+E         - o
+E         + O
+
+c4b_bak/src_2330/2/test_transformed_src_2330.py:46: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = "JY"
+        var_0 = module_0.func(*str_0)
+>       assert var_0 == "j"
+E       AssertionError: assert 'J' == 'j'
+E         - j
+E         + J
+
+c4b_bak/src_2330/2/test_transformed_src_2330.py:80: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2330/2/test_transformed_src_2330.py::test_case_2 - Asserti...
+FAILED c4b_bak/src_2330/2/test_transformed_src_2330.py::test_case_3 - Asserti...
+FAILED c4b_bak/src_2330/2/test_transformed_src_2330.py::test_case_4 - Asserti...
+FAILED c4b_bak/src_2330/2/test_transformed_src_2330.py::test_case_7 - Asserti...
+========================= 4 failed, 3 passed in 0.05s ==========================

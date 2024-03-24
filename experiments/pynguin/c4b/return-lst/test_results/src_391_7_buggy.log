@@ -1,0 +1,57 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_391/7/test_transformed_src_391.py FF                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"x\x7fU\x83\x87\xf1`V\xda\x08\xfa\xf9\xb7,\xdd\n4"
+        list_0 = [bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_391/7/test_transformed_src_391.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'x\x7fU\x83\x87\xf1`V\xda\x08\xfa\xf9\xb7,\xdd\n4',)
+string = b'x\x7fU\x83\x87\xf1`V\xda\x08\xfa\xf9\xb7,\xdd\n4'
+numbers = [b'x\x7fU\x83\x87\xf1`V\xda\x08\xfa\xf9\xb7,\xdd', b'4']
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+>   	a = int(numbers[0])
+E    ValueError: invalid literal for int() with base 10: b'x\x7fU\x83\x87\xf1`V\xda\x08\xfa\xf9\xb7,\xdd'
+
+c4b_ret_list_bak/src_391/7/src_391.py:5: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"x\x7fU\x83\x87\xf1`\xee\xda\x08\xfao\xb7,\xdd\n3"
+        list_0 = [bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_391/7/test_transformed_src_391.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'x\x7fU\x83\x87\xf1`\xee\xda\x08\xfao\xb7,\xdd\n3',)
+string = b'x\x7fU\x83\x87\xf1`\xee\xda\x08\xfao\xb7,\xdd\n3'
+numbers = [b'x\x7fU\x83\x87\xf1`\xee\xda\x08\xfao\xb7,\xdd', b'3']
+
+    def func(*args):
+    
+    	string = args[0]
+    	numbers = string.split()
+>   	a = int(numbers[0])
+E    ValueError: invalid literal for int() with base 10: b'x\x7fU\x83\x87\xf1`\xee\xda\x08\xfao\xb7,\xdd'
+
+c4b_ret_list_bak/src_391/7/src_391.py:5: ValueError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_391/7/test_transformed_src_391.py::test_case_1 - ...
+FAILED c4b_ret_list_bak/src_391/7/test_transformed_src_391.py::test_case_2 - ...
+============================== 2 failed in 0.07s ===============================

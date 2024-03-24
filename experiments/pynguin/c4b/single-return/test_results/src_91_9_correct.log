@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_91/9/test_transformed_src_91.py F.FF                         [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "hG}\\\tSs78{\r0ro"
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 5
+E       assert 8 == 5
+
+c4b_bak/src_91/9/test_transformed_src_91.py:11: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'a8"a]K\x0bb{tnv'
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 3
+E       assert 8 == 3
+
+c4b_bak/src_91/9/test_transformed_src_91.py:35: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "%1}G+f=P&7r7N"
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 5
+E       assert 8 == 5
+
+c4b_bak/src_91/9/test_transformed_src_91.py:44: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_91/9/test_transformed_src_91.py::test_case_0 - assert 8 == 5
+FAILED c4b_bak/src_91/9/test_transformed_src_91.py::test_case_3 - assert 8 == 3
+FAILED c4b_bak/src_91/9/test_transformed_src_91.py::test_case_4 - assert 8 == 5
+========================= 3 failed, 1 passed in 0.05s ==========================

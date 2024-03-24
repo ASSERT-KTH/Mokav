@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_bak/src_2183/2/test_transformed_src_2183.py .FF..                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bool_0 = True
+        bytes_0 = b"\x07\xfaC\x9d\xc0\xbeg\xdb\xdb\xb4\xc2"
+        list_0 = [bool_0, bytes_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_2183/2/test_transformed_src_2183.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (True, b'\x07\xfaC\x9d\xc0\xbeg\xdb\xdb\xb4\xc2'), n = 1
+z = b'\x07\xfaC\x9d\xc0\xbeg\xdb\xdb\xb4\xc2'
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	z = args[1]
+>   	x = int(z)
+E    ValueError: invalid literal for int() with base 10: b'\x07\xfaC\x9d\xc0\xbeg\xdb\xdb\xb4\xc2'
+
+c4b_bak/src_2183/2/src_2183.py:5: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        int_0 = 5
+        list_0 = [int_0, int_0, int_0]
+        list_1 = [int_0, list_0, int_0, int_0, int_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_bak/src_2183/2/test_transformed_src_2183.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (5, [5, 5, 5], 5, 5, 5), n = 5, z = [5, 5, 5]
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	z = args[1]
+>   	x = int(z)
+E    TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
+c4b_bak/src_2183/2/src_2183.py:5: TypeError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2183/2/test_transformed_src_2183.py::test_case_1 - ValueEr...
+FAILED c4b_bak/src_2183/2/test_transformed_src_2183.py::test_case_2 - TypeErr...
+========================= 2 failed, 3 passed in 0.04s ==========================

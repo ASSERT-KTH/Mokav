@@ -1,0 +1,76 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+c4b_bak/src_1389/3/test_transformed_src_1389.py FFF..FF                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "J,@)C\t<.\r!iTgabRT9)T"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "21"
+E       AssertionError: assert '0' == '21'
+E         - 21
+E         + 0
+
+c4b_bak/src_1389/3/test_transformed_src_1389.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "/IfUTK[x5BGp?Q"
+        set_0 = {str_0}
+        var_0 = module_0.func(*set_0)
+>       assert var_0 == "11"
+E       AssertionError: assert '2' == '11'
+E         - 11
+E         + 2
+
+c4b_bak/src_1389/3/test_transformed_src_1389.py:27: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "l>IhQ^0AQh/x{%2Mej"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "11"
+E       AssertionError: assert '5' == '11'
+E         - 11
+E         + 5
+
+c4b_bak/src_1389/3/test_transformed_src_1389.py:36: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "op4z/EXHj!Femj@*"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "11"
+E       AssertionError: assert '6' == '11'
+E         - 11
+E         + 6
+
+c4b_bak/src_1389/3/test_transformed_src_1389.py:65: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = "T\x0c'Y{2b+"
+        set_0 = {str_0}
+        var_0 = module_0.func(*set_0)
+>       assert var_0 == "5"
+E       AssertionError: assert '4' == '5'
+E         - 5
+E         + 4
+
+c4b_bak/src_1389/3/test_transformed_src_1389.py:76: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1389/3/test_transformed_src_1389.py::test_case_0 - Asserti...
+FAILED c4b_bak/src_1389/3/test_transformed_src_1389.py::test_case_2 - Asserti...
+FAILED c4b_bak/src_1389/3/test_transformed_src_1389.py::test_case_3 - Asserti...
+FAILED c4b_bak/src_1389/3/test_transformed_src_1389.py::test_case_6 - Asserti...
+FAILED c4b_bak/src_1389/3/test_transformed_src_1389.py::test_case_7 - Asserti...
+========================= 5 failed, 2 passed in 0.04s ==========================

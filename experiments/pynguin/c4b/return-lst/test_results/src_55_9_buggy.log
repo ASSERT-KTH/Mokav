@@ -1,0 +1,34 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 12 items
+
+c4b_ret_list_bak/src_55/9/test_transformed_src_55.py ...F........        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "a8"
+        var_0 = module_0.func(*str_0)
+        list_0 = [var_0, str_0, str_0, var_0]
+>       var_1 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_55/9/test_transformed_src_55.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (5, 'a8', 'a8', 5), x = 5
+
+    def func(*args):
+    
+    	x = args[0]
+    	if ((x == 'a1') or (x == 'a8') or (x == 'h1') or (x == 'h8')):
+    	    return(3)
+>   	elif ((x.count('a') == 1) or ((x.count('h') == 1) and (x.count(('1' or '8')) == 0))):
+E    AttributeError: 'int' object has no attribute 'count'
+
+c4b_ret_list_bak/src_55/9/src_55.py:6: AttributeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_55/9/test_transformed_src_55.py::test_case_4 - At...
+========================= 1 failed, 11 passed in 0.09s =========================

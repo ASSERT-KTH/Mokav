@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_2316/1/test_transformed_src_2316.py F.                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "JJL#$FD*"
+        var_0 = module_0.func(*str_0)
+>       assert var_0 == "j"
+E       AssertionError: assert 'J' == 'j'
+E         - j
+E         + J
+
+c4b_bak/src_2316/1/test_transformed_src_2316.py:11: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2316/1/test_transformed_src_2316.py::test_case_0 - Asserti...
+========================= 1 failed, 1 passed in 0.03s ==========================

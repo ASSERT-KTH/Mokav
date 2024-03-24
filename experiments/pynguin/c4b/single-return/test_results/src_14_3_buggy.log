@@ -1,0 +1,41 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_14/3/test_transformed_src_14.py FF                           [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        int_0 = -2867
+        list_0 = [int_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_bak/src_14/3/test_transformed_src_14.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (-2867,), math = <module 'math' (built-in)>
+
+    def func(*args):
+    
+    	import math
+>   	return(int((math.floor(math.log10(int(args[0]))) + 1)))
+E    ValueError: math domain error
+
+c4b_bak/src_14/3/src_14.py:4: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"P\xc9H\r\x93\xb4G\xd7\xbc\x8a\xef\xf6\xf8\xdf\\h\xa0\x80\x84\x11"
+        var_0 = module_0.func(*bytes_0)
+>       assert var_0 == 3
+E       assert 2 == 3
+
+c4b_bak/src_14/3/test_transformed_src_14.py:25: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_14/3/test_transformed_src_14.py::test_case_1 - ValueError:...
+FAILED c4b_bak/src_14/3/test_transformed_src_14.py::test_case_2 - assert 2 == 3
+============================== 2 failed in 0.04s ===============================

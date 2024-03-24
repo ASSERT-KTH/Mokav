@@ -1,0 +1,40 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_812/6/test_transformed_src_812.py FF                         [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        int_0 = 1841
+        tuple_0 = ()
+        list_0 = [int_0, tuple_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "Penny "
+E       AssertionError: assert 'Penny' == 'Penny '
+E         - Penny 
+E         ?      -
+E         + Penny
+
+c4b_bak/src_812/6/test_transformed_src_812.py:12: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bool_0 = False
+        dict_0 = {bool_0: bool_0, bool_0: bool_0, bool_0: bool_0, bool_0: bool_0}
+        list_0 = [bool_0, dict_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "d"
+E       AssertionError: assert 'Howard' == 'd'
+E         - d
+E         + Howard
+
+c4b_bak/src_812/6/test_transformed_src_812.py:20: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_812/6/test_transformed_src_812.py::test_case_0 - Assertion...
+FAILED c4b_bak/src_812/6/test_transformed_src_812.py::test_case_1 - Assertion...
+============================== 2 failed in 0.03s ===============================

@@ -1,0 +1,77 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_2443/1/test_transformed_src_2443.py FF..            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "Fu.pk8$L,"
+>       list_0 = module_0.func(*str_0)
+
+c4b_ret_list_bak/src_2443/1/test_transformed_src_2443.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('F', 'u', '.', 'p', 'k', '8', ...), s = 'F', i = 0
+
+    def func(*args):
+    
+    	s = args[0]
+    	for i in range(0, len(s)):
+    	    if ((s[i] is 'H') or (s[i] is 'Q') or (s[i] is '9')):
+    	        return('YES')
+    	        h = 1
+    	        break
+>   	if (h is not 1):
+E    UnboundLocalError: local variable 'h' referenced before assignment
+
+c4b_ret_list_bak/src_2443/1/src_2443.py:9: UnboundLocalError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\xb2\xcf\x9e.\x1a_\x80w\x03\x01g\x93\xd2\x08#\x90^\xce\x1f\xfd"
+        str_0 = "d5xGe=H"
+        bool_0 = False
+        list_0 = [str_0, bool_0]
+        var_0 = module_0.func(*list_0)
+        dict_0 = {bytes_0: bytes_0, bytes_0: bytes_0}
+>       var_1 = module_0.func(*dict_0)
+
+c4b_ret_list_bak/src_2443/1/test_transformed_src_2443.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (b'\xb2\xcf\x9e.\x1a_\x80w\x03\x01g\x93\xd2\x08#\x90^\xce\x1f\xfd',)
+s = b'\xb2\xcf\x9e.\x1a_\x80w\x03\x01g\x93\xd2\x08#\x90^\xce\x1f\xfd', i = 19
+
+    def func(*args):
+    
+    	s = args[0]
+    	for i in range(0, len(s)):
+    	    if ((s[i] is 'H') or (s[i] is 'Q') or (s[i] is '9')):
+    	        return('YES')
+    	        h = 1
+    	        break
+>   	if (h is not 1):
+E    UnboundLocalError: local variable 'h' referenced before assignment
+
+c4b_ret_list_bak/src_2443/1/src_2443.py:9: UnboundLocalError
+=============================== warnings summary ===============================
+c4b_ret_list_bak/src_2443/1/src_2443.py:5
+c4b_ret_list_bak/src_2443/1/src_2443.py:5
+c4b_ret_list_bak/src_2443/1/src_2443.py:5
+  /home/khashayar/projs/det-gen/c4b_ret_list_bak/src_2443/1/src_2443.py:5: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if ((s[i] is 'H') or (s[i] is 'Q') or (s[i] is '9')):
+
+c4b_ret_list_bak/src_2443/1/src_2443.py:9
+  /home/khashayar/projs/det-gen/c4b_ret_list_bak/src_2443/1/src_2443.py:9: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+    if (h is not 1):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2443/1/test_transformed_src_2443.py::test_case_0
+FAILED c4b_ret_list_bak/src_2443/1/test_transformed_src_2443.py::test_case_2
+=================== 2 failed, 2 passed, 4 warnings in 0.09s ====================

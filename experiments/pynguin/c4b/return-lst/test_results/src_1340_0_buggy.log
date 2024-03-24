@@ -1,0 +1,52 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 23 items
+
+c4b_ret_list_bak/src_1340/0/test_transformed_src_1340.py F.............. [ 65%]
+.F...FF.                                                                 [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"\x04\x84\x0f\xcb.^\t+\x1bT&v\xf2\xa7K\xd4\xa8s\xf6"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_1340.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_1340/0/test_transformed_src_1340.py:11: TypeError
+_________________________________ test_case_17 _________________________________
+
+    def test_case_17():
+        bytes_0 = b"\x1c^\x8c\xc3\xb9\xcd\x19\t\x9aVqu\x18"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_1340.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_1340/0/test_transformed_src_1340.py:109: TypeError
+_________________________________ test_case_21 _________________________________
+
+    def test_case_21():
+        bytes_0 = b"\x11\xec\x93TR\xa3\x8b\x8e\xd5GF\x11]<Sf"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_1340.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_1340/0/test_transformed_src_1340.py:130: TypeError
+_________________________________ test_case_22 _________________________________
+
+    def test_case_22():
+        bytes_0 = b"\x1f\xaf"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_1340.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_1340/0/test_transformed_src_1340.py:137: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1340/0/test_transformed_src_1340.py::test_case_0
+FAILED c4b_ret_list_bak/src_1340/0/test_transformed_src_1340.py::test_case_17
+FAILED c4b_ret_list_bak/src_1340/0/test_transformed_src_1340.py::test_case_21
+FAILED c4b_ret_list_bak/src_1340/0/test_transformed_src_1340.py::test_case_22
+========================= 4 failed, 19 passed in 0.09s =========================

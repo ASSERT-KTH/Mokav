@@ -1,0 +1,38 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_ret_list_bak/src_1360/5/test_transformed_src_1360.py F..             [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_1360/5/test_transformed_src_1360.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+c4b_ret_list_bak/src_1360/5/src_1360.py:16: in func
+    return(fun(n))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = 0
+
+    def fun(n):
+        for i in range(maximo, (- 1), (- 1)):
+            v = (n - (7 * i))
+            if (v >= 0):
+                x = (v % 4)
+                if (x == 0):
+                    string = (('4' * int((v // 4))) + ('7' * i))
+>                   return int(string)
+E                   ValueError: invalid literal for int() with base 10: ''
+
+c4b_ret_list_bak/src_1360/5/src_1360.py:14: ValueError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1360/5/test_transformed_src_1360.py::test_case_0
+========================= 1 failed, 2 passed in 0.07s ==========================

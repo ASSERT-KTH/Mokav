@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+c4b_bak/src_519/7/test_transformed_src_519.py ..F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bytes_0 = b"\x1ff\x92\xb2\xdc"
+        var_0 = module_1.func(*bytes_0)
+>       assert var_0 == "Rajesh"
+E       AssertionError: assert 'Sheldon' == 'Rajesh'
+E         - Rajesh
+E         + Sheldon
+
+c4b_bak/src_519/7/test_transformed_src_519.py:26: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_519/7/test_transformed_src_519.py::test_case_2 - Assertion...
+========================= 1 failed, 2 passed in 0.03s ==========================

@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_ret_list_bak/src_1573/4/test_transformed_src_1573.py ..F...          [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "VK"
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+        list_1 = [var_0, str_0]
+>       var_1 = module_0.func(*list_1)
+
+c4b_ret_list_bak/src_1573/4/test_transformed_src_1573.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (1, 'VK'), a = 1, s = 0, d = []
+
+    def func(*args):
+    
+    	a = args[0]
+    	s = 0
+    	d = []
+    	d1 = []
+    	f = 0
+    	ff = 0
+    	p = []
+>   	for i in range(len(a)):
+E    TypeError: object of type 'int' has no len()
+
+c4b_ret_list_bak/src_1573/4/src_1573.py:10: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1573/4/test_transformed_src_1573.py::test_case_3
+========================= 1 failed, 5 passed in 0.08s ==========================

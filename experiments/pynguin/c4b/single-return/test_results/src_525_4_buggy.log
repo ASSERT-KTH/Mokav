@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_bak/src_525/4/test_transformed_src_525.py .F..                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "Y&"
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".&"
+E       AssertionError: assert '.y.&' == '.&'
+E         - .&
+E         + .y.&
+
+c4b_bak/src_525/4/test_transformed_src_525.py:26: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_525/4/test_transformed_src_525.py::test_case_2 - Assertion...
+========================= 1 failed, 3 passed in 0.03s ==========================

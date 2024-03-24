@@ -1,0 +1,95 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_ret_list_bak/src_1492/4/test_transformed_src_1492.py F.FF.           [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "hello"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       var_1 = module_0.func(*var_0)
+
+c4b_ret_list_bak/src_1492/4/test_transformed_src_1492.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('Y', 'E', 'S'), s = ['h', 'e', 'l', 'l', 'o'], a = 'Y', c = []
+
+    def func(*args):
+    
+    	s = ['h', 'e', 'l', 'l', 'o']
+    	a = args[0]
+    	c = []
+    	for i in range(len(a)):
+    	    if (a[i] in s):
+    	        c.append(a[i])
+    	x = 1
+    	while True:
+>   	    if (c[0] != 'h'):
+E        IndexError: list index out of range
+
+c4b_ret_list_bak/src_1492/4/src_1492.py:11: IndexError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "hlello"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       var_1 = module_0.func(*var_0)
+
+c4b_ret_list_bak/src_1492/4/test_transformed_src_1492.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('Y', 'E', 'S'), s = ['h', 'e', 'l', 'l', 'o'], a = 'Y', c = []
+
+    def func(*args):
+    
+    	s = ['h', 'e', 'l', 'l', 'o']
+    	a = args[0]
+    	c = []
+    	for i in range(len(a)):
+    	    if (a[i] in s):
+    	        c.append(a[i])
+    	x = 1
+    	while True:
+>   	    if (c[0] != 'h'):
+E        IndexError: list index out of range
+
+c4b_ret_list_bak/src_1492/4/src_1492.py:11: IndexError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "ilello"
+        list_0 = [str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_1492/4/test_transformed_src_1492.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('ilello', 'ilello', 'ilello'), s = ['h', 'e', 'l', 'l', 'o']
+a = 'ilello', c = []
+
+    def func(*args):
+    
+    	s = ['h', 'e', 'l', 'l', 'o']
+    	a = args[0]
+    	c = []
+    	for i in range(len(a)):
+    	    if (a[i] in s):
+    	        c.append(a[i])
+    	x = 1
+    	while True:
+>   	    if (c[0] != 'h'):
+E        IndexError: list index out of range
+
+c4b_ret_list_bak/src_1492/4/src_1492.py:11: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1492/4/test_transformed_src_1492.py::test_case_0
+FAILED c4b_ret_list_bak/src_1492/4/test_transformed_src_1492.py::test_case_3
+FAILED c4b_ret_list_bak/src_1492/4/test_transformed_src_1492.py::test_case_4
+========================= 3 failed, 2 passed in 0.08s ==========================

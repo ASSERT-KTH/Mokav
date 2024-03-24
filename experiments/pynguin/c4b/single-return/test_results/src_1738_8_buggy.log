@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 10 items
+
+c4b_bak/src_1738/8/test_transformed_src_1738.py .........F               [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        str_0 = "Patati"
+        list_0 = [str_0, str_0, str_0, str_0, str_0, str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "P@ati"
+E       AssertionError: assert 'P@@i' == 'P@ati'
+E         - P@ati
+E         + P@@i
+
+c4b_bak/src_1738/8/test_transformed_src_1738.py:90: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1738/8/test_transformed_src_1738.py::test_case_10 - Assert...
+========================= 1 failed, 9 passed in 0.03s ==========================

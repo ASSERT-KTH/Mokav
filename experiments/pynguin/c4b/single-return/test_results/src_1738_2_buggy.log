@@ -1,0 +1,26 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 9 items
+
+c4b_bak/src_1738/2/test_transformed_src_1738.py ........F                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        str_0 = "-atdo<at\r"
+        set_0 = {str_0, str_0, str_0, str_0, str_0}
+        var_0 = module_0.func(*set_0)
+>       assert var_0 == "-@do<at\r"
+E       AssertionError: assert '-@do<@\r' == '-@do<at\r'
+E         - -@do<at
+E         ?      ^^
+E         + -@do<@
+E         ?      ^
+
+c4b_bak/src_1738/2/test_transformed_src_1738.py:71: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1738/2/test_transformed_src_1738.py::test_case_9 - Asserti...
+========================= 1 failed, 8 passed in 0.05s ==========================

@@ -1,0 +1,40 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 8 items
+
+c4b_ret_list_bak/src_509/3/test_transformed_src_509.py .F......          [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "ow)SR\n[}Qcef44`lT"
+        list_0 = [str_0, str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_509/3/test_transformed_src_509.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('ow)SR\n[}Qcef44`lT', 'ow)SR\n[}Qcef44`lT', 'ow)SR\n[}Qcef44`lT', 'ow)SR\n[}Qcef44`lT')
+s = 'ow)SR', a = [], i = 4
+
+    def func(*args):
+    
+    
+    	def f(c):
+    	    return ((c == 'A') or (c == 'E') or (c == 'I') or (c == 'O') or (c == 'U') or (c == 'Y'))
+    	s = args[0].split()[0]
+    	a = ([0] * len(s))
+    	for i in range(len(s)):
+    	    a[i] = (s[i], (i + 1))
+    	a = [elem for (letter, elem) in a if f(letter)]
+    	b = ([0] * len(a))
+>   	b[0] = a[0]
+E    IndexError: list index out of range
+
+c4b_ret_list_bak/src_509/3/src_509.py:12: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_509/3/test_transformed_src_509.py::test_case_1 - ...
+========================= 1 failed, 7 passed in 0.08s ==========================

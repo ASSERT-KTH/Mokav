@@ -1,0 +1,52 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 12 items
+
+c4b_bak/src_906/7/test_transformed_src_906.py ......F.F...               [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '(n\x0b\x0cYH<"!UG\t'
+        var_0 = module_0.func(*str_0)
+        assert var_0 == ".("
+        var_1 = module_0.func(*var_0)
+        assert var_1 == ".."
+        var_2 = module_0.func(*var_1)
+        assert var_2 == ".."
+        var_3 = module_0.func(*var_2)
+        assert var_3 == ".."
+        list_0 = [str_0, var_2]
+        var_4 = module_0.func(*list_0)
+>       assert var_4 == '.(.n.\x0b.\x0c.h.<.".!.g.\t'
+E       assert '.(.n.\x0b.\x....h.<.".!.g.\t' == '.(.n.\x0b.\x0c.h.<.".!.g.\t'
+E           .(.n.
+E           .
+E         - .h.<.".!.g.	
+E         + .y.h.<.".!.g.	
+E         ? ++
+
+c4b_bak/src_906/7/test_transformed_src_906.py:80: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        str_0 = ".W2V)DuCxK{"
+        str_1 = "V$BH~y\n`$\rR@c=TVBc"
+        list_0 = [str_1, str_1, str_1, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".v.$.b.h.~.\n.`.$.\r.r.@.c.=.t.v.b.c"
+E       AssertionError: assert '.v.$.b.h.~.y...@.c.=.t.v.b.c' == '.v.$.b.h.~.\...@.c.=.t.v.b.c'
+E         - .v.$.b.h.~.
+E         + .v.$.b.h.~.y.
+E         ?            ++
+E           .`.$.
+E           .r.@.c.=.t.v.b.c
+
+c4b_bak/src_906/7/test_transformed_src_906.py:101: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_906/7/test_transformed_src_906.py::test_case_7 - assert '....
+FAILED c4b_bak/src_906/7/test_transformed_src_906.py::test_case_9 - Assertion...
+========================= 2 failed, 10 passed in 0.07s =========================

@@ -1,0 +1,55 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_bak/src_1571/5/test_transformed_src_1571.py F..FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "\x0c_"
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "\x0c_"
+E       AssertionError: assert None == '\x0c_'
+
+c4b_bak/src_1571/5/test_transformed_src_1571.py:12: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "_"
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "_"
+E       AssertionError: assert None == '_'
+
+c4b_bak/src_1571/5/test_transformed_src_1571.py:34: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "'<++B\"N`RF"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "'<++b\"n`rf"
+E       assert None == '\'<++b"n`rf'
+
+c4b_bak/src_1571/5/test_transformed_src_1571.py:43: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        str_0 = "bUM~"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "Bum~"
+E       AssertionError: assert None == 'Bum~'
+
+c4b_bak/src_1571/5/test_transformed_src_1571.py:58: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1571/5/test_transformed_src_1571.py::test_case_0 - Asserti...
+FAILED c4b_bak/src_1571/5/test_transformed_src_1571.py::test_case_3 - Asserti...
+FAILED c4b_bak/src_1571/5/test_transformed_src_1571.py::test_case_4 - assert ...
+FAILED c4b_bak/src_1571/5/test_transformed_src_1571.py::test_case_5 - Asserti...
+========================= 4 failed, 2 passed in 0.04s ==========================

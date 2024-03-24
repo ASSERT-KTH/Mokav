@@ -1,0 +1,55 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+c4b_bak/src_2330/1/test_transformed_src_2330.py ..F..FF                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "L6)?24G^s%Y?"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "L6)?24G^s%Y?"
+E       AssertionError: assert 'L6)?24G^S%Y?' == 'L6)?24G^s%Y?'
+E         - L6)?24G^s%Y?
+E         ?         ^
+E         + L6)?24G^S%Y?
+E         ?         ^
+
+c4b_bak/src_2330/1/test_transformed_src_2330.py:35: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "AF"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == "af"
+E       AssertionError: assert 'Af' == 'af'
+E         - af
+E         + Af
+
+c4b_bak/src_2330/1/test_transformed_src_2330.py:64: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = "xO"
+        list_0 = [str_0]
+        var_0 = module_0.func(*list_0)
+        assert var_0 == "Xo"
+        object_0 = module_1.object()
+        var_1 = module_0.func(*var_0)
+>       assert var_1 == "x"
+E       AssertionError: assert 'X' == 'x'
+E         - x
+E         + X
+
+c4b_bak/src_2330/1/test_transformed_src_2330.py:78: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2330/1/test_transformed_src_2330.py::test_case_3 - Asserti...
+FAILED c4b_bak/src_2330/1/test_transformed_src_2330.py::test_case_6 - Asserti...
+FAILED c4b_bak/src_2330/1/test_transformed_src_2330.py::test_case_7 - Asserti...
+========================= 3 failed, 4 passed in 0.04s ==========================

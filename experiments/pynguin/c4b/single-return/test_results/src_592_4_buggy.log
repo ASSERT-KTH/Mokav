@@ -1,0 +1,88 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+c4b_bak/src_592/4/test_transformed_src_592.py .FF.FFF                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "EgEe8"
+        var_0 = module_0.func(*str_0)
+>       assert var_0 == ""
+E       AssertionError: assert '.E' == ''
+E         + .E
+
+c4b_bak/src_592/4/test_transformed_src_592.py:21: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "|s>bR2EPTz6LMgtPO':"
+        list_0 = [str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".|.s.>.b.r.2.p.t.z.6.l.m.g.t.p.'.:"
+E       assert ".|.s.>.b.R.2...M.g.t.P.O.'.:" == ".|.s.>.b.r.2...l.m.g.t.p.'.:"
+E         - .|.s.>.b.r.2.p.t.z.6.l.m.g.t.p.'.:
+E         ?          ^   ^ ^     ^ ^     ^
+E         + .|.s.>.b.R.2.E.P.T.z.6.L.M.g.t.P.O.'.:
+E         ?          ^   ^ ^^^     ^ ^     ^^^
+
+c4b_bak/src_592/4/test_transformed_src_592.py:28: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        str_0 = "xUg>e8."
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".x.g.>.8.."
+E       AssertionError: assert '.x.U.g.>.8..' == '.x.g.>.8..'
+E         - .x.g.>.8..
+E         + .x.U.g.>.8..
+E         ?   ++
+
+c4b_bak/src_592/4/test_transformed_src_592.py:43: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "v|~.\tZBl _A]|b"
+        bool_0 = True
+        list_0 = [str_0, bool_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".v.|.~...\t.z.b.l. ._.].|.b"
+E       AssertionError: assert '.v.|.~...\t....l. ._.A.].|.b' == '.v.|.~...\t.z.b.l. ._.].|.b'
+E         - .v.|.~...	.z.b.l. ._.].|.b
+E         ?          	 ^ ^
+E         + .v.|.~...	.Z.B.l. ._.A.].|.b
+E         ?          	 ^ ^      ++
+
+c4b_bak/src_592/4/test_transformed_src_592.py:53: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = "bG|n&\nmCy25C\trL;M"
+        var_0 = module_0.func(*str_0)
+        assert var_0 == ".b"
+        dict_0 = {str_0: str_0}
+        var_1 = module_0.func(*dict_0)
+>       assert var_1 == ".b.g.|.n.&.\n.m.c.2.5.c.\t.r.l.;.m"
+E       AssertionError: assert '.b.G.|.n.&.\....C.\t.r.L.;.M' == '.b.g.|.n.&.\....c.\t.r.l.;.m'
+E         - .b.g.|.n.&.
+E         ?    ^
+E         + .b.G.|.n.&.
+E         ?    ^
+E         - .m.c.2.5.c.	.r.l.;.m
+E         ?    ^     ^ 	   ^   ^
+E         + .m.C.2.5.C.	.r.L.;.M
+E         ?    ^     ^ 	   ^   ^
+
+c4b_bak/src_592/4/test_transformed_src_592.py:63: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_592/4/test_transformed_src_592.py::test_case_2 - Assertion...
+FAILED c4b_bak/src_592/4/test_transformed_src_592.py::test_case_3 - assert "....
+FAILED c4b_bak/src_592/4/test_transformed_src_592.py::test_case_5 - Assertion...
+FAILED c4b_bak/src_592/4/test_transformed_src_592.py::test_case_6 - Assertion...
+FAILED c4b_bak/src_592/4/test_transformed_src_592.py::test_case_7 - Assertion...
+========================= 5 failed, 2 passed in 0.06s ==========================

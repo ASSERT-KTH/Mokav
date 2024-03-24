@@ -1,0 +1,55 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_ret_list_bak/src_13/4/test_transformed_src_13.py FF                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_13/4/test_transformed_src_13.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (False, False, False), f = <built-in function factorial>, k = 0, n = -1
+
+    def func(*args):
+    
+    	from math import factorial as f
+    	k = int(args[0])
+    	n = ((2 * k) - 1)
+>   	ans = ((2 * f(n)) // (f(k) * f((n - k))))
+E    ValueError: factorial() not defined for negative values
+
+c4b_ret_list_bak/src_13/4/src_13.py:6: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bool_0 = False
+        list_0 = [bool_0, bool_0, bool_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_13/4/test_transformed_src_13.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (False, False, False), f = <built-in function factorial>, k = 0, n = -1
+
+    def func(*args):
+    
+    	from math import factorial as f
+    	k = int(args[0])
+    	n = ((2 * k) - 1)
+>   	ans = ((2 * f(n)) // (f(k) * f((n - k))))
+E    ValueError: factorial() not defined for negative values
+
+c4b_ret_list_bak/src_13/4/src_13.py:6: ValueError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_13/4/test_transformed_src_13.py::test_case_0 - Va...
+FAILED c4b_ret_list_bak/src_13/4/test_transformed_src_13.py::test_case_2 - Va...
+============================== 2 failed in 0.09s ===============================

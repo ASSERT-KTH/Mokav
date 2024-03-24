@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+c4b_bak/src_2396/2/test_transformed_src_2396.py ..F..F                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "&xy571tm"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".&.x.5.7.1.t.m"
+E       AssertionError: assert '.&.x.y.5.7.1.t.m' == '.&.x.5.7.1.t.m'
+E         - .&.x.5.7.1.t.m
+E         + .&.x.y.5.7.1.t.m
+E         ?     ++
+
+c4b_bak/src_2396/2/test_transformed_src_2396.py:34: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "\t;8%]bMzwQoayHd&Si"
+        list_0 = [str_0, str_0, str_0, str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == ".\t.;.8.%.].b.m.z.w.q.h.d.&.s"
+E       AssertionError: assert '.\t.;.8.%.]....w.q.y.h.d.&.s' == '.\t.;.8.%.]....z.w.q.h.d.&.s'
+E         - .	.;.8.%.].b.m.z.w.q.h.d.&.s
+E         + .	.;.8.%.].b.m.z.w.q.y.h.d.&.s
+E         ?  	                   ++
+
+c4b_bak/src_2396/2/test_transformed_src_2396.py:72: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_2396/2/test_transformed_src_2396.py::test_case_3 - Asserti...
+FAILED c4b_bak/src_2396/2/test_transformed_src_2396.py::test_case_6 - Asserti...
+========================= 2 failed, 4 passed in 0.04s ==========================

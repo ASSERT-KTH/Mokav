@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+c4b_bak/src_427/8/test_transformed_src_427.py F                          [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = ")(ZIt@$tghjg~+yTuM^"
+        list_0 = [str_0, str_0, str_0]
+        var_0 = module_0.func(*list_0)
+>       assert var_0 == 16
+E       assert 4 == 16
+
+c4b_bak/src_427/8/test_transformed_src_427.py:12: AssertionError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_427/8/test_transformed_src_427.py::test_case_0 - assert 4 ...
+============================== 1 failed in 0.03s ===============================

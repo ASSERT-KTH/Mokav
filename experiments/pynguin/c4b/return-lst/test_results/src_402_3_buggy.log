@@ -1,0 +1,96 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_ret_list_bak/src_402/3/test_transformed_src_402.py .FFFF             [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        float_0 = 937.7997228681578
+        dict_0 = {float_0: float_0}
+        list_0 = [float_0, dict_0, float_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_402/3/test_transformed_src_402.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (937.7997228681578, {937.7997228681578: 937.7997228681578}, 937.7997228681578)
+n = 937.7997228681578
+
+    def func(*args):
+    
+    	n = args[0]
+>   	a = (len(n) // 2)
+E    TypeError: object of type 'float' has no len()
+
+c4b_ret_list_bak/src_402/3/src_402.py:4: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        int_0 = -1247
+        str_0 = ""
+        list_0 = [int_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_402/3/test_transformed_src_402.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (-1247, ''), n = -1247
+
+    def func(*args):
+    
+    	n = args[0]
+>   	a = (len(n) // 2)
+E    TypeError: object of type 'int' has no len()
+
+c4b_ret_list_bak/src_402/3/src_402.py:4: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        int_0 = -1237
+        str_0 = "4"
+        list_0 = [int_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_402/3/test_transformed_src_402.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (-1237, '4'), n = -1237
+
+    def func(*args):
+    
+    	n = args[0]
+>   	a = (len(n) // 2)
+E    TypeError: object of type 'int' has no len()
+
+c4b_ret_list_bak/src_402/3/src_402.py:4: TypeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        int_0 = -1249
+        str_0 = "7j>J>J0`Bb;;\n^0[o"
+        list_0 = [int_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_402/3/test_transformed_src_402.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (-1249, '7j>J>J0`Bb;;\n^0[o'), n = -1249
+
+    def func(*args):
+    
+    	n = args[0]
+>   	a = (len(n) // 2)
+E    TypeError: object of type 'int' has no len()
+
+c4b_ret_list_bak/src_402/3/src_402.py:4: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_402/3/test_transformed_src_402.py::test_case_2 - ...
+FAILED c4b_ret_list_bak/src_402/3/test_transformed_src_402.py::test_case_3 - ...
+FAILED c4b_ret_list_bak/src_402/3/test_transformed_src_402.py::test_case_4 - ...
+FAILED c4b_ret_list_bak/src_402/3/test_transformed_src_402.py::test_case_5 - ...
+========================= 4 failed, 1 passed in 0.08s ==========================

@@ -1,0 +1,539 @@
+╭─────────────────────────────── Traceback (most recent call last) ────────────────────────────────╮
+│ /home/khashayar/projs/det-gen/.venv/bin/pynguin:8 in <module>                                    │
+│                                                                                                  │
+│   5 from pynguin.cli import main                                                                 │
+│   6 if __name__ == '__main__':                                                                   │
+│   7 │   sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])                         │
+│ ❱ 8 │   sys.exit(main())                                                                         │
+│   9                                                                                              │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/cli.py:196 in main      │
+│                                                                                                  │
+│   193 │   set_configuration(parsed.config)                                                       │
+│   194 │   if console is not None:                                                                │
+│   195 │   │   with console.status("Running Pynguin..."):                                         │
+│ ❱ 196 │   │   │   return run_pynguin().value                                                     │
+│   197 │   else:                                                                                  │
+│   198 │   │   return run_pynguin().value                                                         │
+│   199                                                                                            │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/generator.py:108 in     │
+│ run_pynguin                                                                                      │
+│                                                                                                  │
+│   105 │   """                                                                                    │
+│   106 │   try:                                                                                   │
+│   107 │   │   _LOGGER.info("Start Pynguin Test Generation…")                                     │
+│ ❱ 108 │   │   return _run()                                                                      │
+│   109 │   finally:                                                                               │
+│   110 │   │   _LOGGER.info("Stop Pynguin Test Generation…")                                      │
+│   111                                                                                            │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/generator.py:506 in     │
+│ _run                                                                                             │
+│                                                                                                  │
+│   503                                                                                            │
+│   504                                                                                            │
+│   505 def _run() -> ReturnCode:                                                                  │
+│ ❱ 506 │   if (setup_result := _setup_and_check()) is None:                                       │
+│   507 │   │   return ReturnCode.SETUP_FAILED                                                     │
+│   508 │   executor, test_cluster, constant_provider = setup_result                               │
+│   509 │   # traces slices for test cases after execution                                         │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/generator.py:251 in     │
+│ _setup_and_check                                                                                 │
+│                                                                                                  │
+│   248 │   │   set(config.configuration.statistics_output.coverage_metrics),                      │
+│   249 │   │   dynamic_constant_provider,                                                         │
+│   250 │   )                                                                                      │
+│ ❱ 251 │   if not _load_sut(tracer):                                                              │
+│   252 │   │   return None                                                                        │
+│   253 │   if not _setup_report_dir():                                                            │
+│   254 │   │   return None                                                                        │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/generator.py:164 in     │
+│ _load_sut                                                                                        │
+│                                                                                                  │
+│   161 │   try:                                                                                   │
+│   162 │   │   # We need to set the current thread ident so the import trace is recorded.         │
+│   163 │   │   tracer.current_thread_identifier = threading.current_thread().ident                │
+│ ❱ 164 │   │   importlib.import_module(config.configuration.module_name)                          │
+│   165 │   except ImportError as ex:                                                              │
+│   166 │   │   # A module could not be imported because some dependencies                         │
+│   167 │   │   # are missing or it is malformed                                                   │
+│                                                                                                  │
+│ /usr/lib/python3.10/importlib/__init__.py:126 in import_module                                   │
+│                                                                                                  │
+│   123 │   │   │   if character != '.':                                                           │
+│   124 │   │   │   │   break                                                                      │
+│   125 │   │   │   level += 1                                                                     │
+│ ❱ 126 │   return _bootstrap._gcd_import(name[level:], package, level)                            │
+│   127                                                                                            │
+│   128                                                                                            │
+│   129 _RELOADING = {}                                                                            │
+│ in _gcd_import:1050                                                                              │
+│ in _find_and_load:1027                                                                           │
+│ in _find_and_load_unlocked:1006                                                                  │
+│ in _load_unlocked:688                                                                            │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/instrumentation/machine │
+│ ry.py:59 in exec_module                                                                          │
+│                                                                                                  │
+│    56 │                                                                                          │
+│    57 │   def exec_module(self, module):  # noqa: D102                                           │
+│    58 │   │   self._tracer.reset()                                                               │
+│ ❱  59 │   │   super().exec_module(module)                                                        │
+│    60 │   │   self._tracer.store_import_trace()                                                  │
+│    61 │                                                                                          │
+│    62 │   def get_code(self, fullname) -> CodeType:                                              │
+│ in exec_module:879                                                                               │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/instrumentation/machine │
+│ ry.py:75 in get_code                                                                             │
+│                                                                                                  │
+│    72 │   │   """                                                                                │
+│    73 │   │   to_instrument = cast(CodeType, super().get_code(fullname))                         │
+│    74 │   │   assert to_instrument is not None, "Failed to get code object of module."           │
+│ ❱  75 │   │   return self._transformer.instrument_module(to_instrument)                          │
+│    76                                                                                            │
+│    77                                                                                            │
+│    78 def build_transformer(                                                                     │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/instrumentation/instrum │
+│ entation.py:240 in instrument_module                                                             │
+│                                                                                                  │
+│    237 │   │   │   │   # Abort instrumentation, since we have already                            │
+│    238 │   │   │   │   # instrumented this code object.                                          │
+│    239 │   │   │   │   raise AssertionError("Tried to instrument already instrumented module.")  │
+│ ❱  240 │   │   return self._instrument_code_recursive(module_code)                               │
+│    241 │                                                                                         │
+│    242 │   def _instrument_code_recursive(                                                       │
+│    243 │   │   self,                                                                             │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/instrumentation/instrum │
+│ entation.py:279 in _instrument_code_recursive                                                    │
+│                                                                                                  │
+│    276 │   │   for adapter in self._instrumentation_adapters:                                    │
+│    277 │   │   │   adapter.visit_entry_node(real_entry_node.basic_block, code_object_id)         │
+│    278 │   │   self._instrument_cfg(cfg, code_object_id)                                         │
+│ ❱  279 │   │   return self._instrument_inner_code_objects(                                       │
+│    280 │   │   │   cfg.bytecode_cfg().to_code(), code_object_id                                  │
+│    281 │   │   )                                                                                 │
+│    282                                                                                           │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/instrumentation/instrum │
+│ entation.py:300 in _instrument_inner_code_objects                                                │
+│                                                                                                  │
+│    297 │   │   │   if isinstance(const, CodeType):                                               │
+│    298 │   │   │   │   # The const is an inner code object                                       │
+│    299 │   │   │   │   new_consts.append(                                                        │
+│ ❱  300 │   │   │   │   │   self._instrument_code_recursive(                                      │
+│    301 │   │   │   │   │   │   const, parent_code_object_id=parent_code_object_id                │
+│    302 │   │   │   │   │   )                                                                     │
+│    303 │   │   │   │   )                                                                         │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/instrumentation/instrum │
+│ entation.py:257 in _instrument_code_recursive                                                    │
+│                                                                                                  │
+│    254 │   │   │   The instrumented code object                                                  │
+│    255 │   │   """                                                                               │
+│    256 │   │   self._logger.debug("Instrumenting Code Object for %s", code.co_name)              │
+│ ❱  257 │   │   cfg = CFG.from_bytecode(Bytecode.from_code(code))                                 │
+│    258 │   │   original_cfg = CFG.from_bytecode(Bytecode.from_code(code))                        │
+│    259 │   │   cdg = ControlDependenceGraph.compute(cfg)                                         │
+│    260 │   │   code_object_id = self._tracer.register_code_object(                               │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/analyses/controlflow.py │
+│ :400 in from_bytecode                                                                            │
+│                                                                                                  │
+│   397 │   │   cfg = filter_dead_code_nodes(cfg)                                                  │
+│   398 │   │                                                                                      │
+│   399 │   │   # Insert dummy exit and entry nodes                                                │
+│ ❱ 400 │   │   cfg = CFG._insert_dummy_exit_node(cfg)                                             │
+│   401 │   │   cfg = CFG._insert_dummy_entry_node(cfg)                                            │
+│   402 │   │   return cfg  # noqa: RET504                                                         │
+│   403                                                                                            │
+│                                                                                                  │
+│ /home/khashayar/projs/det-gen/.venv/lib/python3.10/site-packages/pynguin/analyses/controlflow.py │
+│ :563 in _insert_dummy_exit_node                                                                  │
+│                                                                                                  │
+│   560 │   def _insert_dummy_exit_node(cfg: CFG) -> CFG:                                          │
+│   561 │   │   dummy_exit_node = ProgramGraphNode(index=sys.maxsize, is_artificial=True)          │
+│   562 │   │   exit_nodes = cfg.exit_nodes                                                        │
+│ ❱ 563 │   │   assert exit_nodes, (                                                               │
+│   564 │   │   │   "Control flow must have at least one exit node. Offending CFG: " + cfg.dot     │
+│   565 │   │   )                                                                                  │
+│   566 │   │   cfg.add_node(dummy_exit_node)                                                      │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
+AssertionError: Control flow must have at least one exit node. Offending CFG: strict digraph  {
+"ProgramGraphNode(0)
+BUILD_LIST 0
+STORE_FAST 'ret_values'
+LOAD_CONST 0
+LOAD_CONST None
+IMPORT_NAME 'math'
+STORE_FAST 'math'
+LOAD_CONST <code object <genexpr> at 0x7f07eb7992c0, file "/home/khashayar/projs/det-gen/c4b_ret_list/src_1569/2/src_1569.py", line 5>
+LOAD_CONST 'func.<locals>.<genexpr>'
+MAKE_FUNCTION 0
+LOAD_FAST 'args'
+LOAD_CONST 0
+BINARY_SUBSCR
+LOAD_METHOD 'split'
+CALL_METHOD 0
+GET_ITER
+CALL_FUNCTION 1
+UNPACK_SEQUENCE 3
+STORE_FAST 'a'
+STORE_FAST 'b'
+STORE_FAST 's'
+NOP";
+"ProgramGraphNode(1)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'a'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode";
+"ProgramGraphNode(2)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 0
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP
+JUMP_FORWARD ProgramGraphNode";
+"ProgramGraphNode(3)
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP LT
+POP_JUMP_IF_FALSE ProgramGraphNode";
+"ProgramGraphNode(4)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 1
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP";
+"ProgramGraphNode(5)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'b'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode";
+"ProgramGraphNode(6)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 1
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP
+JUMP_FORWARD ProgramGraphNode";
+"ProgramGraphNode(7)
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP LT
+POP_JUMP_IF_FALSE ProgramGraphNode";
+"ProgramGraphNode(8)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 0
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP";
+"ProgramGraphNode(9)
+JUMP_ABSOLUTE ProgramGraphNode";
+"ProgramGraphNode(0)
+BUILD_LIST 0
+STORE_FAST 'ret_values'
+LOAD_CONST 0
+LOAD_CONST None
+IMPORT_NAME 'math'
+STORE_FAST 'math'
+LOAD_CONST <code object <genexpr> at 0x7f07eb7992c0, file "/home/khashayar/projs/det-gen/c4b_ret_list/src_1569/2/src_1569.py", line 5>
+LOAD_CONST 'func.<locals>.<genexpr>'
+MAKE_FUNCTION 0
+LOAD_FAST 'args'
+LOAD_CONST 0
+BINARY_SUBSCR
+LOAD_METHOD 'split'
+CALL_METHOD 0
+GET_ITER
+CALL_FUNCTION 1
+UNPACK_SEQUENCE 3
+STORE_FAST 'a'
+STORE_FAST 'b'
+STORE_FAST 's'
+NOP" -> "ProgramGraphNode(1)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'a'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode";
+"ProgramGraphNode(1)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'a'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode" -> "ProgramGraphNode(2)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 0
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP
+JUMP_FORWARD ProgramGraphNode"  [branch_value=True, label=True];
+"ProgramGraphNode(1)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'a'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode" -> "ProgramGraphNode(3)
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP LT
+POP_JUMP_IF_FALSE ProgramGraphNode"  [branch_value=False, label=False];
+"ProgramGraphNode(2)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 0
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP
+JUMP_FORWARD ProgramGraphNode" -> "ProgramGraphNode(5)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'b'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode";
+"ProgramGraphNode(3)
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP LT
+POP_JUMP_IF_FALSE ProgramGraphNode" -> "ProgramGraphNode(4)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 1
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP"  [branch_value=True, label=True];
+"ProgramGraphNode(3)
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP LT
+POP_JUMP_IF_FALSE ProgramGraphNode" -> "ProgramGraphNode(5)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'b'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode"  [branch_value=False, label=False];
+"ProgramGraphNode(4)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 1
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP" -> "ProgramGraphNode(5)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'b'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode";
+"ProgramGraphNode(5)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'b'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode" -> "ProgramGraphNode(6)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 1
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP
+JUMP_FORWARD ProgramGraphNode"  [branch_value=True, label=True];
+"ProgramGraphNode(5)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'b'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode" -> "ProgramGraphNode(7)
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP LT
+POP_JUMP_IF_FALSE ProgramGraphNode"  [branch_value=False, label=False];
+"ProgramGraphNode(6)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 1
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP
+JUMP_FORWARD ProgramGraphNode" -> "ProgramGraphNode(9)
+JUMP_ABSOLUTE ProgramGraphNode";
+"ProgramGraphNode(7)
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP LT
+POP_JUMP_IF_FALSE ProgramGraphNode" -> "ProgramGraphNode(8)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 0
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP"  [branch_value=True, label=True];
+"ProgramGraphNode(7)
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP LT
+POP_JUMP_IF_FALSE ProgramGraphNode" -> "ProgramGraphNode(9)
+JUMP_ABSOLUTE ProgramGraphNode"  [branch_value=False, label=False];
+"ProgramGraphNode(8)
+LOAD_FAST 'ret_values'
+LOAD_METHOD 'append'
+LOAD_CONST 0
+CALL_METHOD 1
+POP_TOP
+LOAD_GLOBAL 'exit'
+LOAD_CONST 0
+CALL_FUNCTION 1
+POP_TOP" -> "ProgramGraphNode(9)
+JUMP_ABSOLUTE ProgramGraphNode";
+"ProgramGraphNode(9)
+JUMP_ABSOLUTE ProgramGraphNode" -> "ProgramGraphNode(1)
+LOAD_FAST 'math'
+LOAD_METHOD 'gcd'
+LOAD_FAST 'a'
+LOAD_FAST 's'
+CALL_METHOD 2
+STORE_FAST 'k'
+LOAD_FAST 's'
+LOAD_FAST 'k'
+INPLACE_SUBTRACT
+STORE_FAST 's'
+LOAD_FAST 's'
+LOAD_CONST 0
+COMPARE_OP EQ
+POP_JUMP_IF_FALSE ProgramGraphNode";
+}

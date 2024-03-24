@@ -1,0 +1,49 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+c4b_ret_list_bak/src_408/1/test_transformed_src_408.py .F...             [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "BBI"
+        list_0 = [str_0, str_0, str_0, str_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_408/1/test_transformed_src_408.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ('BBI', 'BBI', 'BBI', 'BBI')
+squarex = <function func.<locals>.squarex at 0x7f33e432e950>, condition = False
+
+    def func(*args):
+    
+    	rows = [list(args[0]) for x in range(4)]
+    
+    	def squarey(a, b):
+    	    if (rows[x][y] == rows[x][(y + b)] == rows[(x + a)][y] == rows[(x + a)][(y + b)]):
+    	        return True
+    	    else:
+    	        return False
+    
+    	def squarex(a):
+    	    condition = False
+    	    if (y > 0):
+    	        condition = squarey(a, (- 1))
+    	    if ((not condition) and (y < 3)):
+    	        condition = squarey(a, 1)
+    	    return condition
+    	condition = False
+    	for x in range(4):
+    	    for y in range(4):
+>   	        if (rows[x][y] == '.'):
+E            IndexError: list index out of range
+
+c4b_ret_list_bak/src_408/1/src_408.py:21: IndexError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_408/1/test_transformed_src_408.py::test_case_2 - ...
+========================= 1 failed, 4 passed in 0.08s ==========================

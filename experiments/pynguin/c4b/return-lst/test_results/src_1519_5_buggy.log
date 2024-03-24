@@ -1,0 +1,42 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+c4b_ret_list_bak/src_1519/5/test_transformed_src_1519.py F...            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bool_0 = True
+        set_0 = {bool_0}
+>       var_0 = module_0.func(*set_0)
+
+c4b_ret_list_bak/src_1519/5/test_transformed_src_1519.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (True,), n = 1
+
+    def func(*args):
+    
+    	n = int(args[0])
+    	for i in range(4, (n + 1)):
+    	    if ((n % i) == 0):
+    	        s = list(str(i))
+    	        flag = 0
+    	        for i in s:
+    	            if ((i != '4') and (i != '7')):
+    	                flag = 1
+    	                break
+    	        if (flag == 0):
+    	            return('YES')
+    	            break
+>   	if (flag == 1):
+E    UnboundLocalError: local variable 'flag' referenced before assignment
+
+c4b_ret_list_bak/src_1519/5/src_1519.py:15: UnboundLocalError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_1519/5/test_transformed_src_1519.py::test_case_0
+========================= 1 failed, 3 passed in 0.07s ==========================

@@ -1,0 +1,58 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 11 items
+
+c4b_ret_list_bak/src_2181/9/test_transformed_src_2181.py ..FF..F...F     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bool_0 = True
+        list_0 = [bool_0, bool_0]
+        var_0 = module_0.func(*list_0)
+        bytes_0 = b"`\xb9\xbc\xbf(\xc9~\x08"
+        var_1 = module_0.func(*bytes_0)
+>       var_2 = module_0.func(*var_1)
+E       TypeError: src_2181.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2181/9/test_transformed_src_2181.py:24: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bool_0 = False
+        list_0 = [bool_0, bool_0]
+        var_0 = module_0.func(*list_0)
+        bytes_0 = b"`\xb9\xbc\xbf(\xc9~\x08"
+        var_1 = module_0.func(*bytes_0)
+>       var_2 = module_0.func(*var_1)
+E       TypeError: src_2181.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2181/9/test_transformed_src_2181.py:34: TypeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bytes_0 = b"\x1a\xf1e\xae\xa4\xff"
+        var_0 = module_0.func(*bytes_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_2181.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2181/9/test_transformed_src_2181.py:56: TypeError
+_________________________________ test_case_11 _________________________________
+
+    def test_case_11():
+        bool_0 = True
+        list_0 = [bool_0, bool_0]
+        var_0 = module_0.func(*list_0)
+>       var_1 = module_0.func(*var_0)
+E       TypeError: src_2181.func() argument after * must be an iterable, not int
+
+c4b_ret_list_bak/src_2181/9/test_transformed_src_2181.py:84: TypeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2181/9/test_transformed_src_2181.py::test_case_2
+FAILED c4b_ret_list_bak/src_2181/9/test_transformed_src_2181.py::test_case_3
+FAILED c4b_ret_list_bak/src_2181/9/test_transformed_src_2181.py::test_case_7
+FAILED c4b_ret_list_bak/src_2181/9/test_transformed_src_2181.py::test_case_11
+========================= 4 failed, 7 passed in 0.10s ==========================

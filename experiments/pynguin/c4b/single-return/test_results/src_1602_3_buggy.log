@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+c4b_bak/src_1602/3/test_transformed_src_1602.py .F                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        list_0 = []
+        list_1 = [list_0, list_0, list_0]
+>       var_0 = module_0.func(*list_1)
+
+c4b_bak/src_1602/3/test_transformed_src_1602.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([], [], []), math = <module 'math' (built-in)>
+Counter = <class 'collections.Counter'>, reduce = <built-in function reduce>
+
+    def func(*args):
+    
+    	import math
+    	from collections import Counter
+    	from functools import reduce
+    	s = args[0]
+    	c = Counter(s).most_common()
+    	s1 = [v for (k, v) in c]
+    	c1 = Counter(s1).most_common()
+    	x = [k for (k, v) in c1]
+>   	gcd = reduce(math.gcd, x)
+E    TypeError: reduce() of empty iterable with no initial value
+
+c4b_bak/src_1602/3/src_1602.py:11: TypeError
+=========================== short test summary info ============================
+FAILED c4b_bak/src_1602/3/test_transformed_src_1602.py::test_case_1 - TypeErr...
+========================= 1 failed, 1 passed in 0.06s ==========================

@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 8 items
+
+c4b_ret_list_bak/src_2330/1/test_transformed_src_2330.py ..F..F..        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = ")V"
+        bytes_0 = b"\x0b"
+        tuple_0 = (str_0, bytes_0, str_0)
+        list_0 = [tuple_0, tuple_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_2330/1/test_transformed_src_2330.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ((')V', b'\x0b', ')V'), (')V', b'\x0b', ')V')), s = (')V', b'\x0b', ')V')
+
+    def func(*args):
+    
+    	s = args[0]
+>   	s = s.title()
+E    AttributeError: 'tuple' object has no attribute 'title'
+
+c4b_ret_list_bak/src_2330/1/src_2330.py:4: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        str_0 = "t"
+        bytes_0 = b"\xcdE@\x80r"
+        tuple_0 = (str_0, bytes_0, str_0)
+        list_0 = [tuple_0, tuple_0, tuple_0]
+>       var_0 = module_0.func(*list_0)
+
+c4b_ret_list_bak/src_2330/1/test_transformed_src_2330.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (('t', b'\xcdE@\x80r', 't'), ('t', b'\xcdE@\x80r', 't'), ('t', b'\xcdE@\x80r', 't'))
+s = ('t', b'\xcdE@\x80r', 't')
+
+    def func(*args):
+    
+    	s = args[0]
+>   	s = s.title()
+E    AttributeError: 'tuple' object has no attribute 'title'
+
+c4b_ret_list_bak/src_2330/1/src_2330.py:4: AttributeError
+=========================== short test summary info ============================
+FAILED c4b_ret_list_bak/src_2330/1/test_transformed_src_2330.py::test_case_3
+FAILED c4b_ret_list_bak/src_2330/1/test_transformed_src_2330.py::test_case_6
+========================= 2 failed, 6 passed in 0.08s ==========================
