@@ -129,6 +129,7 @@ if __name__ == '__main__':
 
     def check_test(self, problem_id, author_id):
 
+        logging.info(f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
         acc1, _, rej, test_case = self.prepare_data(problem_id, author_id)
         test_case = self.test_generator.generate_test(rej, acc1, test_case, None)
 
@@ -146,7 +147,7 @@ if __name__ == '__main__':
         logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
         if ("AssertionError" not in output) and ("temp_bug_qb.py" not in output):
             if self.is_iteravtive:
-                for _ in range(10):
+                for i in range(10):
                     input_data = data_list[0]["inputdata"]
                     if "\n" in input_data:
                         input_data = list(input_data.split("\n"))
@@ -163,7 +164,8 @@ if __name__ == '__main__':
                         process = "Timeout"
                     output = str(process)
                     print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
-                    logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n{output}")
+                    logging.info(f"###ITERATION###: {i}")
+                    logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
                     if ("AssertionError" in output) or ("temp_bug_qb.py" in output):
                         return "Found1"
             return str(process)
@@ -185,8 +187,8 @@ if __name__ == '__main__':
             ].values.tolist()
             
             for i in result:
-                print(self.check_test(i[1], i[0]))
-                logging.info(f"###CHECK_TEST###:\n\n{self.check_test(i[1], i[0])}")
+                # print(self.check_test(i[1], i[0]))
+                logging.info(f"###CHECK_TEST###:\n{self.check_test(i[1], i[0])}")
         else:
             self.check_test(1, 1)
         return "Done"
