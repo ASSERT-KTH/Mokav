@@ -8,7 +8,7 @@ class TestGenerator:
         self.config = config
         self.chatgpt = ChatGPT_2(
             instruction="You are a software test expert. You are given an original and a patched version of a program. You generate a test input that distinguishes between the two versions. Your generated test fails on the original version and passes on the patched version.",
-            cache_file_path="/Users/bardia/Downloads/APR_With_LLMs/cache.json"
+            cache_file_path="cache.json"
         )
         self.test_format = "{'inputdata': <inputdata>}"
         self.prompt_history = []

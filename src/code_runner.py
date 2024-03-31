@@ -46,9 +46,9 @@ class CodeRunner:
 
         if is_func:
             self.df_submissions = pd.read_csv(
-                "data2/2acc_copy/cb_submission_res_2acc_alt_new.csv"
+                "c4b_data/cb_submission_res_2acc_alt_new_stdin.csv"
             )
-            self.df_testcases = pd.read_csv("data2/2acc_copy/cb_testcase_res_2acc.csv")
+            self.df_testcases = pd.read_csv("c4b_data/cb_testcase_res_2acc.csv")
 
     def prepare_data(self, problem_id, author_id) -> tuple:
         df = self.df_submissions[
@@ -62,7 +62,8 @@ class CodeRunner:
         ]["func_sourceCode_yield"]
         acc1 = df.values.tolist()[0]
         rej = df.values.tolist()[1]
-        acc2 = df_acc_other.values.tolist()[0]
+        # acc2 = df_acc_other.values.tolist()[0]
+        acc2 = None
 
         df_testcase = self.df_testcases[self.df_testcases["problems_id"] == problem_id]
         test_cases = df_testcase[["inputdata"]].to_dict("records")
@@ -138,7 +139,7 @@ if __name__ == '__main__':
         self.create_unnitest(rej, acc1, data_list)
         try:
             process = subprocess.run(
-                ["python", f"temp_test_case.py"], capture_output=True, timeout=5
+                ["python3", f"temp_test_case.py"], capture_output=True, timeout=5
             )
         except subprocess.TimeoutExpired:
             process = "Timeout"
@@ -151,9 +152,10 @@ if __name__ == '__main__':
                     input_data = data_list[0]["inputdata"]
                     if "\n" in input_data:
                         input_data = list(input_data.split("\n"))
-
+                    print(input_data)
                     output_code = accepted_source(input_data)
                     test_case = self.test_generator.generate_test(rej, acc1, test_case, list(output_code)[0])
+                    print('check')
                     data_list = self.change_test_to_dict(test_case)
                     self.create_unnitest(rej, acc1, data_list)
                     try:
@@ -169,6 +171,8 @@ if __name__ == '__main__':
                     if ("AssertionError" in output) or ("temp_bug_qb.py" in output):
                         return "Found1"
             return str(process)
+        elif "Timeout" in output:
+            return "Timeout!!"
         else:
             return "Found1"
 
@@ -182,7 +186,7 @@ if __name__ == '__main__':
             )
             grouped = grouped.sort_values("diff_ratio", ascending=False)
             top_10_percent = int(len(grouped) * 0.1)
-            result = grouped.iloc[2 * top_10_percent : 3 * top_10_percent][
+            result = grouped[
                 ["author", "problems_id"]
             ].values.tolist()
             
