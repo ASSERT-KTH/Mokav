@@ -171,6 +171,6 @@ data
 
 data2
 
-cache.json
+cache*.json
 
 logging*.log
