@@ -1,15 +1,12 @@
 from src.test_generator import TestGenerator
+from src.utils import write_to_file, run_process
 import pandas as pd
 import subprocess
 import ast
 
-
 import time
 from functools import wraps
 import logging
-
-from temp_acc_qb import func as accepted_source
-
 
 
 def retry_decorator(max_retries=3, delay=1):
@@ -24,7 +21,8 @@ def retry_decorator(max_retries=3, delay=1):
                     print(f"Exception occurred: {e}")
                     logging.info(f"Exception occurred: {e}")
                     retry_count += 1
-                    print(f"Retrying... (Attempt {retry_count} of {max_retries})")
+                    print(
+                        f"Retrying... (Attempt {retry_count} of {max_retries})")
                     logging.info(
                         f"Retrying... (Attempt {retry_count} of {max_retries})"
                     )
@@ -46,9 +44,10 @@ class CodeRunner:
 
         if is_func:
             self.df_submissions = pd.read_csv(
-                "c4b_data/cb_submission_res_2acc_alt_new_stdin.csv"
+                "c4b_data/cb_submission_res_v_0_1.csv"
             )
-            self.df_testcases = pd.read_csv("c4b_data/cb_testcase_res_2acc.csv")
+            self.df_testcases = pd.read_csv(
+                "c4b_data/cb_testcase_res_2acc.csv")
 
     def prepare_data(self, problem_id, author_id) -> tuple:
         df = self.df_submissions[
@@ -70,11 +69,17 @@ class CodeRunner:
 
         return acc1, acc2, rej, test_cases[0]
 
-    def create_unnitest(self, buggy_code, acc_code, test_cases):
+    def create_unnitest(self, buggy_code, acc_code, test_cases, author_id=None, problem_id=None):
         with open(f"temp_acc_qb.py", "w") as f:
             f.write(acc_code)
+
+        write_to_file(
+            f"results_sample/sample_{author_id}_{problem_id}", "accepted.py", acc_code)
         with open(f"temp_bug_qb.py", "w") as f:
             f.write(buggy_code)
+
+        write_to_file(
+            f"results_sample/sample_{author_id}_{problem_id}", "buggy.py", buggy_code)
 
         unittest_str = f"""
 import unittest
@@ -110,67 +115,74 @@ if __name__ == '__main__':
 
         with open(f"temp_test_case.py", "w") as f:
             f.write(unittest_str)
-
-    def generate_bet_test(self, problem_id, author_id) -> list:
-        acc1, _, rej, test_case = self.prepare_data(problem_id, author_id)
-        test_cases = self.test_generator.generate_test(rej, acc1, test_case, None)
-        return test_cases
+        with open(f"results_sample/sample_{author_id}_{problem_id}/test.py", "w+") as f:
+            f.write(unittest_str)
+        write_to_file(
+            f"results_sample/sample_{author_id}_{problem_id}", "test.py", unittest_str)
 
     def change_test_to_dict(self, test_case) -> list:
         data_list = []
         for fault_test in test_case:
             if fault_test:
                 try:
-                    data_list.append(ast.literal_eval(fault_test[0].replace("python", "")))
+                    data_list.append(ast.literal_eval(
+                        fault_test[0].replace("python", "")))
                 except Exception as e:
                     print(e)
                     logging.info(f"ast.literal_eval error: {e}")
                     continue
         return data_list
 
+    def process_input_data(self, input_data):
+        if "\n" in input_data:
+            return list(input_data.split("\n"))
+        return input_data
+
+    def generate_test_and_run(self, rej, acc1, test_case, output_code, author_id, problem_id):
+        test_case = self.test_generator.generate_test(
+            rej, acc1, test_case, output_code, author_id=author_id, problem_id=problem_id)
+        data_list = self.change_test_to_dict(test_case)
+        self.create_unnitest(rej, acc1, data_list)
+        return str(run_process(["python", "temp_test_case.py"], 1))
+
+    def accepted_code_output(self, input_data):
+
+        with open(f"temp_acc_exec.py", "w") as f:
+            f.write(f'''
+from temp_acc_qb import func as accepted_source
+input_data = {input_data}
+output_code = accepted_source(input_data)
+output_code = list(output_code)
+print(output_code)
+''')
+        process_acc_exec = run_process(["python3", f"temp_acc_exec.py"], 5)
+        output_code = str(process_acc_exec.stdout.decode()).strip()
+        return output_code
+
     def check_test(self, problem_id, author_id):
 
-        logging.info(f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
+        logging.info(
+            f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
         acc1, _, rej, test_case = self.prepare_data(problem_id, author_id)
-        test_case = self.test_generator.generate_test(rej, acc1, test_case, None)
-
         data_list = self.change_test_to_dict(test_case)
-
-        self.create_unnitest(rej, acc1, data_list)
-        try:
-            process = subprocess.run(
-                ["python3", f"temp_test_case.py"], capture_output=True, timeout=5
-            )
-        except subprocess.TimeoutExpired:
-            process = "Timeout"
-        output = str(process)
+        output = self.generate_test_and_run(
+            rej, acc1, test_case, None, author_id, problem_id)
         print("###TEMP_TEST_PY_OUTPUT", output)
         logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
         if ("AssertionError" not in output) and ("temp_bug_qb.py" not in output):
             if self.is_iteravtive:
                 for i in range(10):
-                    input_data = data_list[0]["inputdata"]
-                    if "\n" in input_data:
-                        input_data = list(input_data.split("\n"))
-                    print(input_data)
-                    output_code = accepted_source(input_data)
-                    test_case = self.test_generator.generate_test(rej, acc1, test_case, list(output_code)[0])
-                    print('check')
-                    data_list = self.change_test_to_dict(test_case)
-                    self.create_unnitest(rej, acc1, data_list)
-                    try:
-                        process = subprocess.run(
-                            ["python", f"temp_test_case.py"], capture_output=True, timeout=1
-                        )
-                    except subprocess.TimeoutExpired:
-                        process = "Timeout"
-                    output = str(process)
+                    input_data = self.process_input_data(
+                        data_list[0]["inputdata"])
+                    output_code = self.accepted_code_output(input_data)
+                    output = self.generate_test_and_run(
+                        rej, acc1, test_case, output_code, author_id, problem_id)
                     print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
-                    logging.info(f"###ITERATION###: {i}")
+                    logging.info(f"###ITERATION###: {i + 1}")
                     logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
                     if ("AssertionError" in output) or ("temp_bug_qb.py" in output):
                         return "Found1"
-            return str(process)
+            return str(output)
         elif "Timeout" in output:
             return "Timeout!!"
         else:
@@ -180,19 +192,22 @@ if __name__ == '__main__':
     def run(self):
         if self.is_func:
             grouped = (
-                self.df_submissions.groupby(["author", "problems_id"])["diff_ratio"]
+                self.df_submissions.groupby(["author", "problems_id"])[
+                    "diff_ratio"]
                 .mean()
                 .reset_index()
             )
             grouped = grouped.sort_values("diff_ratio", ascending=False)
-            top_10_percent = int(len(grouped) * 0.1)
             result = grouped[
                 ["author", "problems_id"]
             ].values.tolist()
-            
-            for i in result:
-                # print(self.check_test(i[1], i[0]))
-                logging.info(f"###CHECK_TEST###:\n{self.check_test(i[1], i[0])}")
+
+            # for i in result:
+            #     # print(self.check_test(i[1], i[0]))
+            #     logging.info(
+            #         f"###CHECK_TEST###:\n{self.check_test(i[1], i[0])}")
+            logging.info(f"###CHECK_TEST###:\n{self.check_test(305, 27961)}")
+
         else:
             self.check_test(1, 1)
         return "Done"

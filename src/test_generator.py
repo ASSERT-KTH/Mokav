@@ -33,13 +33,14 @@ class TestGenerator:
         matches = re.findall(pattern, text, re.DOTALL)
         return "".join([match.strip() for match in matches])
 
-    def generate_test(self, buggy_code, accepted_code, existing_test=None, retry=False):
+    def generate_test(self, buggy_code, accepted_code, existing_test=None, retry_ouput=False, author_id=None, problem_id=None):
         responses = []
-        if retry:
-            prompt = f"Both versions give us {retry} as output. The output should be different. Please generate again"
+        if retry_ouput:
+            prompt = f"Both versions give us {retry_ouput} as output. The output should be different. Please generate again"
             chatgpt_resp = self.chatgpt.get_response(
-                new_question=prompt, previous_questions_and_answers=self.prompt_history
+                new_question=prompt, previous_questions_and_answers=self.prompt_history, author_id=author_id, problem_id=problem_id
             )
+            
             for i in range(10):
                 responses.append(chatgpt_resp[i])
             self.prompt_history.append((prompt, responses[-1]))
@@ -59,27 +60,29 @@ Generate a test input in Python dict format as follows:
 """
 
             if self.config == "BA":
-                chatgpt_resp = self.chatgpt.get_response(new_question=prompt)
+                chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
                 for i in range(10):
                     responses.append(chatgpt_resp[i])
             elif self.config == "BAD":
                 description = self.code_description(accepted_code)
                 prompt += f"  This is description of code: {description}"
-                chatgpt_resp = self.chatgpt.get_response(new_question=prompt)
+                chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
                 for i in range(10):
                     responses.append(chatgpt_resp[i])
             elif self.config == "BADT":
                 description = self.code_description(accepted_code)
                 prompt += f"  This is description: {description}  This is a passing test: ```python {existing_test}``` generate a diffret test case"
-                chatgpt_resp = self.chatgpt.get_response(new_question=prompt)
+                chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
                 for i in range(10):
                     responses.append(chatgpt_resp[i])
             elif self.config == "BAT":
                 prompt += f"  This is a passing test: {existing_test}"
-                chatgpt_resp = self.chatgpt.get_response(new_question=prompt)
+                chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
                 for i in range(10):
                     responses.append(chatgpt_resp[i])
             self.prompt_history.append((prompt, responses[-1]))
         print("###CHATRESP###", responses)
         logging.info(f"###CHATRESP###\n\n {responses}")
         return [self.extract_regex(str(response)) for response in responses]
+    
+    

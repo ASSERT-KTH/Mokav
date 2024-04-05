@@ -1,3 +1,4 @@
+from src.utils import write_to_file
 import openai
 import os
 import json
@@ -51,7 +52,7 @@ class ChatGPT_2():
             print("Error:", str(e))
             logging.info(f"###CHATGPT_ERROR###\n\n {str(e)}")
 
-    def get_response(self, new_question, previous_questions_and_answers=None):
+    def get_response(self, new_question, previous_questions_and_answers=None, author_id=None, problem_id=None):
         instruction = self.instruction
         messages = [
             {"role": "system", "content": instruction},
@@ -65,6 +66,8 @@ class ChatGPT_2():
         print("###Messages###\n\n", messages)
         logging.info(f"###CHATGPT_INITIAL_PROMPT###\n\n {messages}")
 
+        write_to_file(f"results_sample/sample_{author_id}_{problem_id}", "prompt.txt", f"\n\n {messages}\n\n")
+        
         prompt = "\n".join([msg['content'] for msg in messages])
         
         if prompt in self.cache:
