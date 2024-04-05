@@ -3,7 +3,7 @@ from src.code_runner import CodeRunner
 import logging
 from datetime import datetime
 
-logging.basicConfig(filename='logging_{:%Y-%m-%d}.log'.format(datetime.now()),
+logging.basicConfig(filename='logging_{:%Y-%m-%d-%H-%M}.log'.format(datetime.now()),
                     filemode='a',
                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                     datefmt='%H:%M:%S',
