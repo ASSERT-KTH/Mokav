@@ -7,6 +7,7 @@ import logging
 
 load_dotenv()
 openai.api_key = os.getenv("API_KEY")
+MAX_LENGTH = 39000
 
 class ChatGPT_2():
 
@@ -69,6 +70,11 @@ class ChatGPT_2():
         write_to_file(f"results_sample/sample_{author_id}_{problem_id}", "prompt.txt", f"\n\n {messages}\n\n")
         
         prompt = "\n".join([msg['content'] for msg in messages])
+
+        while len(prompt) > MAX_LENGTH:
+            # Remove messages from the start until the length is below the threshold
+            messages = messages[:3] + messages[5:]
+            prompt = "\n".join([msg['content'] for msg in messages])
         
         if prompt in self.cache:
             return self.cache[prompt]

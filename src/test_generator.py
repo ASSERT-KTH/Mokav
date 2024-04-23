@@ -55,7 +55,7 @@ class TestGenerator:
 The following is the patched version of the program: 
 ```python {accepted_code}```
 Generate a test input in Python dict format as follows:
-```python {self.test_format}```. The generated test input should be difference exposing, which means the following: when the test input is given to the original and patched versions, they should produce different outputs. Your output should not contain any explanation or '\n' character. 
+```python {self.test_format}```. The generated test input should be difference exposing, which means ```original_func(inputdata)!= patched_func(inputdata)```. This means when the test input is given to the original and patched versions, they should produce different outputs. Your output should not contain any explanation or '\n' character.
 
 """
 
@@ -84,5 +84,3 @@ Generate a test input in Python dict format as follows:
         print("###CHATRESP###", responses)
         logging.info(f"###CHATRESP###\n\n {responses}")
         return [self.extract_regex(str(response)) for response in responses]
-    
-    

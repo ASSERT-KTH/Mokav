@@ -1,38 +1,8 @@
 from src.test_generator import TestGenerator
 from src.utils import write_to_file, run_process
 import pandas as pd
-import subprocess
 import ast
-
-import time
-from functools import wraps
 import logging
-
-
-def retry_decorator(max_retries=3, delay=1):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            retry_count = 0
-            while retry_count < max_retries:
-                try:
-                    return func(*args, **kwargs)
-                except Exception as e:
-                    print(f"Exception occurred: {e}")
-                    logging.info(f"Exception occurred: {e}")
-                    retry_count += 1
-                    print(
-                        f"Retrying... (Attempt {retry_count} of {max_retries})")
-                    logging.info(
-                        f"Retrying... (Attempt {retry_count} of {max_retries})"
-                    )
-                    time.sleep(delay)
-            print(f"Max retries reached. Giving up.")
-            logging.info(f"Max retries reached. Giving up.")
-
-        return wrapper
-
-    return decorator
 
 
 class CodeRunner:
@@ -44,7 +14,7 @@ class CodeRunner:
 
         if is_func:
             self.df_submissions = pd.read_csv(
-                "c4b_data/cb_submission_res_v_0_1.csv"
+                "c4b_data/cb_submission_res_v_0_3.csv"
             )
             self.df_testcases = pd.read_csv(
                 "c4b_data/cb_testcase_res_2acc.csv")
@@ -53,12 +23,12 @@ class CodeRunner:
         df = self.df_submissions[
             (self.df_submissions["problems_id"] == problem_id)
             & (self.df_submissions["author"] == author_id)
-        ]["func_sourceCode_yield"]
+        ]["func_sourceCode_list_2"]
         df_acc_other = self.df_submissions[
             (self.df_submissions["verdicts_id"] == 1)
             & (self.df_submissions["problems_id"] == problem_id)
             & (self.df_submissions["author"] != author_id)
-        ]["func_sourceCode_yield"]
+        ]["func_sourceCode_list_2"]
         acc1 = df.values.tolist()[0]
         rej = df.values.tolist()[1]
         # acc2 = df_acc_other.values.tolist()[0]
@@ -83,8 +53,8 @@ class CodeRunner:
 
         unittest_str = f"""
 import unittest
-from temp_bug_qb import func as buggy_source
-from temp_acc_qb import func as accepted_source
+from temp_bug_qb import original_func as original_source
+from temp_acc_qb import patched_func as patched_source
 
 class TestFunctions(unittest.TestCase):
                 
@@ -101,7 +71,7 @@ class TestFunctions(unittest.TestCase):
 
     def test{i}(self):
         input_{i} = "{input_data}"
-        self.assertEqual(list(buggy_source(input_{i})), list(accepted_source(input_{i})))
+        self.assertEqual(original_source(input_{i}), patched_source(input_{i}))
             
 """
             )
@@ -143,15 +113,15 @@ if __name__ == '__main__':
             rej, acc1, test_case, output_code, author_id=author_id, problem_id=problem_id)
         data_list = self.change_test_to_dict(test_case)
         self.create_unnitest(rej, acc1, data_list)
-        return str(run_process(["python", "temp_test_case.py"], 1))
+        return str(run_process(["python", "temp_test_case.py"], 1)), data_list
 
     def accepted_code_output(self, input_data):
 
         with open(f"temp_acc_exec.py", "w") as f:
             f.write(f'''
-from temp_acc_qb import func as accepted_source
+from temp_acc_qb import patched_source as patched_source
 input_data = {input_data}
-output_code = accepted_source(input_data)
+output_code = patched_source(input_data)
 output_code = list(output_code)
 print(output_code)
 ''')
@@ -164,16 +134,16 @@ print(output_code)
         logging.info(
             f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
         acc1, _, rej, test_case = self.prepare_data(problem_id, author_id)
-        data_list = self.change_test_to_dict(test_case)
-        output = self.generate_test_and_run(
+        output, data_list = self.generate_test_and_run(
             rej, acc1, test_case, None, author_id, problem_id)
         print("###TEMP_TEST_PY_OUTPUT", output)
         logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
         if ("AssertionError" not in output) and ("temp_bug_qb.py" not in output):
             if self.is_iteravtive:
                 for i in range(10):
+                    print("data list", data_list)
                     input_data = self.process_input_data(
-                        data_list[0]["inputdata"])
+                        data_list[2]["inputdata"])
                     output_code = self.accepted_code_output(input_data)
                     output = self.generate_test_and_run(
                         rej, acc1, test_case, output_code, author_id, problem_id)
@@ -202,11 +172,11 @@ print(output_code)
                 ["author", "problems_id"]
             ].values.tolist()
 
-            # for i in result:
-            #     # print(self.check_test(i[1], i[0]))
-            #     logging.info(
-            #         f"###CHECK_TEST###:\n{self.check_test(i[1], i[0])}")
-            logging.info(f"###CHECK_TEST###:\n{self.check_test(305, 27961)}")
+            for i in result:
+                # print(self.check_test(i[1], i[0]))
+                logging.info(
+                    f"###CHECK_TEST###:\n{self.check_test(i[1], i[0])}")
+            # logging.info(f"###CHECK_TEST###:\n{self.check_test(1975, 60724)}")
 
         else:
             self.check_test(1, 1)

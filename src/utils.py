@@ -1,5 +1,9 @@
 import os
 import subprocess
+from functools import wraps
+import time
+import logging
+
 
 def write_to_file(directory, filename, content):
     """
@@ -7,7 +11,8 @@ def write_to_file(directory, filename, content):
     If the directory does not exist, it will be created.
     """
     try:
-        os.makedirs(directory, exist_ok=True)  # Create the directory if it doesn't exist
+        # Create the directory if it doesn't exist
+        os.makedirs(directory, exist_ok=True)
         filepath = os.path.join(directory, filename)
         with open(filepath, "w+") as f:
             f.write(content)
@@ -15,8 +20,35 @@ def write_to_file(directory, filename, content):
     except Exception as e:
         print(f"Error writing to file: {e}")
 
+
 def run_process(command, timeout):
-        try:
-            return subprocess.run(command, capture_output=True, timeout=timeout)
-        except subprocess.TimeoutExpired:
-            return "Timeout"
+    try:
+        return subprocess.run(command, capture_output=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        return "Timeout"
+
+
+def retry_decorator(max_retries=3, delay=1):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            retry_count = 0
+            while retry_count < max_retries:
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    print(f"Exception occurred: {e}")
+                    logging.info(f"Exception occurred: {e}")
+                    retry_count += 1
+                    print(
+                        f"Retrying... (Attempt {retry_count} of {max_retries})")
+                    logging.info(
+                        f"Retrying... (Attempt {retry_count} of {max_retries})"
+                    )
+                    time.sleep(delay)
+            print(f"Max retries reached. Giving up.")
+            logging.info(f"Max retries reached. Giving up.")
+
+        return wrapper
+
+    return decorator
