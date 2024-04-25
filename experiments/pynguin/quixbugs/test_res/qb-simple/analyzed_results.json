@@ -1,0 +1,222 @@
+{
+    "levenshtein": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "max_sublist_sum": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "next_palindrome": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "breadth_first_search": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "longest_common_subsequence": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "bitcount": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "kheapsort": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "next_permutation": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "reverse_linked_list": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "to_base": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "depth_first_search": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "possible_change": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "gcd": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "get_factors": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "shortest_path_length": {
+        "buggy_fail": true,
+        "correct_fail": true
+    },
+    "is_valid_parenthesization": {
+        "buggy_fail": true,
+        "correct_fail": true
+    },
+    "shunting_yard": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "detect_cycle": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "find_first_in_sorted": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "sqrt": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "powerset": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "pascal": {
+        "buggy_fail": true,
+        "correct_fail": true
+    },
+    "subsequences": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "topological_ordering": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "flatten": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "kth": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "shortest_paths": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "knapsack": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "lcs_length": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "rpn_eval": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "bucketsort": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "lis": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "hanoi": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "shortest_path_lengths": {
+        "buggy_fail": true,
+        "correct_fail": true
+    },
+    "mergesort": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "find_in_sorted": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "wrap": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "minimum_spanning_tree": {
+        "buggy_fail": true,
+        "correct_fail": false
+    },
+    "sieve": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "quicksort": {
+        "buggy_fail": false,
+        "correct_fail": false
+    },
+    "programs_cnt": 40,
+    "programs_with_buggy_fail_cnt": 25,
+    "programs_with_correct_fail_cnt": 4,
+    "programs_with_diff_detected_cnt": 21,
+    "programs_with_buggy_fail": [
+        "reverse_linked_list",
+        "sqrt",
+        "shortest_path_length",
+        "lcs_length",
+        "levenshtein",
+        "bitcount",
+        "knapsack",
+        "topological_ordering",
+        "possible_change",
+        "breadth_first_search",
+        "is_valid_parenthesization",
+        "find_first_in_sorted",
+        "shortest_paths",
+        "gcd",
+        "mergesort",
+        "minimum_spanning_tree",
+        "to_base",
+        "next_permutation",
+        "pascal",
+        "detect_cycle",
+        "lis",
+        "find_in_sorted",
+        "kth",
+        "shortest_path_lengths",
+        "longest_common_subsequence"
+    ],
+    "programs_with_correct_fail": [
+        "shortest_path_lengths",
+        "pascal",
+        "shortest_path_length",
+        "is_valid_parenthesization"
+    ],
+    "programs_with_diff_detected": [
+        "reverse_linked_list",
+        "sqrt",
+        "lcs_length",
+        "minimum_spanning_tree",
+        "levenshtein",
+        "bitcount",
+        "knapsack",
+        "to_base",
+        "next_permutation",
+        "longest_common_subsequence",
+        "topological_ordering",
+        "possible_change",
+        "detect_cycle",
+        "lis",
+        "find_in_sorted",
+        "kth",
+        "breadth_first_search",
+        "find_first_in_sorted",
+        "shortest_paths",
+        "gcd",
+        "mergesort"
+    ]
+}
