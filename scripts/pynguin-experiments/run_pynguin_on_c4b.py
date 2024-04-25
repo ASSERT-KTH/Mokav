@@ -9,7 +9,7 @@ def process(target_dir, module_name):
     if os.path.exists(f'{target_dir}/test_{module_name}.py'):
         return
     # print(f'Processing {target_dir}/test_{module_name}.py')
-    os.system(f'PYNGUIN_DANGER_AWARE=TRUE timeout 600 pynguin --project-path {target_dir}/ --output-path {target_dir}/ --module-name {module_name} 1>> {target_dir}/pynguin.log 2>> {target_dir}/pynguin.err')
+    os.system(f'PYNGUIN_DANGER_AWARE=TRUE pynguin --maximum-search-time 1500 --project-path {target_dir}/ --output-path {target_dir}/ --module-name {module_name} 1>> {target_dir}/pynguin.log 2>> {target_dir}/pynguin.err')
 
 def main(argv):
     pool = mp.Pool(1)
