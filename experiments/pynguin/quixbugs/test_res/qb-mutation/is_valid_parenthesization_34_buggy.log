@@ -1,0 +1,28 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+pynguin-qb-mutation-res/is_valid_parenthesization/34/test_transformed_is_valid_parenthesization.py . [ 20%]
+..F.                                                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "\x0bs`\\r HiA~B:S"
+        bytes_0 = b"\xda\xc1"
+        var_0 = module_0.is_valid_parenthesization(str_0)
+        assert var_0 is False
+        var_1 = module_0.is_valid_parenthesization(bytes_0)
+        assert var_1 is False
+        str_1 = "("
+        var_2 = module_0.is_valid_parenthesization(str_1)
+>       assert var_2 is False
+E       assert True is False
+
+pynguin-qb-mutation-res/is_valid_parenthesization/34/test_transformed_is_valid_parenthesization.py:38: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/is_valid_parenthesization/34/test_transformed_is_valid_parenthesization.py::test_case_3
+========================= 1 failed, 4 passed in 0.05s ==========================

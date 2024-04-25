@@ -1,0 +1,34 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-simple-res/lcs_length/40/test_transformed_lcs_length.py FF.   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "Z(c~z5AU<RitsS"
+        var_0 = module_0.lcs_length(str_0, str_0)
+>       assert var_0 == 14
+E       assert 1 == 14
+
+pynguin-qb-simple-res/lcs_length/40/test_transformed_lcs_length.py:11: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        tuple_0 = ()
+        var_0 = module_0.lcs_length(tuple_0, tuple_0)
+        assert var_0 == 0
+        str_0 = "Nb"
+        var_1 = module_0.lcs_length(str_0, str_0)
+>       assert var_1 == 2
+E       assert 1 == 2
+
+pynguin-qb-simple-res/lcs_length/40/test_transformed_lcs_length.py:24: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/lcs_length/40/test_transformed_lcs_length.py::test_case_0
+FAILED pynguin-qb-simple-res/lcs_length/40/test_transformed_lcs_length.py::test_case_1
+========================= 2 failed, 1 passed in 0.04s ==========================

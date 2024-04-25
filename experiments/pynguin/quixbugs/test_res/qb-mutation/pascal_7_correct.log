@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+pynguin-qb-mutation-res/pascal/7/test_transformed_pascal.py .F           [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        int_0 = 602
+        var_0 = module_0.pascal(int_0)
+>       var_1 = module_0.pascal(var_0)
+
+pynguin-qb-mutation-res/pascal/7/test_transformed_pascal.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1], [1, 5, 10, 10, 5, 1], ...]
+
+    def pascal(n):
+        rows = [[1]]
+>       for r in range(1, n):
+E       TypeError: 'list' object cannot be interpreted as an integer
+
+pynguin-qb-mutation-res/pascal/7/pascal.py:4: TypeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/pascal/7/test_transformed_pascal.py::test_case_1
+========================= 1 failed, 1 passed in 0.12s ==========================

@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+pynguin-qb-mutation-res/sqrt/45/test_transformed_sqrt.py F.              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        float_0 = 1419.5747
+        var_0 = module_0.sqrt(float_0, float_0)
+>       assert var_0 == pytest.approx(40.27762394259008, abs=0.01, rel=0.01)
+E       assert 709.78735 == 40.27762394259008 ± 4.0e-01
+E         comparison failed
+E         Obtained: 709.78735
+E         Expected: 40.27762394259008 ± 4.0e-01
+
+pynguin-qb-mutation-res/sqrt/45/test_transformed_sqrt.py:10: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/sqrt/45/test_transformed_sqrt.py::test_case_0
+========================= 1 failed, 1 passed in 0.05s ==========================

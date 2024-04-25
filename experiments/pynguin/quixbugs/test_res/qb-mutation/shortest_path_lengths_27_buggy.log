@@ -1,0 +1,34 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+pynguin-qb-mutation-res/shortest_path_lengths/27/test_transformed_shortest_path_lengths.py . [ 20%]
+...F                                                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        int_0 = 104
+        dict_0 = {}
+        var_0 = module_0.shortest_path_lengths(int_0, dict_0)
+        bool_0 = False
+>       var_1 = module_0.shortest_path_lengths(bool_0, int_0)
+
+pynguin-qb-mutation-res/shortest_path_lengths/27/test_transformed_shortest_path_lengths.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = False, length_by_edge = 104
+
+    def shortest_path_lengths(n, length_by_edge):
+        length_by_path = defaultdict(lambda: float('inf'))
+        length_by_path.update({(i, i): 0 for i in range(n)})
+>       length_by_path.update(length_by_edge)
+E       TypeError: 'int' object is not iterable
+
+pynguin-qb-mutation-res/shortest_path_lengths/27/shortest_path_lengths.py:6: TypeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/shortest_path_lengths/27/test_transformed_shortest_path_lengths.py::test_case_4
+========================= 1 failed, 4 passed in 1.04s ==========================

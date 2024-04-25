@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+pynguin-qb-mutation-res/kth/48/test_transformed_kth.py .F..              [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"\xf1\x05`4"
+        bool_0 = True
+        var_0 = module_0.kth(bytes_0, bool_0)
+>       assert var_0 == 52
+E       assert 96 == 52
+
+pynguin-qb-mutation-res/kth/48/test_transformed_kth.py:19: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/kth/48/test_transformed_kth.py::test_case_1 - ...
+========================= 1 failed, 3 passed in 0.03s ==========================

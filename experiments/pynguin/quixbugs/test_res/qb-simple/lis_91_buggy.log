@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+pynguin-qb-simple-res/lis/91/test_transformed_lis.py .F..                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"/\xfe#\x01\xc5\x8b\xea.\x9c\x99JV\x99\xfc\x9f\xea\xc1\x08\xcaT"
+        bytes_1 = b"\xa8u"
+        var_0 = module_0.lis(bytes_0)
+>       assert var_0 == 8
+E       assert 3 == 8
+
+pynguin-qb-simple-res/lis/91/test_transformed_lis.py:22: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/lis/91/test_transformed_lis.py::test_case_1 - as...
+========================= 1 failed, 3 passed in 0.05s ==========================

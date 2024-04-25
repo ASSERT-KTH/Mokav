@@ -1,0 +1,8 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+pynguin-qb-mutation-res/find_first_in_sorted/84/test_transformed_find_first_in_sorted.py F [ 16%]
+F.

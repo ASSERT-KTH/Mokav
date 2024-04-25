@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+pynguin-qb-mutation-res/lis/33/test_transformed_lis.py FF                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "jm0iPu,&!CgeD*/(W$'"
+        var_0 = module_0.lis(str_0)
+>       assert var_0 == 4
+E       assert 3 == 4
+
+pynguin-qb-mutation-res/lis/33/test_transformed_lis.py:10: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"\x08\x87\x8a\xef\xb0YY\xa1|\x8e\x91y5\x02&"
+        bytes_1 = b""
+        str_0 = ",qb'"
+        var_0 = module_0.lis(str_0)
+>       assert var_0 == 2
+E       assert 1 == 2
+
+pynguin-qb-mutation-res/lis/33/test_transformed_lis.py:19: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/lis/33/test_transformed_lis.py::test_case_0 - ...
+FAILED pynguin-qb-mutation-res/lis/33/test_transformed_lis.py::test_case_1 - ...
+============================== 2 failed in 0.04s ===============================

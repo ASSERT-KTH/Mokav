@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+pynguin-qb-simple-res/sqrt/67/test_transformed_sqrt.py .F                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        int_0 = 2477
+        var_0 = module_0.sqrt(int_0, int_0)
+>       assert var_0 == pytest.approx(57.99020576733768, abs=0.01, rel=0.01)
+E       assert 1238.5 == 57.99020576733768 ± 5.8e-01
+E         comparison failed
+E         Obtained: 1238.5
+E         Expected: 57.99020576733768 ± 5.8e-01
+
+pynguin-qb-simple-res/sqrt/67/test_transformed_sqrt.py:22: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/sqrt/67/test_transformed_sqrt.py::test_case_1 - ...
+========================= 1 failed, 1 passed in 0.05s ==========================

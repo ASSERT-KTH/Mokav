@@ -1,0 +1,38 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-simple-res/minimum_spanning_tree/44/test_transformed_minimum_spanning_tree.py F [ 33%]
+..                                                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"e\x1e"
+        dict_0 = {bytes_0: bytes_0}
+>       var_0 = module_0.minimum_spanning_tree(dict_0)
+
+pynguin-qb-simple-res/minimum_spanning_tree/44/test_transformed_minimum_spanning_tree.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+weight_by_edge = {b'e\x1e': b'e\x1e'}
+
+    def minimum_spanning_tree(weight_by_edge):
+        group_by_node = {}
+        mst_edges = set()
+    
+        for edge in sorted(weight_by_edge, key=weight_by_edge.__getitem__):
+            u, v = edge
+            if group_by_node.setdefault(u, {u}) != group_by_node.setdefault(v, {v}):
+                mst_edges.add(edge)
+                group_by_node[u].update(group_by_node[v])
+>               for node in group_by_node[v]:
+E               RuntimeError: Set changed size during iteration
+
+pynguin-qb-simple-res/minimum_spanning_tree/44/minimum_spanning_tree.py:11: RuntimeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/minimum_spanning_tree/44/test_transformed_minimum_spanning_tree.py::test_case_0
+========================= 1 failed, 2 passed in 0.04s ==========================

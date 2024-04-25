@@ -1,0 +1,25 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-mutation-res/lcs_length/64/test_transformed_lcs_length.py F.. [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        int_0 = -2844
+        str_0 = "0z-q1Nc]1GRm=m "
+        tuple_0 = (int_0,)
+        complex_0 = 1534.326 - 2687.03271j
+        tuple_1 = (int_0, str_0, tuple_0, complex_0)
+        var_0 = module_0.lcs_length(tuple_1, tuple_1)
+>       assert var_0 == 4
+E       assert 1 == 4
+
+pynguin-qb-mutation-res/lcs_length/64/test_transformed_lcs_length.py:14: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/lcs_length/64/test_transformed_lcs_length.py::test_case_0
+========================= 1 failed, 2 passed in 0.04s ==========================

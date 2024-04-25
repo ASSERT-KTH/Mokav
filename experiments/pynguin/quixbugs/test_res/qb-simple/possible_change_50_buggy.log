@@ -1,0 +1,565 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+pynguin-qb-simple-res/possible_change/50/test_transformed_possible_change.py . [ 20%]
+...F                                                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        int_0 = -1099
+        var_0 = module_0.possible_change(int_0, int_0)
+        assert var_0 == 0
+        var_1 = module_0.possible_change(var_0, int_0)
+        assert var_1 == 0
+        var_2 = module_0.possible_change(var_1, var_1)
+        assert var_2 == 1
+        int_1 = 259
+        object_0 = module_0.possible_change(var_0, var_0)
+        assert object_0 == 1
+        list_0 = [int_1, object_0]
+>       var_3 = module_0.possible_change(list_0, int_1)
+
+pynguin-qb-simple-res/possible_change/50/test_transformed_possible_change.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+pynguin-qb-simple-res/possible_change/50/possible_change.py:9: in possible_change
+    return possible_change(coins, total - first) + possible_change(rest, total)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+coins = [], total = 1
+
+    def possible_change(coins, total):
+        if total == 0:
+            return 1
+        if total < 0:
+            return 0
+    
+>       first, *rest = coins
+E       ValueError: not enough values to unpack (expected at least 1, got 0)
+
+pynguin-qb-simple-res/possible_change/50/possible_change.py:8: ValueError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/possible_change/50/test_transformed_possible_change.py::test_case_4
+========================= 1 failed, 4 passed in 0.18s ==========================

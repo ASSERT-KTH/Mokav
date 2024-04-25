@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+pynguin-qb-simple-res/to_base/66/test_transformed_to_base.py ...F        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        regex_flag_0 = module_1.RegexFlag.MULTILINE
+        var_0 = module_0.to_base(regex_flag_0, regex_flag_0)
+>       assert var_0 == "10"
+E       AssertionError: assert '01' == '10'
+E         - 10
+E         + 01
+
+pynguin-qb-simple-res/to_base/66/test_transformed_to_base.py:33: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/to_base/66/test_transformed_to_base.py::test_case_3
+========================= 1 failed, 3 passed in 0.06s ==========================

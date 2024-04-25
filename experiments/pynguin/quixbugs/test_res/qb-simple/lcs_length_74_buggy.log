@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-simple-res/lcs_length/74/test_transformed_lcs_length.py FF.   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"e+\xb1!\x05\xe0WU\rt\xa8\xa6R\x9f\x92\xe9&\x1d2"
+        var_0 = module_0.lcs_length(bytes_0, bytes_0)
+>       assert var_0 == 19
+E       assert 1 == 19
+
+pynguin-qb-simple-res/lcs_length/74/test_transformed_lcs_length.py:11: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        bytes_0 = b"\xc0\x0e\xe9\x90q\xa4\xbf\x04%\xaa\xb2\xb18\x04"
+        var_0 = module_0.lcs_length(bytes_0, bytes_0)
+>       assert var_0 == 14
+E       assert 1 == 14
+
+pynguin-qb-simple-res/lcs_length/74/test_transformed_lcs_length.py:23: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/lcs_length/74/test_transformed_lcs_length.py::test_case_0
+FAILED pynguin-qb-simple-res/lcs_length/74/test_transformed_lcs_length.py::test_case_1
+========================= 2 failed, 1 passed in 0.04s ==========================

@@ -1,8 +1,0 @@
-============================= test session starts ==============================
-platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
-rootdir: /home/khashayar/projs/det-gen
-collected 6 items
-
-pynguin-res/shunting_yard/7/test_transformed_shunting_yard.py ......     [100%]
-
-============================== 6 passed in 0.02s ===============================

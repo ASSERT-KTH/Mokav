@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 1 item
+
+pynguin-qb-mutation-res/lis/8/test_transformed_lis.py F                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "J2QH=%S\x0bL.P|c#^Pq["
+        var_0 = module_0.lis(str_0)
+>       assert var_0 == 6
+E       assert 4 == 6
+
+pynguin-qb-mutation-res/lis/8/test_transformed_lis.py:9: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/lis/8/test_transformed_lis.py::test_case_0 - a...
+============================== 1 failed in 0.03s ===============================

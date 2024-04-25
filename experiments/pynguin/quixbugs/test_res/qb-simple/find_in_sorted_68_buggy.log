@@ -1,0 +1,59 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+pynguin-qb-simple-res/find_in_sorted/68/test_transformed_find_in_sorted.py F [ 50%]
+F                                                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        str_0 = "\n~f"
+>       var_0 = module_0.find_in_sorted(str_0, str_0)
+
+pynguin-qb-simple-res/find_in_sorted/68/test_transformed_find_in_sorted.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:13: in find_in_sorted
+    return binsearch(0, len(arr))
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:7: in binsearch
+    return binsearch(start, mid)
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:9: in binsearch
+    return binsearch(mid, end)
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:9: in binsearch
+    return binsearch(mid, end)
+E   RecursionError: maximum recursion depth exceeded in comparison
+!!! Recursion detected (same locals & position)
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = "\na4tO(;]tm;\r5~-mzD"
+        list_0 = [str_0, str_0, str_0, str_0]
+        var_0 = module_0.find_in_sorted(list_0, str_0)
+        assert var_0 == 2
+>       var_1 = module_0.find_in_sorted(str_0, str_0)
+
+pynguin-qb-simple-res/find_in_sorted/68/test_transformed_find_in_sorted.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:13: in find_in_sorted
+    return binsearch(0, len(arr))
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:7: in binsearch
+    return binsearch(start, mid)
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:7: in binsearch
+    return binsearch(start, mid)
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:7: in binsearch
+    return binsearch(start, mid)
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:7: in binsearch
+    return binsearch(start, mid)
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:9: in binsearch
+    return binsearch(mid, end)
+pynguin-qb-simple-res/find_in_sorted/68/find_in_sorted.py:9: in binsearch
+    return binsearch(mid, end)
+E   RecursionError: maximum recursion depth exceeded in comparison
+!!! Recursion detected (same locals & position)
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/find_in_sorted/68/test_transformed_find_in_sorted.py::test_case_0
+FAILED pynguin-qb-simple-res/find_in_sorted/68/test_transformed_find_in_sorted.py::test_case_1
+============================== 2 failed in 0.06s ===============================

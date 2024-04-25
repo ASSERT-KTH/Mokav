@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-mutation-res/lis/71/test_transformed_lis.py F.F               [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        bytes_0 = b"\xde4\x81\xc2\x9a\xd0\x7f;\xc7\x86\x8e\xfa\x7f\x00\xf7\xfd\xea=\x8a"
+        var_0 = module_0.lis(bytes_0)
+>       assert var_0 == 6
+E       assert 3 == 6
+
+pynguin-qb-mutation-res/lis/71/test_transformed_lis.py:12: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = ";tXXK4&Qv}5?X.i65"
+        var_0 = module_0.lis(str_0)
+>       assert var_0 == 5
+E       assert 3 == 5
+
+pynguin-qb-mutation-res/lis/71/test_transformed_lis.py:27: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/lis/71/test_transformed_lis.py::test_case_0 - ...
+FAILED pynguin-qb-mutation-res/lis/71/test_transformed_lis.py::test_case_2 - ...
+========================= 2 failed, 1 passed in 0.04s ==========================

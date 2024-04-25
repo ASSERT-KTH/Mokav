@@ -1,0 +1,31 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-simple-res/pascal/80/test_transformed_pascal.py ..F           [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        float_0 = -1053.58
+        int_0 = 610
+        var_0 = module_0.pascal(int_0)
+>       var_1 = module_0.pascal(float_0)
+
+pynguin-qb-simple-res/pascal/80/test_transformed_pascal.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = -1053.58
+
+    def pascal(n):
+        rows = [[1]]
+>       for r in range(1, n):
+E       TypeError: 'float' object cannot be interpreted as an integer
+
+pynguin-qb-simple-res/pascal/80/pascal.py:4: TypeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/pascal/80/test_transformed_pascal.py::test_case_2
+========================= 1 failed, 2 passed in 0.12s ==========================

@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+pynguin-qb-mutation-res/reverse_linked_list/12/test_transformed_reverse_linked_list.py . [ 25%]
+..F                                                                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "w#lI"
+        none_type_0 = None
+        var_0 = module_0.reverse_linked_list(none_type_0)
+        list_0 = [str_0, str_0, str_0, str_0]
+        node_0 = module_1.Node(successor=list_0)
+        tuple_0 = (node_0,)
+        var_1 = module_0.reverse_linked_list(var_0)
+        node_1 = module_1.Node(incoming_nodes=tuple_0, outgoing_nodes=node_0)
+        node_2 = module_1.Node(successors=var_1)
+        var_2 = module_0.reverse_linked_list(node_1)
+>       assert f"{type(var_2).__module__}.{type(var_2).__qualname__}" == "node.Node"
+E       AssertionError: assert 'builtins.NoneType' == 'node.Node'
+E         - node.Node
+E         + builtins.NoneType
+
+pynguin-qb-mutation-res/reverse_linked_list/12/test_transformed_reverse_linked_list.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/reverse_linked_list/12/test_transformed_reverse_linked_list.py::test_case_3
+========================= 1 failed, 3 passed in 0.05s ==========================

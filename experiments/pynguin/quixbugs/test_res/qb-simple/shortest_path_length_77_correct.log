@@ -1,0 +1,41 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 9 items
+
+pynguin-qb-simple-res/shortest_path_length/77/test_transformed_shortest_path_length.py . [ 11%]
+F.......                                                                 [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        list_0 = []
+        none_type_0 = None
+        node_0 = module_1.Node(list_0, list_0, list_0, none_type_0)
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value == []
+        assert node_0.successor == []
+        assert node_0.successors == []
+        assert node_0.predecessors is None
+        assert node_0.incoming_nodes == []
+        assert node_0.outgoing_nodes == []
+        set_0 = {node_0, node_0, none_type_0}
+        list_1 = [set_0, node_0, set_0, list_0]
+>       var_0 = module_0.get(list_1, none_type_0)
+
+pynguin-qb-simple-res/shortest_path_length/77/test_transformed_shortest_path_length.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+node_heap = [{None, <node.Node object at 0x7ff35f4587f0>}, <node.Node object at 0x7ff35f4587f0>, {None, <node.Node object at 0x7ff35f4587f0>}, []]
+wanted_node = None
+
+    def get(node_heap, wanted_node):
+>       for dist, node in node_heap:
+E       TypeError: cannot unpack non-iterable Node object
+
+pynguin-qb-simple-res/shortest_path_length/77/shortest_path_length.py:31: TypeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/shortest_path_length/77/test_transformed_shortest_path_length.py::test_case_1
+========================= 1 failed, 8 passed in 0.05s ==========================

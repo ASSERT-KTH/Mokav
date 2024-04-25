@@ -1,0 +1,45 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 8 items
+
+pynguin-qb-mutation-res/topological_ordering/54/test_transformed_topological_ordering.py . [ 12%]
+......F                                                                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        set_0 = set()
+        none_type_0 = None
+        set_1 = {none_type_0, none_type_0}
+        none_type_1 = None
+        node_0 = module_1.Node(
+            none_type_0,
+            predecessors=set_0,
+            incoming_nodes=set_1,
+            outgoing_nodes=none_type_1,
+        )
+        tuple_0 = (node_0, node_0, node_0)
+        node_1 = module_1.Node(tuple_0, successors=node_0, outgoing_nodes=tuple_0)
+        dict_0 = {node_1: node_0}
+>       var_0 = module_0.topological_ordering(dict_0)
+
+pynguin-qb-mutation-res/topological_ordering/54/test_transformed_topological_ordering.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+nodes = {<node.Node object at 0x7fc3a1f9a2c0>: <node.Node object at 0x7fc3a1f9a4a0>}
+
+    def topological_ordering(nodes):
+        ordered_nodes = [node for node in nodes if not node.incoming_nodes]
+    
+        for node in ordered_nodes:
+            for nextnode in node.outgoing_nodes:
+>               if set(ordered_nodes).issuperset(nextnode.outgoing_nodes) and nextnode not in ordered_nodes:
+E               TypeError: 'NoneType' object is not iterable
+
+pynguin-qb-mutation-res/topological_ordering/54/topological_ordering.py:6: TypeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/topological_ordering/54/test_transformed_topological_ordering.py::test_case_7
+========================= 1 failed, 7 passed in 0.04s ==========================

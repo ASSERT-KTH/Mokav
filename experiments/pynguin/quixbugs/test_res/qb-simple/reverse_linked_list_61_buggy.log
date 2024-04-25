@@ -1,0 +1,82 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-simple-res/reverse_linked_list/61/test_transformed_reverse_linked_list.py F [ 33%]
+FF                                                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        node_0 = module_0.Node()
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value is None
+        assert node_0.successor is None
+        assert node_0.successors == []
+        assert node_0.predecessors == []
+        assert node_0.incoming_nodes == []
+        assert node_0.outgoing_nodes == []
+        var_0 = module_1.reverse_linked_list(node_0)
+>       assert f"{type(var_0).__module__}.{type(var_0).__qualname__}" == "node.Node"
+E       AssertionError: assert 'builtins.NoneType' == 'node.Node'
+E         - node.Node
+E         + builtins.NoneType
+
+pynguin-qb-simple-res/reverse_linked_list/61/test_transformed_reverse_linked_list.py:18: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        none_type_0 = None
+        var_0 = module_1.reverse_linked_list(none_type_0)
+        node_0 = module_0.Node()
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value is None
+        assert node_0.successor is None
+        assert node_0.successors == []
+        assert node_0.predecessors == []
+        assert node_0.incoming_nodes == []
+        assert node_0.outgoing_nodes == []
+        var_1 = module_1.reverse_linked_list(node_0)
+>       assert f"{type(var_1).__module__}.{type(var_1).__qualname__}" == "node.Node"
+E       AssertionError: assert 'builtins.NoneType' == 'node.Node'
+E         - node.Node
+E         + builtins.NoneType
+
+pynguin-qb-simple-res/reverse_linked_list/61/test_transformed_reverse_linked_list.py:39: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        none_type_0 = None
+        var_0 = module_1.reverse_linked_list(none_type_0)
+        node_0 = module_0.Node()
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value is None
+        assert node_0.successor is None
+        assert node_0.successors == []
+        assert node_0.predecessors == []
+        assert node_0.incoming_nodes == []
+        assert node_0.outgoing_nodes == []
+        str_0 = 'a[-PQg"A7#fet'
+        node_1 = module_0.Node(successor=str_0)
+        assert f"{type(node_1).__module__}.{type(node_1).__qualname__}" == "node.Node"
+        assert node_1.value is None
+        assert node_1.successor == 'a[-PQg"A7#fet'
+        assert node_1.successors == []
+        assert node_1.predecessors == []
+        assert node_1.incoming_nodes == []
+        assert node_1.outgoing_nodes == []
+        var_1 = module_1.reverse_linked_list(node_0)
+>       assert f"{type(var_1).__module__}.{type(var_1).__qualname__}" == "node.Node"
+E       AssertionError: assert 'builtins.NoneType' == 'node.Node'
+E         - node.Node
+E         + builtins.NoneType
+
+pynguin-qb-simple-res/reverse_linked_list/61/test_transformed_reverse_linked_list.py:70: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/reverse_linked_list/61/test_transformed_reverse_linked_list.py::test_case_0
+FAILED pynguin-qb-simple-res/reverse_linked_list/61/test_transformed_reverse_linked_list.py::test_case_1
+FAILED pynguin-qb-simple-res/reverse_linked_list/61/test_transformed_reverse_linked_list.py::test_case_2
+============================== 3 failed in 0.08s ===============================

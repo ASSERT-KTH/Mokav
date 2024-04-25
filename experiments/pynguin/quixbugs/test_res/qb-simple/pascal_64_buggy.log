@@ -1,0 +1,34 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 2 items
+
+pynguin-qb-simple-res/pascal/64/test_transformed_pascal.py .F            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        int_0 = 299
+        str_0 = "D>"
+>       var_0 = module_0.pascal(int_0)
+
+pynguin-qb-simple-res/pascal/64/test_transformed_pascal.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = 299
+
+    def pascal(n):
+        rows = [[1]]
+        for r in range(1, n):
+            row = []
+            for c in range(0, r):
+                upleft = rows[r - 1][c - 1] if c > 0 else 0
+>               upright = rows[r - 1][c] if c < r else 0
+E               IndexError: list index out of range
+
+pynguin-qb-simple-res/pascal/64/pascal.py:8: IndexError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/pascal/64/test_transformed_pascal.py::test_case_1
+========================= 1 failed, 1 passed in 0.03s ==========================

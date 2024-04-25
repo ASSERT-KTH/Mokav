@@ -1,0 +1,45 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+pynguin-qb-mutation-res/topological_ordering/74/test_transformed_topological_ordering.py . [ 16%]
+....F                                                                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        dict_0 = {}
+        none_type_0 = None
+        dict_1 = {none_type_0: none_type_0}
+        none_type_1 = None
+        node_0 = module_1.Node(
+            none_type_0,
+            predecessors=dict_0,
+            incoming_nodes=dict_1,
+            outgoing_nodes=none_type_1,
+        )
+        list_0 = [node_0, node_0]
+        node_1 = module_1.Node(list_0, dict_0, node_0, outgoing_nodes=list_0)
+        tuple_0 = (node_1,)
+>       var_0 = module_0.topological_ordering(tuple_0)
+
+pynguin-qb-mutation-res/topological_ordering/74/test_transformed_topological_ordering.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+nodes = (<node.Node object at 0x7fc40988dd80>,)
+
+    def topological_ordering(nodes):
+        ordered_nodes = [node for node in nodes if not node.incoming_nodes]
+    
+        for node in ordered_nodes:
+            for nextnode in node.outgoing_nodes:
+>               if set(ordered_nodes).issuperset(nextnode.outgoing_nodes) and nextnode not in ordered_nodes:
+E               TypeError: 'NoneType' object is not iterable
+
+pynguin-qb-mutation-res/topological_ordering/74/topological_ordering.py:6: TypeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/topological_ordering/74/test_transformed_topological_ordering.py::test_case_5
+========================= 1 failed, 5 passed in 0.04s ==========================

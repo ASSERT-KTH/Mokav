@@ -1,0 +1,100 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-simple-res/detect_cycle/27/test_transformed_detect_cycle.py F [ 33%]
+.F                                                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        node_0 = module_0.Node()
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value is None
+        assert node_0.successor is None
+        assert node_0.successors == []
+        assert node_0.predecessors == []
+        assert node_0.incoming_nodes == []
+        assert node_0.outgoing_nodes == []
+        node_1 = module_0.Node(successor=node_0, predecessors=node_0, outgoing_nodes=node_0)
+        assert f"{type(node_1).__module__}.{type(node_1).__qualname__}" == "node.Node"
+        assert node_1.value is None
+        assert (
+            f"{type(node_1.successor).__module__}.{type(node_1.successor).__qualname__}"
+            == "node.Node"
+        )
+        assert node_1.successors == []
+        assert (
+            f"{type(node_1.predecessors).__module__}.{type(node_1.predecessors).__qualname__}"
+            == "node.Node"
+        )
+        assert node_1.incoming_nodes == []
+        assert (
+            f"{type(node_1.outgoing_nodes).__module__}.{type(node_1.outgoing_nodes).__qualname__}"
+            == "node.Node"
+        )
+>       var_0 = module_1.detect_cycle(node_1)
+
+pynguin-qb-simple-res/detect_cycle/27/test_transformed_detect_cycle.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+node = <node.Node object at 0x7fc57db015d0>
+
+    def detect_cycle(node):
+        hare = tortoise = node
+    
+        while True:
+>           if hare.successor is None:
+E           AttributeError: 'NoneType' object has no attribute 'successor'
+
+pynguin-qb-simple-res/detect_cycle/27/detect_cycle.py:5: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        node_0 = module_0.Node()
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value is None
+        assert node_0.successor is None
+        assert node_0.successors == []
+        assert node_0.predecessors == []
+        assert node_0.incoming_nodes == []
+        assert node_0.outgoing_nodes == []
+        node_1 = module_0.Node(successor=node_0, predecessors=node_0, outgoing_nodes=node_0)
+        assert f"{type(node_1).__module__}.{type(node_1).__qualname__}" == "node.Node"
+        assert node_1.value is None
+        assert (
+            f"{type(node_1.successor).__module__}.{type(node_1.successor).__qualname__}"
+            == "node.Node"
+        )
+        assert node_1.successors == []
+        assert (
+            f"{type(node_1.predecessors).__module__}.{type(node_1.predecessors).__qualname__}"
+            == "node.Node"
+        )
+        assert node_1.incoming_nodes == []
+        assert (
+            f"{type(node_1.outgoing_nodes).__module__}.{type(node_1.outgoing_nodes).__qualname__}"
+            == "node.Node"
+        )
+>       var_0 = module_1.detect_cycle(node_1)
+
+pynguin-qb-simple-res/detect_cycle/27/test_transformed_detect_cycle.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+node = <node.Node object at 0x7fc57db156f0>
+
+    def detect_cycle(node):
+        hare = tortoise = node
+    
+        while True:
+>           if hare.successor is None:
+E           AttributeError: 'NoneType' object has no attribute 'successor'
+
+pynguin-qb-simple-res/detect_cycle/27/detect_cycle.py:5: AttributeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/detect_cycle/27/test_transformed_detect_cycle.py::test_case_0
+FAILED pynguin-qb-simple-res/detect_cycle/27/test_transformed_detect_cycle.py::test_case_2
+========================= 2 failed, 1 passed in 0.07s ==========================

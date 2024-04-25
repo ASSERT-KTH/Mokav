@@ -1,0 +1,84 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+pynguin-qb-simple-res/reverse_linked_list/4/test_transformed_reverse_linked_list.py . [ 25%]
+.FF                                                                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        none_type_0 = None
+        bool_0 = False
+        node_0 = module_1.Node(
+            successor=none_type_0,
+            successors=bool_0,
+            incoming_nodes=none_type_0,
+            outgoing_nodes=bool_0,
+        )
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value is None
+        assert node_0.successor is None
+        assert node_0.successors is False
+        assert node_0.predecessors == []
+        assert node_0.incoming_nodes is None
+        assert node_0.outgoing_nodes is False
+        var_0 = module_0.reverse_linked_list(node_0)
+>       assert f"{type(var_0).__module__}.{type(var_0).__qualname__}" == "node.Node"
+E       AssertionError: assert 'builtins.NoneType' == 'node.Node'
+E         - node.Node
+E         + builtins.NoneType
+
+pynguin-qb-simple-res/reverse_linked_list/4/test_transformed_reverse_linked_list.py:37: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        none_type_0 = None
+        var_0 = module_0.reverse_linked_list(none_type_0)
+        node_0 = module_1.Node()
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value is None
+        assert node_0.successor is None
+        assert node_0.successors == []
+        assert node_0.predecessors == []
+        assert node_0.incoming_nodes == []
+        assert node_0.outgoing_nodes == []
+        var_1 = module_0.reverse_linked_list(none_type_0)
+        var_2 = module_0.reverse_linked_list(var_0)
+        bytes_0 = b"\x92+\x1an'\xed\rE\xb9\x8cbt\xab\xda\xb3"
+        node_1 = module_1.Node(
+            successor=node_0,
+            predecessors=node_0,
+            incoming_nodes=bytes_0,
+            outgoing_nodes=var_1,
+        )
+        assert f"{type(node_1).__module__}.{type(node_1).__qualname__}" == "node.Node"
+        assert node_1.value is None
+        assert (
+            f"{type(node_1.successor).__module__}.{type(node_1.successor).__qualname__}"
+            == "node.Node"
+        )
+        assert node_1.successors == []
+        assert (
+            f"{type(node_1.predecessors).__module__}.{type(node_1.predecessors).__qualname__}"
+            == "node.Node"
+        )
+        assert node_1.incoming_nodes == b"\x92+\x1an'\xed\rE\xb9\x8cbt\xab\xda\xb3"
+        assert node_1.outgoing_nodes is None
+        var_3 = module_0.reverse_linked_list(node_1)
+>       assert (
+            f"{type(node_0.successor).__module__}.{type(node_0.successor).__qualname__}"
+            == "node.Node"
+        )
+E       AssertionError: assert 'builtins.NoneType' == 'node.Node'
+E         - node.Node
+E         + builtins.NoneType
+
+pynguin-qb-simple-res/reverse_linked_list/4/test_transformed_reverse_linked_list.py:83: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/reverse_linked_list/4/test_transformed_reverse_linked_list.py::test_case_2
+FAILED pynguin-qb-simple-res/reverse_linked_list/4/test_transformed_reverse_linked_list.py::test_case_3
+========================= 2 failed, 2 passed in 0.07s ==========================

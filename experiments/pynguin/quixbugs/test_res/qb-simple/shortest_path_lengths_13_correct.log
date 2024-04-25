@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+pynguin-qb-simple-res/shortest_path_lengths/13/test_transformed_shortest_path_lengths.py . [ 16%]
+....F                                                                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        defaultdict_0 = module_1.defaultdict()
+        int_0 = 98
+        var_0 = module_0.shortest_path_lengths(int_0, defaultdict_0)
+>       var_1 = module_0.shortest_path_lengths(defaultdict_0, var_0)
+
+pynguin-qb-simple-res/shortest_path_lengths/13/test_transformed_shortest_path_lengths.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = defaultdict(None, {})
+length_by_edge = defaultdict(<function shortest_path_lengths.<locals>.<lambda> at 0x7f3d9e948790>, {(0, 0): 0, (1, 1): 0, (2, 2): 0, (3...97, 89): inf, (97, 90): inf, (97, 91): inf, (97, 92): inf, (97, 93): inf, (97, 94): inf, (97, 95): inf, (97, 96): inf})
+
+    def shortest_path_lengths(n, length_by_edge):
+        length_by_path = defaultdict(lambda: float('inf'))
+>       length_by_path.update({(i, i): 0 for i in range(n)})
+E       TypeError: 'collections.defaultdict' object cannot be interpreted as an integer
+
+pynguin-qb-simple-res/shortest_path_lengths/13/shortest_path_lengths.py:6: TypeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/shortest_path_lengths/13/test_transformed_shortest_path_lengths.py::test_case_5
+========================= 1 failed, 5 passed in 0.85s ==========================

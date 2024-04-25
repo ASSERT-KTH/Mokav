@@ -1,7 +1,0 @@
-============================= test session starts ==============================
-platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
-rootdir: /home/khashayar/projs/det-gen
-collected 5 items
-
-pynguin-res/find_first_in_sorted/8/test_transformed_find_first_in_sorted.py F [ 20%]
-F.F

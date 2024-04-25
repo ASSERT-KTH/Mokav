@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 6 items
+
+pynguin-qb-mutation-res/levenshtein/72/test_transformed_levenshtein.py . [ 16%]
+..F.F                                                                    [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = '2b>M1^I-\r "jIVq'
+        var_0 = module_0.levenshtein(str_0, str_0)
+>       assert var_0 == 0
+E       assert 15 == 0
+
+pynguin-qb-mutation-res/levenshtein/72/test_transformed_levenshtein.py:34: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        str_0 = "j'Mf:3a3_"
+        var_0 = module_0.levenshtein(str_0, str_0)
+>       assert var_0 == 0
+E       assert 9 == 0
+
+pynguin-qb-mutation-res/levenshtein/72/test_transformed_levenshtein.py:55: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/levenshtein/72/test_transformed_levenshtein.py::test_case_3
+FAILED pynguin-qb-mutation-res/levenshtein/72/test_transformed_levenshtein.py::test_case_5
+========================= 2 failed, 4 passed in 0.10s ==========================

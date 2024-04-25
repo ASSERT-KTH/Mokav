@@ -1,0 +1,84 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+pynguin-qb-mutation-res/find_first_in_sorted/6/test_transformed_find_first_in_sorted.py . [ 20%]
+F.FF                                                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        tuple_0 = ()
+>       var_0 = module_0.find_first_in_sorted(tuple_0, tuple_0)
+
+pynguin-qb-mutation-res/find_first_in_sorted/6/test_transformed_find_first_in_sorted.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = (), x = ()
+
+    def find_first_in_sorted(arr, x):
+        lo = 0
+        hi = len(arr)
+    
+        while lo <= hi:
+            mid = (lo + hi) // 2
+    
+>           if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):
+E           IndexError: tuple index out of range
+
+pynguin-qb-mutation-res/find_first_in_sorted/6/find_first_in_sorted.py:8: IndexError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "xPiaf"
+>       var_0 = module_0.find_first_in_sorted(str_0, str_0)
+
+pynguin-qb-mutation-res/find_first_in_sorted/6/test_transformed_find_first_in_sorted.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = 'xPiaf', x = 'xPiaf'
+
+    def find_first_in_sorted(arr, x):
+        lo = 0
+        hi = len(arr)
+    
+        while lo <= hi:
+            mid = (lo + hi) // 2
+    
+>           if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):
+E           IndexError: string index out of range
+
+pynguin-qb-mutation-res/find_first_in_sorted/6/find_first_in_sorted.py:8: IndexError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        str_0 = "Q?S/;_a:8dG"
+        str_1 = ""
+        tuple_0 = (str_0, str_0, str_1, str_0)
+        none_type_0 = None
+>       var_0 = module_0.find_first_in_sorted(str_1, none_type_0)
+
+pynguin-qb-mutation-res/find_first_in_sorted/6/test_transformed_find_first_in_sorted.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = '', x = None
+
+    def find_first_in_sorted(arr, x):
+        lo = 0
+        hi = len(arr)
+    
+        while lo <= hi:
+            mid = (lo + hi) // 2
+    
+>           if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):
+E           IndexError: string index out of range
+
+pynguin-qb-mutation-res/find_first_in_sorted/6/find_first_in_sorted.py:8: IndexError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/find_first_in_sorted/6/test_transformed_find_first_in_sorted.py::test_case_1
+FAILED pynguin-qb-mutation-res/find_first_in_sorted/6/test_transformed_find_first_in_sorted.py::test_case_3
+FAILED pynguin-qb-mutation-res/find_first_in_sorted/6/test_transformed_find_first_in_sorted.py::test_case_4
+========================= 3 failed, 2 passed in 0.03s ==========================

@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+pynguin-qb-simple-res/reverse_linked_list/52/test_transformed_reverse_linked_list.py . [ 25%]
+..F                                                                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bytes_0 = b"\x00\xdd\x03\x12\xbe;z"
+        none_type_0 = None
+        node_0 = module_1.Node(bytes_0, none_type_0)
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value == b"\x00\xdd\x03\x12\xbe;z"
+        assert node_0.successor is None
+        assert node_0.successors == []
+        assert node_0.predecessors == []
+        assert node_0.incoming_nodes == []
+        assert node_0.outgoing_nodes == []
+        var_0 = module_0.reverse_linked_list(node_0)
+>       assert f"{type(var_0).__module__}.{type(var_0).__qualname__}" == "node.Node"
+E       AssertionError: assert 'builtins.NoneType' == 'node.Node'
+E         - node.Node
+E         + builtins.NoneType
+
+pynguin-qb-simple-res/reverse_linked_list/52/test_transformed_reverse_linked_list.py:52: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/reverse_linked_list/52/test_transformed_reverse_linked_list.py::test_case_3
+========================= 1 failed, 3 passed in 0.05s ==========================

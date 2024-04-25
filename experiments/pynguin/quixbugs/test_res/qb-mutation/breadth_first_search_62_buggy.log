@@ -1,0 +1,45 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-mutation-res/breadth_first_search/62/test_transformed_breadth_first_search.py . [ 33%]
+.F                                                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        object_0 = module_2.object()
+        var_0 = module_0.breadth_first_search(object_0, object_0)
+        assert var_0 is True
+        var_1 = module_1.Node(
+            predecessors=var_0, incoming_nodes=var_0, outgoing_nodes=var_0
+        )
+        assert var_1.predecessors is True
+        assert var_1.incoming_nodes is True
+        assert var_1.outgoing_nodes is True
+        none_type_0 = None
+>       var_2 = module_0.breadth_first_search(var_1, var_0)
+
+pynguin-qb-mutation-res/breadth_first_search/62/test_transformed_breadth_first_search.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+startnode = <node.Node object at 0x7f8d05d11de0>, goalnode = True
+
+    def breadth_first_search(startnode, goalnode):
+        queue = Queue()
+        queue.append(startnode)
+    
+        nodesseen = set()
+        nodesseen.add(startnode)
+    
+        while True:
+>           node = queue.popleft()
+E           IndexError: pop from an empty deque
+
+pynguin-qb-mutation-res/breadth_first_search/62/breadth_first_search.py:12: IndexError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/breadth_first_search/62/test_transformed_breadth_first_search.py::test_case_2
+========================= 1 failed, 2 passed in 0.05s ==========================

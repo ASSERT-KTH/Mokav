@@ -1,0 +1,53 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-mutation-res/detect_cycle/11/test_transformed_detect_cycle.py F [ 33%]
+F.                                                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        none_type_0 = None
+>       var_0 = module_0.detect_cycle(none_type_0)
+
+pynguin-qb-mutation-res/detect_cycle/11/test_transformed_detect_cycle.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+node = None
+
+    def detect_cycle(node):
+        hare = tortoise = node
+    
+        while True:
+>           if hare.successor is None:
+E           AttributeError: 'NoneType' object has no attribute 'successor'
+
+pynguin-qb-mutation-res/detect_cycle/11/detect_cycle.py:5: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        node_0 = module_1.Node()
+        node_1 = module_1.Node(successor=node_0, successors=node_0)
+>       var_0 = module_0.detect_cycle(node_1)
+
+pynguin-qb-mutation-res/detect_cycle/11/test_transformed_detect_cycle.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+node = <node.Node object at 0x7f65472f8fa0>
+
+    def detect_cycle(node):
+        hare = tortoise = node
+    
+        while True:
+>           if hare.successor is None:
+E           AttributeError: 'NoneType' object has no attribute 'successor'
+
+pynguin-qb-mutation-res/detect_cycle/11/detect_cycle.py:5: AttributeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/detect_cycle/11/test_transformed_detect_cycle.py::test_case_0
+FAILED pynguin-qb-mutation-res/detect_cycle/11/test_transformed_detect_cycle.py::test_case_1
+========================= 2 failed, 1 passed in 0.05s ==========================

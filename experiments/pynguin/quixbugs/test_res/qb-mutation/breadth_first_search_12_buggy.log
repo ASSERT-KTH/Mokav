@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+pynguin-qb-mutation-res/breadth_first_search/12/test_transformed_breadth_first_search.py . [ 25%]
+.F.                                                                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        node_0 = module_1.Node()
+        bytes_0 = b"m\xf5L"
+        var_0 = module_0.breadth_first_search(bytes_0, bytes_0)
+        assert var_0 is True
+>       var_1 = module_0.breadth_first_search(node_0, bytes_0)
+
+pynguin-qb-mutation-res/breadth_first_search/12/test_transformed_breadth_first_search.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+startnode = <node.Node object at 0x7f72e6adf1f0>, goalnode = b'm\xf5L'
+
+    def breadth_first_search(startnode, goalnode):
+        queue = Queue()
+        queue.append(startnode)
+    
+        nodesseen = set()
+        nodesseen.add(startnode)
+    
+        while True:
+>           node = queue.popleft()
+E           IndexError: pop from an empty deque
+
+pynguin-qb-mutation-res/breadth_first_search/12/breadth_first_search.py:12: IndexError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/breadth_first_search/12/test_transformed_breadth_first_search.py::test_case_2
+========================= 1 failed, 3 passed in 0.05s ==========================

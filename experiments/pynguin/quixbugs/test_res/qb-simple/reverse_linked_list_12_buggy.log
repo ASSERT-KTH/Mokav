@@ -1,0 +1,43 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 4 items
+
+pynguin-qb-simple-res/reverse_linked_list/12/test_transformed_reverse_linked_list.py . [ 25%]
+..F                                                                      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        none_type_0 = None
+        dict_0 = {none_type_0: none_type_0, none_type_0: none_type_0}
+        var_0 = module_1.Node(dict_0, dict_0, predecessors=none_type_0)
+        assert f"{type(var_0).__module__}.{type(var_0).__qualname__}" == "node.Node"
+        assert var_0.value == {None: None}
+        assert var_0.successor == {None: None}
+        assert var_0.successors == []
+        assert var_0.predecessors is None
+        assert var_0.incoming_nodes == []
+        assert var_0.outgoing_nodes == []
+        var_1 = module_0.reverse_linked_list(none_type_0)
+        var_2 = module_0.reverse_linked_list(none_type_0)
+        node_0 = module_1.Node()
+        assert f"{type(node_0).__module__}.{type(node_0).__qualname__}" == "node.Node"
+        assert node_0.value is None
+        assert node_0.successor is None
+        assert node_0.successors == []
+        assert node_0.predecessors == []
+        assert node_0.incoming_nodes == []
+        assert node_0.outgoing_nodes == []
+        var_3 = module_0.reverse_linked_list(node_0)
+>       assert f"{type(var_3).__module__}.{type(var_3).__qualname__}" == "node.Node"
+E       AssertionError: assert 'builtins.NoneType' == 'node.Node'
+E         - node.Node
+E         + builtins.NoneType
+
+pynguin-qb-simple-res/reverse_linked_list/12/test_transformed_reverse_linked_list.py:57: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/reverse_linked_list/12/test_transformed_reverse_linked_list.py::test_case_3
+========================= 1 failed, 3 passed in 0.06s ==========================

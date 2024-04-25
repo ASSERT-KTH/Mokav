@@ -1,0 +1,25 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 3 items
+
+pynguin-qb-mutation-res/lis/14/test_transformed_lis.py ..F               [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        object_0 = module_1.object()
+        set_0 = {object_0}
+        var_0 = module_0.lis(set_0)
+        assert var_0 == 1
+        str_0 = "oTT_h*)h"
+        var_1 = module_0.lis(str_0)
+>       assert var_1 == 3
+E       assert 2 == 3
+
+pynguin-qb-mutation-res/lis/14/test_transformed_lis.py:30: AssertionError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/lis/14/test_transformed_lis.py::test_case_2 - ...
+========================= 1 failed, 2 passed in 0.04s ==========================

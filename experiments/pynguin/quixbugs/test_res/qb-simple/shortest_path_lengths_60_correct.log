@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 5 items
+
+pynguin-qb-simple-res/shortest_path_lengths/60/test_transformed_shortest_path_lengths.py . [ 20%]
+...F                                                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        int_0 = 96
+        dict_0 = {int_0: int_0, int_0: int_0}
+        var_0 = module_0.shortest_path_lengths(int_0, dict_0)
+>       var_1 = module_0.shortest_path_lengths(dict_0, var_0)
+
+pynguin-qb-simple-res/shortest_path_lengths/60/test_transformed_shortest_path_lengths.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+n = {96: 96}
+length_by_edge = defaultdict(<function shortest_path_lengths.<locals>.<lambda> at 0x7f1a081f2c20>, {(0, 0): 0, (1, 1): 0, (2, 2): 0, (3...95, 87): inf, (95, 88): inf, (95, 89): inf, (95, 90): inf, (95, 91): inf, (95, 92): inf, (95, 93): inf, (95, 94): inf})
+
+    def shortest_path_lengths(n, length_by_edge):
+        length_by_path = defaultdict(lambda: float('inf'))
+>       length_by_path.update({(i, i): 0 for i in range(n)})
+E       TypeError: 'dict' object cannot be interpreted as an integer
+
+pynguin-qb-simple-res/shortest_path_lengths/60/shortest_path_lengths.py:6: TypeError
+=========================== short test summary info ============================
+FAILED pynguin-qb-simple-res/shortest_path_lengths/60/test_transformed_shortest_path_lengths.py::test_case_4
+========================= 1 failed, 4 passed in 0.81s ==========================

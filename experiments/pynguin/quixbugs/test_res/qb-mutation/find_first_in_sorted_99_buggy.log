@@ -1,0 +1,105 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
+rootdir: /home/khashayar/projs/det-gen
+plugins: anyio-4.3.0
+collected 7 items
+
+pynguin-qb-mutation-res/find_first_in_sorted/99/test_transformed_find_first_in_sorted.py . [ 14%]
+FFF..F                                                                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        set_0 = set()
+        none_type_0 = None
+>       var_0 = module_0.find_first_in_sorted(set_0, none_type_0)
+
+pynguin-qb-mutation-res/find_first_in_sorted/99/test_transformed_find_first_in_sorted.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = set(), x = None
+
+    def find_first_in_sorted(arr, x):
+        lo = 0
+        hi = len(arr)
+    
+        while lo <= hi:
+            mid = (lo + hi) // 2
+    
+>           if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):
+E           TypeError: 'set' object is not subscriptable
+
+pynguin-qb-mutation-res/find_first_in_sorted/99/find_first_in_sorted.py:8: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        str_0 = "wUu~WW_aASX;+eS"
+>       var_0 = module_0.find_first_in_sorted(str_0, str_0)
+
+pynguin-qb-mutation-res/find_first_in_sorted/99/test_transformed_find_first_in_sorted.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = 'wUu~WW_aASX;+eS', x = 'wUu~WW_aASX;+eS'
+
+    def find_first_in_sorted(arr, x):
+        lo = 0
+        hi = len(arr)
+    
+        while lo <= hi:
+            mid = (lo + hi) // 2
+    
+>           if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):
+E           IndexError: string index out of range
+
+pynguin-qb-mutation-res/find_first_in_sorted/99/find_first_in_sorted.py:8: IndexError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = "O?"
+>       var_0 = module_0.find_first_in_sorted(str_0, str_0)
+
+pynguin-qb-mutation-res/find_first_in_sorted/99/test_transformed_find_first_in_sorted.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = 'O?', x = 'O?'
+
+    def find_first_in_sorted(arr, x):
+        lo = 0
+        hi = len(arr)
+    
+        while lo <= hi:
+            mid = (lo + hi) // 2
+    
+>           if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):
+E           IndexError: string index out of range
+
+pynguin-qb-mutation-res/find_first_in_sorted/99/find_first_in_sorted.py:8: IndexError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bytes_0 = b""
+>       var_0 = module_0.find_first_in_sorted(bytes_0, bytes_0)
+
+pynguin-qb-mutation-res/find_first_in_sorted/99/test_transformed_find_first_in_sorted.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+arr = b'', x = b''
+
+    def find_first_in_sorted(arr, x):
+        lo = 0
+        hi = len(arr)
+    
+        while lo <= hi:
+            mid = (lo + hi) // 2
+    
+>           if x == arr[mid] and (mid == 0 or x != arr[mid - 1]):
+E           IndexError: index out of range
+
+pynguin-qb-mutation-res/find_first_in_sorted/99/find_first_in_sorted.py:8: IndexError
+=========================== short test summary info ============================
+FAILED pynguin-qb-mutation-res/find_first_in_sorted/99/test_transformed_find_first_in_sorted.py::test_case_1
+FAILED pynguin-qb-mutation-res/find_first_in_sorted/99/test_transformed_find_first_in_sorted.py::test_case_2
+FAILED pynguin-qb-mutation-res/find_first_in_sorted/99/test_transformed_find_first_in_sorted.py::test_case_3
+FAILED pynguin-qb-mutation-res/find_first_in_sorted/99/test_transformed_find_first_in_sorted.py::test_case_6
+========================= 4 failed, 3 passed in 0.07s ==========================
