@@ -46,18 +46,26 @@ def get_args():
         required=False,
     )
 
+    parser.add_argument(
+        "-td",
+        "--generated_tests_dir",
+        default="generated_tests",
+        help="Directory to write the generated tests",
+        required=False,
+    )
+
     args = parser.parse_args()
 
-    return args.is_func, args.is_qb, args.is_iterative, args.meta_data_config
+    return args.is_func, args.is_qb, args.is_iterative, args.meta_data_config, args.generated_tests_dir
 
 
 def main() -> None:
 
-    (is_func, is_qb, is_iterative, meta_data_config) = get_args()
+    (is_func, is_qb, is_iterative, meta_data_config, generated_tests_dir) = get_args()
 
     logging.info(f"Running with is_func: {is_func}, is_qb: {is_qb}, is_iterative: {is_iterative}, meta_data_config: {meta_data_config}")
 
-    code_runner = CodeRunner(is_func, is_qb, is_iterative, meta_data_config)
+    code_runner = CodeRunner(is_func, is_qb, is_iterative, meta_data_config, generated_tests_dir)
     code_runner.run()
 
 

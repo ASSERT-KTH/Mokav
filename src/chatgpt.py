@@ -1,12 +1,14 @@
 from src.utils import write_to_file
-import openai
+from openai import OpenAI
 import os
 import json
 from dotenv import load_dotenv
 import logging
 
 load_dotenv()
-openai.api_key = os.getenv("API_KEY")
+client = OpenAI(
+  api_key=os.getenv("OPENAI_API_KEY"),  # this is also the default, it can be omitted
+)
 MAX_LENGTH = 39000
 
 class ChatGPT_2():
@@ -40,10 +42,10 @@ class ChatGPT_2():
         try:
             print("###Messages###\n\n", messages)
             logging.info(f"###CHATGPT_INITIAL_PROMPT###\n\n {messages}")
-            response = openai.ChatCompletion.create(
+            response = client.chat.completions.create(
                 model='gpt-3.5-turbo',
                 messages=messages,
-                temperature=0.8
+                temperature=0
             )
             message = response.choices[0].message.content
             self.cache[prompt] = message
@@ -79,13 +81,13 @@ class ChatGPT_2():
         if prompt in self.cache:
             return self.cache[prompt]
 
-        completion = openai.ChatCompletion.create(
+        completion = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=messages,
             temperature=1,
             n=10,
         )
-        responses = [choice['message']['content'] for choice in completion['choices']]
+        responses = [choice.message.content for choice in completion.choices]
         self.cache[prompt] = responses
         self.save_cache()  # Save cache to file
         return responses
