@@ -70,13 +70,18 @@ class TestFunctions(unittest.TestCase):
             if "\n" in input_data:
                 input_data = list(input_data.split("\n"))
 
+            is_input_list = type(input_data) is list
+            
+            if not is_input_list:
+                input_data = f'"{input_data}"'
+
             unittest_str = (
                 unittest_str
                 + f"""
 
     def test{i}(self):
-        input_{i} = "{input_data}"
-        self.assertEqual(patched_source(input_{i}), original_source(input_{i}))
+        input_{i} = {input_data}
+        self.assertEqual(patched_source({"*" if is_input_list else ""}input_{i}), original_source({"*" if is_input_list else ""}input_{i}))
             
 """
             )
@@ -109,21 +114,28 @@ if __name__ == '__main__':
             return list(input_data.split("\n"))
         return input_data
 
-    def generate_test_and_run(self, rej, acc1, test_case, output_code, author_id, problem_id):
+    def generate_test_and_run(self, rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id):
         test_case = self.test_generator.generate_test(
-            rej, acc1, test_case, output_code, author_id=author_id, problem_id=problem_id)
+            rej, acc1, existing_test, existing_test_output, output_code, author_id=author_id, problem_id=problem_id)
         data_list = self.change_test_to_dict(test_case)
         self.create_unnitest(rej, acc1, data_list)
         return str(run_process(["python", "temp_test_case.py"], 50)), data_list
 
     def accepted_code_output(self, input_data):
+        if "\n" in input_data:
+            input_data = list(input_data.split("\n"))
+
+        is_input_list = type(input_data) is list
+
+        if not is_input_list:
+            input_data = f'"{input_data}"'
 
         with open(f"temp_acc_exec.py", "w") as f:
             f.write(f'''
 from temp_acc_qb import patched_func as patched_func
-input_data = "{input_data}"
-output_code = patched_func(input_data)
-output_code = list(output_code)
+input_data = {input_data}
+output_code = patched_func({"*" if is_input_list else ""}input_data)
+output_code = list({"*" if is_input_list else ""}output_code)
 print(output_code)
 ''')
         process_acc_exec = run_process(["python3", f"temp_acc_exec.py"], 50)
@@ -135,9 +147,12 @@ print(output_code)
         try:
             logging.info(
                 f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
-            acc1, _, rej, test_case = self.prepare_data(problem_id, author_id)
+            acc1, _, rej, existing_test = self.prepare_data(problem_id, author_id)
+
+            existing_test_output = self.accepted_code_output(existing_test["inputdata"])
+
             output, data_list = self.generate_test_and_run(
-                rej, acc1, test_case, None, author_id, problem_id)
+                rej, acc1, existing_test, existing_test_output, None, author_id, problem_id)
             print("###TEMP_TEST_PY_OUTPUT", output)
             logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
             if not (("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output))):
@@ -151,7 +166,7 @@ print(output_code)
 
                         output_code = self.accepted_code_output(input_data)
                         output, data_list = self.generate_test_and_run(
-                            rej, acc1, test_case, output_code, author_id, problem_id)
+                            rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id)
                         print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
                         logging.info(f"###ITERATION###: {i + 1}")
                         logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")

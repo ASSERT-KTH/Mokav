@@ -37,7 +37,8 @@ class TestGenerator:
         matches = re.findall(pattern, text, re.DOTALL)
         return "".join([match.strip() for match in matches])
 
-    def generate_test(self, buggy_code, accepted_code, existing_test=None, retry_ouput=False, author_id=None, problem_id=None):
+    def generate_test(self, buggy_code, accepted_code, existing_test=None, existing_test_accepted_output=None, 
+                      retry_ouput=False, author_id=None, problem_id=None):
         responses = []
         if retry_ouput:
             prompt = f"Both versions give us {retry_ouput} as output. The output should be different. Please generate again"
@@ -76,7 +77,10 @@ The generated test input should be difference exposing, which means ```python or
                     responses.append(chatgpt_resp[i])
             elif self.config == "BADT":
                 description = self.code_description(accepted_code)
-                prompt += f"\nThis is description of the patched program: {description}\nThis is a sample test input for which both versions produce the same output: ```python {existing_test}```\nGenerate a difference exposing test input as described above."
+                
+                prompt += (f"\nThis is description of the patched program: {description}\nThis is a sample test input for which both versions produce the same output: " + 
+                           f"```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}\nGenerate a difference exposing test input as described above.")
+                
                 chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
                 for i in range(len(chatgpt_resp)):
                     responses.append(chatgpt_resp[i])
