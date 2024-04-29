@@ -139,34 +139,38 @@ print(output_code)
 
     def check_test(self, problem_id, author_id):
 
-        logging.info(
-            f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
-        acc1, _, rej, test_case = self.prepare_data(problem_id, author_id)
-        output, data_list = self.generate_test_and_run(
-            rej, acc1, test_case, None, author_id, problem_id)
-        print("###TEMP_TEST_PY_OUTPUT", output)
-        logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
-        if not (("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output))):
-            if self.is_iteravtive:
-                for i in range(10):
-                    print("data list", data_list)
-                    input_data = self.process_input_data(
-                        data_list[0]["inputdata"])
-                    output_code = self.accepted_code_output(input_data)
-                    output, data_list = self.generate_test_and_run(
-                        rej, acc1, test_case, output_code, author_id, problem_id)
-                    print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
-                    logging.info(f"###ITERATION###: {i + 1}")
-                    logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
-                    if ("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output)):
-                        self.save_generated_test(author_id, problem_id, i + 1, output)
-                        return "Found1"
-            return str(output)
-        elif "Timeout" in output:
-            return "Timeout!!"
-        else:
-            self.save_generated_test(author_id, problem_id, 0, output)
-            return "Found1"
+        try:
+            logging.info(
+                f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
+            acc1, _, rej, test_case = self.prepare_data(problem_id, author_id)
+            output, data_list = self.generate_test_and_run(
+                rej, acc1, test_case, None, author_id, problem_id)
+            print("###TEMP_TEST_PY_OUTPUT", output)
+            logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
+            if not (("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output))):
+                if self.is_iteravtive:
+                    for i in range(10):
+                        print("data list", data_list)
+                        input_data = self.process_input_data(
+                            data_list[0]["inputdata"])
+                        output_code = self.accepted_code_output(input_data)
+                        output, data_list = self.generate_test_and_run(
+                            rej, acc1, test_case, output_code, author_id, problem_id)
+                        print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
+                        logging.info(f"###ITERATION###: {i + 1}")
+                        logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
+                        if ("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output)):
+                            self.save_generated_test(author_id, problem_id, i + 1, output)
+                            return "Found1"
+                return str(output)
+            elif "Timeout" in output:
+                return "Timeout!!"
+            else:
+                self.save_generated_test(author_id, problem_id, 0, output)
+                return "Found1"
+        except Exception as e:
+            logging.info(f"###EXCEPTION###: {e}")
+            return "Exception!!"
 
     def save_generated_test(self, author_id, problem_id, iteration_ind, execution_output):
         os.system(f'mkdir {self.generated_tests_dir}/{problem_id}')
