@@ -16,7 +16,6 @@ class TestGenerator:
         self.temperature = temperature
         self.test_format = "{'inputdata': <inputdata>}"
         self.prompt_history = []
-        self.chat_resp_history = []
 
     def extract_code_blocks(self, text):
         code_blocks = re.findall(r"```(.*?)```", text, re.DOTALL)
@@ -48,8 +47,10 @@ class TestGenerator:
             
             for i in range(len(chatgpt_resp)):
                 responses.append(chatgpt_resp[i])
-            self.prompt_history.append((prompt, responses[-1]))
+            self.prompt_history.append((prompt, responses[0]))
         else:
+            self.prompt_history = [] # it's an initial prompt
+
             prompt = f"""
 "The following is the original version of a program: 
 ```python

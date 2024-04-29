@@ -144,8 +144,11 @@ print(output_code)
                 if self.is_iteravtive:
                     for i in range(10):
                         print("data list", data_list)
+
+                        ### TODO: if the first response doesn't have correct format, the output is computed for another response
                         input_data = self.process_input_data(
                             data_list[0]["inputdata"])
+
                         output_code = self.accepted_code_output(input_data)
                         output, data_list = self.generate_test_and_run(
                             rej, acc1, test_case, output_code, author_id, problem_id)
