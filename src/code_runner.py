@@ -51,13 +51,8 @@ class CodeRunner:
         with open(f"temp_acc_qb.py", "w") as f:
             f.write(acc_code)
 
-        write_to_file(
-            f"results_sample/sample_{author_id}_{problem_id}", "accepted.py", acc_code)
         with open(f"temp_bug_qb.py", "w") as f:
             f.write(buggy_code)
-
-        write_to_file(
-            f"results_sample/sample_{author_id}_{problem_id}", "buggy.py", buggy_code)
 
         unittest_str = f"""
 import unittest
@@ -93,10 +88,6 @@ if __name__ == '__main__':
 
         with open(f"temp_test_case.py", "w") as f:
             f.write(unittest_str)
-        with open(f"results_sample/sample_{author_id}_{problem_id}/test.py", "w+") as f:
-            f.write(unittest_str)
-        write_to_file(
-            f"results_sample/sample_{author_id}_{problem_id}", "test.py", unittest_str)
 
     def change_test_to_dict(self, test_case) -> list:
         data_list = []
