@@ -6,12 +6,14 @@ import logging
 import os
 
 class CodeRunner:
-    def __init__(self, is_func, is_qb, is_iterative, meta_data_config, generated_tests_dir) -> None:
+    def __init__(self, is_func, is_qb, is_iterative, meta_data_config, generated_tests_dir, number_of_samples, temperature) -> None:
         self.is_func = is_func
         self.is_qb = is_qb
         self.is_iteravtive = is_iterative
-        self.test_generator = TestGenerator(config=meta_data_config)
+        self.test_generator = TestGenerator(config=meta_data_config, number_of_samples=number_of_samples, temperature=temperature)
         self.generated_tests_dir = generated_tests_dir
+        self.number_of_samples = number_of_samples
+        self.temperature = temperature
 
         if is_func:
             self.df_submissions = pd.read_csv(

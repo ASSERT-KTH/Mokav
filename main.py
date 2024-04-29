@@ -54,18 +54,35 @@ def get_args():
         required=False,
     )
 
+    parser.add_argument(
+        "-dn",
+        "--number_of_samples",
+        default=10,
+        help="Number of samples to be generated at each iteration",
+        required=False,
+    )
+
+    parser.add_argument(
+        "-dt",
+        "--temperature",
+        default=1,
+        help="The temperature",
+        required=False,
+    )
+
     args = parser.parse_args()
 
-    return args.is_func, args.is_qb, args.is_iterative, args.meta_data_config, args.generated_tests_dir
+    return args.is_func, args.is_qb, args.is_iterative, args.meta_data_config, args.generated_tests_dir, args.number_of_samples, args.temperature
 
 
 def main() -> None:
 
-    (is_func, is_qb, is_iterative, meta_data_config, generated_tests_dir) = get_args()
+    (is_func, is_qb, is_iterative, meta_data_config, generated_tests_dir, number_of_samples, temperature) = get_args()
 
-    logging.info(f"Running with is_func: {is_func}, is_qb: {is_qb}, is_iterative: {is_iterative}, meta_data_config: {meta_data_config}")
+    logging.info(f"Running with is_func: {is_func}, is_qb: {is_qb}, is_iterative: {is_iterative}, meta_data_config: {meta_data_config}" +
+                 f"generated_tests_dir: {generated_tests_dir}, number_of_samples: {number_of_samples}, temperature: {temperature}")
 
-    code_runner = CodeRunner(is_func, is_qb, is_iterative, meta_data_config, generated_tests_dir)
+    code_runner = CodeRunner(is_func, is_qb, is_iterative, meta_data_config, generated_tests_dir, number_of_samples, temperature)
     code_runner.run()
 
 

@@ -4,12 +4,16 @@ import logging
 
 
 class TestGenerator:
-    def __init__(self, config):
+    def __init__(self, config, number_of_samples, temperature):
         self.config = config
         self.chatgpt = ChatGPT_2(
-            instruction="You are a software test expert. You are given an original and a patched version of a program. You generate a test input that distinguishes between the two versions. Your generated test fails on the original version and passes on the patched version.",
-            cache_file_path="cache.json"
+            default_instruction="You are a software test expert. You are given an original and a patched version of a program. You generate a test input that distinguishes between the two versions. Your generated test fails on the original version and passes on the patched version.",
+            cache_file_path="cache.json",
+            default_temp=temperature,
+            default_n=number_of_samples
         )
+        self.number_of_samples = number_of_samples
+        self.temperature = temperature
         self.test_format = "{'inputdata': <inputdata>}"
         self.prompt_history = []
         self.chat_resp_history = []
@@ -25,7 +29,8 @@ class TestGenerator:
 
     def code_description(self, accepted_code):
         description_prompt = f"What is the intention of this code?  {accepted_code}"
-        chatgpt_resp = self.chatgpt.call(description_prompt)
+        chatgpt_resp = self.chatgpt.get_response(new_question=description_prompt, temp=0, n=1, 
+                                         instruction="You are an intelligent software bot that describes python code. You are given a python code snippet.")
         return chatgpt_resp
 
     def extract_code(self, text):
