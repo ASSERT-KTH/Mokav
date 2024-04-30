@@ -178,5 +178,3 @@ data2
 cache*.json
 
 logging*.log
-
-generated_tests

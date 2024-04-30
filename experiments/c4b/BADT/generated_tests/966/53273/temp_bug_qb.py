@@ -1,0 +1,25 @@
+def original_func(*args):
+	global_list = []
+	
+	(beds, pillows, frodo) = map(int, args[0].split())
+	pillows = ((pillows - beds) - 1)
+	layer = 2
+	while (pillows > 0):
+	    if (beds == 1):
+	        layer = (pillows + 2)
+	        pillows = 0
+	        break
+	    if (((frodo - 1) < (layer - 1)) and ((beds - frodo) < (layer - 1))):
+	        layer += (int((pillows / beds)) + 1)
+	        break
+	    else:
+	        pillows -= (min((frodo - 1), (layer - 1)) + min((layer - 1), (beds - frodo)))
+	    pillows -= 1
+	    if (pillows < 0):
+	        layer -= 1
+	    layer += 1
+	if (pillows <= 0):
+	    global_list.append(layer)
+	else:
+	    global_list.append((layer - 1))
+	return global_list
