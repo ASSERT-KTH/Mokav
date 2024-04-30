@@ -71,7 +71,7 @@ class TestFunctions(unittest.TestCase):
                 input_data = list(input_data.split("\n"))
 
             is_input_list = type(input_data) is list
-            
+
             if not is_input_list:
                 input_data = f'"{input_data}"'
 
@@ -121,7 +121,7 @@ if __name__ == '__main__':
         self.create_unnitest(rej, acc1, data_list)
         return str(run_process(["python", "temp_test_case.py"], 50)), data_list
 
-    def accepted_code_output(self, input_data):
+    def accepted_code_output(self, input_data, acc_code):
         if "\n" in input_data:
             input_data = list(input_data.split("\n"))
 
@@ -129,6 +129,9 @@ if __name__ == '__main__':
 
         if not is_input_list:
             input_data = f'"{input_data}"'
+        
+        with open(f"temp_acc_qb.py", "w") as f:
+            f.write(acc_code)
 
         with open(f"temp_acc_exec.py", "w") as f:
             f.write(f'''
@@ -149,7 +152,7 @@ print(output_code)
                 f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
             acc1, _, rej, existing_test = self.prepare_data(problem_id, author_id)
 
-            existing_test_output = self.accepted_code_output(existing_test["inputdata"])
+            existing_test_output = self.accepted_code_output(existing_test["inputdata"], acc1)
 
             output, data_list = self.generate_test_and_run(
                 rej, acc1, existing_test, existing_test_output, None, author_id, problem_id)
@@ -164,7 +167,7 @@ print(output_code)
                         input_data = self.process_input_data(
                             data_list[0]["inputdata"])
 
-                        output_code = self.accepted_code_output(input_data)
+                        output_code = self.accepted_code_output(input_data, acc1)
                         output, data_list = self.generate_test_and_run(
                             rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id)
                         print("###TEMP_TEST_PY_OUTPUT_RETRY", output)

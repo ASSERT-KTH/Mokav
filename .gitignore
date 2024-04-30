@@ -167,7 +167,7 @@ cython_debug/
 
 .coverage
 
-temp*.py
+./temp*.py
 
 log*.txt
 
