@@ -32,7 +32,7 @@ def get_args():
     parser.add_argument(
         "-ic",
         "--iteration_count",
-        default=10,
+        default=9,
         help="Number of iterations after the initial prompt",
         required=False,
         type=int,
@@ -41,7 +41,7 @@ def get_args():
     parser.add_argument(
         "-mc",
         "--meta_data_config",
-        choices=["BA", "BAD", "BADT", "BBDT"],
+        choices=["BA", "BAD", "BADT", "AADT"],
         default="BADT",
         help="Config for meta data",
         required=False,

@@ -52,7 +52,7 @@ class TestGenerator:
         else:
             self.prompt_history = [] # it's an initial prompt
 
-            if "BB" in self.config:
+            if "AA" in self.config:
                 prompt = f"""
 "The following is the patched version of a program: 
 ```python
