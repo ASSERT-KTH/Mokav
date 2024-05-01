@@ -58,8 +58,8 @@ class CodeRunner:
 
         unittest_str = f"""
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
@@ -138,7 +138,7 @@ if __name__ == '__main__':
 from temp_acc_qb import patched_func as patched_func
 input_data = {input_data}
 output_code = patched_func({"*" if is_input_list else ""}input_data)
-output_code = list({"*" if is_input_list else ""}output_code)
+output_code = list(output_code)
 print(output_code)
 ''')
         process_acc_exec = run_process(["python3", f"temp_acc_exec.py"], 50)

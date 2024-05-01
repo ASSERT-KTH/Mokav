@@ -52,7 +52,19 @@ class TestGenerator:
         else:
             self.prompt_history = [] # it's an initial prompt
 
-            prompt = f"""
+            if "BB" in self.config:
+                prompt = f"""
+"The following is the patched version of a program: 
+```python
+{accepted_code}``` 
+We also have an original version of this program, which is slightly different from the patched version.
+Generate a test input in Python dict format as follows:
+```python {self.test_format}```
+The generated test input should be difference exposing, which means ```python original_func(inputdata)!= patched_func(inputdata)```. This means when the test input is given to the original and patched versions, they should produce different outputs. Your output should not contain any explanation or '\\n' character.
+
+"""
+            elif "BA" in self.config:
+                prompt = f"""
 "The following is the original version of a program: 
 ```python
 {buggy_code}``` 
@@ -65,17 +77,7 @@ The generated test input should be difference exposing, which means ```python or
 
 """
 
-            if self.config == "BA":
-                chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
-                for i in range(len(chatgpt_resp)):
-                    responses.append(chatgpt_resp[i])
-            elif self.config == "BAD":
-                description = self.code_description(accepted_code)
-                prompt += f"  This is description of code: {description}"
-                chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
-                for i in range(len(chatgpt_resp)):
-                    responses.append(chatgpt_resp[i])
-            elif self.config == "BADT":
+            if "DT" in self.config:
                 description = self.code_description(accepted_code)
                 
                 prompt += (f"\nThis is description of the patched program: {description}\nThis is a sample test input for which both versions produce the same output: " + 
@@ -84,11 +86,7 @@ The generated test input should be difference exposing, which means ```python or
                 chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
                 for i in range(len(chatgpt_resp)):
                     responses.append(chatgpt_resp[i])
-            elif self.config == "BAT":
-                prompt += f"  This is a passing test: {existing_test}"
-                chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
-                for i in range(len(chatgpt_resp)):
-                    responses.append(chatgpt_resp[i])
+            
             self.prompt_history.append((prompt, responses[0]))
         print("###CHATRESP###", responses)
         logging.info(f"###CHATRESP###\n\n {responses}")
