@@ -1,0 +1,12 @@
+def original_func(*args):
+	global_list = []
+	
+	x = int(args[0])
+	c = 0
+	while (x > 0):
+	    d = (x % 8)
+	    global_list.append(d)
+	    c += (d == 1)
+	    x = (x // 8)
+	global_list.append(c)
+	return global_list

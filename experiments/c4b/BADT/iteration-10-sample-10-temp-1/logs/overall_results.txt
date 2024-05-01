@@ -1,2 +1,1 @@
-DETs generated: 1535 # retrieved with grep -o "Found1" main-log_2024-04-30-11-23.log | wc -l
-Number of submission pairs: 1920 # retrieved with grep -o "(PROBLEM_ID, AUTHOR)" main-log_2024-04-30-11-23.log | wc -l
+1554 DETs found out of 1920 
