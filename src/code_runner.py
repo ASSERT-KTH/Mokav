@@ -6,10 +6,10 @@ import logging
 import os
 
 class CodeRunner:
-    def __init__(self, is_func, is_qb, is_iterative, meta_data_config, generated_tests_dir, number_of_samples, temperature) -> None:
+    def __init__(self, is_func, is_qb, iteration_count, meta_data_config, generated_tests_dir, number_of_samples, temperature) -> None:
         self.is_func = is_func
         self.is_qb = is_qb
-        self.is_iteravtive = is_iterative
+        self.iteration_count = iteration_count
         self.test_generator = TestGenerator(config=meta_data_config, number_of_samples=number_of_samples, temperature=temperature)
         self.generated_tests_dir = generated_tests_dir
         self.number_of_samples = number_of_samples
@@ -159,23 +159,22 @@ print(output_code)
             print("###TEMP_TEST_PY_OUTPUT", output)
             logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
             if not (("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output))):
-                if self.is_iteravtive:
-                    for i in range(10):
-                        print("data list", data_list)
+                for i in range(self.iteration_count):
+                    print("data list", data_list)
 
-                        ### TODO: if the first response doesn't have correct format, the output is computed for another response
-                        input_data = self.process_input_data(
-                            data_list[0]["inputdata"])
+                    ### TODO: if the first response doesn't have correct format, the output is computed for another response
+                    input_data = self.process_input_data(
+                        data_list[0]["inputdata"])
 
-                        output_code = self.accepted_code_output(input_data, acc1)
-                        output, data_list = self.generate_test_and_run(
-                            rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id)
-                        print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
-                        logging.info(f"###ITERATION###: {i + 1}")
-                        logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
-                        if ("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output)):
-                            self.save_generated_test(author_id, problem_id, i + 1, output)
-                            return "Found1"
+                    output_code = self.accepted_code_output(input_data, acc1)
+                    output, data_list = self.generate_test_and_run(
+                        rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id)
+                    print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
+                    logging.info(f"###ITERATION###: {i + 1}")
+                    logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
+                    if ("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output)):
+                        self.save_generated_test(author_id, problem_id, i + 1, output)
+                        return "Found1"
                 return str(output)
             elif "Timeout" in output:
                 return "Timeout!!"
