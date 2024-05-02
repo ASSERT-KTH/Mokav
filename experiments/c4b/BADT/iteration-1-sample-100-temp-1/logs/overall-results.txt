@@ -1,1 +1,1 @@
-1486 DETs found, for 1920 pairs of <rejected,accepted> submissions
+1487 DETs found, for 1920 pairs of <rejected,accepted> submissions

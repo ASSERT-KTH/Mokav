@@ -1,440 +1,440 @@
 
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
 
 
     def test0(self):
-        input_0 = "jacobcats"
+        input_0 = "xyz"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "cyjmt"
+        input_1 = "xy"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "opp"
+        input_2 = "wjmzbmr"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "hello"
+        input_3 = "abbcc"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "wjmzmbra"
+        input_4 = "wjmzbmr"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "zwvmqokqpljgnfl"
+        input_5 = "alicebob"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "wjmzbmr"
+        input_6 = "jhgfdsapoiuytrewq"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "aabbcccdd"
+        input_7 = "hello"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "mmnnnbbbaaa"
+        input_8 = "abbcccddd"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "aaaabbb"
+        input_9 = "w"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 
 
     def test10(self):
-        input_10 = "aaaaab"
+        input_10 = "pepe"
         self.assertEqual(patched_source(input_10), original_source(input_10))
             
 
 
     def test11(self):
-        input_11 = "aba"
+        input_11 = "wjmzbmr"
         self.assertEqual(patched_source(input_11), original_source(input_11))
             
 
 
     def test12(self):
-        input_12 = "wzjmzbwr"
+        input_12 = "xy"
         self.assertEqual(patched_source(input_12), original_source(input_12))
             
 
 
     def test13(self):
-        input_13 = "wjmzbmr!#"
+        input_13 = "randomtext"
         self.assertEqual(patched_source(input_13), original_source(input_13))
             
 
 
     def test14(self):
-        input_14 = "abcddcba"
+        input_14 = "wjmzbmr"
         self.assertEqual(patched_source(input_14), original_source(input_14))
             
 
 
     def test15(self):
-        input_15 = "xyzzxyzz"
+        input_15 = "iealake"
         self.assertEqual(patched_source(input_15), original_source(input_15))
             
 
 
     def test16(self):
-        input_16 = "ab"
+        input_16 = "sffgdrnemr"
         self.assertEqual(patched_source(input_16), original_source(input_16))
             
 
 
     def test17(self):
-        input_17 = "xxyyzz"
+        input_17 = "wjmzbmr"
         self.assertEqual(patched_source(input_17), original_source(input_17))
             
 
 
     def test18(self):
-        input_18 = "wjmzbmr!"
+        input_18 = "aghduef"
         self.assertEqual(patched_source(input_18), original_source(input_18))
             
 
 
     def test19(self):
-        input_19 = "codeforces"
+        input_19 = "aabbccddee"
         self.assertEqual(patched_source(input_19), original_source(input_19))
             
 
 
     def test20(self):
-        input_20 = "testing"
+        input_20 = "ahdjfns"
         self.assertEqual(patched_source(input_20), original_source(input_20))
             
 
 
     def test21(self):
-        input_21 = "weeewawr"
+        input_21 = "helloworld"
         self.assertEqual(patched_source(input_21), original_source(input_21))
             
 
 
     def test22(self):
-        input_22 = "iloveprogramming"
+        input_22 = "aabbc"
         self.assertEqual(patched_source(input_22), original_source(input_22))
             
 
 
     def test23(self):
-        input_23 = "sdfenrk743"
+        input_23 = "mwemrsam"
         self.assertEqual(patched_source(input_23), original_source(input_23))
             
 
 
     def test24(self):
-        input_24 = "wjmzbmr"
+        input_24 = "abc"
         self.assertEqual(patched_source(input_24), original_source(input_24))
             
 
 
     def test25(self):
-        input_25 = "ehllo"
+        input_25 = "aabbc"
         self.assertEqual(patched_source(input_25), original_source(input_25))
             
 
 
     def test26(self):
-        input_26 = "xxxxxyyyy"
+        input_26 = "abcd"
         self.assertEqual(patched_source(input_26), original_source(input_26))
             
 
 
     def test27(self):
-        input_27 = "watermelon"
+        input_27 = "wjmzbmr"
         self.assertEqual(patched_source(input_27), original_source(input_27))
             
 
 
     def test28(self):
-        input_28 = "wjmzzbmr"
+        input_28 = "ab"
         self.assertEqual(patched_source(input_28), original_source(input_28))
             
 
 
     def test29(self):
-        input_29 = "patched_function"
+        input_29 = "abc"
         self.assertEqual(patched_source(input_29), original_source(input_29))
             
 
 
     def test30(self):
-        input_30 = "wjmz"
+        input_30 = "abbcccdddd"
         self.assertEqual(patched_source(input_30), original_source(input_30))
             
 
 
     def test31(self):
-        input_31 = "tombrady"
+        input_31 = "ab"
         self.assertEqual(patched_source(input_31), original_source(input_31))
             
 
 
     def test32(self):
-        input_32 = "wjmzbmr!#"
+        input_32 = "wjmzbmrj"
         self.assertEqual(patched_source(input_32), original_source(input_32))
             
 
 
     def test33(self):
-        input_33 = "abcdefgab"
+        input_33 = "wjmzbmrkkd"
         self.assertEqual(patched_source(input_33), original_source(input_33))
             
 
 
     def test34(self):
-        input_34 = "wjmzbmr."
+        input_34 = "xyzab"
         self.assertEqual(patched_source(input_34), original_source(input_34))
             
 
 
     def test35(self):
-        input_35 = "wjmzbmr!"
+        input_35 = "wjmzbmr!;->~|"
         self.assertEqual(patched_source(input_35), original_source(input_35))
             
 
 
     def test36(self):
-        input_36 = "he"
+        input_36 = "commoninput"
         self.assertEqual(patched_source(input_36), original_source(input_36))
             
 
 
     def test37(self):
-        input_37 = "aabbcc"
+        input_37 = "abacabadabacaba"
         self.assertEqual(patched_source(input_37), original_source(input_37))
             
 
 
     def test38(self):
-        input_38 = "cbabcda"
+        input_38 = "accccaddaaabbb"
         self.assertEqual(patched_source(input_38), original_source(input_38))
             
 
 
     def test39(self):
-        input_39 = "aabbc"
+        input_39 = "wjmzbmr!"
         self.assertEqual(patched_source(input_39), original_source(input_39))
             
 
 
     def test40(self):
-        input_40 = "raaeeec"
+        input_40 = "abcccdef"
         self.assertEqual(patched_source(input_40), original_source(input_40))
             
 
 
     def test41(self):
-        input_41 = "binary"
+        input_41 = "ababab"
         self.assertEqual(patched_source(input_41), original_source(input_41))
             
 
 
     def test42(self):
-        input_42 = "wjmzbmr"
+        input_42 = "aaaaabbbccc"
         self.assertEqual(patched_source(input_42), original_source(input_42))
             
 
 
     def test43(self):
-        input_43 = "wtfwtflol"
+        input_43 = "wjmzbmr"
         self.assertEqual(patched_source(input_43), original_source(input_43))
             
 
 
     def test44(self):
-        input_44 = "programming"
+        input_44 = "abc"
         self.assertEqual(patched_source(input_44), original_source(input_44))
             
 
 
     def test45(self):
-        input_45 = "jjjjkkl"
+        input_45 = "wwaiiwd"
         self.assertEqual(patched_source(input_45), original_source(input_45))
             
 
 
     def test46(self):
-        input_46 = "hello"
+        input_46 = "a"
         self.assertEqual(patched_source(input_46), original_source(input_46))
             
 
 
     def test47(self):
-        input_47 = "hello"
+        input_47 = "chatwithherignoresagittariusscenarios"
         self.assertEqual(patched_source(input_47), original_source(input_47))
             
 
 
     def test48(self):
-        input_48 = "abcdefg123456"
+        input_48 = "abbbccc"
         self.assertEqual(patched_source(input_48), original_source(input_48))
             
 
 
     def test49(self):
-        input_49 = "hello"
+        input_49 = "abbcccdddd"
         self.assertEqual(patched_source(input_49), original_source(input_49))
             
 
 
     def test50(self):
-        input_50 = "abcdeffg"
+        input_50 = "ab"
         self.assertEqual(patched_source(input_50), original_source(input_50))
             
 
 
     def test51(self):
-        input_51 = "hi"
+        input_51 = "abccdefg"
         self.assertEqual(patched_source(input_51), original_source(input_51))
             
 
 
     def test52(self):
-        input_52 = "ab"
+        input_52 = "helloworld"
         self.assertEqual(patched_source(input_52), original_source(input_52))
             
 
 
     def test53(self):
-        input_53 = "abcde"
+        input_53 = "abc"
         self.assertEqual(patched_source(input_53), original_source(input_53))
             
 
 
     def test54(self):
-        input_54 = "hello"
+        input_54 = "chatabc"
         self.assertEqual(patched_source(input_54), original_source(input_54))
             
 
 
     def test55(self):
-        input_55 = "withher"
+        input_55 = "ab"
         self.assertEqual(patched_source(input_55), original_source(input_55))
             
 
 
     def test56(self):
-        input_56 = "ABCDabcd"
+        input_56 = "ab"
         self.assertEqual(patched_source(input_56), original_source(input_56))
             
 
 
     def test57(self):
-        input_57 = "wjmzbmr123"
+        input_57 = "xyzaaabbc"
         self.assertEqual(patched_source(input_57), original_source(input_57))
             
 
 
     def test58(self):
-        input_58 = "banana"
+        input_58 = "wjmzbmr"
         self.assertEqual(patched_source(input_58), original_source(input_58))
             
 
 
     def test59(self):
-        input_59 = "wjmzbmrbz"
+        input_59 = "wjmzbmr"
         self.assertEqual(patched_source(input_59), original_source(input_59))
             
 
 
     def test60(self):
-        input_60 = "hiwojs"
+        input_60 = "togqni"
         self.assertEqual(patched_source(input_60), original_source(input_60))
             
 
 
     def test61(self):
-        input_61 = "aaabbbccc"
+        input_61 = "zxcvbnmasdfghjkl"
         self.assertEqual(patched_source(input_61), original_source(input_61))
             
 
 
     def test62(self):
-        input_62 = "abcdefg"
+        input_62 = "ab"
         self.assertEqual(patched_source(input_62), original_source(input_62))
             
 
 
     def test63(self):
-        input_63 = "wjmzbmrz"
+        input_63 = "mango"
         self.assertEqual(patched_source(input_63), original_source(input_63))
             
 
 
     def test64(self):
-        input_64 = "wjmzbmr!Xyz"
+        input_64 = "ab"
         self.assertEqual(patched_source(input_64), original_source(input_64))
             
 
 
     def test65(self):
-        input_65 = "wjmzbmrb"
+        input_65 = "aba"
         self.assertEqual(patched_source(input_65), original_source(input_65))
             
 
 
     def test66(self):
-        input_66 = "wwsd"
+        input_66 = "wjmzbmr"
         self.assertEqual(patched_source(input_66), original_source(input_66))
             
 
 
     def test67(self):
-        input_67 = "xylophone"
+        input_67 = "wjmzbmr"
         self.assertEqual(patched_source(input_67), original_source(input_67))
             
 
 
     def test68(self):
-        input_68 = "abcde"
+        input_68 = "aabbcdd"
         self.assertEqual(patched_source(input_68), original_source(input_68))
             
 
 
     def test69(self):
-        input_69 = "wzmdqcqqqmr"
+        input_69 = "sdfs"
         self.assertEqual(patched_source(input_69), original_source(input_69))
             
 
 
     def test70(self):
-        input_70 = "aabbccc"
+        input_70 = "exposetest"
         self.assertEqual(patched_source(input_70), original_source(input_70))
             
 
 
     def test71(self):
-        input_71 = "HELLOWORLD"
+        input_71 = "wjmzbmr123"
         self.assertEqual(patched_source(input_71), original_source(input_71))
             
 
@@ -446,164 +446,158 @@ class TestFunctions(unittest.TestCase):
 
 
     def test73(self):
-        input_73 = "xyzabc"
+        input_73 = "abccc"
         self.assertEqual(patched_source(input_73), original_source(input_73))
             
 
 
     def test74(self):
-        input_74 = "diversify"
+        input_74 = "fghjkloiuy"
         self.assertEqual(patched_source(input_74), original_source(input_74))
             
 
 
     def test75(self):
-        input_75 = "lalalalala"
+        input_75 = "wjmzrzm"
         self.assertEqual(patched_source(input_75), original_source(input_75))
             
 
 
     def test76(self):
-        input_76 = "helloworld"
+        input_76 = "aab"
         self.assertEqual(patched_source(input_76), original_source(input_76))
             
 
 
     def test77(self):
-        input_77 = "wjmz"
+        input_77 = "wjmzbmrq"
         self.assertEqual(patched_source(input_77), original_source(input_77))
             
 
 
     def test78(self):
-        input_78 = "wljxls"
+        input_78 = "wjmzbmr"
         self.assertEqual(patched_source(input_78), original_source(input_78))
             
 
 
     def test79(self):
-        input_79 = "abcc"
+        input_79 = "hirohamada"
         self.assertEqual(patched_source(input_79), original_source(input_79))
             
 
 
     def test80(self):
-        input_80 = "wjmzbmr"
+        input_80 = "program testing"
         self.assertEqual(patched_source(input_80), original_source(input_80))
             
 
 
     def test81(self):
-        input_81 = "jsdighow"
+        input_81 = "helloworld"
         self.assertEqual(patched_source(input_81), original_source(input_81))
             
 
 
     def test82(self):
-        input_82 = "qwertyuiop"
+        input_82 = "helloworld"
         self.assertEqual(patched_source(input_82), original_source(input_82))
             
 
 
     def test83(self):
-        input_83 = "hhellloo"
+        input_83 = "wjmzbmr"
         self.assertEqual(patched_source(input_83), original_source(input_83))
             
 
 
     def test84(self):
-        input_84 = "wjmzbmrz"
+        input_84 = "testinput"
         self.assertEqual(patched_source(input_84), original_source(input_84))
             
 
 
     def test85(self):
-        input_85 = "ab"
+        input_85 = "programtesting"
         self.assertEqual(patched_source(input_85), original_source(input_85))
             
 
 
     def test86(self):
-        input_86 = "abbcccddddeeeee"
+        input_86 = "wjmzbmr"
         self.assertEqual(patched_source(input_86), original_source(input_86))
             
 
 
     def test87(self):
-        input_87 = ""
+        input_87 = "qwerty"
         self.assertEqual(patched_source(input_87), original_source(input_87))
             
 
 
     def test88(self):
-        input_88 = "Sphinx of black quartz, judge my vow."
+        input_88 = "isawesome"
         self.assertEqual(patched_source(input_88), original_source(input_88))
             
 
 
     def test89(self):
-        input_89 = "wjmzbmr!#$%^&"
+        input_89 = "wjmzbmr!?"
         self.assertEqual(patched_source(input_89), original_source(input_89))
             
 
 
     def test90(self):
-        input_90 = "akjdofp"
+        input_90 = "wjmnzmr"
         self.assertEqual(patched_source(input_90), original_source(input_90))
             
 
 
     def test91(self):
-        input_91 = "aabc"
+        input_91 = "hello"
         self.assertEqual(patched_source(input_91), original_source(input_91))
             
 
 
     def test92(self):
-        input_92 = "aabbcc"
+        input_92 = "helloworld"
         self.assertEqual(patched_source(input_92), original_source(input_92))
             
 
 
     def test93(self):
-        input_93 = "hello"
+        input_93 = "wjmzbmr"
         self.assertEqual(patched_source(input_93), original_source(input_93))
             
 
 
     def test94(self):
-        input_94 = "ohiwkatkrlnccikmm"
+        input_94 = "ab"
         self.assertEqual(patched_source(input_94), original_source(input_94))
             
 
 
     def test95(self):
-        input_95 = "aaabbbcccd"
+        input_95 = "aabcc"
         self.assertEqual(patched_source(input_95), original_source(input_95))
             
 
 
     def test96(self):
-        input_96 = "ab"
+        input_96 = "programming"
         self.assertEqual(patched_source(input_96), original_source(input_96))
             
 
 
     def test97(self):
-        input_97 = "mississippi"
+        input_97 = "softwaretesting"
         self.assertEqual(patched_source(input_97), original_source(input_97))
             
 
 
     def test98(self):
-        input_98 = "helloworld"
+        input_98 = "aabbcc"
         self.assertEqual(patched_source(input_98), original_source(input_98))
-            
-
-
-    def test99(self):
-        input_99 = "ceffc"
-        self.assertEqual(patched_source(input_99), original_source(input_99))
             
 
 

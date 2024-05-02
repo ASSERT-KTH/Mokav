@@ -1,224 +1,224 @@
 
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
 
 
     def test0(self):
-        input_0 = "6b"
+        input_0 = "999999999999999999a"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "10c"
+        input_1 = "170935926047714665c"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "999999999999999999a"
+        input_2 = "4b"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "999999999999999995b"
+        input_3 = "999999999999999999f"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "999999999999999999f"
+        input_4 = "15b"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "999999999999999998f"
+        input_5 = "999999999999999999e"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "8c"
+        input_6 = "999999999999999995c"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "1312e"
+        input_7 = "999999999999999995c"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "999999999999999999f"
+        input_8 = "202c"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "999999999999999999a"
+        input_9 = "999999999999999998d"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 
 
     def test10(self):
-        input_10 = "12b"
+        input_10 = "999999999999999995e"
         self.assertEqual(patched_source(input_10), original_source(input_10))
             
 
 
     def test11(self):
-        input_11 = "999999999999999999f"
+        input_11 = "999999999999999999b"
         self.assertEqual(patched_source(input_11), original_source(input_11))
             
 
 
     def test12(self):
-        input_12 = "8a"
+        input_12 = "999999999999999995c"
         self.assertEqual(patched_source(input_12), original_source(input_12))
             
 
 
     def test13(self):
-        input_13 = "999999999999999995d"
+        input_13 = "6c"
         self.assertEqual(patched_source(input_13), original_source(input_13))
             
 
 
     def test14(self):
-        input_14 = "999999999999999999c"
+        input_14 = "999999999999999995c"
         self.assertEqual(patched_source(input_14), original_source(input_14))
             
 
 
     def test15(self):
-        input_15 = "30a"
+        input_15 = "100000000000000001d"
         self.assertEqual(patched_source(input_15), original_source(input_15))
             
 
 
     def test16(self):
-        input_16 = "10a"
+        input_16 = "999999999999999998c"
         self.assertEqual(patched_source(input_16), original_source(input_16))
             
 
 
     def test17(self):
-        input_17 = "3c"
+        input_17 = "999999999999999998f"
         self.assertEqual(patched_source(input_17), original_source(input_17))
             
 
 
     def test18(self):
-        input_18 = "999999999999999999f"
+        input_18 = "999999999999999997d"
         self.assertEqual(patched_source(input_18), original_source(input_18))
             
 
 
     def test19(self):
-        input_19 = "16e"
+        input_19 = "999999999999999995a"
         self.assertEqual(patched_source(input_19), original_source(input_19))
             
 
 
     def test20(self):
-        input_20 = "999999999999999999a"
+        input_20 = "100000000000000002b"
         self.assertEqual(patched_source(input_20), original_source(input_20))
             
 
 
     def test21(self):
-        input_21 = "999999999999999998a"
+        input_21 = "999999999999999999f"
         self.assertEqual(patched_source(input_21), original_source(input_21))
             
 
 
     def test22(self):
-        input_22 = "1000000000000000000c"
+        input_22 = "9f"
         self.assertEqual(patched_source(input_22), original_source(input_22))
             
 
 
     def test23(self):
-        input_23 = "999999999999999999b"
+        input_23 = "999999999999999998f"
         self.assertEqual(patched_source(input_23), original_source(input_23))
             
 
 
     def test24(self):
-        input_24 = "8a"
+        input_24 = "8f"
         self.assertEqual(patched_source(input_24), original_source(input_24))
             
 
 
     def test25(self):
-        input_25 = "999999999999999999f"
+        input_25 = "999999999999999993b"
         self.assertEqual(patched_source(input_25), original_source(input_25))
             
 
 
     def test26(self):
-        input_26 = "999999999999999995b"
+        input_26 = "999999999999999998c"
         self.assertEqual(patched_source(input_26), original_source(input_26))
             
 
 
     def test27(self):
-        input_27 = "10f"
+        input_27 = "999999999999999998f"
         self.assertEqual(patched_source(input_27), original_source(input_27))
             
 
 
     def test28(self):
-        input_28 = "999999999999999995e"
+        input_28 = "999999999999999999a"
         self.assertEqual(patched_source(input_28), original_source(input_28))
             
 
 
     def test29(self):
-        input_29 = "999999999999999999e"
+        input_29 = "100000000000000000a"
         self.assertEqual(patched_source(input_29), original_source(input_29))
             
 
 
     def test30(self):
-        input_30 = "8a"
+        input_30 = "10b"
         self.assertEqual(patched_source(input_30), original_source(input_30))
             
 
 
     def test31(self):
-        input_31 = "14f"
+        input_31 = "999999999999999998f"
         self.assertEqual(patched_source(input_31), original_source(input_31))
             
 
 
     def test32(self):
-        input_32 = "20f"
+        input_32 = "13e"
         self.assertEqual(patched_source(input_32), original_source(input_32))
             
 
 
     def test33(self):
-        input_33 = "999999999999999998f"
+        input_33 = "999999999999999999f"
         self.assertEqual(patched_source(input_33), original_source(input_33))
             
 
 
     def test34(self):
-        input_34 = "999999999999999998a"
+        input_34 = "5a"
         self.assertEqual(patched_source(input_34), original_source(input_34))
             
 
 
     def test35(self):
-        input_35 = "999999999999999999f"
+        input_35 = "999999999999999999c"
         self.assertEqual(patched_source(input_35), original_source(input_35))
             
 
@@ -230,259 +230,259 @@ class TestFunctions(unittest.TestCase):
 
 
     def test37(self):
-        input_37 = "999999999999999998f"
+        input_37 = "999999999999999998c"
         self.assertEqual(patched_source(input_37), original_source(input_37))
             
 
 
     def test38(self):
-        input_38 = "8d"
+        input_38 = "999999999999999999a"
         self.assertEqual(patched_source(input_38), original_source(input_38))
             
 
 
     def test39(self):
-        input_39 = "999999999999999995a"
+        input_39 = "12c"
         self.assertEqual(patched_source(input_39), original_source(input_39))
             
 
 
     def test40(self):
-        input_40 = "999999999999999999a"
+        input_40 = "999999999999999995a"
         self.assertEqual(patched_source(input_40), original_source(input_40))
             
 
 
     def test41(self):
-        input_41 = "999999999999999995f"
+        input_41 = "1000000000000000000a"
         self.assertEqual(patched_source(input_41), original_source(input_41))
             
 
 
     def test42(self):
-        input_42 = "999999999999999998a"
+        input_42 = "999999999999999995a"
         self.assertEqual(patched_source(input_42), original_source(input_42))
             
 
 
     def test43(self):
-        input_43 = "34e"
+        input_43 = "999999999999999998c"
         self.assertEqual(patched_source(input_43), original_source(input_43))
             
 
 
     def test44(self):
-        input_44 = "1000000000000000000d"
+        input_44 = "999999999999999998f"
         self.assertEqual(patched_source(input_44), original_source(input_44))
             
 
 
     def test45(self):
-        input_45 = "999999999999999994d"
+        input_45 = "999999999999999994e"
         self.assertEqual(patched_source(input_45), original_source(input_45))
             
 
 
     def test46(self):
-        input_46 = "4f"
+        input_46 = "999999999999999995a"
         self.assertEqual(patched_source(input_46), original_source(input_46))
             
 
 
     def test47(self):
-        input_47 = "3c"
+        input_47 = "999999999999999994f"
         self.assertEqual(patched_source(input_47), original_source(input_47))
             
 
 
     def test48(self):
-        input_48 = "999999999999999999f"
+        input_48 = "999999999999999999e"
         self.assertEqual(patched_source(input_48), original_source(input_48))
             
 
 
     def test49(self):
-        input_49 = "14b"
+        input_49 = "999999999999999998a"
         self.assertEqual(patched_source(input_49), original_source(input_49))
             
 
 
     def test50(self):
-        input_50 = "999999999999999999f"
+        input_50 = "999999999999999999a"
         self.assertEqual(patched_source(input_50), original_source(input_50))
             
 
 
     def test51(self):
-        input_51 = "12a"
+        input_51 = "100000000000000023f"
         self.assertEqual(patched_source(input_51), original_source(input_51))
             
 
 
     def test52(self):
-        input_52 = "4b"
+        input_52 = "999999999999999999a"
         self.assertEqual(patched_source(input_52), original_source(input_52))
             
 
 
     def test53(self):
-        input_53 = "999999999999999998f"
+        input_53 = "999999999999999999f"
         self.assertEqual(patched_source(input_53), original_source(input_53))
             
 
 
     def test54(self):
-        input_54 = "999999999999999999a"
+        input_54 = "999999999999999999f"
         self.assertEqual(patched_source(input_54), original_source(input_54))
             
 
 
     def test55(self):
-        input_55 = "999999999999999998e"
+        input_55 = "999999999999999994a"
         self.assertEqual(patched_source(input_55), original_source(input_55))
             
 
 
     def test56(self):
-        input_56 = "999999999999999999f"
+        input_56 = "999999999999999999a"
         self.assertEqual(patched_source(input_56), original_source(input_56))
             
 
 
     def test57(self):
-        input_57 = "999999999999999999f"
+        input_57 = "6a"
         self.assertEqual(patched_source(input_57), original_source(input_57))
             
 
 
     def test58(self):
-        input_58 = "999999999999999995a"
+        input_58 = "999999999999999996a"
         self.assertEqual(patched_source(input_58), original_source(input_58))
             
 
 
     def test59(self):
-        input_59 = "9e"
+        input_59 = "999999999999999998f"
         self.assertEqual(patched_source(input_59), original_source(input_59))
             
 
 
     def test60(self):
-        input_60 = "999999999999999999a"
+        input_60 = "999999999999999995c"
         self.assertEqual(patched_source(input_60), original_source(input_60))
             
 
 
     def test61(self):
-        input_61 = "999999999999999995a"
+        input_61 = "999999999999999999f"
         self.assertEqual(patched_source(input_61), original_source(input_61))
             
 
 
     def test62(self):
-        input_62 = "6f"
+        input_62 = "6d"
         self.assertEqual(patched_source(input_62), original_source(input_62))
             
 
 
     def test63(self):
-        input_63 = "8c"
+        input_63 = "999999999999999995b"
         self.assertEqual(patched_source(input_63), original_source(input_63))
             
 
 
     def test64(self):
-        input_64 = "20959152e"
+        input_64 = "999999999999999999f"
         self.assertEqual(patched_source(input_64), original_source(input_64))
             
 
 
     def test65(self):
-        input_65 = "999999999999999999f"
+        input_65 = "999999999999999995c"
         self.assertEqual(patched_source(input_65), original_source(input_65))
             
 
 
     def test66(self):
-        input_66 = "100000000000000001f"
+        input_66 = "999999999999999999f"
         self.assertEqual(patched_source(input_66), original_source(input_66))
             
 
 
     def test67(self):
-        input_67 = "8a"
+        input_67 = "3c"
         self.assertEqual(patched_source(input_67), original_source(input_67))
             
 
 
     def test68(self):
-        input_68 = "20c"
+        input_68 = "999999999999999998f"
         self.assertEqual(patched_source(input_68), original_source(input_68))
             
 
 
     def test69(self):
-        input_69 = "4d"
+        input_69 = "45f"
         self.assertEqual(patched_source(input_69), original_source(input_69))
             
 
 
     def test70(self):
-        input_70 = "999999999999999995c"
+        input_70 = "999999999999999999a"
         self.assertEqual(patched_source(input_70), original_source(input_70))
             
 
 
     def test71(self):
-        input_71 = "8b"
+        input_71 = "999999999999999995a"
         self.assertEqual(patched_source(input_71), original_source(input_71))
             
 
 
     def test72(self):
-        input_72 = "5b"
+        input_72 = "999999999999999999f"
         self.assertEqual(patched_source(input_72), original_source(input_72))
             
 
 
     def test73(self):
-        input_73 = "999999999999999999c"
+        input_73 = "999999999999999999a"
         self.assertEqual(patched_source(input_73), original_source(input_73))
             
 
 
     def test74(self):
-        input_74 = "999999999999999999f"
+        input_74 = "999999999999999999a"
         self.assertEqual(patched_source(input_74), original_source(input_74))
             
 
 
     def test75(self):
-        input_75 = "999999999999999999f"
+        input_75 = "999999999999999998b"
         self.assertEqual(patched_source(input_75), original_source(input_75))
             
 
 
     def test76(self):
-        input_76 = "10c"
+        input_76 = "999999999999999995a"
         self.assertEqual(patched_source(input_76), original_source(input_76))
             
 
 
     def test77(self):
-        input_77 = "999999999999999995a"
+        input_77 = "4a"
         self.assertEqual(patched_source(input_77), original_source(input_77))
             
 
 
     def test78(self):
-        input_78 = "13f"
+        input_78 = "999999999999999995c"
         self.assertEqual(patched_source(input_78), original_source(input_78))
             
 
 
     def test79(self):
-        input_79 = "999999999999999998c"
+        input_79 = "999999999999999999c"
         self.assertEqual(patched_source(input_79), original_source(input_79))
             
 
@@ -494,13 +494,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test81(self):
-        input_81 = "10b"
+        input_81 = "48c"
         self.assertEqual(patched_source(input_81), original_source(input_81))
             
 
 
     def test82(self):
-        input_82 = "10a"
+        input_82 = "999999999999999999b"
         self.assertEqual(patched_source(input_82), original_source(input_82))
             
 
@@ -518,91 +518,91 @@ class TestFunctions(unittest.TestCase):
 
 
     def test85(self):
-        input_85 = "15a"
+        input_85 = "999999999999999999a"
         self.assertEqual(patched_source(input_85), original_source(input_85))
             
 
 
     def test86(self):
-        input_86 = "999999999999999995e"
+        input_86 = "16d"
         self.assertEqual(patched_source(input_86), original_source(input_86))
             
 
 
     def test87(self):
-        input_87 = "999999999999999999a"
+        input_87 = "999999999999999998a"
         self.assertEqual(patched_source(input_87), original_source(input_87))
             
 
 
     def test88(self):
-        input_88 = "999999999999999994c"
+        input_88 = "999999999999999999e"
         self.assertEqual(patched_source(input_88), original_source(input_88))
             
 
 
     def test89(self):
-        input_89 = "999999999999999999f"
+        input_89 = "999999999999999998b"
         self.assertEqual(patched_source(input_89), original_source(input_89))
             
 
 
     def test90(self):
-        input_90 = "999999999999999998c"
+        input_90 = "999999999999999999f"
         self.assertEqual(patched_source(input_90), original_source(input_90))
             
 
 
     def test91(self):
-        input_91 = "10b"
+        input_91 = "999999999999999995a"
         self.assertEqual(patched_source(input_91), original_source(input_91))
             
 
 
     def test92(self):
-        input_92 = "4b"
+        input_92 = "999999999999999998a"
         self.assertEqual(patched_source(input_92), original_source(input_92))
             
 
 
     def test93(self):
-        input_93 = "4d"
+        input_93 = "20a"
         self.assertEqual(patched_source(input_93), original_source(input_93))
             
 
 
     def test94(self):
-        input_94 = "22f"
+        input_94 = "1000000000000000000f"
         self.assertEqual(patched_source(input_94), original_source(input_94))
             
 
 
     def test95(self):
-        input_95 = "7f"
+        input_95 = "999999999999999999a"
         self.assertEqual(patched_source(input_95), original_source(input_95))
             
 
 
     def test96(self):
-        input_96 = "12a"
+        input_96 = "999999999999999999f"
         self.assertEqual(patched_source(input_96), original_source(input_96))
             
 
 
     def test97(self):
-        input_97 = "999999999999999995c"
+        input_97 = "12a"
         self.assertEqual(patched_source(input_97), original_source(input_97))
             
 
 
     def test98(self):
-        input_98 = "1799999999999999c"
+        input_98 = "999999999999999995b"
         self.assertEqual(patched_source(input_98), original_source(input_98))
             
 
 
     def test99(self):
-        input_99 = "999999999999999999a"
+        input_99 = "999999999999999994c"
         self.assertEqual(patched_source(input_99), original_source(input_99))
             
 

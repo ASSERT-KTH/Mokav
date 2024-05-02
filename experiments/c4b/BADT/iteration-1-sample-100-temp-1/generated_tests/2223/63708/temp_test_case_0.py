@@ -1,7 +1,7 @@
 
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
@@ -32,7 +32,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test4(self):
-        input_4 = "4"
+        input_4 = "2"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
@@ -278,7 +278,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test45(self):
-        input_45 = "4"
+        input_45 = "2"
         self.assertEqual(patched_source(input_45), original_source(input_45))
             
 
@@ -452,7 +452,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test74(self):
-        input_74 = "2"
+        input_74 = "6"
         self.assertEqual(patched_source(input_74), original_source(input_74))
             
 

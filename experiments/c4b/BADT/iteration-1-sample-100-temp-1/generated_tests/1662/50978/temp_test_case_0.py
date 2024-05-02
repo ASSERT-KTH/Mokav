@@ -1,422 +1,422 @@
 
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
 
 
     def test0(self):
-        input_0 = "john.doe@gmail.com"
+        input_0 = "testing@program.com/testing"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "test@email.com"
+        input_1 = "john.doe@example.com"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "abc@def"
+        input_2 = "john.doe@example.com"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "test@domain.com/123456"
+        input_3 = "john.doe@example.com"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "john.doe@example.com"
+        input_4 = "@.com"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "user@example.com"
+        input_5 = "name@example.com"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "valid_username@gmail.com/1234"
+        input_6 = "example.@domain.com"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "a@b.c/12"
+        input_7 = "abc@def.ghi/jklm"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "test@test.com/test"
+        input_8 = "abc@def.com/ghi"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "test@case"
+        input_9 = "abc123@domain.com/"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 
 
     def test10(self):
-        input_10 = ".@."
+        input_10 = "@.com"
         self.assertEqual(patched_source(input_10), original_source(input_10))
             
 
 
     def test11(self):
-        input_11 = "test@domain.com"
+        input_11 = "john.doe@example.com"
         self.assertEqual(patched_source(input_11), original_source(input_11))
             
 
 
     def test12(self):
-        input_12 = "@example.com/abc123"
+        input_12 = "test.email@domain.com"
         self.assertEqual(patched_source(input_12), original_source(input_12))
             
 
 
     def test13(self):
-        input_13 = "abc@def.123/456"
+        input_13 = "@.6"
         self.assertEqual(patched_source(input_13), original_source(input_13))
             
 
 
     def test14(self):
-        input_14 = "abc@d.ef1/ghi_j/23"
+        input_14 = "john.doe@example.com"
         self.assertEqual(patched_source(input_14), original_source(input_14))
             
 
 
     def test15(self):
-        input_15 = "@testing_example.com/1234"
+        input_15 = "user@example.com"
         self.assertEqual(patched_source(input_15), original_source(input_15))
             
 
 
     def test16(self):
-        input_16 = "@.example.com"
+        input_16 = "test.email@test.com"
         self.assertEqual(patched_source(input_16), original_source(input_16))
             
 
 
     def test17(self):
-        input_17 = "my.email@domain.com"
+        input_17 = "john.doe@example.com"
         self.assertEqual(patched_source(input_17), original_source(input_17))
             
 
 
     def test18(self):
-        input_18 = "user@abc.com/123"
+        input_18 = "@_9asdf.asdf@asdf/asdf"
         self.assertEqual(patched_source(input_18), original_source(input_18))
             
 
 
     def test19(self):
-        input_19 = "name@domain/extension"
+        input_19 = "abc@def.ghi/jkl"
         self.assertEqual(patched_source(input_19), original_source(input_19))
             
 
 
     def test20(self):
-        input_20 = "john.doe@example.com"
+        input_20 = "@.com"
         self.assertEqual(patched_source(input_20), original_source(input_20))
             
 
 
     def test21(self):
-        input_21 = "test@input/for.patching"
+        input_21 = "abc@gmail.com/1234"
         self.assertEqual(patched_source(input_21), original_source(input_21))
             
 
 
     def test22(self):
-        input_22 = "@./"
+        input_22 = "my_email@example.com"
         self.assertEqual(patched_source(input_22), original_source(input_22))
             
 
 
     def test23(self):
-        input_23 = "@._"
+        input_23 = ".@example.com/_1234567890/6/7"
         self.assertEqual(patched_source(input_23), original_source(input_23))
             
 
 
     def test24(self):
-        input_24 = "a@b/c"
+        input_24 = "test@domain.com"
         self.assertEqual(patched_source(input_24), original_source(input_24))
             
 
 
     def test25(self):
-        input_25 = "@abc"
+        input_25 = "@example.com"
         self.assertEqual(patched_source(input_25), original_source(input_25))
             
 
 
     def test26(self):
-        input_26 = "abc@def/ghi"
+        input_26 = "test@123.com/test"
         self.assertEqual(patched_source(input_26), original_source(input_26))
             
 
 
     def test27(self):
-        input_27 = "@."
+        input_27 = "user@example.com/user123"
         self.assertEqual(patched_source(input_27), original_source(input_27))
             
 
 
     def test28(self):
-        input_28 = "test@123/abc.xyz"
+        input_28 = "abcdef@123.com/path"
         self.assertEqual(patched_source(input_28), original_source(input_28))
             
 
 
     def test29(self):
-        input_29 = "test@string.com"
+        input_29 = "user@example.com"
         self.assertEqual(patched_source(input_29), original_source(input_29))
             
 
 
     def test30(self):
-        input_30 = "@abc123xyz/abc123xyzabc123xyz"
+        input_30 = "a@b.com/c"
         self.assertEqual(patched_source(input_30), original_source(input_30))
             
 
 
     def test31(self):
-        input_31 = "test@123.com/test"
+        input_31 = "user@example.com//"
         self.assertEqual(patched_source(input_31), original_source(input_31))
             
 
 
     def test32(self):
-        input_32 = "john.doe@example.com/123"
+        input_32 = "test@example.com"
         self.assertEqual(patched_source(input_32), original_source(input_32))
             
 
 
     def test33(self):
-        input_33 = "karthik123@gmail.com"
+        input_33 = "john.doe@example.com"
         self.assertEqual(patched_source(input_33), original_source(input_33))
             
 
 
     def test34(self):
-        input_34 = "abc@def.com/12"
+        input_34 = "abc@def.com"
         self.assertEqual(patched_source(input_34), original_source(input_34))
             
 
 
     def test35(self):
-        input_35 = "a@b/c"
+        input_35 = "abc@def.ghi/jkl_mno32145"
         self.assertEqual(patched_source(input_35), original_source(input_35))
             
 
 
     def test36(self):
-        input_36 = "abc@def/123"
+        input_36 = "username@example.com/"
         self.assertEqual(patched_source(input_36), original_source(input_36))
             
 
 
     def test37(self):
-        input_37 = "abc@def.ghi/jkl"
+        input_37 = "email@gmail.com"
         self.assertEqual(patched_source(input_37), original_source(input_37))
             
 
 
     def test38(self):
-        input_38 = "abc@def/ghi.jkl"
+        input_38 = "john.doe@example.com"
         self.assertEqual(patched_source(input_38), original_source(input_38))
             
 
 
     def test39(self):
-        input_39 = "abc@def.ghi"
+        input_39 = "abc@def.ghi/jklmno54321/pqr678"
         self.assertEqual(patched_source(input_39), original_source(input_39))
             
 
 
     def test40(self):
-        input_40 = "test@domain.com/123456"
+        input_40 = "john.doe@example.com"
         self.assertEqual(patched_source(input_40), original_source(input_40))
             
 
 
     def test41(self):
-        input_41 = "a@bcd.efg/hij"
+        input_41 = "abc@gmail.com"
         self.assertEqual(patched_source(input_41), original_source(input_41))
             
 
 
     def test42(self):
-        input_42 = "@./456"
+        input_42 = "abcd@domain.com/123"
         self.assertEqual(patched_source(input_42), original_source(input_42))
             
 
 
     def test43(self):
-        input_43 = "test@code.com"
+        input_43 = "test@example.com"
         self.assertEqual(patched_source(input_43), original_source(input_43))
             
 
 
     def test44(self):
-        input_44 = "a@b/c."
+        input_44 = "a@b.c"
         self.assertEqual(patched_source(input_44), original_source(input_44))
             
 
 
     def test45(self):
-        input_45 = "xy@yahoo.com/d"
+        input_45 = "username@example.com"
         self.assertEqual(patched_source(input_45), original_source(input_45))
             
 
 
     def test46(self):
-        input_46 = "@./abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789"
+        input_46 = "abc@def.ghi/jkl"
         self.assertEqual(patched_source(input_46), original_source(input_46))
             
 
 
     def test47(self):
-        input_47 = "test@123.com/test"
+        input_47 = "a@b.cc/d"
         self.assertEqual(patched_source(input_47), original_source(input_47))
             
 
 
     def test48(self):
-        input_48 = "john.doe@example.com"
+        input_48 = "test@domain.com"
         self.assertEqual(patched_source(input_48), original_source(input_48))
             
 
 
     def test49(self):
-        input_49 = "abc@def/ghi.jkl"
+        input_49 = "@.com"
         self.assertEqual(patched_source(input_49), original_source(input_49))
             
 
 
     def test50(self):
-        input_50 = "john.doe@example.com"
+        input_50 = "user@example.com/user"
         self.assertEqual(patched_source(input_50), original_source(input_50))
             
 
 
     def test51(self):
-        input_51 = "test@/1Gtmu.y"
+        input_51 = "john.doe@example.com"
         self.assertEqual(patched_source(input_51), original_source(input_51))
             
 
 
     def test52(self):
-        input_52 = "_@.a."
+        input_52 = "@.abc123@def/ghi"
         self.assertEqual(patched_source(input_52), original_source(input_52))
             
 
 
     def test53(self):
-        input_53 = "user@example.com"
+        input_53 = "john.doe@example.com"
         self.assertEqual(patched_source(input_53), original_source(input_53))
             
 
 
     def test54(self):
-        input_54 = "john.doe@gmail.com"
+        input_54 = "a@b/c"
         self.assertEqual(patched_source(input_54), original_source(input_54))
             
 
 
     def test55(self):
-        input_55 = "@username1"
+        input_55 = "john.doe@example.com"
         self.assertEqual(patched_source(input_55), original_source(input_55))
             
 
 
     def test56(self):
-        input_56 = "info@domain.com"
+        input_56 = "@./"
         self.assertEqual(patched_source(input_56), original_source(input_56))
             
 
 
     def test57(self):
-        input_57 = "test@_example.com/1234"
+        input_57 = "tester@example.com"
         self.assertEqual(patched_source(input_57), original_source(input_57))
             
 
 
     def test58(self):
-        input_58 = "@_/a"
+        input_58 = "john.doe@example.com"
         self.assertEqual(patched_source(input_58), original_source(input_58))
             
 
 
     def test59(self):
-        input_59 = "john.doe@example.com"
+        input_59 = "@a.com"
         self.assertEqual(patched_source(input_59), original_source(input_59))
             
 
 
     def test60(self):
-        input_60 = "@123/456"
+        input_60 = "john.doe123@example.com"
         self.assertEqual(patched_source(input_60), original_source(input_60))
             
 
 
     def test61(self):
-        input_61 = "a@b/c"
+        input_61 = "user@example.com"
         self.assertEqual(patched_source(input_61), original_source(input_61))
             
 
 
     def test62(self):
-        input_62 = "a@bcd/e_"
+        input_62 = "abc@def.com/ghi"
         self.assertEqual(patched_source(input_62), original_source(input_62))
             
 
 
     def test63(self):
-        input_63 = "@_."
+        input_63 = "abc@def.com/99"
         self.assertEqual(patched_source(input_63), original_source(input_63))
             
 
 
     def test64(self):
-        input_64 = "@_a./c"
+        input_64 = "john.doe@example.com"
         self.assertEqual(patched_source(input_64), original_source(input_64))
             
 
 
     def test65(self):
-        input_65 = "john.doe@example.com"
+        input_65 = "test@example.com"
         self.assertEqual(patched_source(input_65), original_source(input_65))
             
 
 
     def test66(self):
-        input_66 = "a@b/c"
+        input_66 = "email@domain.com"
         self.assertEqual(patched_source(input_66), original_source(input_66))
             
 
 
     def test67(self):
-        input_67 = "example@somedomain.com"
+        input_67 = "email@domain.com"
         self.assertEqual(patched_source(input_67), original_source(input_67))
             
 
 
     def test68(self):
-        input_68 = "@.a_"
+        input_68 = "user@example.com/wronginput"
         self.assertEqual(patched_source(input_68), original_source(input_68))
             
 
@@ -428,61 +428,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test70(self):
-        input_70 = "@./"
+        input_70 = "test@codenight.com/test"
         self.assertEqual(patched_source(input_70), original_source(input_70))
             
 
 
     def test71(self):
-        input_71 = "abcdefghijklmno@pqrstuvwxyz"
+        input_71 = "john.doe@example.com."
         self.assertEqual(patched_source(input_71), original_source(input_71))
             
 
 
     def test72(self):
-        input_72 = "a@b/c"
+        input_72 = ".@._"
         self.assertEqual(patched_source(input_72), original_source(input_72))
             
 
 
     def test73(self):
-        input_73 = "/T3st@Ex@mple_A.37x7926/new_file"
+        input_73 = "@abc.com/123456"
         self.assertEqual(patched_source(input_73), original_source(input_73))
             
 
 
     def test74(self):
-        input_74 = "example@website.com"
+        input_74 = "user@domain.com"
         self.assertEqual(patched_source(input_74), original_source(input_74))
             
 
 
     def test75(self):
-        input_75 = "abc@abc.abc/123"
+        input_75 = "bob@example.com"
         self.assertEqual(patched_source(input_75), original_source(input_75))
             
 
 
     def test76(self):
-        input_76 = "test@sample.com"
+        input_76 = "john.doe@example.com"
         self.assertEqual(patched_source(input_76), original_source(input_76))
             
 
 
     def test77(self):
-        input_77 = ".abc@def/ghi.jkl/mno"
+        input_77 = "example@example.com"
         self.assertEqual(patched_source(input_77), original_source(input_77))
             
 
 
     def test78(self):
-        input_78 = "@."
+        input_78 = "test@domain.com"
         self.assertEqual(patched_source(input_78), original_source(input_78))
             
 
 
     def test79(self):
-        input_79 = "abc@def.ghi/jkl"
+        input_79 = "test@domain.com./extra"
         self.assertEqual(patched_source(input_79), original_source(input_79))
             
 
@@ -494,115 +494,115 @@ class TestFunctions(unittest.TestCase):
 
 
     def test81(self):
-        input_81 = "john.doe@example.com"
+        input_81 = "@0"
         self.assertEqual(patched_source(input_81), original_source(input_81))
             
 
 
     def test82(self):
-        input_82 = "john.doe@example.com"
+        input_82 = "test@domain.com/12345"
         self.assertEqual(patched_source(input_82), original_source(input_82))
             
 
 
     def test83(self):
-        input_83 = "example@domain.com"
+        input_83 = "john.doe@example.com"
         self.assertEqual(patched_source(input_83), original_source(input_83))
             
 
 
     def test84(self):
-        input_84 = "test@example.com"
+        input_84 = "john.doe@example.com"
         self.assertEqual(patched_source(input_84), original_source(input_84))
             
 
 
     def test85(self):
-        input_85 = "a@example.com"
+        input_85 = "a@b.com/c"
         self.assertEqual(patched_source(input_85), original_source(input_85))
             
 
 
     def test86(self):
-        input_86 = "alice@company.com"
+        input_86 = " [email protected]"
         self.assertEqual(patched_source(input_86), original_source(input_86))
             
 
 
     def test87(self):
-        input_87 = "test@examp.le.com/test"
+        input_87 = "example@domain.com"
         self.assertEqual(patched_source(input_87), original_source(input_87))
             
 
 
     def test88(self):
-        input_88 = "ab@cd.ef/gh"
+        input_88 = "@example.com"
         self.assertEqual(patched_source(input_88), original_source(input_88))
             
 
 
     def test89(self):
-        input_89 = "@va[45..]"
+        input_89 = "john.doe@example.com"
         self.assertEqual(patched_source(input_89), original_source(input_89))
             
 
 
     def test90(self):
-        input_90 = "@/@."
+        input_90 = "@."
         self.assertEqual(patched_source(input_90), original_source(input_90))
             
 
 
     def test91(self):
-        input_91 = "example@domain.com"
+        input_91 = "john.doe@example.com"
         self.assertEqual(patched_source(input_91), original_source(input_91))
             
 
 
     def test92(self):
-        input_92 = "john.doe@gmail.com"
+        input_92 = "john.doe@example.com"
         self.assertEqual(patched_source(input_92), original_source(input_92))
             
 
 
     def test93(self):
-        input_93 = "@/1234567"
+        input_93 = "example@domain.com"
         self.assertEqual(patched_source(input_93), original_source(input_93))
             
 
 
     def test94(self):
-        input_94 = "..@.abcdefghijklmnopqrstuvwxyz_123456"
+        input_94 = "john.doe@example.com/test_string"
         self.assertEqual(patched_source(input_94), original_source(input_94))
             
 
 
     def test95(self):
-        input_95 = "hello@world.com/validusername"
+        input_95 = "test@sample.com"
         self.assertEqual(patched_source(input_95), original_source(input_95))
             
 
 
     def test96(self):
-        input_96 = "abc@def/ghi.jkl"
+        input_96 = "example@domain.com/valid"
         self.assertEqual(patched_source(input_96), original_source(input_96))
             
 
 
     def test97(self):
-        input_97 = "abc@def.example"
+        input_97 = "@example.com"
         self.assertEqual(patched_source(input_97), original_source(input_97))
             
 
 
     def test98(self):
-        input_98 = "example@string"
+        input_98 = "abc@def.com/ghi"
         self.assertEqual(patched_source(input_98), original_source(input_98))
             
 
 
     def test99(self):
-        input_99 = "@/a"
+        input_99 = "a@b.c"
         self.assertEqual(patched_source(input_99), original_source(input_99))
             
 

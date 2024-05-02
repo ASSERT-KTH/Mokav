@@ -1,7 +1,7 @@
 
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
@@ -74,7 +74,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test11(self):
-        input_11 = "12"
+        input_11 = "2"
         self.assertEqual(patched_source(input_11), original_source(input_11))
             
 
@@ -176,7 +176,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test28(self):
-        input_28 = "2"
+        input_28 = "7"
         self.assertEqual(patched_source(input_28), original_source(input_28))
             
 
@@ -218,7 +218,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test35(self):
-        input_35 = "2"
+        input_35 = "9"
         self.assertEqual(patched_source(input_35), original_source(input_35))
             
 
@@ -248,7 +248,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test40(self):
-        input_40 = "2"
+        input_40 = "4"
         self.assertEqual(patched_source(input_40), original_source(input_40))
             
 
@@ -368,7 +368,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test60(self):
-        input_60 = "2"
+        input_60 = "4"
         self.assertEqual(patched_source(input_60), original_source(input_60))
             
 
@@ -416,7 +416,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test68(self):
-        input_68 = "4"
+        input_68 = "2"
         self.assertEqual(patched_source(input_68), original_source(input_68))
             
 
@@ -506,7 +506,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test83(self):
-        input_83 = "4"
+        input_83 = "2"
         self.assertEqual(patched_source(input_83), original_source(input_83))
             
 
@@ -530,7 +530,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test87(self):
-        input_87 = "2"
+        input_87 = "6"
         self.assertEqual(patched_source(input_87), original_source(input_87))
             
 

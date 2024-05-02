@@ -1,32 +1,32 @@
 
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
 
 
     def test0(self):
-        input_0 = "5"
+        input_0 = "7"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "5"
+        input_1 = "11"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "9"
+        input_2 = "11"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "3"
+        input_3 = "9"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
@@ -38,19 +38,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test5(self):
-        input_5 = "7"
+        input_5 = "9"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "5"
+        input_6 = "7"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "9"
+        input_7 = "5"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
@@ -62,7 +62,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test9(self):
-        input_9 = "9"
+        input_9 = "5"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 
@@ -80,19 +80,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test12(self):
-        input_12 = "7"
+        input_12 = "5"
         self.assertEqual(patched_source(input_12), original_source(input_12))
             
 
 
     def test13(self):
-        input_13 = "5"
+        input_13 = "7"
         self.assertEqual(patched_source(input_13), original_source(input_13))
             
 
 
     def test14(self):
-        input_14 = "5"
+        input_14 = "9"
         self.assertEqual(patched_source(input_14), original_source(input_14))
             
 
@@ -104,13 +104,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test16(self):
-        input_16 = "5"
+        input_16 = "9"
         self.assertEqual(patched_source(input_16), original_source(input_16))
             
 
 
     def test17(self):
-        input_17 = "5"
+        input_17 = "7"
         self.assertEqual(patched_source(input_17), original_source(input_17))
             
 
@@ -134,7 +134,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test21(self):
-        input_21 = "3"
+        input_21 = "9"
         self.assertEqual(patched_source(input_21), original_source(input_21))
             
 
@@ -146,13 +146,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test23(self):
-        input_23 = "5"
+        input_23 = "7"
         self.assertEqual(patched_source(input_23), original_source(input_23))
             
 
 
     def test24(self):
-        input_24 = "5"
+        input_24 = "13"
         self.assertEqual(patched_source(input_24), original_source(input_24))
             
 
@@ -164,25 +164,25 @@ class TestFunctions(unittest.TestCase):
 
 
     def test26(self):
-        input_26 = "5"
+        input_26 = "7"
         self.assertEqual(patched_source(input_26), original_source(input_26))
             
 
 
     def test27(self):
-        input_27 = "7"
+        input_27 = "11"
         self.assertEqual(patched_source(input_27), original_source(input_27))
             
 
 
     def test28(self):
-        input_28 = "5"
+        input_28 = "13"
         self.assertEqual(patched_source(input_28), original_source(input_28))
             
 
 
     def test29(self):
-        input_29 = "7"
+        input_29 = "5"
         self.assertEqual(patched_source(input_29), original_source(input_29))
             
 
@@ -206,13 +206,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test33(self):
-        input_33 = "3"
+        input_33 = "7"
         self.assertEqual(patched_source(input_33), original_source(input_33))
             
 
 
     def test34(self):
-        input_34 = "9"
+        input_34 = "5"
         self.assertEqual(patched_source(input_34), original_source(input_34))
             
 
@@ -224,19 +224,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test36(self):
-        input_36 = "9"
+        input_36 = "5"
         self.assertEqual(patched_source(input_36), original_source(input_36))
             
 
 
     def test37(self):
-        input_37 = "5"
+        input_37 = "7"
         self.assertEqual(patched_source(input_37), original_source(input_37))
             
 
 
     def test38(self):
-        input_38 = "5"
+        input_38 = "7"
         self.assertEqual(patched_source(input_38), original_source(input_38))
             
 
@@ -248,7 +248,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test40(self):
-        input_40 = "7"
+        input_40 = "5"
         self.assertEqual(patched_source(input_40), original_source(input_40))
             
 
@@ -266,13 +266,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test43(self):
-        input_43 = "5"
+        input_43 = "7"
         self.assertEqual(patched_source(input_43), original_source(input_43))
             
 
 
     def test44(self):
-        input_44 = "5"
+        input_44 = "7"
         self.assertEqual(patched_source(input_44), original_source(input_44))
             
 
@@ -290,19 +290,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test47(self):
-        input_47 = "5"
+        input_47 = "2"
         self.assertEqual(patched_source(input_47), original_source(input_47))
             
 
 
     def test48(self):
-        input_48 = "5"
+        input_48 = "9"
         self.assertEqual(patched_source(input_48), original_source(input_48))
             
 
 
     def test49(self):
-        input_49 = "5"
+        input_49 = "9"
         self.assertEqual(patched_source(input_49), original_source(input_49))
             
 
@@ -314,31 +314,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test51(self):
-        input_51 = "5"
+        input_51 = "13"
         self.assertEqual(patched_source(input_51), original_source(input_51))
             
 
 
     def test52(self):
-        input_52 = "5"
+        input_52 = "9"
         self.assertEqual(patched_source(input_52), original_source(input_52))
             
 
 
     def test53(self):
-        input_53 = "5"
+        input_53 = "13"
         self.assertEqual(patched_source(input_53), original_source(input_53))
             
 
 
     def test54(self):
-        input_54 = "7"
+        input_54 = "9"
         self.assertEqual(patched_source(input_54), original_source(input_54))
             
 
 
     def test55(self):
-        input_55 = "5"
+        input_55 = "3"
         self.assertEqual(patched_source(input_55), original_source(input_55))
             
 
@@ -350,13 +350,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test57(self):
-        input_57 = "9"
+        input_57 = "5"
         self.assertEqual(patched_source(input_57), original_source(input_57))
             
 
 
     def test58(self):
-        input_58 = "5"
+        input_58 = "7"
         self.assertEqual(patched_source(input_58), original_source(input_58))
             
 
@@ -368,19 +368,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test60(self):
-        input_60 = "5"
+        input_60 = "7"
         self.assertEqual(patched_source(input_60), original_source(input_60))
             
 
 
     def test61(self):
-        input_61 = "9"
+        input_61 = "7"
         self.assertEqual(patched_source(input_61), original_source(input_61))
             
 
 
     def test62(self):
-        input_62 = "7"
+        input_62 = "9"
         self.assertEqual(patched_source(input_62), original_source(input_62))
             
 
@@ -398,25 +398,25 @@ class TestFunctions(unittest.TestCase):
 
 
     def test65(self):
-        input_65 = "9"
+        input_65 = "7"
         self.assertEqual(patched_source(input_65), original_source(input_65))
             
 
 
     def test66(self):
-        input_66 = "9"
+        input_66 = "5"
         self.assertEqual(patched_source(input_66), original_source(input_66))
             
 
 
     def test67(self):
-        input_67 = "7"
+        input_67 = "9"
         self.assertEqual(patched_source(input_67), original_source(input_67))
             
 
 
     def test68(self):
-        input_68 = "11"
+        input_68 = "7"
         self.assertEqual(patched_source(input_68), original_source(input_68))
             
 
@@ -428,31 +428,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test70(self):
-        input_70 = "7"
+        input_70 = "9"
         self.assertEqual(patched_source(input_70), original_source(input_70))
             
 
 
     def test71(self):
-        input_71 = "5"
+        input_71 = "10"
         self.assertEqual(patched_source(input_71), original_source(input_71))
             
 
 
     def test72(self):
-        input_72 = "5"
+        input_72 = "7"
         self.assertEqual(patched_source(input_72), original_source(input_72))
             
 
 
     def test73(self):
-        input_73 = "5"
+        input_73 = "7"
         self.assertEqual(patched_source(input_73), original_source(input_73))
             
 
 
     def test74(self):
-        input_74 = "5"
+        input_74 = "7"
         self.assertEqual(patched_source(input_74), original_source(input_74))
             
 
@@ -464,13 +464,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test76(self):
-        input_76 = "5"
+        input_76 = "13"
         self.assertEqual(patched_source(input_76), original_source(input_76))
             
 
 
     def test77(self):
-        input_77 = "5"
+        input_77 = "7"
         self.assertEqual(patched_source(input_77), original_source(input_77))
             
 
@@ -482,7 +482,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test79(self):
-        input_79 = "7"
+        input_79 = "13"
         self.assertEqual(patched_source(input_79), original_source(input_79))
             
 
@@ -494,25 +494,25 @@ class TestFunctions(unittest.TestCase):
 
 
     def test81(self):
-        input_81 = "9"
+        input_81 = "7"
         self.assertEqual(patched_source(input_81), original_source(input_81))
             
 
 
     def test82(self):
-        input_82 = "5"
+        input_82 = "14"
         self.assertEqual(patched_source(input_82), original_source(input_82))
             
 
 
     def test83(self):
-        input_83 = "5"
+        input_83 = "7"
         self.assertEqual(patched_source(input_83), original_source(input_83))
             
 
 
     def test84(self):
-        input_84 = "7"
+        input_84 = "9"
         self.assertEqual(patched_source(input_84), original_source(input_84))
             
 
@@ -524,7 +524,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test86(self):
-        input_86 = "7"
+        input_86 = "5"
         self.assertEqual(patched_source(input_86), original_source(input_86))
             
 
@@ -536,13 +536,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test88(self):
-        input_88 = "7"
+        input_88 = "5"
         self.assertEqual(patched_source(input_88), original_source(input_88))
             
 
 
     def test89(self):
-        input_89 = "5"
+        input_89 = "9"
         self.assertEqual(patched_source(input_89), original_source(input_89))
             
 
@@ -554,7 +554,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test91(self):
-        input_91 = "5"
+        input_91 = "15"
         self.assertEqual(patched_source(input_91), original_source(input_91))
             
 
@@ -566,31 +566,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test93(self):
-        input_93 = "5"
+        input_93 = "7"
         self.assertEqual(patched_source(input_93), original_source(input_93))
             
 
 
     def test94(self):
-        input_94 = "5"
+        input_94 = "7"
         self.assertEqual(patched_source(input_94), original_source(input_94))
             
 
 
     def test95(self):
-        input_95 = "7"
+        input_95 = "5"
         self.assertEqual(patched_source(input_95), original_source(input_95))
             
 
 
     def test96(self):
-        input_96 = "5"
+        input_96 = "9"
         self.assertEqual(patched_source(input_96), original_source(input_96))
             
 
 
     def test97(self):
-        input_97 = "9"
+        input_97 = "5"
         self.assertEqual(patched_source(input_97), original_source(input_97))
             
 
@@ -602,7 +602,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test99(self):
-        input_99 = "7"
+        input_99 = "9"
         self.assertEqual(patched_source(input_99), original_source(input_99))
             
 

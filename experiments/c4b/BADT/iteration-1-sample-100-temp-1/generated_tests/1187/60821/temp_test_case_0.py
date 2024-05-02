@@ -1,290 +1,290 @@
 
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
 
 
     def test0(self):
-        input_0 = "cAPS"
+        input_0 = "AaBCD"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "cAPs"
+        input_1 = "AaBCD"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "eXAMPLE"
+        input_2 = "aBCD"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "aBcd"
+        input_3 = "aBCD"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "HelloWorld"
+        input_4 = "aBCD"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "Aac"
+        input_5 = "a"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "capS"
+        input_6 = "aBCD"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "CAPs"
+        input_7 = "aBC"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "Aaa"
+        input_8 = "aBCDE"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "abcD"
+        input_9 = "aBcdE"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 
 
     def test10(self):
-        input_10 = "123ABC"
+        input_10 = "TeSt"
         self.assertEqual(patched_source(input_10), original_source(input_10))
             
 
 
     def test11(self):
-        input_11 = "Testing123"
+        input_11 = "caps"
         self.assertEqual(patched_source(input_11), original_source(input_11))
             
 
 
     def test12(self):
-        input_12 = "tEsTcases"
+        input_12 = "catFISH"
         self.assertEqual(patched_source(input_12), original_source(input_12))
             
 
 
     def test13(self):
-        input_13 = "CAPS"
+        input_13 = "cAPS"
         self.assertEqual(patched_source(input_13), original_source(input_13))
             
 
 
     def test14(self):
-        input_14 = "testCASEs"
+        input_14 = "aCAPS"
         self.assertEqual(patched_source(input_14), original_source(input_14))
             
 
 
     def test15(self):
-        input_15 = "CAApsD"
+        input_15 = "Test"
         self.assertEqual(patched_source(input_15), original_source(input_15))
             
 
 
     def test16(self):
-        input_16 = "Test"
+        input_16 = "aBCD"
         self.assertEqual(patched_source(input_16), original_source(input_16))
             
 
 
     def test17(self):
-        input_17 = "CAPS"
+        input_17 = "AaBC"
         self.assertEqual(patched_source(input_17), original_source(input_17))
             
 
 
     def test18(self):
-        input_18 = "CAPs"
+        input_18 = "aBCD"
         self.assertEqual(patched_source(input_18), original_source(input_18))
             
 
 
     def test19(self):
-        input_19 = "abcdef"
+        input_19 = "AA"
         self.assertEqual(patched_source(input_19), original_source(input_19))
             
 
 
     def test20(self):
-        input_20 = "AbcD"
+        input_20 = "aBC"
         self.assertEqual(patched_source(input_20), original_source(input_20))
             
 
 
     def test21(self):
-        input_21 = "testCASE"
+        input_21 = "D"
         self.assertEqual(patched_source(input_21), original_source(input_21))
             
 
 
     def test22(self):
-        input_22 = "tESt"
+        input_22 = "tEST"
         self.assertEqual(patched_source(input_22), original_source(input_22))
             
 
 
     def test23(self):
-        input_23 = "aBC"
+        input_23 = "aBCD"
         self.assertEqual(patched_source(input_23), original_source(input_23))
             
 
 
     def test24(self):
-        input_24 = "cApS"
+        input_24 = "xyz"
         self.assertEqual(patched_source(input_24), original_source(input_24))
             
 
 
     def test25(self):
-        input_25 = "TestInput"
+        input_25 = "AaBCD"
         self.assertEqual(patched_source(input_25), original_source(input_25))
             
 
 
     def test26(self):
-        input_26 = "Test123"
+        input_26 = "aBCD"
         self.assertEqual(patched_source(input_26), original_source(input_26))
             
 
 
     def test27(self):
-        input_27 = "CAPS"
+        input_27 = "sTRing"
         self.assertEqual(patched_source(input_27), original_source(input_27))
             
 
 
     def test28(self):
-        input_28 = "aXyz"
+        input_28 = "cAPS"
         self.assertEqual(patched_source(input_28), original_source(input_28))
             
 
 
     def test29(self):
-        input_29 = "abCDE"
+        input_29 = "cApS"
         self.assertEqual(patched_source(input_29), original_source(input_29))
             
 
 
     def test30(self):
-        input_30 = " cAPS"
+        input_30 = "aBCD"
         self.assertEqual(patched_source(input_30), original_source(input_30))
             
 
 
     def test31(self):
-        input_31 = "Test123"
+        input_31 = "aA"
         self.assertEqual(patched_source(input_31), original_source(input_31))
             
 
 
     def test32(self):
-        input_32 = "cAPs"
+        input_32 = "abCDE"
         self.assertEqual(patched_source(input_32), original_source(input_32))
             
 
 
     def test33(self):
-        input_33 = "Abc"
+        input_33 = "tEST"
         self.assertEqual(patched_source(input_33), original_source(input_33))
             
 
 
     def test34(self):
-        input_34 = "cApS"
+        input_34 = "aCAPS"
         self.assertEqual(patched_source(input_34), original_source(input_34))
             
 
 
     def test35(self):
-        input_35 = "cAPS"
+        input_35 = "TestInput"
         self.assertEqual(patched_source(input_35), original_source(input_35))
             
 
 
     def test36(self):
-        input_36 = "cAPS"
+        input_36 = "gOOD"
         self.assertEqual(patched_source(input_36), original_source(input_36))
             
 
 
     def test37(self):
-        input_37 = "CAps"
+        input_37 = "tEst"
         self.assertEqual(patched_source(input_37), original_source(input_37))
             
 
 
     def test38(self):
-        input_38 = "aBCD"
+        input_38 = "sCap"
         self.assertEqual(patched_source(input_38), original_source(input_38))
             
 
 
     def test39(self):
-        input_39 = "Testing123"
+        input_39 = "aBCD"
         self.assertEqual(patched_source(input_39), original_source(input_39))
             
 
 
     def test40(self):
-        input_40 = "TestInput"
+        input_40 = "cAPs"
         self.assertEqual(patched_source(input_40), original_source(input_40))
             
 
 
     def test41(self):
-        input_41 = " tWIST"
+        input_41 = "cAPS"
         self.assertEqual(patched_source(input_41), original_source(input_41))
             
 
 
     def test42(self):
-        input_42 = "AbcD"
+        input_42 = "Test"
         self.assertEqual(patched_source(input_42), original_source(input_42))
             
 
 
     def test43(self):
-        input_43 = "a"
+        input_43 = "aCdE"
         self.assertEqual(patched_source(input_43), original_source(input_43))
             
 
 
     def test44(self):
-        input_44 = " cAPS"
+        input_44 = "aCAPS"
         self.assertEqual(patched_source(input_44), original_source(input_44))
             
 
 
     def test45(self):
-        input_45 = "Test"
+        input_45 = "aBC"
         self.assertEqual(patched_source(input_45), original_source(input_45))
             
 
 
     def test46(self):
-        input_46 = "AAAbbb"
+        input_46 = "aBcdEFG"
         self.assertEqual(patched_source(input_46), original_source(input_46))
             
 
@@ -296,103 +296,103 @@ class TestFunctions(unittest.TestCase):
 
 
     def test48(self):
-        input_48 = "CAPS"
+        input_48 = "aBCD"
         self.assertEqual(patched_source(input_48), original_source(input_48))
             
 
 
     def test49(self):
-        input_49 = "tests"
+        input_49 = "CAps"
         self.assertEqual(patched_source(input_49), original_source(input_49))
             
 
 
     def test50(self):
-        input_50 = "TrueStory"
+        input_50 = "cAPSs"
         self.assertEqual(patched_source(input_50), original_source(input_50))
             
 
 
     def test51(self):
-        input_51 = "ABcdE"
+        input_51 = "aMeRica"
         self.assertEqual(patched_source(input_51), original_source(input_51))
             
 
 
     def test52(self):
-        input_52 = "aBC"
+        input_52 = "AbCdEf"
         self.assertEqual(patched_source(input_52), original_source(input_52))
             
 
 
     def test53(self):
-        input_53 = "sTRIPE"
+        input_53 = "TestCASE"
         self.assertEqual(patched_source(input_53), original_source(input_53))
             
 
 
     def test54(self):
-        input_54 = "TesTing123"
+        input_54 = "tEsTing"
         self.assertEqual(patched_source(input_54), original_source(input_54))
             
 
 
     def test55(self):
-        input_55 = "aBCD"
+        input_55 = "AaBC"
         self.assertEqual(patched_source(input_55), original_source(input_55))
             
 
 
     def test56(self):
-        input_56 = "Patchy"
+        input_56 = "aCAPS"
         self.assertEqual(patched_source(input_56), original_source(input_56))
             
 
 
     def test57(self):
-        input_57 = "aBCD"
+        input_57 = "Test"
         self.assertEqual(patched_source(input_57), original_source(input_57))
             
 
 
     def test58(self):
-        input_58 = "Abc"
+        input_58 = "cAps"
         self.assertEqual(patched_source(input_58), original_source(input_58))
             
 
 
     def test59(self):
-        input_59 = "aBcdE"
+        input_59 = "aBCD"
         self.assertEqual(patched_source(input_59), original_source(input_59))
             
 
 
     def test60(self):
-        input_60 = "Test123"
+        input_60 = "AaBC"
         self.assertEqual(patched_source(input_60), original_source(input_60))
             
 
 
     def test61(self):
-        input_61 = "testCASE"
+        input_61 = "TeSt"
         self.assertEqual(patched_source(input_61), original_source(input_61))
             
 
 
     def test62(self):
-        input_62 = "aBC"
+        input_62 = "Testing123"
         self.assertEqual(patched_source(input_62), original_source(input_62))
             
 
 
     def test63(self):
-        input_63 = "cAPS"
+        input_63 = "AAAa"
         self.assertEqual(patched_source(input_63), original_source(input_63))
             
 
 
     def test64(self):
-        input_64 = "cAPS"
+        input_64 = "AbCDE"
         self.assertEqual(patched_source(input_64), original_source(input_64))
             
 
@@ -404,31 +404,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test66(self):
-        input_66 = "cAPS"
+        input_66 = "tEst"
         self.assertEqual(patched_source(input_66), original_source(input_66))
             
 
 
     def test67(self):
-        input_67 = "cAPS"
+        input_67 = "ABC"
         self.assertEqual(patched_source(input_67), original_source(input_67))
             
 
 
     def test68(self):
-        input_68 = "AaB"
+        input_68 = "cAPS"
         self.assertEqual(patched_source(input_68), original_source(input_68))
             
 
 
     def test69(self):
-        input_69 = "aBCD"
+        input_69 = "TeSt"
         self.assertEqual(patched_source(input_69), original_source(input_69))
             
 
 
     def test70(self):
-        input_70 = "Test123"
+        input_70 = "bAcd"
         self.assertEqual(patched_source(input_70), original_source(input_70))
             
 
@@ -440,103 +440,103 @@ class TestFunctions(unittest.TestCase):
 
 
     def test72(self):
-        input_72 = "aBCD"
+        input_72 = "aCD"
         self.assertEqual(patched_source(input_72), original_source(input_72))
             
 
 
     def test73(self):
-        input_73 = "tEst"
+        input_73 = "aBcd"
         self.assertEqual(patched_source(input_73), original_source(input_73))
             
 
 
     def test74(self):
-        input_74 = "aBC"
+        input_74 = "CAP"
         self.assertEqual(patched_source(input_74), original_source(input_74))
             
 
 
     def test75(self):
-        input_75 = "aBcd"
+        input_75 = "AbcdE"
         self.assertEqual(patched_source(input_75), original_source(input_75))
             
 
 
     def test76(self):
-        input_76 = "PatchTest"
+        input_76 = "cAPS1"
         self.assertEqual(patched_source(input_76), original_source(input_76))
             
 
 
     def test77(self):
-        input_77 = "cAPS"
+        input_77 = "TesT"
         self.assertEqual(patched_source(input_77), original_source(input_77))
             
 
 
     def test78(self):
-        input_78 = "aBCD"
+        input_78 = "Zcaps"
         self.assertEqual(patched_source(input_78), original_source(input_78))
             
 
 
     def test79(self):
-        input_79 = "CapS"
+        input_79 = "teST"
         self.assertEqual(patched_source(input_79), original_source(input_79))
             
 
 
     def test80(self):
-        input_80 = "cApS"
+        input_80 = "ABcD"
         self.assertEqual(patched_source(input_80), original_source(input_80))
             
 
 
     def test81(self):
-        input_81 = "abc"
+        input_81 = "dIFFERENCE"
         self.assertEqual(patched_source(input_81), original_source(input_81))
             
 
 
     def test82(self):
-        input_82 = "aBC"
+        input_82 = "Testing123"
         self.assertEqual(patched_source(input_82), original_source(input_82))
             
 
 
     def test83(self):
-        input_83 = "cAPS"
+        input_83 = "aN_GAMEs"
         self.assertEqual(patched_source(input_83), original_source(input_83))
             
 
 
     def test84(self):
-        input_84 = "ABC"
+        input_84 = "Testing123"
         self.assertEqual(patched_source(input_84), original_source(input_84))
             
 
 
     def test85(self):
-        input_85 = "Test"
+        input_85 = "cApS"
         self.assertEqual(patched_source(input_85), original_source(input_85))
             
 
 
     def test86(self):
-        input_86 = "a"
+        input_86 = "aBCD"
         self.assertEqual(patched_source(input_86), original_source(input_86))
             
 
 
     def test87(self):
-        input_87 = "Patch"
+        input_87 = "CAPs"
         self.assertEqual(patched_source(input_87), original_source(input_87))
             
 
 
     def test88(self):
-        input_88 = "CAPS"
+        input_88 = "testINput"
         self.assertEqual(patched_source(input_88), original_source(input_88))
             
 
@@ -548,37 +548,37 @@ class TestFunctions(unittest.TestCase):
 
 
     def test90(self):
-        input_90 = "Test123"
+        input_90 = "aAAA"
         self.assertEqual(patched_source(input_90), original_source(input_90))
             
 
 
     def test91(self):
-        input_91 = "AbcdE"
+        input_91 = "ZzZzZ"
         self.assertEqual(patched_source(input_91), original_source(input_91))
             
 
 
     def test92(self):
-        input_92 = "aBCD"
+        input_92 = "tEsT"
         self.assertEqual(patched_source(input_92), original_source(input_92))
             
 
 
     def test93(self):
-        input_93 = "Test"
+        input_93 = "aBC"
         self.assertEqual(patched_source(input_93), original_source(input_93))
             
 
 
     def test94(self):
-        input_94 = "CapS"
+        input_94 = "aBCD"
         self.assertEqual(patched_source(input_94), original_source(input_94))
             
 
 
     def test95(self):
-        input_95 = "aBCD"
+        input_95 = "testing123"
         self.assertEqual(patched_source(input_95), original_source(input_95))
             
 
@@ -590,19 +590,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test97(self):
-        input_97 = "cAPs"
+        input_97 = "aBCDE"
         self.assertEqual(patched_source(input_97), original_source(input_97))
             
 
 
     def test98(self):
-        input_98 = "cAPS"
+        input_98 = "aBCD"
         self.assertEqual(patched_source(input_98), original_source(input_98))
             
 
 
     def test99(self):
-        input_99 = "cAps"
+        input_99 = "aBcdEFG"
         self.assertEqual(patched_source(input_99), original_source(input_99))
             
 
