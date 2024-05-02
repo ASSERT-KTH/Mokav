@@ -1,14 +1,14 @@
 
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
 
 
     def test0(self):
-        input_0 = ['12:30\r', '90']
+        input_0 = ['23:59\r\r', '10']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 

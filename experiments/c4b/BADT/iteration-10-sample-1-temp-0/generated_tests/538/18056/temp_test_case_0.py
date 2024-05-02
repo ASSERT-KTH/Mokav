@@ -1,14 +1,14 @@
 
 import unittest
-from temp_bug_qb import original_func as original_source
 from temp_acc_qb import patched_func as patched_source
+from temp_bug_qb import original_func as original_source
 
 class TestFunctions(unittest.TestCase):
                 
 
 
     def test0(self):
-        input_0 = "1 1 1 2 2 2 3 3 3 4 4 4"
+        input_0 = "1 2 3 4 5 6 7 8 9 10"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
