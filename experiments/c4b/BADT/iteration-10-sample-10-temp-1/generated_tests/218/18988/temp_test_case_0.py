@@ -8,37 +8,37 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['12:30\r\r', '120']
+        input_0 = ['18:45\r\r', '40']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['17:30\r\r', '120']
+        input_1 = ['12:30\r\r', '90']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
 
     def test2(self):
-        input_2 = ['23:30\r\r', '90']
+        input_2 = ['23:01\r\r', '60']
         self.assertEqual(patched_source(*input_2), original_source(*input_2))
             
 
 
     def test3(self):
-        input_3 = ['23:59\r\r', '58']
+        input_3 = ['00:01\r\r', '70']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['22:50\r\r', '90']
+        input_4 = ['23:59\r\r', '9']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
 
     def test5(self):
-        input_5 = ['12:30\r\r', '3600']
+        input_5 = ['23:59\r\r', '10']
         self.assertEqual(patched_source(*input_5), original_source(*input_5))
             
 
@@ -50,19 +50,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test7(self):
-        input_7 = "23:59 60"
-        self.assertEqual(patched_source(input_7), original_source(input_7))
+        input_7 = ['23:59\r', '10']
+        self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
 
     def test8(self):
-        input_8 = ['12:30\r', '80']
+        input_8 = ['00:01\r\r', '60']
         self.assertEqual(patched_source(*input_8), original_source(*input_8))
             
 
 
     def test9(self):
-        input_9 = ['23:59\r\r', '9']
+        input_9 = ['23:59\r\r', '11']
         self.assertEqual(patched_source(*input_9), original_source(*input_9))
             
 

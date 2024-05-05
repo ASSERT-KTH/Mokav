@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "8 16 4"
+        input_0 = "8 12 5"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "11 11 5"
+        input_1 = "10 15 7"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "3 3 2"
+        input_2 = "10 10 5"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "11 11 5"
+        input_3 = "10 15 20"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "10 20 15"
+        input_4 = "10 11 5"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "11 11 5"
+        input_5 = "11 11 6"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "5 6 7"
+        input_6 = "3 5 5"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "10 12 5"
+        input_7 = "10 20 5"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "5 5 5"
+        input_8 = "10 21 5"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "15 10 25"
+        input_9 = "10 10 5"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

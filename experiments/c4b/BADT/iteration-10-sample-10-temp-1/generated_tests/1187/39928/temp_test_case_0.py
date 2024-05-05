@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "AbCdEfG"
+        input_0 = "UPPER"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "TESTing"
+        input_1 = "TestCASE"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "tEST"
+        input_2 = "APPLES"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "HELLO"
+        input_3 = "CAPS"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "tEstCase"
+        input_4 = "AbcDEF"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "MIXedCASE"
+        input_5 = "ABCD"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "TestCASE"
+        input_6 = "CAPSS"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "tESTing"
+        input_7 = "aDDRESS"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "HELLO"
+        input_8 = "c1PS"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "UPPERCASE"
+        input_9 = "CAPs"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

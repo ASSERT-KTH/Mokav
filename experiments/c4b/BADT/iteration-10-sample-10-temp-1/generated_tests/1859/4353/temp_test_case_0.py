@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "httpsf"
+        input_0 = "https://not_equal_rux"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "ftpfoobar"
+        input_1 = "httpsfurux"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "ftpunru"
+        input_2 = "httpforu"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "httpsunruy"
+        input_3 = "httpsunrurux"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "ftestru"
+        input_4 = "httpfurux"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "feffectiveru"
+        input_5 = "httpsunruy"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "fgarux"
+        input_6 = "httpsunrux /"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "fuu"
+        input_7 = "httpsunnyrux"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "fttps://unf.ruuu"
+        input_8 = "httpsunrux.ru"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "ftestcaseru"
+        input_9 = "https:// example.com"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

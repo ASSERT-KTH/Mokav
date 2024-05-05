@@ -14,55 +14,55 @@ class TestFunctions(unittest.TestCase):
 
 
     def test1(self):
-        input_1 = "abccb"
+        input_1 = "abccab"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "abcdecba"
+        input_2 = "aaabb"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "racecr"
+        input_3 = "aa"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "abcdb"
+        input_4 = "racecar"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "abcba"
+        input_5 = "abccaa"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "deed"
+        input_6 = "abcddca"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "abccbab"
+        input_7 = "abcddba"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "abccab"
+        input_8 = "madam"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "abccaa"
+        input_9 = "abcddcba"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

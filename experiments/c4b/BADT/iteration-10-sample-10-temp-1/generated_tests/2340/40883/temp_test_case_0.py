@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "HELLOthere"
+        input_0 = "HoUsE"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "HELLOworld"
+        input_1 = "AbCDeF"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "aAAbBBcCcDdD"
+        input_2 = "HoUSe"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "TeStINg"
+        input_3 = "hOuSe"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "TeStINg"
+        input_4 = "HELp"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "HELLOworld123"
+        input_5 = "HELLOworld"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "abcXYZ"
+        input_6 = "HELLO"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "HeLp"
+        input_7 = "HeLLo"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "HOUSe"
+        input_8 = "hOUSE"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "HELLO"
+        input_9 = "HELlo"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

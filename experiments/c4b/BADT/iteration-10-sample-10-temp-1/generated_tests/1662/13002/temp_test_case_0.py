@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "johndoe@example.com/extra"
+        input_0 = "a@b.com/"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "abcd@domain123.com/user"
+        input_1 = "test@domain.com/test"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "user@domain.com/"
+        input_2 = "abc@def.ghi/jkl_mnopqrs"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "a@b.com"
+        input_3 = "abcdef@abcdef.abcdef/a"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "test@domain.com/something"
+        input_4 = "abc@abc.com/defghi"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "johndoe@domain.com/user"
+        input_5 = "a@b.c"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "test@domain.com/test"
+        input_6 = "a@b.com////"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "john.doe@example.com"
+        input_7 = "a@.com"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "john.doe@example.com/path"
+        input_8 = "ab@cd.com/efg"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "username@[256.256.256.256]/abc.xyz"
+        input_9 = "a@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

@@ -8,55 +8,55 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "05:55"
+        input_0 = "09:56"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "07:30"
+        input_1 = "12:41"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "06:00"
+        input_2 = "05:50"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "16:45"
+        input_3 = "56:18"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "06:00"
+        input_4 = "12:10"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "09:59"
+        input_5 = "06:15"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "05:50"
+        input_6 = "09:50"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "08:00"
+        input_7 = "11:33"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "12:59"
+        input_8 = "07:45"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 

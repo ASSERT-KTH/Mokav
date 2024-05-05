@@ -8,37 +8,37 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "VKVK"
+        input_0 = "KVK"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "VKKV"
+        input_1 = "VKK"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "VVVK"
+        input_2 = "VKV"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "VKVKK"
+        input_3 = "VVVKKKK"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "VKVKVK"
+        input_4 = "VKK"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "VKVK"
+        input_5 = "VVKK"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
@@ -50,13 +50,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test7(self):
-        input_7 = "VKKV"
+        input_7 = "VKK"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "VKVKVK"
+        input_8 = "VVVVVVVV"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 

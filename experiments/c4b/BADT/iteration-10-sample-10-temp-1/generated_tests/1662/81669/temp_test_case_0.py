@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "example_123@domain.com"
+        input_0 = "username@hostname"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "john_doe@companyA.com"
+        input_1 = "aaaaa@bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.com"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "example@domain.com"
+        input_2 = "T3st@str!ng"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "test@123.com"
+        input_3 = "abcd.efg@yahoo.com"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "__@."
+        input_4 = "a@b.c/"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "example@domain.com"
+        input_5 = "a0@"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "my_email@email.com"
+        input_6 = " _@"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "test@domain.com"
+        input_7 = "ab@abc"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "abc_ABC123@domain.com"
+        input_8 = "a@1234567890123456"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "user_name@domain.com/user123"
+        input_9 = "username@hostname"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

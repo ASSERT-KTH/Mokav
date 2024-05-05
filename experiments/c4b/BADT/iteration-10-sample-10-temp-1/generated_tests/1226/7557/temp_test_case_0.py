@@ -8,31 +8,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['50\r', '10 10 10 10 10 10 10']
+        input_0 = ['150\r', '25 30 10 20 15 25 40']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['100', '15 20 20 15 10 30 45']
+        input_1 = ['45\r', '5 10 15 20 25 30 35']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
 
     def test2(self):
-        input_2 = ['50\r', '10 10 10 10 10 10 10']
+        input_2 = ['80\r', '10 15 15 10 5 20 35']
         self.assertEqual(patched_source(*input_2), original_source(*input_2))
             
 
 
     def test3(self):
-        input_3 = ['100\r', '15 20 20 15 10 30 45']
+        input_3 = ['35\r', '10 5 20 10 15 10 10']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['80\r', '10 20 10 20 30 10 5']
+        input_4 = ['100\r', '15 20 20 15 10 25 45']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
@@ -44,13 +44,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test6(self):
-        input_6 = ['55\r', '10 20 15 5 10 20 13']
+        input_6 = ['70\r', '15 20 20 15 10 30 45']
         self.assertEqual(patched_source(*input_6), original_source(*input_6))
             
 
 
     def test7(self):
-        input_7 = ['50\r', '10 12 8 5 18 10 3']
+        input_7 = ['150\r', '20 25 30 35 40 45 50']
         self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
@@ -62,7 +62,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test9(self):
-        input_9 = ['50\r', '10 20 40 10 5 5 8']
+        input_9 = ['100\r', '15 20 20 15 10 30 45']
         self.assertEqual(patched_source(*input_9), original_source(*input_9))
             
 
