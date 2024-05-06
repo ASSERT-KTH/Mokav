@@ -8,62 +8,56 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "ahhellllloou"
+        input_0 = "ahhhelllllo"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "helll"
+        input_1 = "ahhelolololll"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "helxlo"
+        input_2 = "ahhellllloou"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "help"
+        input_3 = "hheeeelllllo"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "ahhellllxou"
+        input_4 = "helloo"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "aehelloou"
+        input_5 = "helXlo"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "hi"
+        input_6 = "hhheeelllooo"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "hey, how are you doing?"
+        input_7 = "ahhellol"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "hellotest"
+        input_8 = "ahhellloou"
         self.assertEqual(patched_source(input_8), original_source(input_8))
-            
-
-
-    def test9(self):
-        input_9 = "ahhelloworldd"
-        self.assertEqual(patched_source(input_9), original_source(input_9))
             
 
 

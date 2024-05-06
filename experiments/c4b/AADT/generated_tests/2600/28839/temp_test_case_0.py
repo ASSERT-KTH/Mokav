@@ -8,37 +8,37 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['4\r\r', '10 20 30 40']
+        input_0 = ['4\r\r', '2018 2017 2020 2019']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['4\r\r', '10 5 20 15']
+        input_1 = ['5\r\r', '-2 4 0 7 1']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
 
     def test2(self):
-        input_2 = ['5\r\r', '-10 0 10 -20 20']
+        input_2 = ['4\r', '2014 2016 2015 2017']
         self.assertEqual(patched_source(*input_2), original_source(*input_2))
             
 
 
     def test3(self):
-        input_3 = ['5\r\r', '4 2 3 1 5']
+        input_3 = ['4\r', '2019 2020 2021 2022']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['3\r', '2018 2017 2016']
+        input_4 = ['4\r', '2014 2016 2015 2017']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
 
     def test5(self):
-        input_5 = ['5\r\r', '10 5 20 15 25']
+        input_5 = ['5\r', '10 20 30 40 50']
         self.assertEqual(patched_source(*input_5), original_source(*input_5))
             
 
@@ -50,19 +50,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test7(self):
-        input_7 = ['5\r\r', '10 20 30 40 50']
+        input_7 = ['4\r', '2019 2012 2020 2018']
         self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
 
     def test8(self):
-        input_8 = ['5\r\r', '9 4 7 2 6']
+        input_8 = ['4\r', '2014 2016 2015 2017']
         self.assertEqual(patched_source(*input_8), original_source(*input_8))
             
 
 
     def test9(self):
-        input_9 = ['4\r\r', '10 20 30 40']
+        input_9 = ['4\r', '2 3 4 5']
         self.assertEqual(patched_source(*input_9), original_source(*input_9))
             
 

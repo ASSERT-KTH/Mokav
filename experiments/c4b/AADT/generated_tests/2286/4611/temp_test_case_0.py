@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "Is it a melon?"
+        input_0 = "Are you a fan?"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "Is it a melon?"
+        input_1 = "potato"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "This is a test"
+        input_2 = "Is IT a melon?"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "You are a software tester?}"
+        input_3 = "Are you an apple?"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "Are you good?"
+        input_4 = "Is it a melon!"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "Is it a pineapple?"
+        input_5 = "Are you feeling happy?"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "Is there a ?"
+        input_6 = "I like apples!"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "apple"
+        input_7 = "Why is a cat?"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "Hello"
+        input_8 = "Is it a melon"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "Is it a catchy day?"
+        input_9 = "Why are you here?"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

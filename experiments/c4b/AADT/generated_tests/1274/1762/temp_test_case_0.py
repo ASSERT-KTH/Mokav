@@ -8,37 +8,37 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['1\r', '2\r', '3\r', '4\r', '6']
+        input_0 = ['3\r', '2\r', '3\r', '4\r', '12']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['1\r', '1\r', '1\r', '1\r', '1']
+        input_1 = ['2\r', '2\r', '3\r', '4\r', '12']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
 
     def test2(self):
-        input_2 = ['1\r', '2\r', '3\r', '4\r', '5']
+        input_2 = ['1\r', '1\r', '1\r', '1\r', '1']
         self.assertEqual(patched_source(*input_2), original_source(*input_2))
             
 
 
     def test3(self):
-        input_3 = ['4\r', '3\r', '2\r', '5\r', '10\r', '']
+        input_3 = ['1', '1', '2', '3', '4']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['1\r', '2\r', '3\r', '4\r', '12']
+        input_4 = ['2\r', '3\r', '4\r', '5\r', '16']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
 
     def test5(self):
-        input_5 = ['1\r', '2\r', '3\r', '4\r', '5']
+        input_5 = ['1', '2', '3', '4', '12', '']
         self.assertEqual(patched_source(*input_5), original_source(*input_5))
             
 
@@ -50,19 +50,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test7(self):
-        input_7 = ['0\r', '2\r', '3\r', '4\r', '12']
+        input_7 = ['2\r', '3\r', '5\r', '7\r', '12']
         self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
 
     def test8(self):
-        input_8 = ['2\r', '3\r', '5\r', '7\r', '30']
+        input_8 = ['2\r', '3\r', '4\r', '5\r', '10']
         self.assertEqual(patched_source(*input_8), original_source(*input_8))
             
 
 
     def test9(self):
-        input_9 = ['1', '2', '3', '4', '7']
+        input_9 = ['2\r', '2\r', '3\r', '4\r', '12']
         self.assertEqual(patched_source(*input_9), original_source(*input_9))
             
 

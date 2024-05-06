@@ -14,31 +14,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test1(self):
-        input_1 = "TOUR"
+        input_1 = "prOdUcTiVe"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "ToUr"
+        input_2 = "T0uR"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "aA@bBcCdD"
+        input_3 = "BooM"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "TOUR"
+        input_4 = "BYE"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "aAiIuUeE"
+        input_5 = "HELLO123"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
@@ -50,19 +50,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test7(self):
-        input_7 = "TodayIsGreat!"
+        input_7 = "TOur"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "HELLO123"
+        input_8 = "Testing"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "TesTing123"
+        input_9 = "Python"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

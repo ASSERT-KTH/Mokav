@@ -8,55 +8,55 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "3c"
+        input_0 = "999999999999999998e"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "2a"
+        input_1 = "999999999999999998d"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "17f"
+        input_2 = "999999999999999996a"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "15d"
+        input_3 = "999999999999999998e"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "12a"
+        input_4 = "999999999999999995a"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "5f"
+        input_5 = "999999999999999994b"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "6a"
+        input_6 = "999999999999999995f"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "999999999999999995a"
+        input_7 = "999999999999999998f"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "7d"
+        input_8 = "999999999999999998b"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 

@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "001001001"
+        input_0 = "999999Z"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "000111"
+        input_1 = "110001"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "0010010001"
+        input_2 = "aaaaaabbbbbb"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "aaaaaaaasdddddd"
+        input_3 = "000011"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "001001001001001001"
+        input_4 = "AABBCCCCDDDD"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "1111111111111"
+        input_5 = "000109999"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "111011101110111011101110"
+        input_6 = "111111001001"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "011001"
+        input_7 = "111110001000"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "11111112222"
+        input_8 = "011011"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "aaaaaabb"
+        input_9 = "aaabbbcccddd"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

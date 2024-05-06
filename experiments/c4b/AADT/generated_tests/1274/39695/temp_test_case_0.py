@@ -8,13 +8,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['2\r', '3\r', '5\r', '7\r', '35']
+        input_0 = ['4\r', '3\r', '5\r', '6\r', '15']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['2\r', '3\r', '4\r', '5\r', '6']
+        input_1 = ['1\r', '2\r', '9\r', '4\r', '12']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
@@ -26,43 +26,43 @@ class TestFunctions(unittest.TestCase):
 
 
     def test3(self):
-        input_3 = ['1\r', '2\r', '3\r', '4\r', '5']
+        input_3 = ['2\r', '3\r', '5\r', '7\r', '10']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['5\r', '10\r', '15\r', '20\r', '25']
+        input_4 = ['5', '6', '7', '8', '9']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
 
     def test5(self):
-        input_5 = ['7\r', '2\r', '5\r', '3\r', '15']
+        input_5 = ['1\r', '1\r', '1\r', '1\r', '2']
         self.assertEqual(patched_source(*input_5), original_source(*input_5))
             
 
 
     def test6(self):
-        input_6 = ['1\r', '2\r', '3\r', '4\r', '12']
+        input_6 = ['4\r', '7\r', '9\r', '3\r', '27']
         self.assertEqual(patched_source(*input_6), original_source(*input_6))
             
 
 
     def test7(self):
-        input_7 = ['2\r', '3\r', '5\r', '7\r', '11']
+        input_7 = ['6\r', '9\r', '12\r', '15\r', '18']
         self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
 
     def test8(self):
-        input_8 = ['3\r', '6\r', '9\r', '12\r', '15']
+        input_8 = ['6\r', '2\r', '5\r', '3\r', '15']
         self.assertEqual(patched_source(*input_8), original_source(*input_8))
             
 
 
     def test9(self):
-        input_9 = ['4\r', '3\r', '2\r', '1\r', '12']
+        input_9 = ['5\r', '10\r', '15\r', '20\r', '25']
         self.assertEqual(patched_source(*input_9), original_source(*input_9))
             
 

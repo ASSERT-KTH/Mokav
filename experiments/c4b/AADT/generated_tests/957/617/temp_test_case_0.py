@@ -8,19 +8,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "R!BGR!YG"
+        input_0 = "RY!BG!RYBGR"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "!!RBGRY!B!"
+        input_1 = "RYBGRY!BGR"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "R!R!R!"
+        input_2 = "RRRR!RRBGB"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
@@ -32,37 +32,37 @@ class TestFunctions(unittest.TestCase):
 
 
     def test4(self):
-        input_4 = "RG!R!B!YBGR"
+        input_4 = "RYBGR!BGR"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "R!!B!Y!G!R!"
+        input_5 = "RR!R!R!R!"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "!!!!R!!!!"
+        input_6 = "RYBG!RYBG"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "RY!B!GRY!B!G"
+        input_7 = "RR!R!BBBB"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "R!!YR!!YG"
+        input_8 = "RY!BGRYBGR"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "RY!RYBGR"
+        input_9 = "RRRR!"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

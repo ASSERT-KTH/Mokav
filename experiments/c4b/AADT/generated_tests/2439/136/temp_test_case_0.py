@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['123\r', '321']
+        input_0 = ['1001\r', '1002']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['9\r', '6']
+        input_1 = ['110\r', '440']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
 
     def test2(self):
-        input_2 = ['001\r', '001']
+        input_2 = ['101\r', '100']
         self.assertEqual(patched_source(*input_2), original_source(*input_2))
             
 
 
     def test3(self):
-        input_3 = ['109\r', '901']
+        input_3 = ['110\r', '220']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['12\r', '13']
+        input_4 = ['1000\r', '2000']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
 
     def test5(self):
-        input_5 = ['100\r', '100']
+        input_5 = ['100\r', '200']
         self.assertEqual(patched_source(*input_5), original_source(*input_5))
             
 
 
     def test6(self):
-        input_6 = ['100\r', '100']
+        input_6 = ['1000\r', '1002']
         self.assertEqual(patched_source(*input_6), original_source(*input_6))
             
 
 
     def test7(self):
-        input_7 = ['100\r', '200']
+        input_7 = ['100\r', '100']
         self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
 
     def test8(self):
-        input_8 = ['123\r', '456']
+        input_8 = ['111\r', '222']
         self.assertEqual(patched_source(*input_8), original_source(*input_8))
             
 
 
     def test9(self):
-        input_9 = ['123\r', '456']
+        input_9 = ['500\r', '500']
         self.assertEqual(patched_source(*input_9), original_source(*input_9))
             
 

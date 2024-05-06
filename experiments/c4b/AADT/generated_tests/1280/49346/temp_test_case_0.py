@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['5\r', '1 1 1 2 2 3 2 2 2 1 1 1']
+        input_0 = ['3\r', '1 1 1 1 2 2 3 2 2 1 1 1']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['7\r', '1 1 1 1 2 2 3 2 2 1 1 1']
+        input_1 = ['7\r', '2 3 5 1 4 2 3 4 5 1 2 3']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
 
     def test2(self):
-        input_2 = ['4', '1 2 3 4 5 6 7 8 9 10 11 12']
+        input_2 = ['5\r', '1 1 1 1 2 2 3 2 2 1 1 2']
         self.assertEqual(patched_source(*input_2), original_source(*input_2))
             
 
 
     def test3(self):
-        input_3 = ['3', '1 2 3 4 5']
+        input_3 = ['5\r', '1 1 1 1 2 2 3 2 2 1 1 2']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['4\r', '1 2 3 4 5']
+        input_4 = ['3\r', '1 2 3 4 5']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
 
     def test5(self):
-        input_5 = ['7\r', '3 4 1 5 6 1 2 3 4 5']
+        input_5 = ['3\r', '1 2 3 4 5']
         self.assertEqual(patched_source(*input_5), original_source(*input_5))
             
 
 
     def test6(self):
-        input_6 = ['7\r', '10 11 12 13 14 15 16 11 10 9 8 7']
+        input_6 = ['4\r', '1 5 7 3 9 8 2 6 3 4 7 7']
         self.assertEqual(patched_source(*input_6), original_source(*input_6))
             
 
 
     def test7(self):
-        input_7 = ['7', '5 4 3 2 1 1 1 1']
+        input_7 = ['3', '1 1 2 2 3 1 1 1']
         self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
 
     def test8(self):
-        input_8 = ['4', '9 3 3 1 3 3 3 17']
+        input_8 = ['3\r', '4 2 1 5 3 6 2 3 1 2']
         self.assertEqual(patched_source(*input_8), original_source(*input_8))
             
 
 
     def test9(self):
-        input_9 = ['10', '1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1']
+        input_9 = ['6\r', '1 1 1 1 2 2 3 2 2 1 1 1']
         self.assertEqual(patched_source(*input_9), original_source(*input_9))
             
 

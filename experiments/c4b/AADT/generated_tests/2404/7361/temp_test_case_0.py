@@ -8,55 +8,55 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB']
+        input_0 = ['WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB']
+        input_1 = ['WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
 
     def test2(self):
-        input_2 = ['BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB']
+        input_2 = ['WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW']
         self.assertEqual(patched_source(*input_2), original_source(*input_2))
             
 
 
     def test3(self):
-        input_3 = ['BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB']
+        input_3 = ['WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['BBBBBBBB\r', 'BWWBWWBW\r', 'BWWBWWBW\r', 'BWWBWWBW\r', 'BWWBWWBW\r', 'BWWBWWBW\r', 'BWWBWWBW\r', 'BBBBBBBB']
+        input_4 = ['BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
 
     def test5(self):
-        input_5 = ['BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB']
+        input_5 = ['BBBBBBBB\r', 'BBWBWBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB']
         self.assertEqual(patched_source(*input_5), original_source(*input_5))
             
 
 
     def test6(self):
-        input_6 = ['BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB']
+        input_6 = ['BBBBBBBB\r', 'BWWBWWBB\r', 'BWWBWWBW\r', 'BWWBWWBW\r', 'BWWBWWBW\r', 'BWWBWWBW\r', 'BWWBWWBW\r', 'BBBBBBBB']
         self.assertEqual(patched_source(*input_6), original_source(*input_6))
             
 
 
     def test7(self):
-        input_7 = ['BBBBBBBB\r', 'BBBBBBWW\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB\r', 'BBBBBBBB']
+        input_7 = ['WBWBWBWB\r', 'BBBBBBBB\r', 'WBWBWBWB\r', 'WBWBWBWB\r', 'WBWBWBWB\r', 'WBWBWBWB\r', 'WBWBWBWB\r', 'WBWBWBWB']
         self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
 
     def test8(self):
-        input_8 = ['BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB\r', 'BWBWBWBW\r', 'WBWBWBWB']
+        input_8 = ['WWWBWWBW\r', 'BBBBBBBB\r', 'WWWBWWBW\r', 'WWWBWWBW\r', 'WWWBWWBW\r', 'WWWBWWBW\r', 'WWWBWWBW\r', 'WWBBBBW']
         self.assertEqual(patched_source(*input_8), original_source(*input_8))
             
 

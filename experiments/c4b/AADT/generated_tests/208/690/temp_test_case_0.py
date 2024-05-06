@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['0 0\r\r', '4 0']
+        input_0 = ['3 7', '2 4']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['0 0\r\r', '0 0']
+        input_1 = ['0 3\r', '3 0']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
 
     def test2(self):
-        input_2 = ['0 1\r', '3 3']
+        input_2 = ['0 1\r', '1 0']
         self.assertEqual(patched_source(*input_2), original_source(*input_2))
             
 
 
     def test3(self):
-        input_3 = ['3 9\r', '1 6']
+        input_3 = ['1 1\r', '3 3']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['3 9', '10 2']
+        input_4 = ['3 3\r', '9 9']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
 
     def test5(self):
-        input_5 = ['3 7', '9 2']
+        input_5 = ['1 1\r', '7 3']
         self.assertEqual(patched_source(*input_5), original_source(*input_5))
             
 
 
     def test6(self):
-        input_6 = ['0 0\r\r', '4 5 1']
+        input_6 = ['1 1', '7 4']
         self.assertEqual(patched_source(*input_6), original_source(*input_6))
             
 
 
     def test7(self):
-        input_7 = ['3 8\r', '6 2']
+        input_7 = ['3 7\r', '1 9']
         self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
 
     def test8(self):
-        input_8 = ['1 1', '3 4']
+        input_8 = ['3 3\r\r', '1 1']
         self.assertEqual(patched_source(*input_8), original_source(*input_8))
             
 
 
     def test9(self):
-        input_9 = ['3 8\r\r', '6 2']
+        input_9 = ['3 8\r\r', '5 2']
         self.assertEqual(patched_source(*input_9), original_source(*input_9))
             
 

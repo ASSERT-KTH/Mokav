@@ -8,61 +8,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "example@domain.com"
+        input_0 = "username@domain.com/@"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "username@subdomain.com"
+        input_1 = "a@b.com/invalid_subdomain/invalid_subdomain"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "info@example.com"
+        input_2 = "user@example.com/u"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
 
     def test3(self):
-        input_3 = "username@domain.com"
+        input_3 = "invalid.email.com"
         self.assertEqual(patched_source(input_3), original_source(input_3))
             
 
 
     def test4(self):
-        input_4 = "!!@domain.com"
+        input_4 = "ab@cd.com"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "user@domain.com"
+        input_5 = "abc@domain.com/something"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "username@domain.com"
+        input_6 = "validusername@subdomain.domain.com"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "john.doe@example.com"
+        input_7 = "username@subdomain..domain"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "user@domain...com"
+        input_8 = "invalid@email..com"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "john.doe@example.com"
+        input_9 = "invalid.email.com"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 

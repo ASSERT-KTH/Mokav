@@ -8,13 +8,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['4 3\r', 'BGBG']
+        input_0 = ['3 2\r', 'BGGB']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
 
     def test1(self):
-        input_1 = ['4 1\r', 'BGBG']
+        input_1 = ['4 1\r', 'GBGB']
         self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
@@ -26,43 +26,43 @@ class TestFunctions(unittest.TestCase):
 
 
     def test3(self):
-        input_3 = ['4 2\r', 'BGGG']
+        input_3 = ['6 2\r', 'BGBGBG']
         self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
     def test4(self):
-        input_4 = ['5 1\r', 'GBBGB']
+        input_4 = ['3 1\r', 'BGB']
         self.assertEqual(patched_source(*input_4), original_source(*input_4))
             
 
 
     def test5(self):
-        input_5 = ['4 1\r', 'BGBG']
+        input_5 = ['4 1\r', 'BGGB']
         self.assertEqual(patched_source(*input_5), original_source(*input_5))
             
 
 
     def test6(self):
-        input_6 = ['3 2', 'GBB']
+        input_6 = ['4 1\r', 'BGGB']
         self.assertEqual(patched_source(*input_6), original_source(*input_6))
             
 
 
     def test7(self):
-        input_7 = ['5 2\r', 'BGGBG']
+        input_7 = ['4 2\r', 'GBGB']
         self.assertEqual(patched_source(*input_7), original_source(*input_7))
             
 
 
     def test8(self):
-        input_8 = ['6 2\r', 'BGBGGB']
+        input_8 = ['4 1\r', 'BGBG']
         self.assertEqual(patched_source(*input_8), original_source(*input_8))
             
 
 
     def test9(self):
-        input_9 = ['3 2\r', 'BGB']
+        input_9 = ['5 2\r', 'BGGBG']
         self.assertEqual(patched_source(*input_9), original_source(*input_9))
             
 
