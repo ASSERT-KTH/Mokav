@@ -56,12 +56,17 @@ class TestGenerator:
                 acc_description = self.code_description(accepted_code)
 
                 prompt = f"""
-"The following is the patched version of a program: 
+The following is the patched version of a program: 
 ```python
 {accepted_code}```
 This is description of the patched program: {acc_description}
-This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}
-We also have an original version of this program, which is slightly different from the patched version.
+We also have an original version of this program, which is slightly different from the patched version."""
+                
+                if "I" in self.config:
+                    prompt += f"""
+This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}"""
+                
+                prompt += f"""
 Generate a test input in Python dict format as follows:
 ```python {self.test_format}```
 The generated test input should be difference exposing, which means ```python original_func(inputdata)!= patched_func(inputdata)```. This means when the test input is given to the original and patched versions, they should produce different outputs. Your output should not contain any explanation or '\\n' character.
@@ -73,15 +78,20 @@ Generate a difference exposing test input as described above.
                 buggy_description = self.code_description(buggy_code)
 
                 prompt = f"""
-"The following is the original version of a program: 
+The following is the original version of a program: 
 ```python
 {buggy_code}``` 
 This is description of the original program: {buggy_description}
 The following is the patched version of the program: 
 ```python
 {accepted_code}```
-This is description of the patched program: {acc_description}
-This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}
+This is description of the patched program: {acc_description}"""
+                
+                if "I" in self.config:                
+                    prompt += f"""
+This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}"""
+
+                prompt += f"""
 Generate a test input in Python dict format as follows:
 ```python {self.test_format}```
 The generated test input should be difference exposing, which means ```python original_func(inputdata)!= patched_func(inputdata)```. This means when the test input is given to the original and patched versions, they should produce different outputs. Your output should not contain any explanation or '\\n' character.

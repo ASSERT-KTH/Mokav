@@ -41,7 +41,7 @@ def get_args():
     parser.add_argument(
         "-mc",
         "--meta_data_config",
-        choices=["BADT", "AADT"],
+        choices=["BADT", "AADT", "BADTI", "AADTI"],
         default="BADT",
         help="Config for meta data",
         required=False,
