@@ -42,7 +42,7 @@ def get_args():
         "-mc",
         "--meta_data_config",
         choices=["BADT", "AADT", "BADTI", "AADTI"],
-        default="BADT",
+        default="BADTI",
         help="Config for meta data",
         required=False,
     )
