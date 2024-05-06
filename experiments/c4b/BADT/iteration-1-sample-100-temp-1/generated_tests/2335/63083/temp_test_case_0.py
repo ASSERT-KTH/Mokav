@@ -14,7 +14,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test1(self):
-        input_1 = "ahhelllllo"
+        input_1 = "hello"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
@@ -32,7 +32,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test4(self):
-        input_4 = "hello world"
+        input_4 = "hellooo"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
@@ -44,31 +44,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test6(self):
-        input_6 = "hello"
+        input_6 = "hhelloo"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
 
     def test7(self):
-        input_7 = "ahhello"
+        input_7 = "ahheo"
         self.assertEqual(patched_source(input_7), original_source(input_7))
             
 
 
     def test8(self):
-        input_8 = "ahheloo"
+        input_8 = "heello"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "ahhellllloop"
+        input_9 = "hello"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 
 
     def test10(self):
-        input_10 = "helo"
+        input_10 = "hello"
         self.assertEqual(patched_source(input_10), original_source(input_10))
             
 
@@ -80,7 +80,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test12(self):
-        input_12 = "ahellollo"
+        input_12 = "hello"
         self.assertEqual(patched_source(input_12), original_source(input_12))
             
 
@@ -92,13 +92,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test14(self):
-        input_14 = "ahhelllllo"
+        input_14 = "hello"
         self.assertEqual(patched_source(input_14), original_source(input_14))
             
 
 
     def test15(self):
-        input_15 = "hellohe"
+        input_15 = "hhello"
         self.assertEqual(patched_source(input_15), original_source(input_15))
             
 
@@ -110,19 +110,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test17(self):
-        input_17 = "helloworld"
+        input_17 = "ahhello"
         self.assertEqual(patched_source(input_17), original_source(input_17))
             
 
 
     def test18(self):
-        input_18 = "ahhellllloou"
+        input_18 = "hello"
         self.assertEqual(patched_source(input_18), original_source(input_18))
             
 
 
     def test19(self):
-        input_19 = "ahhello"
+        input_19 = "hello"
         self.assertEqual(patched_source(input_19), original_source(input_19))
             
 
@@ -134,7 +134,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test21(self):
-        input_21 = "ahhezlllo"
+        input_21 = "helllo"
         self.assertEqual(patched_source(input_21), original_source(input_21))
             
 
@@ -146,13 +146,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test23(self):
-        input_23 = "ahhelllllo"
+        input_23 = "helloworld"
         self.assertEqual(patched_source(input_23), original_source(input_23))
             
 
 
     def test24(self):
-        input_24 = "ahhello"
+        input_24 = "hello"
         self.assertEqual(patched_source(input_24), original_source(input_24))
             
 
@@ -176,13 +176,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test28(self):
-        input_28 = "helloworld"
+        input_28 = "hello"
         self.assertEqual(patched_source(input_28), original_source(input_28))
             
 
 
     def test29(self):
-        input_29 = "hello"
+        input_29 = "heelloo"
         self.assertEqual(patched_source(input_29), original_source(input_29))
             
 
@@ -194,7 +194,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test31(self):
-        input_31 = "ahhelclloou"
+        input_31 = "hellol"
         self.assertEqual(patched_source(input_31), original_source(input_31))
             
 
@@ -206,13 +206,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test33(self):
-        input_33 = "hello"
+        input_33 = "ahhelllllo"
         self.assertEqual(patched_source(input_33), original_source(input_33))
             
 
 
     def test34(self):
-        input_34 = "hello"
+        input_34 = "hlleo"
         self.assertEqual(patched_source(input_34), original_source(input_34))
             
 
@@ -230,7 +230,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test37(self):
-        input_37 = "hello world"
+        input_37 = "ahhello"
         self.assertEqual(patched_source(input_37), original_source(input_37))
             
 
@@ -242,13 +242,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test39(self):
-        input_39 = "hello"
+        input_39 = "hallo"
         self.assertEqual(patched_source(input_39), original_source(input_39))
             
 
 
     def test40(self):
-        input_40 = "hlle"
+        input_40 = "hello"
         self.assertEqual(patched_source(input_40), original_source(input_40))
             
 
@@ -260,13 +260,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test42(self):
-        input_42 = "hello"
+        input_42 = "hellomynameis"
         self.assertEqual(patched_source(input_42), original_source(input_42))
             
 
 
     def test43(self):
-        input_43 = "ahhellllloop"
+        input_43 = "hellol"
         self.assertEqual(patched_source(input_43), original_source(input_43))
             
 
@@ -290,7 +290,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test47(self):
-        input_47 = "hello"
+        input_47 = "helloworld"
         self.assertEqual(patched_source(input_47), original_source(input_47))
             
 
@@ -302,31 +302,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test49(self):
-        input_49 = "hello"
+        input_49 = "ohhello"
         self.assertEqual(patched_source(input_49), original_source(input_49))
             
 
 
     def test50(self):
-        input_50 = "help hello world"
+        input_50 = "hello"
         self.assertEqual(patched_source(input_50), original_source(input_50))
             
 
 
     def test51(self):
-        input_51 = "hello"
+        input_51 = "hheello"
         self.assertEqual(patched_source(input_51), original_source(input_51))
             
 
 
     def test52(self):
-        input_52 = "ahhellllloou"
+        input_52 = "hello"
         self.assertEqual(patched_source(input_52), original_source(input_52))
             
 
 
     def test53(self):
-        input_53 = "ahhhello"
+        input_53 = "hello"
         self.assertEqual(patched_source(input_53), original_source(input_53))
             
 
@@ -338,7 +338,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test55(self):
-        input_55 = "ahellllloou"
+        input_55 = "hello"
         self.assertEqual(patched_source(input_55), original_source(input_55))
             
 
@@ -350,31 +350,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test57(self):
-        input_57 = "ahhello"
+        input_57 = "hello"
         self.assertEqual(patched_source(input_57), original_source(input_57))
             
 
 
     def test58(self):
-        input_58 = "hello"
+        input_58 = "helllllllo"
         self.assertEqual(patched_source(input_58), original_source(input_58))
             
 
 
     def test59(self):
-        input_59 = "hello"
+        input_59 = "hhelllo"
         self.assertEqual(patched_source(input_59), original_source(input_59))
             
 
 
     def test60(self):
-        input_60 = "hello"
+        input_60 = "hhello"
         self.assertEqual(patched_source(input_60), original_source(input_60))
             
 
 
     def test61(self):
-        input_61 = "ahedoelloh"
+        input_61 = "ahhello"
         self.assertEqual(patched_source(input_61), original_source(input_61))
             
 
@@ -386,7 +386,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test63(self):
-        input_63 = "hello"
+        input_63 = "ahhealloo"
         self.assertEqual(patched_source(input_63), original_source(input_63))
             
 
@@ -404,7 +404,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test66(self):
-        input_66 = "hello"
+        input_66 = "ahhelllllo"
         self.assertEqual(patched_source(input_66), original_source(input_66))
             
 
@@ -416,25 +416,25 @@ class TestFunctions(unittest.TestCase):
 
 
     def test68(self):
-        input_68 = "hello"
+        input_68 = "helloy"
         self.assertEqual(patched_source(input_68), original_source(input_68))
             
 
 
     def test69(self):
-        input_69 = "hellohello"
+        input_69 = "helllloou"
         self.assertEqual(patched_source(input_69), original_source(input_69))
             
 
 
     def test70(self):
-        input_70 = "hello"
+        input_70 = "ahhellllloo"
         self.assertEqual(patched_source(input_70), original_source(input_70))
             
 
 
     def test71(self):
-        input_71 = "hello"
+        input_71 = "hohohohohohohohoh"
         self.assertEqual(patched_source(input_71), original_source(input_71))
             
 
@@ -464,7 +464,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test76(self):
-        input_76 = "ahhhello"
+        input_76 = "hello_world"
         self.assertEqual(patched_source(input_76), original_source(input_76))
             
 
@@ -476,19 +476,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test78(self):
-        input_78 = "hello"
+        input_78 = "helloworld"
         self.assertEqual(patched_source(input_78), original_source(input_78))
             
 
 
     def test79(self):
-        input_79 = "hello"
+        input_79 = "ahellol"
         self.assertEqual(patched_source(input_79), original_source(input_79))
             
 
 
     def test80(self):
-        input_80 = "heeeeeello"
+        input_80 = "hello"
         self.assertEqual(patched_source(input_80), original_source(input_80))
             
 
@@ -518,7 +518,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test85(self):
-        input_85 = "ahelol"
+        input_85 = "ahhello"
         self.assertEqual(patched_source(input_85), original_source(input_85))
             
 
@@ -530,19 +530,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test87(self):
-        input_87 = "hello"
+        input_87 = "hhello"
         self.assertEqual(patched_source(input_87), original_source(input_87))
             
 
 
     def test88(self):
-        input_88 = "hello"
+        input_88 = "ahhelollou"
         self.assertEqual(patched_source(input_88), original_source(input_88))
             
 
 
     def test89(self):
-        input_89 = "ahhelllol"
+        input_89 = "ahheloooo"
         self.assertEqual(patched_source(input_89), original_source(input_89))
             
 
@@ -554,7 +554,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test91(self):
-        input_91 = "ahhellllloou"
+        input_91 = "hello"
         self.assertEqual(patched_source(input_91), original_source(input_91))
             
 
@@ -566,13 +566,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test93(self):
-        input_93 = "ahhellllloou"
+        input_93 = "help"
         self.assertEqual(patched_source(input_93), original_source(input_93))
             
 
 
     def test94(self):
-        input_94 = "ahhhhello"
+        input_94 = "hello"
         self.assertEqual(patched_source(input_94), original_source(input_94))
             
 
@@ -596,13 +596,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test98(self):
-        input_98 = "ahhelllllo"
+        input_98 = "ahhhello"
         self.assertEqual(patched_source(input_98), original_source(input_98))
             
 
 
     def test99(self):
-        input_99 = "ahhello"
+        input_99 = "hello"
         self.assertEqual(patched_source(input_99), original_source(input_99))
             
 

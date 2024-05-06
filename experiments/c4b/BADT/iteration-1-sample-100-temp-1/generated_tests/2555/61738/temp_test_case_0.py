@@ -8,19 +8,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "11111110000000"
+        input_0 = "00000000001111111"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 
 
     def test1(self):
-        input_1 = "1111110000000"
+        input_1 = "0000000000"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "11111110000000"
+        input_2 = "111111101110000001"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
@@ -32,19 +32,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test4(self):
-        input_4 = "1111100000"
+        input_4 = "000000011111110"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
 
     def test5(self):
-        input_5 = "1001100111111110011"
+        input_5 = "11111110000000"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "111111100000"
+        input_6 = "1111100000111100"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
@@ -56,25 +56,25 @@ class TestFunctions(unittest.TestCase):
 
 
     def test8(self):
-        input_8 = "1111100000"
+        input_8 = "000000001111111"
         self.assertEqual(patched_source(input_8), original_source(input_8))
             
 
 
     def test9(self):
-        input_9 = "11111110000000"
+        input_9 = "1111111111"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 
 
     def test10(self):
-        input_10 = "00000001111111"
+        input_10 = "1111110000000"
         self.assertEqual(patched_source(input_10), original_source(input_10))
             
 
 
     def test11(self):
-        input_11 = "00111110010"
+        input_11 = "11111110000000"
         self.assertEqual(patched_source(input_11), original_source(input_11))
             
 
@@ -86,7 +86,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test13(self):
-        input_13 = "11111110000000"
+        input_13 = "0000001111111000000"
         self.assertEqual(patched_source(input_13), original_source(input_13))
             
 
@@ -98,7 +98,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test15(self):
-        input_15 = "11111110000000"
+        input_15 = "00000111000011"
         self.assertEqual(patched_source(input_15), original_source(input_15))
             
 
@@ -110,67 +110,67 @@ class TestFunctions(unittest.TestCase):
 
 
     def test17(self):
-        input_17 = "000000011111110"
+        input_17 = "1111111 0000000"
         self.assertEqual(patched_source(input_17), original_source(input_17))
             
 
 
     def test18(self):
-        input_18 = "1110000001111111000000"
+        input_18 = "00000000111111"
         self.assertEqual(patched_source(input_18), original_source(input_18))
             
 
 
     def test19(self):
-        input_19 = "11111110000000"
+        input_19 = "0000001"
         self.assertEqual(patched_source(input_19), original_source(input_19))
             
 
 
     def test20(self):
-        input_20 = "1111000011111100"
+        input_20 = "1111111"
         self.assertEqual(patched_source(input_20), original_source(input_20))
             
 
 
     def test21(self):
-        input_21 = "11111111100110000"
+        input_21 = "00000000111000000"
         self.assertEqual(patched_source(input_21), original_source(input_21))
             
 
 
     def test22(self):
-        input_22 = "111111100000000"
+        input_22 = "1111111"
         self.assertEqual(patched_source(input_22), original_source(input_22))
             
 
 
     def test23(self):
-        input_23 = "0001111111000"
+        input_23 = "01111110010000"
         self.assertEqual(patched_source(input_23), original_source(input_23))
             
 
 
     def test24(self):
-        input_24 = "10111011000111"
+        input_24 = "11111110000000"
         self.assertEqual(patched_source(input_24), original_source(input_24))
             
 
 
     def test25(self):
-        input_25 = "11111110000000"
+        input_25 = "000000001111111"
         self.assertEqual(patched_source(input_25), original_source(input_25))
             
 
 
     def test26(self):
-        input_26 = "11111110000000"
+        input_26 = "1011111111101"
         self.assertEqual(patched_source(input_26), original_source(input_26))
             
 
 
     def test27(self):
-        input_27 = "1111111"
+        input_27 = "010111"
         self.assertEqual(patched_source(input_27), original_source(input_27))
             
 
@@ -182,7 +182,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test29(self):
-        input_29 = "01111110011000001"
+        input_29 = "11111110000000"
         self.assertEqual(patched_source(input_29), original_source(input_29))
             
 
@@ -194,13 +194,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test31(self):
-        input_31 = "11111110000000"
+        input_31 = "1100001111110"
         self.assertEqual(patched_source(input_31), original_source(input_31))
             
 
 
     def test32(self):
-        input_32 = "1111111"
+        input_32 = "0000000000000011111111"
         self.assertEqual(patched_source(input_32), original_source(input_32))
             
 
@@ -212,79 +212,79 @@ class TestFunctions(unittest.TestCase):
 
 
     def test34(self):
-        input_34 = "00000001111111"
+        input_34 = "11111110000000"
         self.assertEqual(patched_source(input_34), original_source(input_34))
             
 
 
     def test35(self):
-        input_35 = "11111110000000"
+        input_35 = "111111100000000"
         self.assertEqual(patched_source(input_35), original_source(input_35))
             
 
 
     def test36(self):
-        input_36 = "0010011111111001001001"
+        input_36 = "1111111"
         self.assertEqual(patched_source(input_36), original_source(input_36))
             
 
 
     def test37(self):
-        input_37 = "11111000000111"
+        input_37 = "00000000001111111"
         self.assertEqual(patched_source(input_37), original_source(input_37))
             
 
 
     def test38(self):
-        input_38 = "1111111110000000"
+        input_38 = "00000001"
         self.assertEqual(patched_source(input_38), original_source(input_38))
             
 
 
     def test39(self):
-        input_39 = "00000000011111110000000"
+        input_39 = "100011111110000"
         self.assertEqual(patched_source(input_39), original_source(input_39))
             
 
 
     def test40(self):
-        input_40 = "0000001111111"
+        input_40 = "11111110000000"
         self.assertEqual(patched_source(input_40), original_source(input_40))
             
 
 
     def test41(self):
-        input_41 = "11111110000000"
+        input_41 = "01111110000000"
         self.assertEqual(patched_source(input_41), original_source(input_41))
             
 
 
     def test42(self):
-        input_42 = "1111111a0000000"
+        input_42 = "11111110000000"
         self.assertEqual(patched_source(input_42), original_source(input_42))
             
 
 
     def test43(self):
-        input_43 = "1111111111"
+        input_43 = "000000001111111"
         self.assertEqual(patched_source(input_43), original_source(input_43))
             
 
 
     def test44(self):
-        input_44 = "11111110000000"
+        input_44 = "1111111"
         self.assertEqual(patched_source(input_44), original_source(input_44))
             
 
 
     def test45(self):
-        input_45 = "11111111111000000000"
+        input_45 = "11111110000000"
         self.assertEqual(patched_source(input_45), original_source(input_45))
             
 
 
     def test46(self):
-        input_46 = "11111110000000"
+        input_46 = "111100000"
         self.assertEqual(patched_source(input_46), original_source(input_46))
             
 
@@ -296,31 +296,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test48(self):
-        input_48 = "11110000001111"
+        input_48 = "0000000000111111000000"
         self.assertEqual(patched_source(input_48), original_source(input_48))
             
 
 
     def test49(self):
-        input_49 = "1111111"
+        input_49 = "00000001111111"
         self.assertEqual(patched_source(input_49), original_source(input_49))
             
 
 
     def test50(self):
-        input_50 = "11111110000000"
+        input_50 = "01111110111000"
         self.assertEqual(patched_source(input_50), original_source(input_50))
             
 
 
     def test51(self):
-        input_51 = "11111110000000"
+        input_51 = "0000011"
         self.assertEqual(patched_source(input_51), original_source(input_51))
             
 
 
     def test52(self):
-        input_52 = "1111111000000001"
+        input_52 = "0111111"
         self.assertEqual(patched_source(input_52), original_source(input_52))
             
 
@@ -332,7 +332,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test54(self):
-        input_54 = "11111110000000"
+        input_54 = "00000001000000"
         self.assertEqual(patched_source(input_54), original_source(input_54))
             
 
@@ -350,7 +350,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test57(self):
-        input_57 = "11111110000000"
+        input_57 = "0000000001"
         self.assertEqual(patched_source(input_57), original_source(input_57))
             
 
@@ -374,31 +374,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test61(self):
-        input_61 = "11111110000000"
+        input_61 = "111110000"
         self.assertEqual(patched_source(input_61), original_source(input_61))
             
 
 
     def test62(self):
-        input_62 = "00000001000000"
+        input_62 = "11111110000000"
         self.assertEqual(patched_source(input_62), original_source(input_62))
             
 
 
     def test63(self):
-        input_63 = "1111000001111"
+        input_63 = "0010011111111"
         self.assertEqual(patched_source(input_63), original_source(input_63))
             
 
 
     def test64(self):
-        input_64 = "11111110000000"
+        input_64 = "00000001111111"
         self.assertEqual(patched_source(input_64), original_source(input_64))
             
 
 
     def test65(self):
-        input_65 = "11111110000001"
+        input_65 = "0111000001111"
         self.assertEqual(patched_source(input_65), original_source(input_65))
             
 
@@ -416,7 +416,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test68(self):
-        input_68 = "00000001000000"
+        input_68 = "11111110000000"
         self.assertEqual(patched_source(input_68), original_source(input_68))
             
 
@@ -428,7 +428,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test70(self):
-        input_70 = "11111110000000"
+        input_70 = "0000000000001111111"
         self.assertEqual(patched_source(input_70), original_source(input_70))
             
 
@@ -440,13 +440,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test72(self):
-        input_72 = "1111111000000"
+        input_72 = "011111110"
         self.assertEqual(patched_source(input_72), original_source(input_72))
             
 
 
     def test73(self):
-        input_73 = "111111100000000"
+        input_73 = "0000001"
         self.assertEqual(patched_source(input_73), original_source(input_73))
             
 
@@ -470,7 +470,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test77(self):
-        input_77 = "11111110000000"
+        input_77 = "0000000"
         self.assertEqual(patched_source(input_77), original_source(input_77))
             
 
@@ -482,7 +482,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test79(self):
-        input_79 = "11111110000000"
+        input_79 = "11000001111001"
         self.assertEqual(patched_source(input_79), original_source(input_79))
             
 
@@ -500,7 +500,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test82(self):
-        input_82 = "11111110000000"
+        input_82 = "1111000000111"
         self.assertEqual(patched_source(input_82), original_source(input_82))
             
 
@@ -524,25 +524,25 @@ class TestFunctions(unittest.TestCase):
 
 
     def test86(self):
-        input_86 = "1111000000001111"
+        input_86 = "000000001111111"
         self.assertEqual(patched_source(input_86), original_source(input_86))
             
 
 
     def test87(self):
-        input_87 = "0000000001111111"
+        input_87 = "1100000111111"
         self.assertEqual(patched_source(input_87), original_source(input_87))
             
 
 
     def test88(self):
-        input_88 = "00000001111111"
+        input_88 = "11111110000000"
         self.assertEqual(patched_source(input_88), original_source(input_88))
             
 
 
     def test89(self):
-        input_89 = "0011111"
+        input_89 = "11111110000000"
         self.assertEqual(patched_source(input_89), original_source(input_89))
             
 
@@ -560,31 +560,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test92(self):
-        input_92 = "111111100000001111110"
+        input_92 = "101010111111101010"
         self.assertEqual(patched_source(input_92), original_source(input_92))
             
 
 
     def test93(self):
-        input_93 = "11111110000000"
+        input_93 = "00011111000"
         self.assertEqual(patched_source(input_93), original_source(input_93))
             
 
 
     def test94(self):
-        input_94 = "111000010000"
+        input_94 = "11111110000000"
         self.assertEqual(patched_source(input_94), original_source(input_94))
             
 
 
     def test95(self):
-        input_95 = "11111110000000"
+        input_95 = "0010011111111001001"
         self.assertEqual(patched_source(input_95), original_source(input_95))
             
 
 
     def test96(self):
-        input_96 = "11111110000000"
+        input_96 = "00000001111111"
         self.assertEqual(patched_source(input_96), original_source(input_96))
             
 
@@ -602,7 +602,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test99(self):
-        input_99 = "00000001111111"
+        input_99 = "11111110000000"
         self.assertEqual(patched_source(input_99), original_source(input_99))
             
 

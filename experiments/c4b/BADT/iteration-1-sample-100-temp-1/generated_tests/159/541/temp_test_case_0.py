@@ -32,7 +32,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test4(self):
-        input_4 = "6 of week"
+        input_4 = "6 of month"
         self.assertEqual(patched_source(input_4), original_source(input_4))
             
 
@@ -44,7 +44,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test6(self):
-        input_6 = "6 of week"
+        input_6 = "2 of week"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
@@ -74,7 +74,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test11(self):
-        input_11 = "6 of week"
+        input_11 = "6 of month"
         self.assertEqual(patched_source(input_11), original_source(input_11))
             
 
@@ -116,7 +116,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test18(self):
-        input_18 = "6 of weekend"
+        input_18 = "6 of week"
         self.assertEqual(patched_source(input_18), original_source(input_18))
             
 
@@ -140,13 +140,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test22(self):
-        input_22 = "6 of month"
+        input_22 = "6 of week"
         self.assertEqual(patched_source(input_22), original_source(input_22))
             
 
 
     def test23(self):
-        input_23 = "6 of week"
+        input_23 = "6 of weekend"
         self.assertEqual(patched_source(input_23), original_source(input_23))
             
 
@@ -158,55 +158,55 @@ class TestFunctions(unittest.TestCase):
 
 
     def test25(self):
-        input_25 = "5 of week"
+        input_25 = "6 of week"
         self.assertEqual(patched_source(input_25), original_source(input_25))
             
 
 
     def test26(self):
-        input_26 = "7 of week"
+        input_26 = "6 of week"
         self.assertEqual(patched_source(input_26), original_source(input_26))
             
 
 
     def test27(self):
-        input_27 = "6 of week"
+        input_27 = "29 of week"
         self.assertEqual(patched_source(input_27), original_source(input_27))
             
 
 
     def test28(self):
-        input_28 = "5 of week"
+        input_28 = "6 of week"
         self.assertEqual(patched_source(input_28), original_source(input_28))
             
 
 
     def test29(self):
-        input_29 = "6 of week"
+        input_29 = "30 of week"
         self.assertEqual(patched_source(input_29), original_source(input_29))
             
 
 
     def test30(self):
-        input_30 = "6 of week"
+        input_30 = "30 of month"
         self.assertEqual(patched_source(input_30), original_source(input_30))
             
 
 
     def test31(self):
-        input_31 = "5 of week"
+        input_31 = "30 prime w"
         self.assertEqual(patched_source(input_31), original_source(input_31))
             
 
 
     def test32(self):
-        input_32 = "6 of week"
+        input_32 = "6 of weekend"
         self.assertEqual(patched_source(input_32), original_source(input_32))
             
 
 
     def test33(self):
-        input_33 = "6 of week"
+        input_33 = "29 any week"
         self.assertEqual(patched_source(input_33), original_source(input_33))
             
 
@@ -224,31 +224,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test36(self):
-        input_36 = "6 of weekend"
+        input_36 = "6 of week"
         self.assertEqual(patched_source(input_36), original_source(input_36))
             
 
 
     def test37(self):
-        input_37 = "5 of week"
+        input_37 = "7 of week"
         self.assertEqual(patched_source(input_37), original_source(input_37))
             
 
 
     def test38(self):
-        input_38 = "10 of week"
+        input_38 = "6 of week"
         self.assertEqual(patched_source(input_38), original_source(input_38))
             
 
 
     def test39(self):
-        input_39 = "6 of week"
+        input_39 = "5 of week"
         self.assertEqual(patched_source(input_39), original_source(input_39))
             
 
 
     def test40(self):
-        input_40 = "6 of month"
+        input_40 = "6 of week"
         self.assertEqual(patched_source(input_40), original_source(input_40))
             
 
@@ -266,7 +266,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test43(self):
-        input_43 = "6 of week"
+        input_43 = "5 of week"
         self.assertEqual(patched_source(input_43), original_source(input_43))
             
 
@@ -278,7 +278,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test45(self):
-        input_45 = "8 of week"
+        input_45 = "5 of week"
         self.assertEqual(patched_source(input_45), original_source(input_45))
             
 
@@ -302,7 +302,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test49(self):
-        input_49 = "5 of week"
+        input_49 = "6 of week"
         self.assertEqual(patched_source(input_49), original_source(input_49))
             
 
@@ -314,7 +314,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test51(self):
-        input_51 = "6 of week"
+        input_51 = "6 on weekend"
         self.assertEqual(patched_source(input_51), original_source(input_51))
             
 
@@ -338,13 +338,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test55(self):
-        input_55 = "6 of week"
+        input_55 = "7 of month"
         self.assertEqual(patched_source(input_55), original_source(input_55))
             
 
 
     def test56(self):
-        input_56 = "6 of week"
+        input_56 = "6 of weekend"
         self.assertEqual(patched_source(input_56), original_source(input_56))
             
 
@@ -356,13 +356,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test58(self):
-        input_58 = "7 of week"
+        input_58 = "6 of week"
         self.assertEqual(patched_source(input_58), original_source(input_58))
             
 
 
     def test59(self):
-        input_59 = "6 of week"
+        input_59 = "6 of month"
         self.assertEqual(patched_source(input_59), original_source(input_59))
             
 
@@ -380,7 +380,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test62(self):
-        input_62 = "6 of week"
+        input_62 = "7 of month"
         self.assertEqual(patched_source(input_62), original_source(input_62))
             
 
@@ -392,7 +392,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test64(self):
-        input_64 = "6 of week"
+        input_64 = "5 of month"
         self.assertEqual(patched_source(input_64), original_source(input_64))
             
 
@@ -416,13 +416,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test68(self):
-        input_68 = "6 of weekend"
+        input_68 = "6 of week"
         self.assertEqual(patched_source(input_68), original_source(input_68))
             
 
 
     def test69(self):
-        input_69 = "6 of weekend"
+        input_69 = "6 of week"
         self.assertEqual(patched_source(input_69), original_source(input_69))
             
 
@@ -440,7 +440,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test72(self):
-        input_72 = "7 of week"
+        input_72 = "6 of weekend"
         self.assertEqual(patched_source(input_72), original_source(input_72))
             
 
@@ -464,7 +464,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test76(self):
-        input_76 = "6 of week"
+        input_76 = "6 of weekend"
         self.assertEqual(patched_source(input_76), original_source(input_76))
             
 
@@ -512,7 +512,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test84(self):
-        input_84 = "6 of week"
+        input_84 = "5 week days"
         self.assertEqual(patched_source(input_84), original_source(input_84))
             
 
@@ -542,7 +542,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test89(self):
-        input_89 = "6 of week"
+        input_89 = "5 of weekend"
         self.assertEqual(patched_source(input_89), original_source(input_89))
             
 
@@ -566,7 +566,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test93(self):
-        input_93 = "6 of week"
+        input_93 = "6 of weekend"
         self.assertEqual(patched_source(input_93), original_source(input_93))
             
 
@@ -584,7 +584,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test96(self):
-        input_96 = "6 of week"
+        input_96 = "6 weeks"
         self.assertEqual(patched_source(input_96), original_source(input_96))
             
 
@@ -602,7 +602,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test99(self):
-        input_99 = "6 of weekend"
+        input_99 = "6 of week"
         self.assertEqual(patched_source(input_99), original_source(input_99))
             
 

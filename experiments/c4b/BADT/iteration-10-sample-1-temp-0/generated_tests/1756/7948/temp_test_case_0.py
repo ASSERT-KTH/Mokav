@@ -8,7 +8,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = "1 2 3 4 5 1 2 3 4 5"
+        input_0 = "1 1 2 2"
         self.assertEqual(patched_source(input_0), original_source(input_0))
             
 

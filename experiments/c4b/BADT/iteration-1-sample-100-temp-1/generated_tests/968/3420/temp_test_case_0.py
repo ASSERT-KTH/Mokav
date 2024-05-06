@@ -14,13 +14,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test1(self):
-        input_1 = "2 1"
+        input_1 = "3 15"
         self.assertEqual(patched_source(input_1), original_source(input_1))
             
 
 
     def test2(self):
-        input_2 = "3 21"
+        input_2 = "2 1"
         self.assertEqual(patched_source(input_2), original_source(input_2))
             
 
@@ -38,13 +38,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test5(self):
-        input_5 = "3 10"
+        input_5 = "2 1"
         self.assertEqual(patched_source(input_5), original_source(input_5))
             
 
 
     def test6(self):
-        input_6 = "5 15"
+        input_6 = "2 1"
         self.assertEqual(patched_source(input_6), original_source(input_6))
             
 
@@ -62,7 +62,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test9(self):
-        input_9 = "2 1"
+        input_9 = "1 8"
         self.assertEqual(patched_source(input_9), original_source(input_9))
             
 
@@ -92,7 +92,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test14(self):
-        input_14 = "2 15"
+        input_14 = "2 1"
         self.assertEqual(patched_source(input_14), original_source(input_14))
             
 
@@ -110,7 +110,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test17(self):
-        input_17 = "2 5"
+        input_17 = "2 1"
         self.assertEqual(patched_source(input_17), original_source(input_17))
             
 
@@ -122,13 +122,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test19(self):
-        input_19 = "2 1"
+        input_19 = "3 15"
         self.assertEqual(patched_source(input_19), original_source(input_19))
             
 
 
     def test20(self):
-        input_20 = "1 20"
+        input_20 = "2 1"
         self.assertEqual(patched_source(input_20), original_source(input_20))
             
 
@@ -140,7 +140,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test22(self):
-        input_22 = "3 31"
+        input_22 = "2 1"
         self.assertEqual(patched_source(input_22), original_source(input_22))
             
 
@@ -152,13 +152,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test24(self):
-        input_24 = "3 1"
+        input_24 = "2 1"
         self.assertEqual(patched_source(input_24), original_source(input_24))
             
 
 
     def test25(self):
-        input_25 = "1 32"
+        input_25 = "2 1"
         self.assertEqual(patched_source(input_25), original_source(input_25))
             
 
@@ -182,13 +182,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test29(self):
-        input_29 = "3 32"
+        input_29 = "2 1"
         self.assertEqual(patched_source(input_29), original_source(input_29))
             
 
 
     def test30(self):
-        input_30 = "2 10"
+        input_30 = "2 1"
         self.assertEqual(patched_source(input_30), original_source(input_30))
             
 
@@ -206,7 +206,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test33(self):
-        input_33 = "2 28"
+        input_33 = "3 1"
         self.assertEqual(patched_source(input_33), original_source(input_33))
             
 
@@ -236,13 +236,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test38(self):
-        input_38 = "2 1"
+        input_38 = "3 5"
         self.assertEqual(patched_source(input_38), original_source(input_38))
             
 
 
     def test39(self):
-        input_39 = "1 31"
+        input_39 = "2 10"
         self.assertEqual(patched_source(input_39), original_source(input_39))
             
 
@@ -266,31 +266,31 @@ class TestFunctions(unittest.TestCase):
 
 
     def test43(self):
-        input_43 = "2 15"
+        input_43 = "2 1"
         self.assertEqual(patched_source(input_43), original_source(input_43))
             
 
 
     def test44(self):
-        input_44 = "3 1"
+        input_44 = "2 1"
         self.assertEqual(patched_source(input_44), original_source(input_44))
             
 
 
     def test45(self):
-        input_45 = "2 29"
+        input_45 = "2 1"
         self.assertEqual(patched_source(input_45), original_source(input_45))
             
 
 
     def test46(self):
-        input_46 = "2 28"
+        input_46 = "2 1"
         self.assertEqual(patched_source(input_46), original_source(input_46))
             
 
 
     def test47(self):
-        input_47 = "2 1"
+        input_47 = "10 25"
         self.assertEqual(patched_source(input_47), original_source(input_47))
             
 
@@ -302,7 +302,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test49(self):
-        input_49 = "3 21"
+        input_49 = "2 1"
         self.assertEqual(patched_source(input_49), original_source(input_49))
             
 
@@ -320,7 +320,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test52(self):
-        input_52 = "2 8"
+        input_52 = "2 1"
         self.assertEqual(patched_source(input_52), original_source(input_52))
             
 
@@ -332,13 +332,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test54(self):
-        input_54 = "2 10"
+        input_54 = "2 1"
         self.assertEqual(patched_source(input_54), original_source(input_54))
             
 
 
     def test55(self):
-        input_55 = "2 1"
+        input_55 = "3 15"
         self.assertEqual(patched_source(input_55), original_source(input_55))
             
 
@@ -356,7 +356,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test58(self):
-        input_58 = "1 1"
+        input_58 = "2 1"
         self.assertEqual(patched_source(input_58), original_source(input_58))
             
 
@@ -368,25 +368,25 @@ class TestFunctions(unittest.TestCase):
 
 
     def test60(self):
-        input_60 = "3 24"
+        input_60 = "2 1"
         self.assertEqual(patched_source(input_60), original_source(input_60))
             
 
 
     def test61(self):
-        input_61 = "1 30"
+        input_61 = "2 1"
         self.assertEqual(patched_source(input_61), original_source(input_61))
             
 
 
     def test62(self):
-        input_62 = "2 10"
+        input_62 = "2 1"
         self.assertEqual(patched_source(input_62), original_source(input_62))
             
 
 
     def test63(self):
-        input_63 = "2 10"
+        input_63 = "2 1"
         self.assertEqual(patched_source(input_63), original_source(input_63))
             
 
@@ -410,7 +410,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test67(self):
-        input_67 = "1 28"
+        input_67 = "3 20"
         self.assertEqual(patched_source(input_67), original_source(input_67))
             
 
@@ -428,7 +428,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test70(self):
-        input_70 = "2 1"
+        input_70 = "3 20"
         self.assertEqual(patched_source(input_70), original_source(input_70))
             
 
@@ -446,13 +446,13 @@ class TestFunctions(unittest.TestCase):
 
 
     def test73(self):
-        input_73 = "2 1"
+        input_73 = "3 15"
         self.assertEqual(patched_source(input_73), original_source(input_73))
             
 
 
     def test74(self):
-        input_74 = "6 5"
+        input_74 = "2 1"
         self.assertEqual(patched_source(input_74), original_source(input_74))
             
 
@@ -464,19 +464,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test76(self):
-        input_76 = "3 30"
+        input_76 = "2 1"
         self.assertEqual(patched_source(input_76), original_source(input_76))
             
 
 
     def test77(self):
-        input_77 = "1 3"
+        input_77 = "2 1"
         self.assertEqual(patched_source(input_77), original_source(input_77))
             
 
 
     def test78(self):
-        input_78 = "12 15"
+        input_78 = "2 1"
         self.assertEqual(patched_source(input_78), original_source(input_78))
             
 
@@ -500,19 +500,19 @@ class TestFunctions(unittest.TestCase):
 
 
     def test82(self):
-        input_82 = "3 15"
+        input_82 = "2 1"
         self.assertEqual(patched_source(input_82), original_source(input_82))
             
 
 
     def test83(self):
-        input_83 = "3 30"
+        input_83 = "2 1"
         self.assertEqual(patched_source(input_83), original_source(input_83))
             
 
 
     def test84(self):
-        input_84 = "2 1"
+        input_84 = "3 1"
         self.assertEqual(patched_source(input_84), original_source(input_84))
             
 
@@ -548,61 +548,61 @@ class TestFunctions(unittest.TestCase):
 
 
     def test90(self):
-        input_90 = "1 7"
+        input_90 = "2 1"
         self.assertEqual(patched_source(input_90), original_source(input_90))
             
 
 
     def test91(self):
-        input_91 = "2 2"
+        input_91 = "2 1"
         self.assertEqual(patched_source(input_91), original_source(input_91))
             
 
 
     def test92(self):
-        input_92 = "1 25"
+        input_92 = "2 1"
         self.assertEqual(patched_source(input_92), original_source(input_92))
             
 
 
     def test93(self):
-        input_93 = "3 1"
+        input_93 = "2 1"
         self.assertEqual(patched_source(input_93), original_source(input_93))
             
 
 
     def test94(self):
-        input_94 = "1 1"
+        input_94 = "2 1"
         self.assertEqual(patched_source(input_94), original_source(input_94))
             
 
 
     def test95(self):
-        input_95 = "3 23"
+        input_95 = "2 1"
         self.assertEqual(patched_source(input_95), original_source(input_95))
             
 
 
     def test96(self):
-        input_96 = "1 28"
+        input_96 = "2 1"
         self.assertEqual(patched_source(input_96), original_source(input_96))
             
 
 
     def test97(self):
-        input_97 = "1 30"
+        input_97 = "2 1"
         self.assertEqual(patched_source(input_97), original_source(input_97))
             
 
 
     def test98(self):
-        input_98 = "12 1"
+        input_98 = "2 1"
         self.assertEqual(patched_source(input_98), original_source(input_98))
             
 
 
     def test99(self):
-        input_99 = "6 1"
+        input_99 = "2 1"
         self.assertEqual(patched_source(input_99), original_source(input_99))
             
 

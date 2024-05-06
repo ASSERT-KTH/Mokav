@@ -8,7 +8,7 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['200 400 600 800 1000\r\r', '0 1 2 3 4\r\r', '1 0']
+        input_0 = ['250 250 250 250 250\r\r', '0 0 0 0 0\r\r', '1 1']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
             
 
