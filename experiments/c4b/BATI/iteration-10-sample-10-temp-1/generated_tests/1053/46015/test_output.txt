@@ -1,0 +1,1 @@
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'/home/khashayar/projs/det-gen/DET-Gen2/temp_bug_qb.py:29: SyntaxWarning: "is not" with a literal. Did you mean "!="?\n  if (i is not 0):\n..........\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n')

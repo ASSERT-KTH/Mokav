@@ -1,0 +1,10 @@
+def original_func(*args):
+	global_list = []
+	
+	(n, a, b) = map(int, args[0].split())
+	n -= a
+	if (n > (b + 1)):
+	    global_list.append((n - b))
+	else:
+	    global_list.append(n)
+	return global_list
