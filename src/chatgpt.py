@@ -1,19 +1,21 @@
 from src.utils import write_to_file
-from openai import OpenAI
+#from openai import OpenAI
 import os
 import json
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import logging
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
-load_dotenv()
-client = OpenAI(
-    # this is also the default, it can be omitted
-    api_key=os.getenv("OPENAI_API_KEY"),
-)
-MAX_LENGTH = 39000
+import gc
+
+# load_dotenv()
+# client = OpenAI(
+#     # this is also the default, it can be omitted
+#     api_key=os.getenv("OPENAI_API_KEY"),
+# )
+MAX_LENGTH = 10000
 
 
 class ChatGPT_2():
@@ -87,14 +89,14 @@ class CodeLlama():
         self.default_instruction = default_instruction
         self.inst_sep = '[/INST]'
 
-        quantization_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_compute_dtype=torch.float16,
-            bnb_4bit_use_double_quant=True,
-        )
+#         quantization_config = BitsAndBytesConfig(
+#             load_in_4bit=True,
+#             bnb_4bit_compute_dtype=torch.float16,
+#             bnb_4bit_use_double_quant=True,
+#         )
         self.model = AutoModelForCausalLM.from_pretrained(
             model,
-            quantization_config=quantization_config,
+#             quantization_config=quantization_config,
             device_map="cuda",
             cache_dir="./.models",
         )
@@ -136,23 +138,24 @@ class CodeLlama():
         if prompt in self.cache:
             return self.cache[prompt]
 
-        inputs = self.tokenizer.apply_chat_template(
-            messages, return_tensors="pt", max_length=1024, truncation=True, padding="max_length")
-        input_ids = inputs.input_ids.to(self.model.device)
-        attention_mask = inputs.attention_mask.to(self.model.device)
+        inputs = self.tokenizer.apply_chat_template(messages, tokenize=True, return_tensors="pt").to("cuda")
+        # input_ids = inputs.input_ids.to(self.model.device)
+        # attention_mask = inputs.attention_mask.to(self.model.device)
 
         with torch.no_grad():
             outputs = self.model.generate(
-                input_ids=input_ids,
-                attention_mask=attention_mask,
-                max_length=1024,
+                # input_ids=input_ids,
+                # attention_mask=attention_mask,
+                inputs,
+                max_length=14000,
                 temperature=temp if temp else self.default_temp,
                 num_return_sequences=n if n else self.default_n,
                 pad_token_id=self.tokenizer.eos_token_id,
                 do_sample=True,
-                num_return_sequences=10,
             )
 
+        torch.cuda.empty_cache()
+        gc.collect()
         responses = [self.tokenizer.decode(
             output, skip_special_tokens=True) for output in outputs]
         

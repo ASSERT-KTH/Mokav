@@ -1,4 +1,4 @@
-from src.chatgpt import ChatGPT_2
+from src.chatgpt import ChatGPT_2,CodeLlama
 import re
 import logging
 
@@ -6,7 +6,7 @@ import logging
 class TestGenerator:
     def __init__(self, config, number_of_samples, temperature):
         self.config = config
-        self.chatgpt = ChatGPT_2(
+        self.chatgpt = CodeLlama(
             default_instruction="You are a software test expert. You are given an original and a patched version of a program. You generate a test input that distinguishes between the two versions. Your generated test input produces different outputs on the original and patched versions.",
             cache_file_path="cache.json",
             default_temp=temperature,
