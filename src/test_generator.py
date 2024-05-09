@@ -53,13 +53,18 @@ class TestGenerator:
             self.prompt_history = [] # it's an initial prompt
 
             if "AA" in self.config:
-                acc_description = self.code_description(accepted_code)
-
                 prompt = f"""
 The following is the patched version of a program: 
 ```python
-{accepted_code}```
-This is description of the patched program: {acc_description}
+{accepted_code}```"""
+
+                if 'D' in self.config:
+                    acc_description = self.code_description(accepted_code)
+
+                    prompt += f"""
+This is a description of the patched program: {acc_description}"""
+
+                prompt += f"""
 We also have an original version of this program, which is slightly different from the patched version."""
                 
                 if "I" in self.config:
@@ -74,18 +79,27 @@ Generate a difference exposing test input as described above.
 
 """
             elif "BA" in self.config:
-                acc_description = self.code_description(accepted_code)
-                buggy_description = self.code_description(buggy_code)
 
                 prompt = f"""
 The following is the original version of a program: 
 ```python
-{buggy_code}``` 
-This is description of the original program: {buggy_description}
+{buggy_code}```"""
+                if 'D' in self.config:
+                    buggy_description = self.code_description(buggy_code)
+
+                    prompt += f"""
+This is a description of the original program: {buggy_description}"""
+                
+                prompt += f"""
 The following is the patched version of the program: 
 ```python
-{accepted_code}```
-This is description of the patched program: {acc_description}"""
+{accepted_code}```"""
+                
+                if 'D' in self.config:
+                    acc_description = self.code_description(accepted_code)
+
+                    prompt += f"""
+This is a description of the patched program: {acc_description}"""
                 
                 if "I" in self.config:                
                     prompt += f"""
