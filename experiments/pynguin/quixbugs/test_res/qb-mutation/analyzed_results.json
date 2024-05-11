@@ -4,7 +4,7 @@
         "correct_fail": false
     },
     "max_sublist_sum": {
-        "buggy_fail": true,
+        "buggy_fail": false,
         "correct_fail": false
     },
     "next_palindrome": {
@@ -13,11 +13,11 @@
     },
     "breadth_first_search": {
         "buggy_fail": true,
-        "correct_fail": true
+        "correct_fail": false
     },
     "longest_common_subsequence": {
         "buggy_fail": true,
-        "correct_fail": true
+        "correct_fail": false
     },
     "bitcount": {
         "buggy_fail": true,
@@ -28,7 +28,7 @@
         "correct_fail": false
     },
     "next_permutation": {
-        "buggy_fail": true,
+        "buggy_fail": false,
         "correct_fail": false
     },
     "reverse_linked_list": {
@@ -49,15 +49,15 @@
     },
     "gcd": {
         "buggy_fail": true,
-        "correct_fail": true
+        "correct_fail": false
     },
     "get_factors": {
         "buggy_fail": false,
         "correct_fail": false
     },
     "shortest_path_length": {
-        "buggy_fail": true,
-        "correct_fail": true
+        "buggy_fail": false,
+        "correct_fail": false
     },
     "is_valid_parenthesization": {
         "buggy_fail": true,
@@ -92,7 +92,7 @@
         "correct_fail": false
     },
     "topological_ordering": {
-        "buggy_fail": true,
+        "buggy_fail": false,
         "correct_fail": false
     },
     "flatten": {
@@ -132,8 +132,8 @@
         "correct_fail": false
     },
     "shortest_path_lengths": {
-        "buggy_fail": true,
-        "correct_fail": true
+        "buggy_fail": false,
+        "correct_fail": false
     },
     "mergesort": {
         "buggy_fail": true,
@@ -160,65 +160,55 @@
         "correct_fail": false
     },
     "programs_cnt": 40,
-    "programs_with_buggy_fail_cnt": 26,
-    "programs_with_correct_fail_cnt": 6,
+    "programs_with_buggy_fail_cnt": 21,
+    "programs_with_correct_fail_cnt": 1,
     "programs_with_diff_detected_cnt": 20,
     "programs_with_buggy_fail": [
-        "lis",
-        "find_in_sorted",
-        "knapsack",
-        "minimum_spanning_tree",
-        "topological_ordering",
-        "find_first_in_sorted",
-        "next_permutation",
         "possible_change",
-        "gcd",
-        "mergesort",
-        "longest_common_subsequence",
-        "breadth_first_search",
-        "to_base",
-        "sqrt",
-        "max_sublist_sum",
+        "bitcount",
         "pascal",
         "reverse_linked_list",
+        "find_in_sorted",
         "shortest_paths",
+        "kth",
         "lcs_length",
         "levenshtein",
-        "kth",
-        "shortest_path_length",
-        "shortest_path_lengths",
-        "detect_cycle",
+        "longest_common_subsequence",
+        "to_base",
+        "lis",
+        "sqrt",
+        "find_first_in_sorted",
+        "breadth_first_search",
         "is_valid_parenthesization",
-        "bitcount"
+        "detect_cycle",
+        "mergesort",
+        "minimum_spanning_tree",
+        "gcd",
+        "knapsack"
     ],
     "programs_with_correct_fail": [
-        "longest_common_subsequence",
-        "breadth_first_search",
-        "shortest_path_length",
-        "shortest_path_lengths",
-        "pascal",
-        "gcd"
+        "pascal"
     ],
     "programs_with_diff_detected": [
-        "lis",
-        "find_in_sorted",
-        "knapsack",
-        "minimum_spanning_tree",
-        "topological_ordering",
-        "find_first_in_sorted",
-        "next_permutation",
         "possible_change",
-        "mergesort",
-        "to_base",
-        "sqrt",
-        "max_sublist_sum",
+        "bitcount",
+        "lis",
         "reverse_linked_list",
+        "sqrt",
+        "find_in_sorted",
         "shortest_paths",
-        "lcs_length",
-        "levenshtein",
         "kth",
-        "detect_cycle",
+        "find_first_in_sorted",
+        "breadth_first_search",
+        "lcs_length",
         "is_valid_parenthesization",
-        "bitcount"
+        "levenshtein",
+        "detect_cycle",
+        "mergesort",
+        "longest_common_subsequence",
+        "minimum_spanning_tree",
+        "to_base",
+        "gcd",
+        "knapsack"
     ]
 }
