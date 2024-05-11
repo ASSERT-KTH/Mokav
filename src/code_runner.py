@@ -152,43 +152,43 @@ print(output_code)
 
     def check_test(self, problem_id, author_id):
 
-        # try:
-        logging.info(
-            f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
-        acc1, _, rej, existing_test = self.prepare_data(problem_id, author_id)
+        try:
+            logging.info(
+                f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
+            acc1, _, rej, existing_test = self.prepare_data(problem_id, author_id)
 
-        existing_test_output = self.accepted_code_output(existing_test["inputdata"], acc1)
+            existing_test_output = self.accepted_code_output(existing_test["inputdata"], acc1)
 
-        output, data_list = self.generate_test_and_run(
-            rej, acc1, existing_test, existing_test_output, None, author_id, problem_id)
-        print("###TEMP_TEST_PY_OUTPUT", output)
-        logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
-        if not (("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output))):
-            for i in range(self.iteration_count):
-                print("data list", data_list)
+            output, data_list = self.generate_test_and_run(
+                rej, acc1, existing_test, existing_test_output, None, author_id, problem_id)
+            print("###TEMP_TEST_PY_OUTPUT", output)
+            logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
+            if not (("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output))):
+                for i in range(self.iteration_count):
+                    print("data list", data_list)
 
-                ### TODO: if the first response doesn't have correct format, the output is computed for another response
-                input_data = self.process_input_data(
-                    data_list[0]["inputdata"])
+                    ### TODO: if the first response doesn't have correct format, the output is computed for another response
+                    input_data = self.process_input_data(
+                        data_list[0]["inputdata"])
 
-                output_code = self.accepted_code_output(input_data, acc1)
-                output, data_list = self.generate_test_and_run(
-                    rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id)
-                print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
-                logging.info(f"###ITERATION###: {i + 1}")
-                logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
-                if ("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output)):
-                    self.save_generated_test(author_id, problem_id, i + 1, output)
-                    return "Found1"
-            return str(output)
-        elif "Timeout" in output:
-            return "Timeout!!"
-        else:
-            self.save_generated_test(author_id, problem_id, 0, output)
-            return "Found1"
-        # except Exception as e:
-        #     logging.info(f"###EXCEPTION###: {e}")
-        #     throw 
+                    output_code = self.accepted_code_output(input_data, acc1)
+                    output, data_list = self.generate_test_and_run(
+                        rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id)
+                    print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
+                    logging.info(f"###ITERATION###: {i + 1}")
+                    logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
+                    if ("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output)):
+                        self.save_generated_test(author_id, problem_id, i + 1, output)
+                        return "Found1"
+                return str(output)
+            elif "Timeout" in output:
+                return "Timeout!!"
+            else:
+                self.save_generated_test(author_id, problem_id, 0, output)
+                return "Found1"
+        except Exception as e:
+            logging.info(f"###EXCEPTION###: {e}")
+            return "EXCEPTION!!!" 
 
     def save_generated_test(self, author_id, problem_id, iteration_ind, execution_output):
         os.system(f'mkdir {self.generated_tests_dir}/{problem_id}')

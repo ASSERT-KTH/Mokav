@@ -89,14 +89,14 @@ class CodeLlama():
         self.default_instruction = default_instruction
         self.inst_sep = '[/INST]'
 
-#         quantization_config = BitsAndBytesConfig(
-#             load_in_4bit=True,
-#             bnb_4bit_compute_dtype=torch.float16,
-#             bnb_4bit_use_double_quant=True,
-#         )
+        # quantization_config = BitsAndBytesConfig(
+        #     load_in_4bit=True,
+        #     bnb_4bit_compute_dtype=torch.float16,
+        #     bnb_4bit_use_double_quant=True,
+        # )
         self.model = AutoModelForCausalLM.from_pretrained(
             model,
-#             quantization_config=quantization_config,
+            # quantization_config=quantization_config,
             device_map="cuda",
             cache_dir="./.models",
         )
@@ -130,8 +130,13 @@ class CodeLlama():
 
         prompt = "\n".join([msg['content'] for msg in messages])
 
+
         while len(prompt) > MAX_LENGTH:
             # Remove messages from the start until the length is below the threshold
+            
+            if len(messages) < 6:
+                raise Exception("Messages are too long!!")
+            
             messages = messages[:3] + messages[5:]
             prompt = "\n".join([msg['content'] for msg in messages])
 
