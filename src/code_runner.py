@@ -181,8 +181,6 @@ print(output_code)
                         self.save_generated_test(author_id, problem_id, i + 1, output)
                         return "Found1"
                 return str(output)
-            elif "Timeout" in output:
-                return "Timeout!!"
             else:
                 self.save_generated_test(author_id, problem_id, 0, output)
                 return "Found1"
