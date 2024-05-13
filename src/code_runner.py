@@ -163,7 +163,7 @@ print(output_code)
                 rej, acc1, existing_test, existing_test_output, None, author_id, problem_id)
             print("###TEMP_TEST_PY_OUTPUT", output)
             logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
-            if not (("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output))):
+            if not ("AssertionError" in output):
                 for i in range(self.iteration_count):
                     print("data list", data_list)
 
@@ -177,7 +177,7 @@ print(output_code)
                     print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
                     logging.info(f"###ITERATION###: {i + 1}")
                     logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
-                    if ("AssertionError" in output) or (("temp_acc_qb.py" not in output) and ("temp_bug_qb.py" in output)):
+                    if ("AssertionError" in output):
                         self.save_generated_test(author_id, problem_id, i + 1, output)
                         return "Found1"
                 return str(output)
