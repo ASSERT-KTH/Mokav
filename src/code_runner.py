@@ -134,9 +134,9 @@ if __name__ == '__main__':
                 if "AssertionError" in output:
                     break
             except Exception as e:
-                output += f"\n NEW TEST OUTPUT: \nException: {e}"
+                test_output += f"\n NEW TEST OUTPUT: \nException: {e}"
 
-        return output, data_list
+        return test_output, data_list
 
     def accepted_code_output(self, input_data, acc_code):
         if "\n" in input_data:
