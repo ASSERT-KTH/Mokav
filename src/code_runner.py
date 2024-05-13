@@ -119,12 +119,24 @@ if __name__ == '__main__':
             return list(input_data.split("\n"))
         return input_data
 
-    def generate_test_and_run(self, rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id):
+    def generate_test_and_run_until_assertion_error(self, rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id):
         test_case = self.test_generator.generate_test(
             rej, acc1, existing_test, existing_test_output, output_code, author_id=author_id, problem_id=problem_id)
         data_list = self.change_test_to_dict(test_case)
-        self.create_unnitest(rej, acc1, data_list)
-        return str(run_process(["python", "temp_test_case.py"], 50)), data_list
+
+        # Create unittests with single test method
+        test_output = ''
+        for i, data in enumerate(data_list):
+            try:
+                self.create_unnitest(rej, acc1, [data])
+                output = str(run_process(["python", "temp_test_case.py"], 5))
+                test_output += '\n NEW TEST OUTPUT: \n' + output
+                if "AssertionError" in output:
+                    break
+            except Exception as e:
+                output += f"\n NEW TEST OUTPUT: \nException: {e}"
+
+        return output, data_list
 
     def accepted_code_output(self, input_data, acc_code):
         if "\n" in input_data:
@@ -159,7 +171,7 @@ print(output_code)
 
             existing_test_output = self.accepted_code_output(existing_test["inputdata"], acc1)
 
-            output, data_list = self.generate_test_and_run(
+            output, data_list = self.generate_test_and_run_until_assertion_error(
                 rej, acc1, existing_test, existing_test_output, None, author_id, problem_id)
             print("###TEMP_TEST_PY_OUTPUT", output)
             logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
@@ -172,7 +184,7 @@ print(output_code)
                         data_list[0]["inputdata"])
 
                     output_code = self.accepted_code_output(input_data, acc1)
-                    output, data_list = self.generate_test_and_run(
+                    output, data_list = self.generate_test_and_run_until_assertion_error(
                         rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id)
                     print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
                     logging.info(f"###ITERATION###: {i + 1}")
