@@ -38,10 +38,16 @@ class TestGenerator:
         return "".join([match.strip() for match in matches])
 
     def generate_test(self, buggy_code, accepted_code, existing_test=None, existing_test_accepted_output=None, 
-                      retry_ouput=False, author_id=None, problem_id=None):
+                      retry_ouput=False, author_id=None, problem_id=None, acc_unique_var_state=None, bug_unique_var_state=None):
         responses = []
         if retry_ouput:
-            prompt = f"Both versions give us {retry_ouput} as output. The output should be different. Please generate again"
+            prompt = f"Both versions give us {retry_ouput} as output. The output should be different."
+            if "E" in self.config:
+                if acc_unique_var_state is not None:
+                    prompt += f""" During the execution of the sample test input on the patched version, variable {acc_unique_var_state[0]} gets the value {acc_unique_var_state[1]}. This never happens in the original version.."""
+                if bug_unique_var_state is not None:
+                    prompt += f""" During the execution of the sample test input on the original version, variable {bug_unique_var_state[0]} gets the value {bug_unique_var_state[1]}. This never happens in the original version.."""
+            prompt += " Please generate again"
             chatgpt_resp = self.chatgpt.get_response(
                 new_question=prompt, previous_questions_and_answers=self.prompt_history, author_id=author_id, problem_id=problem_id
             )
@@ -69,8 +75,13 @@ We also have an original version of this program, which is slightly different fr
                 
                 if "I" in self.config:
                     prompt += f"""
-This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}"""
-                
+This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}."""
+                    if "E" in self.config:
+                        if acc_unique_var_state is not None:
+                            prompt += f""" During the execution of the sample test input on the patched version, variable {acc_unique_var_state[0]} gets the value {acc_unique_var_state[1]}. This never happens in the original version.."""
+                        if bug_unique_var_state is not None:
+                            prompt += f""" During the execution of the sample test input on the original version, variable {bug_unique_var_state[0]} gets the value {bug_unique_var_state[1]}. This never happens in the patched version."""
+
                 prompt += f"""
 Generate a test input in Python dict format as follows:
 ```python {self.test_format}```
@@ -103,7 +114,12 @@ This is a description of the patched program: {acc_description}"""
                 
                 if "I" in self.config:                
                     prompt += f"""
-This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}"""
+This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}."""
+                    if "E" in self.config:
+                        if acc_unique_var_state is not None:
+                            prompt += f""" During the execution of the sample test input on the patched version, variable {acc_unique_var_state[0]} gets the value {acc_unique_var_state[1]}. This never happens in the original version."""
+                        if bug_unique_var_state is not None:
+                            prompt += f""" During the execution of the sample test input on the original version, variable {bug_unique_var_state[0]} gets the value {bug_unique_var_state[1]}. This never happens in the patched version."""
 
                 prompt += f"""
 Generate a test input in Python dict format as follows:

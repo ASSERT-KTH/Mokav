@@ -14,6 +14,7 @@ class CodeRunner:
         self.generated_tests_dir = generated_tests_dir
         self.number_of_samples = number_of_samples
         self.temperature = temperature
+        self.contain_exec_diff = 'E' in meta_data_config
 
         if is_func:
             self.df_submissions = pd.read_csv(
@@ -114,9 +115,20 @@ if __name__ == '__main__':
             return list(input_data.split("\n"))
         return input_data
 
-    def generate_test_and_run_until_assertion_error(self, rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id):
+    def generate_test_and_run_until_assertion_error(self, rej, acc1, existing_test, existing_test_output, 
+                                                    output_code, author_id, problem_id):
+
+        acc_unique_var_state, rej_unique_var_state = None, None
+
+        try:
+            if self.contain_exec_diff:
+                acc_unique_var_state, rej_unique_var_state = self.get_exec_diff(existing_test["inputdata"], acc1, rej)
+        except Exception as e:
+            logging.info(f"###EXCEPTION###: {e}")
+
         test_case = self.test_generator.generate_test(
-            rej, acc1, existing_test, existing_test_output, output_code, author_id=author_id, problem_id=problem_id)
+            rej, acc1, existing_test, existing_test_output, output_code, author_id=author_id, 
+            problem_id=problem_id, acc_unique_var_state=acc_unique_var_state, bug_unique_var_state=rej_unique_var_state)
         data_list = self.change_test_to_dict(test_case)
 
         # Create unittests with single test method
@@ -133,7 +145,10 @@ if __name__ == '__main__':
 
         return test_output, data_list
 
-    def accepted_code_output(self, input_data, acc_code):
+    def get_code_output(self, input_data, code, is_acc=True, collect_var_states=False):
+        module_name = 'acc' if is_acc else 'bug'
+        func_name = 'patched' if is_acc else 'original'
+
         if "\n" in input_data:
             input_data = list(input_data.split("\n"))
 
@@ -142,20 +157,82 @@ if __name__ == '__main__':
         if not is_input_list:
             input_data = f'"{input_data}"'
         
-        with open(f"temp_acc_qb.py", "w") as f:
-            f.write(acc_code)
+        with open(f"temp_{module_name}_qb.py", "w") as f:
+            f.write(code)
 
-        with open(f"temp_acc_exec.py", "w") as f:
+
+        filename = f"temp_{module_name}_exec.py"
+        with open(filename, "w") as f:
             f.write(f'''
-from temp_acc_qb import patched_func as patched_func
+from temp_{module_name}_qb import {func_name}_func as {func_name}_func
 input_data = {input_data}
-output_code = patched_func({"*" if is_input_list else ""}input_data)
+output_code = {func_name}_func({"*" if is_input_list else ""}input_data)
 output_code = list(output_code)
 print(output_code)
 ''')
-        process_acc_exec = run_process(["python3", f"temp_acc_exec.py"], 50)
-        output_code = str(process_acc_exec.stdout.decode()).strip()
-        return output_code
+
+
+        if collect_var_states:
+            process_acc_exec = run_process(["python", "-m", "spotflow", "-t", f"{func_name}_func", "unittest", filename], 5)
+        else:
+            process_acc_exec = run_process(["python", filename], 5)
+
+        output = str(process_acc_exec.stdout.decode()).strip()
+        return output
+    
+    def get_var_states(self, input_data, code, is_acc=True):
+        var_info = {}
+
+        output = self.get_code_output(input_data, code, is_acc=is_acc, collect_var_states=True)
+        lines = output.splitlines()
+        
+        is_var_state = False
+        for i, l in enumerate(lines):
+            if 'VarStateHistory' in l:
+                is_var_state = True
+                continue
+
+            if not is_var_state:
+                continue
+
+            if 'ReturnState:' in l:
+                break
+
+            ## We now it is a variable state line
+            
+            l = l.removeprefix('- ') # to ignore the starting '- ' characters
+            var_name, var_values = (l.split(': ')[0], ': '.join(l.split(': ')[1:]))
+
+            if var_name == 'args' or var_name == 'global_list':
+                continue
+
+            var_values = [x for x in var_values.split(' #SPLITTER# ') if len(str(x)) < 50] # only keep short values
+            var_info[var_name] = {'states': set(var_values), 'ind': i}
+
+        return var_info
+
+    def get_first_unique_state(self, l_var_info, r_var_info):
+        common_vars = list(set(l_var_info.keys()).intersection(set(r_var_info.keys())))
+
+        common_vars.sort(key=lambda var: l_var_info[var]['ind'])
+
+        for var in common_vars:
+            l_states = l_var_info[var]['states']
+            r_states = r_var_info[var]['states']
+
+            unique_states = l_states.difference(r_states)
+
+            if len(unique_states) > 0:
+                return (var, list(unique_states)[0])
+
+    def get_exec_diff(self, input_data, acc_code, rej_code):
+        acc_var_info = self.get_var_states(input_data, acc_code, is_acc=True)
+        rej_var_info = self.get_var_states(input_data, rej_code, is_acc=False)
+
+        unique_acc_var_state = self.get_first_unique_state(acc_var_info, rej_var_info)
+        unique_rej_var_state = self.get_first_unique_state(rej_var_info, acc_var_info)
+
+        return unique_acc_var_state, unique_rej_var_state
 
     def check_test(self, problem_id, author_id):
 
@@ -164,24 +241,21 @@ print(output_code)
                 f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
             acc1, _, rej, existing_test = self.prepare_data(problem_id, author_id)
 
-            existing_test_output = self.accepted_code_output(existing_test["inputdata"], acc1)
+            existing_test_output = self.get_code_output(existing_test["inputdata"], acc1)
 
             output, data_list = self.generate_test_and_run_until_assertion_error(
                 rej, acc1, existing_test, existing_test_output, None, author_id, problem_id)
-            print("###TEMP_TEST_PY_OUTPUT", output)
             logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
             if not ("AssertionError" in output):
                 for i in range(self.iteration_count):
-                    print("data list", data_list)
 
                     ### TODO: if the first response doesn't have correct format, the output is computed for another response
                     input_data = self.process_input_data(
                         data_list[0]["inputdata"])
 
-                    output_code = self.accepted_code_output(input_data, acc1)
+                    output_code = self.get_code_output(input_data, acc1)
                     output, data_list = self.generate_test_and_run_until_assertion_error(
                         rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id)
-                    print("###TEMP_TEST_PY_OUTPUT_RETRY", output)
                     logging.info(f"###ITERATION###: {i + 1}")
                     logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
                     if ("AssertionError" in output):
