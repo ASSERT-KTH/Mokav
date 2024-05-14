@@ -1,1 +1,17 @@
-CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'...F....F............\n======================================================================\nFAIL: test11 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 78, in test11\n    self.assertEqual(patched_source(input_11), original_source(input_11))\nAssertionError: Lists differ: [\'example\'] != [\'Example\']\n\nFirst differing element 0:\n\'example\'\n\'Example\'\n\n- [\'example\']\n?   ^\n\n+ [\'Example\']\n?   ^\n\n\n======================================================================\nFAIL: test16 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 108, in test16\n    self.assertEqual(patched_source(input_16), original_source(input_16))\nAssertionError: Lists differ: [\'hello\'] != [\'Hello\']\n\nFirst differing element 0:\n\'hello\'\n\'Hello\'\n\n- [\'hello\']\n?   ^\n\n+ [\'Hello\']\n?   ^\n\n\n----------------------------------------------------------------------\nRan 21 tests in 0.002s\n\nFAILED (failures=2)\n')
+
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'F\n======================================================================\nFAIL: test0 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 12, in test0\n    self.assertEqual(patched_source(input_0), original_source(input_0))\nAssertionError: Lists differ: [\'hello123\'] != [\'Hello123\']\n\nFirst differing element 0:\n\'hello123\'\n\'Hello123\'\n\n- [\'hello123\']\n?   ^\n\n+ [\'Hello123\']\n?   ^\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n')

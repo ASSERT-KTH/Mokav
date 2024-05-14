@@ -13,12 +13,6 @@ class TestFunctions(unittest.TestCase):
             
 
 
-    def test1(self):
-        input_1 = "2"
-        self.assertEqual(patched_source(input_1), original_source(input_1))
-            
-
-
 if __name__ == '__main__':
     unittest.main()  
     

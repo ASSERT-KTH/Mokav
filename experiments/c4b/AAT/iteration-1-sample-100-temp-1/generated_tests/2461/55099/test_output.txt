@@ -1,1 +1,151 @@
-CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'................F.......F.............F......F...........E..............F..............\n======================================================================\nERROR: test60 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 372, in test60\n    self.assertEqual(patched_source(input_60), original_source(input_60))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 4, in patched_func\n    (x, y) = [int(x) for x in args[0].split()]\nValueError: too many values to unpack (expected 2)\n\n======================================================================\nFAIL: test23 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 150, in test23\n    self.assertEqual(patched_source(input_23), original_source(input_23))\nAssertionError: Lists differ: [\'Ciel\'] != [\'Hanako\']\n\nFirst differing element 0:\n\'Ciel\'\n\'Hanako\'\n\n- [\'Ciel\']\n+ [\'Hanako\']\n\n======================================================================\nFAIL: test30 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 192, in test30\n    self.assertEqual(patched_source(input_30), original_source(input_30))\nAssertionError: Lists differ: [\'Ciel\'] != [\'Hanako\']\n\nFirst differing element 0:\n\'Ciel\'\n\'Hanako\'\n\n- [\'Ciel\']\n+ [\'Hanako\']\n\n======================================================================\nFAIL: test43 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 270, in test43\n    self.assertEqual(patched_source(input_43), original_source(input_43))\nAssertionError: Lists differ: [\'Hanako\'] != [\'Ciel\']\n\nFirst differing element 0:\n\'Hanako\'\n\'Ciel\'\n\n- [\'Hanako\']\n+ [\'Ciel\']\n\n======================================================================\nFAIL: test5 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 42, in test5\n    self.assertEqual(patched_source(input_5), original_source(input_5))\nAssertionError: Lists differ: [\'Hanako\'] != [\'Ciel\']\n\nFirst differing element 0:\n\'Hanako\'\n\'Ciel\'\n\n- [\'Hanako\']\n+ [\'Ciel\']\n\n======================================================================\nFAIL: test74 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 456, in test74\n    self.assertEqual(patched_source(input_74), original_source(input_74))\nAssertionError: Lists differ: [\'Hanako\'] != [\'Ciel\']\n\nFirst differing element 0:\n\'Hanako\'\n\'Ciel\'\n\n- [\'Hanako\']\n+ [\'Ciel\']\n\n----------------------------------------------------------------------\nRan 87 tests in 0.005s\n\nFAILED (failures=5, errors=1)\n')
+
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'E\n======================================================================\nERROR: test0 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 12, in test0\n    self.assertEqual(patched_source(input_0), original_source(input_0))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 4, in patched_func\n    (x, y) = [int(x) for x in args[0].split()]\nValueError: too many values to unpack (expected 2)\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'F\n======================================================================\nFAIL: test0 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 12, in test0\n    self.assertEqual(patched_source(input_0), original_source(input_0))\nAssertionError: Lists differ: [\'Hanako\'] != [\'Ciel\']\n\nFirst differing element 0:\n\'Hanako\'\n\'Ciel\'\n\n- [\'Hanako\']\n+ [\'Ciel\']\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n')

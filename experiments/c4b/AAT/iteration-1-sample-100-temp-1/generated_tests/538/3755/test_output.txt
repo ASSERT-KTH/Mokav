@@ -1,1 +1,33 @@
-CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'.....................F.........F.......F.............F.............F............\n======================================================================\nFAIL: test28 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 180, in test28\n    self.assertEqual(patched_source(input_28), original_source(input_28))\nAssertionError: Lists differ: [5] != [4]\n\nFirst differing element 0:\n5\n4\n\n- [5]\n+ [4]\n\n======================================================================\nFAIL: test37 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 234, in test37\n    self.assertEqual(patched_source(input_37), original_source(input_37))\nAssertionError: Lists differ: [66] != [55]\n\nFirst differing element 0:\n66\n55\n\n- [66]\n+ [55]\n\n======================================================================\nFAIL: test44 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 276, in test44\n    self.assertEqual(patched_source(input_44), original_source(input_44))\nAssertionError: Lists differ: [5] != [0]\n\nFirst differing element 0:\n5\n0\n\n- [5]\n+ [0]\n\n======================================================================\nFAIL: test57 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 354, in test57\n    self.assertEqual(patched_source(input_57), original_source(input_57))\nAssertionError: Lists differ: [5050] != [4950]\n\nFirst differing element 0:\n5050\n4950\n\n- [5050]\n+ [4950]\n\n======================================================================\nFAIL: test7 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 54, in test7\n    self.assertEqual(patched_source(input_7), original_source(input_7))\nAssertionError: Lists differ: [9] != [8]\n\nFirst differing element 0:\n9\n8\n\n- [9]\n+ [8]\n\n----------------------------------------------------------------------\nRan 80 tests in 0.007s\n\nFAILED (failures=5)\n')
+
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'F\n======================================================================\nFAIL: test0 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 12, in test0\n    self.assertEqual(patched_source(input_0), original_source(input_0))\nAssertionError: Lists differ: [14] != [11]\n\nFirst differing element 0:\n14\n11\n\n- [14]\n?   ^\n\n+ [11]\n?   ^\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n')

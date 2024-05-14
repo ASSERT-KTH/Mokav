@@ -1,1 +1,75 @@
-CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'E..........E......E.............EF......EF............E.....E.........\n======================================================================\nERROR: test0 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 12, in test0\n    self.assertEqual(patched_source(input_0), original_source(input_0))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 6, in patched_func\n    if (s[2][0] == \'w\'):\nIndexError: list index out of range\n\n======================================================================\nERROR: test19 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 126, in test19\n    self.assertEqual(patched_source(input_19), original_source(input_19))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 6, in patched_func\n    if (s[2][0] == \'w\'):\nIndexError: list index out of range\n\n======================================================================\nERROR: test25 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 162, in test25\n    self.assertEqual(patched_source(input_25), original_source(input_25))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 6, in patched_func\n    if (s[2][0] == \'w\'):\nIndexError: list index out of range\n\n======================================================================\nERROR: test38 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 240, in test38\n    self.assertEqual(patched_source(input_38), original_source(input_38))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 6, in patched_func\n    if (s[2][0] == \'w\'):\nIndexError: list index out of range\n\n======================================================================\nERROR: test45 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 282, in test45\n    self.assertEqual(patched_source(input_45), original_source(input_45))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 6, in patched_func\n    if (s[2][0] == \'w\'):\nIndexError: list index out of range\n\n======================================================================\nERROR: test58 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 360, in test58\n    self.assertEqual(patched_source(input_58), original_source(input_58))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 6, in patched_func\n    if (s[2][0] == \'w\'):\nIndexError: list index out of range\n\n======================================================================\nERROR: test63 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 390, in test63\n    self.assertEqual(patched_source(input_63), original_source(input_63))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 6, in patched_func\n    if (s[2][0] == \'w\'):\nIndexError: list index out of range\n\n======================================================================\nFAIL: test39 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 246, in test39\n    self.assertEqual(patched_source(input_39), original_source(input_39))\nAssertionError: Lists differ: [52] != [53]\n\nFirst differing element 0:\n52\n53\n\n- [52]\n?   ^\n\n+ [53]\n?   ^\n\n\n======================================================================\nFAIL: test46 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 288, in test46\n    self.assertEqual(patched_source(input_46), original_source(input_46))\nAssertionError: Lists differ: [52] != [53]\n\nFirst differing element 0:\n52\n53\n\n- [52]\n?   ^\n\n+ [53]\n?   ^\n\n\n----------------------------------------------------------------------\nRan 70 tests in 0.004s\n\nFAILED (failures=2, errors=7)\n')
+
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'E\n======================================================================\nERROR: test0 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 12, in test0\n    self.assertEqual(patched_source(input_0), original_source(input_0))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 6, in patched_func\n    if (s[2][0] == \'w\'):\nIndexError: list index out of range\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'E\n======================================================================\nERROR: test0 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 12, in test0\n    self.assertEqual(patched_source(input_0), original_source(input_0))\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_acc_qb.py", line 6, in patched_func\n    if (s[2][0] == \'w\'):\nIndexError: list index out of range\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=0, stdout=b'', stderr=b'.\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n')
+ NEW TEST OUTPUT: 
+CompletedProcess(args=['python', 'temp_test_case.py'], returncode=1, stdout=b'', stderr=b'F\n======================================================================\nFAIL: test0 (__main__.TestFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File "/home/khashayar/projs/det-gen/DET-Gen/temp_test_case.py", line 12, in test0\n    self.assertEqual(patched_source(input_0), original_source(input_0))\nAssertionError: Lists differ: [52] != [53]\n\nFirst differing element 0:\n52\n53\n\n- [52]\n?   ^\n\n+ [53]\n?   ^\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n')

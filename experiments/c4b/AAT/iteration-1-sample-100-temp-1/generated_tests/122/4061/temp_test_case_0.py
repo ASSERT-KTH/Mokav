@@ -8,14 +8,8 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['10 20 30 40 50', '5 10 15 20 25', '6 7']
+        input_0 = ['500 700 800 900 1000', '50 60 70 80 90', '2000 3000']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
-            
-
-
-    def test1(self):
-        input_1 = ['130 100 120 120 120', '40 50 30 20 10', '200 300']
-        self.assertEqual(patched_source(*input_1), original_source(*input_1))
             
 
 
