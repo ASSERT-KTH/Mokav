@@ -8,26 +8,8 @@ class TestFunctions(unittest.TestCase):
 
 
     def test0(self):
-        input_0 = ['10 5', '15 10']
+        input_0 = ['8 24', '4 16']
         self.assertEqual(patched_source(*input_0), original_source(*input_0))
-            
-
-
-    def test1(self):
-        input_1 = ['25 5', '30 10']
-        self.assertEqual(patched_source(*input_1), original_source(*input_1))
-            
-
-
-    def test2(self):
-        input_2 = ['6 4', '9 7']
-        self.assertEqual(patched_source(*input_2), original_source(*input_2))
-            
-
-
-    def test3(self):
-        input_3 = ['5 15', '6 10']
-        self.assertEqual(patched_source(*input_3), original_source(*input_3))
             
 
 
