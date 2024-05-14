@@ -49,7 +49,6 @@ class ChatGPT_2():
                 messages.append({"role": "assistant", "content": answer})
         messages.append({"role": "user", "content": new_question})
 
-        print("###Messages###\n\n", messages)
         logging.info(f"###CHATGPT_INITIAL_PROMPT###\n\n {messages}")
 
         prompt = "\n".join([msg['content'] for msg in messages])
@@ -61,9 +60,6 @@ class ChatGPT_2():
 
         if prompt in self.cache:
             return self.cache[prompt]
-        
-        print("<#MESSAGES#>", messages)
-        print("</#MESSAGES#/>")
 
         completion = client.chat.completions.create(
             model="gpt-3.5-turbo",
