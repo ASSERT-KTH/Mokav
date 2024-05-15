@@ -1,2 +1,0 @@
-/home/khashayar/projs/det-gen/c4b_ret_list/src_1932/1/src_1932.py:29: SyntaxWarning: "is not" with a literal. Did you mean "!="?
-  if (i is not 0):

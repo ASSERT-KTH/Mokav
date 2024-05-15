@@ -1,9 +1,0 @@
-============================= test session starts ==============================
-platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
-rootdir: /home/khashayar/projs/det-gen
-plugins: anyio-4.3.0
-collected 4 items
-
-pynguin-qb-simple-res/get_factors/6/test_transformed_get_factors.py .... [100%]
-
-============================== 4 passed in 0.02s ===============================

@@ -1,27 +1,0 @@
-============================= test session starts ==============================
-platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
-rootdir: /home/khashayar/projs/det-gen
-plugins: anyio-4.3.0
-collected 2 items
-
-c4b_bak/src_2288/1/test_transformed_src_2288.py .F                       [100%]
-
-=================================== FAILURES ===================================
-_________________________________ test_case_1 __________________________________
-
-    def test_case_1():
-        str_0 = "HSuW@::>H!hp#\x0bW\x0b1yQm"
-        list_0 = [str_0, str_0]
-        var_0 = module_0.func(*list_0)
->       assert var_0 == ".h.s.w.@.:.:.>.h.!.h.p.#.\x0b.w.\x0b.1.q.m"
-E       AssertionError: assert '.h.s.w.@.:.:....\x0b.1.y.q.m' == '.h.s.w.@.:.:....w.\x0b.1.q.m'
-E           .h.s.w.@.:.:.>.h.!.h.p.#.
-E           .w.
-E         - .1.q.m
-E         + .1.y.q.m
-E         ?   ++
-
-c4b_bak/src_2288/1/test_transformed_src_2288.py:20: AssertionError
-=========================== short test summary info ============================
-FAILED c4b_bak/src_2288/1/test_transformed_src_2288.py::test_case_1 - Asserti...
-========================= 1 failed, 1 passed in 0.04s ==========================
