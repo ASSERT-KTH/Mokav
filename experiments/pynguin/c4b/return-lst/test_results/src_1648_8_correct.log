@@ -1,9 +1,0 @@
-============================= test session starts ==============================
-platform linux -- Python 3.10.12, pytest-7.4.4, pluggy-1.4.0
-rootdir: /home/khashayar/projs/det-gen
-plugins: anyio-4.3.0
-collected 4 items
-
-c4b_ret_list_bak/src_1648/8/test_transformed_src_1648.py ....            [100%]
-
-============================== 4 passed in 0.05s ===============================

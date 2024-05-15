@@ -1,2 +1,0 @@
-/home/khashayar/projs/det-gen/c4b_ret_list/src_1835/3/src_1835.py:8: SyntaxWarning: "is" with a literal. Did you mean "=="?
-  if ((n % m) is 0):
