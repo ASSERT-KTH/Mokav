@@ -1,6 +1,0 @@
-def original_func(*args):
-	global_list = []
-	
-	n = int(args[0])
-	global_list.append(sum((((i + 1) * (n - i)) for i in range(n))))
-	return global_list
