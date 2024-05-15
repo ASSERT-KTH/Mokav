@@ -1,0 +1,5 @@
+def patched_func(*args):
+	global_list = []
+	
+	global_list.append(((3 * int(args[0])) // 2))
+	return global_list

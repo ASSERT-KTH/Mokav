@@ -1,0 +1,14 @@
+def original_func(*args):
+	global_list = []
+	
+	k = int(args[0])
+	l = int(args[1])
+	m = int(args[2])
+	n = int(args[3])
+	d = int(args[4])
+	wynik = 0
+	for i in range(0, d):
+	    if (((i % k) == 0) or ((i % l) == 0) or ((i % m) == 0) or ((i % n) == 0)):
+	        wynik += 1
+	global_list.append(wynik)
+	return global_list
