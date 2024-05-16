@@ -41,17 +41,20 @@ class TestGenerator:
                       retry_ouput=False, author_id=None, problem_id=None, acc_unique_var_state=None, bug_unique_var_state=None):
         responses = []
         if retry_ouput:
+            prompt = ""
             if "E" in self.config:
-                prompt += f"Both versions produce {retry_ouput} as output. The output should be different."
                 if bug_unique_var_state is not None:
-                    prompt += f""" When the above test input is executed on version 'original', the variable {bug_unique_var_state[0]} is assigned the value {bug_unique_var_state[1]}. However, this variable never attains this value in version 'patched'."""
+                    prompt += f"""When the your generated test input is executed on version 'original', the variable '{bug_unique_var_state[0]}' is assigned the value '{bug_unique_var_state[1]}'. However, this variable never attains this value in version 'patched'."""
                     if acc_unique_var_state is not None:
-                        prompt += f""" Similarly, during the execution of the same test input on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}, a value it never attains in version 'original'."""
+                        prompt += f"""
+Similarly, during the execution of your generated test input on version 'patched', the variable '{acc_unique_var_state[0]}' is assigned the value '{acc_unique_var_state[1]}', a value it never attains in version 'original'."""
                 elif acc_unique_var_state is not None:
-                    prompt += f"""When the above test input is executed on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}. However, this variable never attains this value in version 'original'."""
+                    prompt += f"""When your generated test input is executed on version 'patched', the variable '{acc_unique_var_state[0]}' is assigned the value '{acc_unique_var_state[1]}'. However, this variable never attains this value in version 'original'."""
+                prompt += f"""
+Both versions produce an identical output for your generated test input. This identical output is {retry_ouput}."""
             else:
-                prompt = "Both versions produce an identical output. The output should be different."
-            prompt += " Please generate another test input."
+                prompt = "Both versions produce an identical output for your generated test input."
+            prompt += " The output should be different. Please generate another test input."
             chatgpt_resp = self.chatgpt.get_response(
                 new_question=prompt, previous_questions_and_answers=self.prompt_history, author_id=author_id, problem_id=problem_id
             )
@@ -88,15 +91,16 @@ Here is a sample test input for which both versions produce identical output:
 ```
 """
                     if "E" in self.config:
-                        prompt += f"""The output for this sample test input is: {existing_test_accepted_output}
-"""
                         if bug_unique_var_state is not None:
-                            prompt += f""" When the above test input is executed on version 'original', the variable {bug_unique_var_state[0]} is assigned the value {bug_unique_var_state[1]}. However, this variable never attains this value in version 'patched'."""
+                            prompt += f"""When the above test input is executed on version 'original', the variable '{bug_unique_var_state[0]}' is assigned the value '{bug_unique_var_state[1]}'. However, this variable never attains this value in version 'patched'."""
                             if acc_unique_var_state is not None:
-                                prompt += f""" Similarly, during the execution of the same test input on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}, a value it never attains in version 'original'."""
+                                prompt += f"""
+Similarly, during the execution of the same test input on version 'patched', the variable '{acc_unique_var_state[0]}' is assigned the value '{acc_unique_var_state[1]}', a value it never attains in version 'original'."""
                         elif acc_unique_var_state is not None:
-                            prompt += f"""When the above test input is executed on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}. However, this variable never attains this value in version 'original'."""
+                            prompt += f"""When the above test input is executed on version 'patched', the variable '{acc_unique_var_state[0]}' is assigned the value '{acc_unique_var_state[1]}'. However, this variable never attains this value in version 'original'."""
 
+                        prompt += f"""The identical output for this sample test input is: {existing_test_accepted_output}
+"""
                 prompt += f"""
 Your task is to generate a new test input in Python dict format as follows:
 ```python
@@ -145,15 +149,15 @@ Here is a sample test input for which both versions produce identical output:
 ```
 """
                     if "E" in self.config:
-                        prompt += f"""The output for this sample test input is: {existing_test_accepted_output}
-"""
                         if bug_unique_var_state is not None:
-                            prompt += f""" When the above test input is executed on version 'original', the variable {bug_unique_var_state[0]} is assigned the value {bug_unique_var_state[1]}. However, this variable never attains this value in version 'patched'."""
+                            prompt += f""" When the above test input is executed on version 'original', the variable '{bug_unique_var_state[0]}' is assigned the value '{bug_unique_var_state[1]}'. However, this variable never attains this value in version 'patched'."""
                             if acc_unique_var_state is not None:
-                                prompt += f""" Similarly, during the execution of the same test input on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}, a value it never attains in version 'original'."""
+                                prompt += f""" Similarly, during the execution of the same test input on version 'patched', the variable '{acc_unique_var_state[0]}' is assigned the value '{acc_unique_var_state[1]}', a value it never attains in version 'original'."""
                         elif acc_unique_var_state is not None:
-                            prompt += f"""When the above test input is executed on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}. However, this variable never attains this value in version 'original'."""
-
+                            prompt += f"""When the above test input is executed on version 'patched', the variable '{acc_unique_var_state[0]}' is assigned the value '{acc_unique_var_state[1]}'. However, this variable never attains this value in version 'original'."""
+                        
+                        prompt += f"""The identical output for this sample test input is: {existing_test_accepted_output}
+"""
                 prompt += f"""
 Your task is to generate a new test input in Python dict format as follows:
 ```python

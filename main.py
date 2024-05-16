@@ -41,7 +41,7 @@ def get_args():
     parser.add_argument(
         "-mc",
         "--meta_data_config",
-        choices=["BADT", "AADT", "BADTI", "AADTI", "BAT", "AAT", "BATI", "AATI", "BADTI", "BADTIE", "BATIE"],
+        choices=["BADT", "AADT", "AADTI", "BAT", "AAT", "BATI", "AATI", "BADTI", "BADTIE", "BATIE"],
         default="BADTIE",
         help="Config for meta data",
         required=False,
