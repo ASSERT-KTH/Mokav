@@ -57,7 +57,7 @@ class ChatGPT_2():
             return self.cache[prompt]
 
         completion = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-3.5-turbo-0125",
             messages=messages,
             temperature=temp if temp else self.default_temp,
             n=n if n else self.default_n,

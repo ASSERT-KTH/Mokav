@@ -7,7 +7,7 @@ class TestGenerator:
     def __init__(self, config, number_of_samples, temperature):
         self.config = config
         self.chatgpt = ChatGPT_2(
-            default_instruction="You are a software test expert. You are given an original and a patched version of a program. You generate a test input that distinguishes between the two versions. Your generated test input produces different outputs on the original and patched versions.",
+            default_instruction="As a software testing expert, your task involves generating a test input that can distinguish between two versions of a program. These are versions 'original' and 'patched'.",
             cache_file_path="cache.json",
             default_temp=temperature,
             default_n=number_of_samples
@@ -41,13 +41,17 @@ class TestGenerator:
                       retry_ouput=False, author_id=None, problem_id=None, acc_unique_var_state=None, bug_unique_var_state=None):
         responses = []
         if retry_ouput:
-            prompt = f"Both versions give us {retry_ouput} as output. The output should be different."
             if "E" in self.config:
-                if acc_unique_var_state is not None:
-                    prompt += f""" During the execution of the sample test input on the patched version, variable '{acc_unique_var_state[0]}' gets the value '{acc_unique_var_state[1]}'. This variable never gets this value in the original version.."""
+                prompt += f"Both versions produce {retry_ouput} as output. The output should be different."
                 if bug_unique_var_state is not None:
-                    prompt += f""" During the execution of the sample test input on the original version, variable '{bug_unique_var_state[0]}' gets the value '{bug_unique_var_state[1]}'. This variable never gets this value in the patched version.."""
-            prompt += " Please generate again"
+                    prompt += f""" When the above test input is executed on version 'original', the variable {bug_unique_var_state[0]} is assigned the value {bug_unique_var_state[1]}. However, this variable never attains this value in version 'patched'."""
+                    if acc_unique_var_state is not None:
+                        prompt += f""" Similarly, during the execution of the same test input on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}, a value it never attains in version 'original'."""
+                elif acc_unique_var_state is not None:
+                    prompt += f"""When the above test input is executed on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}. However, this variable never attains this value in version 'original'."""
+            else:
+                prompt = "Both versions produce an identical output. The output should be different."
+            prompt += " Please generate another test input."
             chatgpt_resp = self.chatgpt.get_response(
                 new_question=prompt, previous_questions_and_answers=self.prompt_history, author_id=author_id, problem_id=problem_id
             )
@@ -60,73 +64,106 @@ class TestGenerator:
 
             if "AA" in self.config:
                 prompt = f"""
-The following is the patched version of a program: 
+The following code represents version 'patched' of the program: 
 ```python
-{accepted_code}```"""
+{accepted_code}```
+"""
 
                 if 'D' in self.config:
                     acc_description = self.code_description(accepted_code)
 
                     prompt += f"""
-This is a description of the patched program: {acc_description}"""
+Description of version 'patched': {acc_description}
+"""
 
                 prompt += f"""
-We also have an original version of this program, which is slightly different from the patched version."""
+We also have an 'original' version of this program, which is slightly different from the patched version.
+"""
                 
                 if "I" in self.config:
                     prompt += f"""
-This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}."""
+Here is a sample test input for which both versions produce identical output:
+```python
+{existing_test}
+```
+"""
                     if "E" in self.config:
-                        if acc_unique_var_state is not None:
-                            prompt += f""" During the execution of the sample test input on the patched version, variable '{acc_unique_var_state[0]}' gets the value '{acc_unique_var_state[1]}'. This variable never gets this value in the original version.."""
+                        prompt += f"""The output for this sample test input is: {existing_test_accepted_output}
+"""
                         if bug_unique_var_state is not None:
-                            prompt += f""" During the execution of the sample test input on the original version, variable '{bug_unique_var_state[0]}' gets the value '{bug_unique_var_state[1]}'. This variable never gets this value in the patched version."""
+                            prompt += f""" When the above test input is executed on version 'original', the variable {bug_unique_var_state[0]} is assigned the value {bug_unique_var_state[1]}. However, this variable never attains this value in version 'patched'."""
+                            if acc_unique_var_state is not None:
+                                prompt += f""" Similarly, during the execution of the same test input on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}, a value it never attains in version 'original'."""
+                        elif acc_unique_var_state is not None:
+                            prompt += f"""When the above test input is executed on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}. However, this variable never attains this value in version 'original'."""
 
                 prompt += f"""
-Generate a test input in Python dict format as follows:
-```python {self.test_format}```
-The generated test input should be difference exposing, which means ```python original_func(inputdata)!= patched_func(inputdata)```. This means when the test input is given to the original and patched versions, they should produce different outputs. Your output should not contain any explanation or '\\n' character.
-Generate a difference exposing test input as described above.
-
+Your task is to generate a new test input in Python dict format as follows:
+```python
+{self.test_format}
+```
+This test input should be designed such that it exposes the differences between the two versions 'original' and 'patched'. In other words, when the test input is given to versions 'original' and 'patched', they should produce different outputs. This can be represented as:
+```python
+original(inputdata) != patched(inputdata)
+```
+Please note that your output should not contain any explanation or newline ('\n') characters. Create a 'difference exposing test' input as per the Python dict format above.
 """
             elif "BA" in self.config:
 
                 prompt = f"""
-The following is the original version of a program: 
+The following code represents version 'original' of the program:
 ```python
-{buggy_code}```"""
+{buggy_code}
+```
+"""
                 if 'D' in self.config:
                     buggy_description = self.code_description(buggy_code)
 
                     prompt += f"""
-This is a description of the original program: {buggy_description}"""
+Description of version 'original': {buggy_description}
+"""
                 
                 prompt += f"""
-The following is the patched version of the program: 
+The following code represents version 'patched' of the same program: 
 ```python
-{accepted_code}```"""
+{accepted_code}
+```
+"""
                 
                 if 'D' in self.config:
                     acc_description = self.code_description(accepted_code)
 
                     prompt += f"""
-This is a description of the patched program: {acc_description}"""
+Description of version 'patched': {acc_description}
+"""
                 
                 if "I" in self.config:                
                     prompt += f"""
-This is a sample test input for which both versions produce the same output: ```python {existing_test}```. The generated output for this sample test input is {existing_test_accepted_output}."""
+Here is a sample test input for which both versions produce identical output:
+```python
+{existing_test}
+```
+"""
                     if "E" in self.config:
-                        if acc_unique_var_state is not None:
-                            prompt += f""" During the execution of the generated test input on the patched version, variable '{acc_unique_var_state[0]}' gets the value '{acc_unique_var_state[1]}'. This variable never gets this value in the original version."""
+                        prompt += f"""The output for this sample test input is: {existing_test_accepted_output}
+"""
                         if bug_unique_var_state is not None:
-                            prompt += f""" During the execution of the generated test input on the original version, variable '{bug_unique_var_state[0]}' gets the value '{bug_unique_var_state[1]}'. This variable never gets this value in the patched version."""
+                            prompt += f""" When the above test input is executed on version 'original', the variable {bug_unique_var_state[0]} is assigned the value {bug_unique_var_state[1]}. However, this variable never attains this value in version 'patched'."""
+                            if acc_unique_var_state is not None:
+                                prompt += f""" Similarly, during the execution of the same test input on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}, a value it never attains in version 'original'."""
+                        elif acc_unique_var_state is not None:
+                            prompt += f"""When the above test input is executed on version 'patched', the variable {acc_unique_var_state[0]} is assigned the value {acc_unique_var_state[1]}. However, this variable never attains this value in version 'original'."""
 
                 prompt += f"""
-Generate a test input in Python dict format as follows:
-```python {self.test_format}```
-The generated test input should be difference exposing, which means ```python original_func(inputdata)!= patched_func(inputdata)```. This means when the test input is given to the original and patched versions, they should produce different outputs. Your output should not contain any explanation or '\\n' character.
-Generate a difference exposing test input as described above.
-
+Your task is to generate a new test input in Python dict format as follows:
+```python
+{self.test_format}
+```
+This test input should be designed such that it exposes the differences between the two versions 'original' and 'patched'. In other words, when the test input is given to versions 'original' and 'patched', they should produce different outputs. This can be represented as:
+```python
+original(inputdata) != patched(inputdata)
+```
+Please note that your output should not contain any explanation or newline ('\n') characters. Create a 'difference exposing test' input as per the Python dict format above.
 """
 
             chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
