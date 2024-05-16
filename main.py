@@ -42,7 +42,7 @@ def get_args():
         "-mc",
         "--meta_data_config",
         choices=["BADT", "AADT", "BADTI", "AADTI", "BAT", "AAT", "BATI", "AATI", "BADTI", "BADTIE", "BATIE"],
-        default="BADTI",
+        default="BADTIE",
         help="Config for meta data",
         required=False,
     )
