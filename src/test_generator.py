@@ -38,9 +38,9 @@ class TestGenerator:
         return "".join([match.strip() for match in matches])
 
     def generate_test(self, buggy_code, accepted_code, existing_test=None, existing_test_accepted_output=None, 
-                      retry_ouput=False, author_id=None, problem_id=None, acc_unique_var_state=None, bug_unique_var_state=None):
+                      retry_ouput=None, author_id=None, problem_id=None, acc_unique_var_state=None, bug_unique_var_state=None, is_iteration=False):
         responses = []
-        if retry_ouput:
+        if is_iteration:
             prompt = ""
             if "E" in self.config:
                 if bug_unique_var_state is not None:
@@ -51,7 +51,7 @@ Similarly, during the execution of your generated test input on version 'patched
                 elif acc_unique_var_state is not None:
                     prompt += f"""When your generated test input is executed on version 'patched', the variable '{acc_unique_var_state[0]}' is assigned the value '{acc_unique_var_state[1]}'. However, this variable never attains this value in version 'original'."""
                 prompt += f"""
-Both versions produce an identical output for your generated test input. This identical output is {retry_ouput}."""
+Both versions produce an identical output for your generated test input.""" + f""" This identical output is {retry_ouput}.""" if retry_ouput is not None else ""
             else:
                 prompt = "Both versions produce an identical output for your generated test input."
             prompt += " The output should be different. Please generate another test input."

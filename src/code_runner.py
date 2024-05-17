@@ -116,7 +116,7 @@ if __name__ == '__main__':
         return input_data
 
     def generate_test_and_run_until_assertion_error(self, rej, acc1, existing_test, existing_test_output, 
-                                                    output_code, author_id, problem_id):
+                                                    output_code, author_id, problem_id, is_iteration=False):
 
         acc_unique_var_state, rej_unique_var_state = None, None
 
@@ -128,7 +128,7 @@ if __name__ == '__main__':
 
         test_case = self.test_generator.generate_test(
             rej, acc1, existing_test, existing_test_output, output_code, author_id=author_id, 
-            problem_id=problem_id, acc_unique_var_state=acc_unique_var_state, bug_unique_var_state=rej_unique_var_state)
+            problem_id=problem_id, acc_unique_var_state=acc_unique_var_state, bug_unique_var_state=rej_unique_var_state, is_iteration=is_iteration)
         data_list = self.change_test_to_dict(test_case)
 
         # Create unittests with single test method
@@ -244,18 +244,20 @@ print(output_code)
             existing_test_output = self.get_code_output(existing_test["inputdata"], acc1)
 
             output, data_list = self.generate_test_and_run_until_assertion_error(
-                rej, acc1, existing_test, existing_test_output, None, author_id, problem_id)
+                rej, acc1, existing_test, existing_test_output, None, author_id, problem_id, is_iteration=False)
             logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
             if not ("AssertionError" in output):
                 for i in range(self.iteration_count):
 
                     ### TODO: if the first response doesn't have correct format, the output is computed for another response
-                    input_data = self.process_input_data(
-                        data_list[0]["inputdata"])
+                    if len(data_list) > 0:
+                        input_data = self.process_input_data(data_list[0]["inputdata"])
+                        output_code = self.get_code_output(input_data, acc1)
+                    else:
+                        output_code = None
 
-                    output_code = self.get_code_output(input_data, acc1)
                     output, data_list = self.generate_test_and_run_until_assertion_error(
-                        rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id)
+                        rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id, is_iteration=True)
                     logging.info(f"###ITERATION###: {i + 1}")
                     logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
                     if ("AssertionError" in output):
