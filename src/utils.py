@@ -52,3 +52,9 @@ def retry_decorator(max_retries=3, delay=1):
         return wrapper
 
     return decorator
+
+def read_file(file_path):
+    """Reads the contents of a file and returns it as a string."""
+    with open(file_path, "r", encoding='utf-8') as file:
+        contents = file.read()
+    return contents

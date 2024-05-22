@@ -16,7 +16,7 @@ def get_args():
     parser.add_argument(
         "-f",
         "--is_func",
-        default=True,
+        default=False,
         help="Run the function runner",
         required=False,
     )
@@ -24,7 +24,7 @@ def get_args():
     parser.add_argument(
         "-q",
         "--is_qb",
-        default=False,
+        default=True,
         help="Run the QuixBugs runner",
         required=False,
     )

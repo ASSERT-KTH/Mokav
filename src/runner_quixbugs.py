@@ -1,6 +1,6 @@
 import json
 import os
-from test_generator import TestGenerator
+from src.test_generator import TestGenerator
 import pandas as pd
 import random
 import subprocess

@@ -1,16 +1,17 @@
 from src.test_generator import TestGenerator
-from src.utils import write_to_file, run_process
+from src.utils import write_to_file, run_process, read_file
 import pandas as pd
 import ast
 import logging
 import os
+import json
 
 class CodeRunner:
     def __init__(self, is_func, is_qb, iteration_count, meta_data_config, generated_tests_dir, number_of_samples, temperature) -> None:
         self.is_func = is_func
         self.is_qb = is_qb
         self.iteration_count = iteration_count
-        self.test_generator = TestGenerator(config=meta_data_config, number_of_samples=number_of_samples, temperature=temperature)
+        self.test_generator = TestGenerator(config=meta_data_config, number_of_samples=number_of_samples, temperature=temperature, is_qb=is_qb)
         self.generated_tests_dir = generated_tests_dir
         self.number_of_samples = number_of_samples
         self.temperature = temperature
@@ -42,7 +43,19 @@ class CodeRunner:
         test_cases = df_testcase[["inputdata"]].to_dict("records")
 
         return acc1, acc2, rej, test_cases[0]
-    
+
+    def prepare_data_qb(self, program_name):
+
+        rej = read_file(f'quixbugs/python_programs/{program_name}.py')
+        acc = read_file(f'quixbugs/correct_python_programs/{program_name}.py')
+        with open(f"quixbugs/json_testcases/{program_name}.json", "r") as data_file:
+            existing_test = [json.loads(line) for line in data_file]
+        existing_test = existing_test[0]
+        if not isinstance(existing_test, list):
+            existing_test = ' '.join(map(str, existing_test))
+        existing_test = {'inputdata': existing_test[0]}
+        return acc, rej, existing_test
+                
     def move_global_ret_inside_func(self, source):
         src_lines = source.split('\n')
         new_src_lines = [src_lines[1], '\t' + src_lines[0]]
@@ -149,7 +162,7 @@ if __name__ == '__main__':
         module_name = 'acc' if is_acc else 'bug'
         func_name = 'patched' if is_acc else 'original'
 
-        if "\n" in input_data:
+        if "\n" in str(input_data):
             input_data = list(input_data.split("\n"))
 
         is_input_list = type(input_data) is list
@@ -234,12 +247,12 @@ print(output_code)
 
         return unique_acc_var_state, unique_rej_var_state
 
-    def check_test(self, problem_id, author_id):
+    def check_test(self, acc1, rej, existing_test, problem_id, author_id):
 
         try:
             logging.info(
                 f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
-            acc1, _, rej, existing_test = self.prepare_data(problem_id, author_id)
+            # acc1, _, rej, existing_test = self.prepare_data(problem_id, author_id)
 
             existing_test_output = self.get_code_output(existing_test["inputdata"], acc1)
 
@@ -296,9 +309,20 @@ print(output_code)
 
             for i in result:
                 # print(self.check_test(i[1], i[0]))
+                acc1, _, rej, existing_test = self.prepare_data(i[1], i[0])
+                # self.check_test(acc1, rej, existing_test, i[1], i[0])
                 logging.info(
-                    f"###CHECK_TEST###:\n{self.check_test(i[1], i[0])}")
+                    f"###CHECK_TEST###:\n{self.check_test(acc1, rej, existing_test, i[1], i[0])}")
             # logging.info(f"###CHECK_TEST###:\n{self.check_test(1975, 60724)}")
+        elif self.is_qb:
+            
+            program_names = os.listdir('quixbugs/python_programs/')
+            for program_name in program_names:
+                try:
+                    acc1, rej, existing_test = self.prepare_data_qb(program_name[:-3])
+                    logging.info(f"###CHECK_TEST###:\n{self.check_test(acc1, rej, existing_test, program_name, program_name)}")
+                except Exception as e:
+                    logging.info(f"###EXCEPTION###: {e}")
 
         else:
             self.check_test(1, 1)
