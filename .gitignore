@@ -178,3 +178,5 @@ data2
 cache*.json
 
 logging*.log
+
+temp*.py
