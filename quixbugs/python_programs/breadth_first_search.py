@@ -1,7 +1,6 @@
-
 from collections import deque as Queue
 
-def original_func(startnode, goalnode):
+def original_func(node_dict, startnode, goalnode):
     queue = Queue()
     queue.append(startnode)
 
@@ -11,13 +10,15 @@ def original_func(startnode, goalnode):
     while True:
         node = queue.popleft()
 
-        if node is goalnode:
+        if node == goalnode:
             return True
         else:
-            queue.extend(node for node in node.successors if node not in nodesseen)
-            nodesseen.update(node.successors)
+            successors = node_dict[node]['successors']
+            queue.extend(successor for successor in successors if successor not in nodesseen)
+            nodesseen.update(successors)
 
     return False
+
 
 
 

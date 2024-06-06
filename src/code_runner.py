@@ -51,6 +51,53 @@ class CodeRunner:
         with open(f"quixbugs/json_testcases/{program_name}.json", "r") as data_file:
             existing_test = [json.loads(line) for line in data_file]
         existing_test = existing_test[0]
+
+
+        # # minimum_spanning_tree
+        # existing_test = [[{(1, 2): 10, (2, 3): 15, (3, 4): 10, (1, 4): 10}]]
+
+        # # shrotest_paths
+        # existing_test = [['A',{
+        #     ("A", "B"): 3,
+        #     ("A", "C"): 3,
+        #     ("A", "F"): 5,
+        #     ("C", "B"): -2,
+        #     ("C", "D"): 7,
+        #     ("C", "E"): 4,
+        #     ("D", "E"): -5,
+        #     ("E", "F"): -1,
+        # }]]
+
+
+        # #shortest_path_length
+        # existing_test = [[{
+        #     "node1": {"value": "1", "successors": []},
+        #     "node5": {"value": "5", "successors": []},
+        #     "node4": {"value": "4", "successors": ["node5"]},
+        #     "node3": {"value": "3", "successors": ["node4"]},
+        #     "node2": {"value": "2", "successors": ["node1", "node3", "node4"]},
+        #     "node0": {"value": "0", "successors": ["node2", "node5"]},
+        # }, {
+        #     ("node0", "node2"): 3,
+        #     ("node0", "node5"): 10,
+        #     ("node2", "node1"): 1,
+        #     ("node2", "node3"): 2,
+        #     ("node2", "node4"): 4,
+        #     ("node3", "node4"): 1,
+        #     ("node4", "node5"): 1,
+        # }, "node0", "node1"]]
+
+        # # shortest_path_lengths
+        # existing_test = [[6, {
+        #     (0, 2): 3,
+        #     (0, 5): 5,
+        #     (2, 1): -2,
+        #     (2, 3): 7,
+        #     (2, 4): 4,
+        #     (3, 4): -5,
+        #     (4, 5): -1,
+        # }]]
+
         if not isinstance(existing_test, list):
             existing_test = ' '.join(map(str, existing_test))
         existing_test = {'inputdata': existing_test[0]}
@@ -151,8 +198,10 @@ if __name__ == '__main__':
                 self.create_unnitest(rej, acc1, [data])
                 output = str(run_process(["python", "temp_test_case.py"], 5))
                 test_output += '\n NEW TEST OUTPUT: \n' + output
-                if "AssertionError" in output:
-                    break
+                if ("AssertionError" in output) or ("temp_bug_qb.py" in output and "error" in output.lower()) or ("Timeout" in output):
+                    logging.info(f"###IS_DET###: {author_id},{output}")
+                else:
+                    logging.info(f"###IS_NOT_DET###: {author_id},{output}")
             except Exception as e:
                 test_output += f"\n NEW TEST OUTPUT: \nException: {e}"
 
@@ -180,7 +229,7 @@ if __name__ == '__main__':
 from temp_{module_name}_qb import {func_name}_func as {func_name}_func
 input_data = {input_data}
 output_code = {func_name}_func({"*" if is_input_list else ""}input_data)
-output_code = list(output_code)
+#output_code = list(output_code)
 print(output_code)
 ''')
 
@@ -258,8 +307,9 @@ print(output_code)
 
             output, data_list = self.generate_test_and_run_until_assertion_error(
                 rej, acc1, existing_test, existing_test_output, None, author_id, problem_id, is_iteration=False)
+            logging.info(f"###ITERATION###: 0")
             logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
-            if not ("AssertionError" in output):
+            if not ("AssertionError" in output) and not ("temp_bug_qb.py" in output) and not ("Timeout" in output):
                 for i in range(self.iteration_count):
 
                     ### TODO: if the first response doesn't have correct format, the output is computed for another response
@@ -273,7 +323,7 @@ print(output_code)
                         rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id, is_iteration=True)
                     logging.info(f"###ITERATION###: {i + 1}")
                     logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
-                    if ("AssertionError" in output):
+                    if ("AssertionError" in output) or ("temp_bug_qb.py" in output) or ("Timeout" in output):
                         self.save_generated_test(author_id, problem_id, i + 1, output)
                         return "Found1"
                 return str(output)
@@ -318,11 +368,30 @@ print(output_code)
             
             program_names = os.listdir('quixbugs/python_programs/')
             for program_name in program_names:
+                print(program_name)
                 try:
                     acc1, rej, existing_test = self.prepare_data_qb(program_name[:-3])
                     logging.info(f"###CHECK_TEST###:\n{self.check_test(acc1, rej, existing_test, program_name, program_name)}")
                 except Exception as e:
                     logging.info(f"###EXCEPTION###: {e}")
+            
+            
+            # program_name = depth_first_search and breadth_first_search and topological_ordering shortest_path_length shortest_path_lengths
+            # program_name = 'rpn_eval.py' cant :(
+            
+            
+            # program_name = 'shortest_paths.py'
+            
+            # seprate tests: minimum_spanning_tree, shortest_path_lengths
+            # shunting yard!!
+            # depth_first_search and breadth_first_search and shortest_path_length and rpn_eval Can't!
+
+
+            # try:
+            #     acc1, rej, existing_test = self.prepare_data_qb(program_name[:-3])
+            #     logging.info(f"###CHECK_TEST###:\n{self.check_test(acc1, rej, existing_test, program_name, program_name)}")
+            # except Exception as e:
+            #     logging.info(f"###EXCEPTION2###: {e}")
 
         else:
             self.check_test(1, 1)

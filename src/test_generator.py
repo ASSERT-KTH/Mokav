@@ -31,6 +31,11 @@ class TestGenerator:
         pattern = r"\{'inputdata': \[.*?\]\}"
         matches = re.findall(pattern, string)
         return [block.strip() for block in matches]
+    
+    def extract_input(self, string):
+        string = string.replace("python", "")
+        string = string.strip("`") 
+        return [string]
 
     def code_description(self, accepted_code):
         description_prompt = f"What is the intention of this code?  {accepted_code}"
@@ -116,7 +121,7 @@ This test input should be designed such that it exposes the differences between 
 ```python
 original(inputdata) != patched(inputdata)
 ```
-Please note that your output should not contain any explanation or newline ('\n') characters. Create a 'difference exposing test' input as per the Python dict format above.
+Please note that your output should not contain any explanation or newline ('\n') characters and should have correct python syntax with close brackets and curly brackets. Create a 'difference exposing test' input as per the Python dict format above.
 """
             elif "BA" in self.config:
 
@@ -183,6 +188,7 @@ Please note that your output should not contain any explanation or newline ('\n'
             self.prompt_history.append((prompt, responses[0]))
         logging.info(f"###CHATRESP###\n\n {responses}")
         if self.is_qb:
-            return [self.extract_regex_qb(str(response)) for response in responses]
+            # return [self.extract_regex_qb(str(response)) for response in responses]
+            return [self.extract_input(str(response)) for response in responses]
         else:
             return [self.extract_regex(str(response)) for response in responses]

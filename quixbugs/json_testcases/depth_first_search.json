@@ -1,0 +1,1 @@
+[[{"nodeA": {"value": "A", "successors": ["nodeB", "nodeC", "nodeD"]}, "nodeB": {"value": "B", "successors": ["nodeE"]},"nodeC": {"value": "C", "successors": ["nodeF"]},"nodeD": {"value": "D", "successors": []},"nodeE": {"value": "E", "successors": []},"nodeF": {"value": "F", "successors": []}}, "nodeA", "nodeE"], "None"]

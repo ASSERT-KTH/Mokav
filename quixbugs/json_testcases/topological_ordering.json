@@ -1,0 +1,1 @@
+[[{"zero": {"value": 0, "outgoing_nodes": [], "incoming_nodes": ["four"]},"four": {"value": 4, "outgoing_nodes": ["zero", "one"], "incoming_nodes": []},"one": {"value": 1, "outgoing_nodes": [], "incoming_nodes": ["four"]}}], "None"]

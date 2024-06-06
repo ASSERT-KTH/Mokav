@@ -1,0 +1,1 @@
+[[{"node1": {"value": 1, "successor": "node2"},"node2": {"value": 2, "successor": "node1"}}, "node2"], "None"]
