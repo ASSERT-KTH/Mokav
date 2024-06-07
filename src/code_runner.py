@@ -19,10 +19,10 @@ class CodeRunner:
 
         if is_func:
             self.df_submissions = pd.read_csv(
-                "c4b_data/cb_submission_res_v_0_3.csv"
+                "c4b_data/cb_submission.csv"
             )
             self.df_testcases = pd.read_csv(
-                "c4b_data/cb_testcase_res_2acc.csv")
+                "c4b_data/cb_testcase.csv")
 
     def prepare_data(self, problem_id, author_id) -> tuple:
         df = self.df_submissions[
