@@ -56,7 +56,7 @@ All arguments are optional. If not provided, the default values will be used.
 
 2. Run the following command to generate test cases for a given buggy program:
 ```bash
-python main.py -f True -q False -ic 9 -mc BADTIE -td generated_tests -ns 10 -tm 1
+python main.py -ic 9 -mc BADTIE -td generated_tests -ns 10 -tm 1
 ```
 
 3. The generated test cases will be saved in the specified output directory.
