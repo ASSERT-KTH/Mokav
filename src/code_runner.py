@@ -152,7 +152,7 @@ if __name__ == '__main__':
                 self.create_unnitest(rej, acc1, [data])
                 output = str(run_process(["python", "temp_test_case.py"], 5))
                 test_output += '\n NEW TEST OUTPUT: \n' + output
-                if ("AssertionError" in output) or ("temp_bug_qb.py" in output and "error" in output.lower()) or ("Timeout" in output):
+                if ("AssertionError" in output):
                     logging.info(f"###IS_DET###: {author_id},{output}")
                 else:
                     logging.info(f"###IS_NOT_DET###: {author_id},{output}")
@@ -261,7 +261,7 @@ print(output_code)
                 rej, acc1, existing_test, existing_test_output, None, author_id, problem_id, is_iteration=False)
             logging.info(f"###ITERATION###: 0")
             logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
-            if not ("AssertionError" in output) and not ("temp_bug_qb.py" in output) and not ("Timeout" in output):
+            if not ("AssertionError" in output):
                 for i in range(self.iteration_count):
 
                     ### TODO: if the first response doesn't have correct format, the output is computed for another response
@@ -275,7 +275,7 @@ print(output_code)
                         rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id, is_iteration=True)
                     logging.info(f"###ITERATION###: {i + 1}")
                     logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
-                    if ("AssertionError" in output) or ("temp_bug_qb.py" in output) or ("Timeout" in output):
+                    if ("AssertionError" in output):
                         self.save_generated_test(author_id, problem_id, i + 1, output)
                         return "Found1"
                 return str(output)
