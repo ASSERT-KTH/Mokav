@@ -85,7 +85,7 @@ class TestFunctions(unittest.TestCase):
             if "\n" in input_data:
                 input_data = list(input_data.split("\n"))
 
-            is_input_list = type(input_data) is list
+            is_input_list = type(input_data) is list or type(input_data) is tuple
 
             if not is_input_list:
                 input_data = f'"{input_data}"'
@@ -168,7 +168,7 @@ if __name__ == '__main__':
         if "\n" in str(input_data):
             input_data = list(input_data.split("\n"))
 
-        is_input_list = type(input_data) is list
+        is_input_list = type(input_data) is list or type(input_data) is tuple
 
         if not is_input_list:
             input_data = f'"{input_data}"'
