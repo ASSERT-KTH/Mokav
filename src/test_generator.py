@@ -4,7 +4,7 @@ import logging
 
 
 class TestGenerator:
-    def __init__(self, config, number_of_samples, temperature):
+    def __init__(self, config, number_of_samples, temperature, is_qb):
         self.config = config
         self.chatgpt = ChatGPT_2(
             default_instruction="As a software testing expert, your task involves generating a test input that can distinguish between two versions of a program. These are versions 'original' and 'patched'.",
@@ -15,6 +15,7 @@ class TestGenerator:
         self.number_of_samples = number_of_samples
         self.temperature = temperature
         self.test_format = "{'inputdata': <inputdata>}"
+        self.is_qb = is_qb
         self.prompt_history = []
 
     def extract_code_blocks(self, text):
@@ -25,6 +26,11 @@ class TestGenerator:
         pattern = r"\{'inputdata': '[^']*'\}"
         matches = re.findall(pattern, string)
         return [block.strip() for block in matches]
+    
+    def extract_regex_qb(self, string):
+        string = string.replace("python", "")
+        string = string.strip("`") 
+        return [string]
 
     def code_description(self, accepted_code):
         description_prompt = f"What is the intention of this code?  {accepted_code}"
@@ -175,6 +181,8 @@ Please note that your output should not contain any explanation or newline ('\n'
                 responses.append(chatgpt_resp[i])
             
             self.prompt_history.append((prompt, responses[0]))
-        print("###CHATRESP###", responses)
         logging.info(f"###CHATRESP###\n\n {responses}")
-        return [self.extract_regex(str(response)) for response in responses]
+        if self.is_qb:
+            return [self.extract_regex_qb(str(response)) for response in responses]
+        else:
+            return [self.extract_regex(str(response)) for response in responses]

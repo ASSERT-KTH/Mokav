@@ -1,16 +1,17 @@
 from src.test_generator import TestGenerator
-from src.utils import write_to_file, run_process
+from src.utils import write_to_file, run_process, read_file
 import pandas as pd
 import ast
 import logging
 import os
+import json
 
 class CodeRunner:
     def __init__(self, is_func, is_qb, iteration_count, meta_data_config, generated_tests_dir, number_of_samples, temperature) -> None:
         self.is_func = is_func
         self.is_qb = is_qb
         self.iteration_count = iteration_count
-        self.test_generator = TestGenerator(config=meta_data_config, number_of_samples=number_of_samples, temperature=temperature)
+        self.test_generator = TestGenerator(config=meta_data_config, number_of_samples=number_of_samples, temperature=temperature, is_qb=is_qb)
         self.generated_tests_dir = generated_tests_dir
         self.number_of_samples = number_of_samples
         self.temperature = temperature
@@ -42,7 +43,20 @@ class CodeRunner:
         test_cases = df_testcase[["inputdata"]].to_dict("records")
 
         return acc1, acc2, rej, test_cases[0]
-    
+
+    def prepare_data_qb(self, program_name):
+
+        rej = read_file(f'quixbugs/python_programs/{program_name}.py')
+        acc = read_file(f'quixbugs/correct_python_programs/{program_name}.py')
+        with open(f"quixbugs/json_testcases/{program_name}.json", "r") as data_file:
+            existing_test = [json.loads(line) for line in data_file]
+        existing_test = existing_test[0]
+
+        if not isinstance(existing_test, list):
+            existing_test = ' '.join(map(str, existing_test))
+        existing_test = {'inputdata': existing_test[0]}
+        return acc, rej, existing_test
+                
     def move_global_ret_inside_func(self, source):
         src_lines = source.split('\n')
         new_src_lines = [src_lines[1], '\t' + src_lines[0]]
@@ -138,8 +152,10 @@ if __name__ == '__main__':
                 self.create_unnitest(rej, acc1, [data])
                 output = str(run_process(["python", "temp_test_case.py"], 5))
                 test_output += '\n NEW TEST OUTPUT: \n' + output
-                if "AssertionError" in output:
-                    break
+                if ("AssertionError" in output) or ("temp_bug_qb.py" in output and "error" in output.lower()) or ("Timeout" in output):
+                    logging.info(f"###IS_DET###: {author_id},{output}")
+                else:
+                    logging.info(f"###IS_NOT_DET###: {author_id},{output}")
             except Exception as e:
                 test_output += f"\n NEW TEST OUTPUT: \nException: {e}"
 
@@ -149,7 +165,7 @@ if __name__ == '__main__':
         module_name = 'acc' if is_acc else 'bug'
         func_name = 'patched' if is_acc else 'original'
 
-        if "\n" in input_data:
+        if "\n" in str(input_data):
             input_data = list(input_data.split("\n"))
 
         is_input_list = type(input_data) is list
@@ -167,7 +183,7 @@ if __name__ == '__main__':
 from temp_{module_name}_qb import {func_name}_func as {func_name}_func
 input_data = {input_data}
 output_code = {func_name}_func({"*" if is_input_list else ""}input_data)
-output_code = list(output_code)
+#output_code = list(output_code)
 print(output_code)
 ''')
 
@@ -234,19 +250,18 @@ print(output_code)
 
         return unique_acc_var_state, unique_rej_var_state
 
-    def check_test(self, problem_id, author_id):
+    def check_test(self, acc1, rej, existing_test, problem_id, author_id):
 
         try:
             logging.info(
                 f"###(PROBLEM_ID, AUTHOR)###: ({problem_id}, {author_id})")
-            acc1, _, rej, existing_test = self.prepare_data(problem_id, author_id)
-
             existing_test_output = self.get_code_output(existing_test["inputdata"], acc1)
 
             output, data_list = self.generate_test_and_run_until_assertion_error(
                 rej, acc1, existing_test, existing_test_output, None, author_id, problem_id, is_iteration=False)
+            logging.info(f"###ITERATION###: 0")
             logging.info(f"###TEMP_TEST_PY_OUTPUT: \n\n{output}")
-            if not ("AssertionError" in output):
+            if not ("AssertionError" in output) and not ("temp_bug_qb.py" in output) and not ("Timeout" in output):
                 for i in range(self.iteration_count):
 
                     ### TODO: if the first response doesn't have correct format, the output is computed for another response
@@ -260,7 +275,7 @@ print(output_code)
                         rej, acc1, existing_test, existing_test_output, output_code, author_id, problem_id, is_iteration=True)
                     logging.info(f"###ITERATION###: {i + 1}")
                     logging.info(f"###TEMP_TEST_PY_OUTPUT_RETRY: \n\n{output}")
-                    if ("AssertionError" in output):
+                    if ("AssertionError" in output) or ("temp_bug_qb.py" in output) or ("Timeout" in output):
                         self.save_generated_test(author_id, problem_id, i + 1, output)
                         return "Found1"
                 return str(output)
@@ -295,10 +310,19 @@ print(output_code)
             ].values.tolist()
 
             for i in result:
-                # print(self.check_test(i[1], i[0]))
+                acc1, _, rej, existing_test = self.prepare_data(i[1], i[0])
                 logging.info(
-                    f"###CHECK_TEST###:\n{self.check_test(i[1], i[0])}")
-            # logging.info(f"###CHECK_TEST###:\n{self.check_test(1975, 60724)}")
+                    f"###CHECK_TEST###:\n{self.check_test(acc1, rej, existing_test, i[1], i[0])}")
+        elif self.is_qb:
+            
+            program_names = os.listdir('quixbugs/python_programs/')
+            for program_name in program_names:
+                print(program_name)
+                try:
+                    acc1, rej, existing_test = self.prepare_data_qb(program_name[:-3])
+                    logging.info(f"###CHECK_TEST###:\n{self.check_test(acc1, rej, existing_test, program_name, program_name)}")
+                except Exception as e:
+                    logging.info(f"###EXCEPTION###: {e}")
 
         else:
             self.check_test(1, 1)
