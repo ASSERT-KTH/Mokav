@@ -6,6 +6,7 @@ This project introduces an innovative approach for iterative test generation usi
 
 - Python 3 installed (Code has been tested with Python 3.10.12 on Ubuntu 22.04)
 - Packages indicated in `requirements.txt` installed on python execution environments.
+- For running code-llama, an NVIDIA A100 GPU was used. Please ensure you have a compatible GPU and the necessary drivers installed.
 
 
 ## Installation
