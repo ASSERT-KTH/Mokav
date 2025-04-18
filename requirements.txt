@@ -10,12 +10,13 @@ ipykernel==6.29.3
 ipython==8.22.2
 nltk==3.8.1
 numpy==1.26.4
-openai==1.26.0
+openai==1.61.1
 pandas==2.2.1
 parso==0.8.3
 psutil==5.9.8
 pytest==8.2.1
 spotflow==1.1.0
-torch==2.2.1
+#torch==2.2.1
 tqdm==4.66.2
-transformers==4.39.1
+#transformers==4.39.1
+dotenv

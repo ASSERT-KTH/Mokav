@@ -7,13 +7,13 @@ import logging
 
 load_dotenv()
 client = OpenAI(
-    # this is also the default, it can be omitted
-    api_key=os.getenv("OPENAI_API_KEY"),
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.getenv("OPENROUTER_API_KEY"),
 )
 MAX_LENGTH = 39000
 
 
-class ChatGPT_2():
+class LLM():
 
     def __init__(self, default_instruction, cache_file_path, default_temp, default_n):
         self.default_instruction = default_instruction
@@ -33,6 +33,9 @@ class ChatGPT_2():
         with open(self.cache_file_path, 'w') as f:
             json.dump(self.cache, f)
 
+    def get_completion(self, messages, temp=None, n=None):
+        raise NotImplementedError("Subclass should implement this.")
+
     def get_response(self, new_question, previous_questions_and_answers=None, author_id=None, problem_id=None, temp=None, n=None, instruction=None):
         messages = [
             {"role": "system",
@@ -44,7 +47,7 @@ class ChatGPT_2():
                 messages.append({"role": "assistant", "content": answer})
         messages.append({"role": "user", "content": new_question})
 
-        logging.info(f"###CHATGPT_INITIAL_PROMPT###\n\n {messages}")
+        logging.info(f"###INITIAL_PROMPT###\n\n {messages}")
 
         prompt = "\n".join([msg['content'] for msg in messages])
 
@@ -56,13 +59,28 @@ class ChatGPT_2():
         if prompt in self.cache:
             return self.cache[prompt]
 
-        completion = client.chat.completions.create(
+        completion = get_completion(messages, temp, n=n)
+
+        responses = [choice.message.content for choice in completion.choices]
+        self.cache[prompt] = responses
+        self.save_cache()  # Save cache to file
+        return responses
+
+class ChatGPT_2(LLM):
+
+    def get_completion(self, messages, temp=None, n=None):
+        return client.chat.completions.create(
             model="gpt-3.5-turbo-0125",
             messages=messages,
             temperature=temp if temp else self.default_temp,
             n=n if n else self.default_n,
         )
-        responses = [choice.message.content for choice in completion.choices]
-        self.cache[prompt] = responses
-        self.save_cache()  # Save cache to file
-        return responses
+
+class DeepseekR1(LLM):
+    def get_completion(self, messages, temp=None, n=None):
+        return client.chat.completions.create(
+            model="deepseek/deepseek-r1:free",
+            messages=messages,
+            temperature=temp if temp else self.default_temp,
+            n=n if n else self.default_n,
+        )

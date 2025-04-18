@@ -7,14 +7,15 @@ import os
 import json
 
 class CodeRunner:
-    def __init__(self, is_func, is_qb, iteration_count, meta_data_config, generated_tests_dir, number_of_samples, temperature) -> None:
+    def __init__(self, is_func, is_qb, iteration_count, meta_data_config, generated_tests_dir, number_of_samples, temperature, model) -> None:
         self.is_func = is_func
         self.is_qb = is_qb
         self.iteration_count = iteration_count
-        self.test_generator = TestGenerator(config=meta_data_config, number_of_samples=number_of_samples, temperature=temperature, is_qb=is_qb)
+        self.test_generator = TestGenerator(config=meta_data_config, number_of_samples=number_of_samples, temperature=temperature, is_qb=is_qb, model=model)
         self.generated_tests_dir = generated_tests_dir
         self.number_of_samples = number_of_samples
         self.temperature = temperature
+        self.model = model
         self.contain_exec_diff = 'E' in meta_data_config
 
         if is_func:
@@ -34,10 +35,12 @@ class CodeRunner:
             & (self.df_submissions["problems_id"] == problem_id)
             & (self.df_submissions["author"] != author_id)
         ]["func_sourceCode_list_2"]
-        acc1 = self.move_global_ret_inside_func(df.values.tolist()[0])
-        rej = self.move_global_ret_inside_func(df.values.tolist()[1])
-        # acc2 = df_acc_other.values.tolist()[0]
+        acc1 = df.values.tolist()[0]
+        rej = df.values.tolist()[1]
         acc2 = None
+        # acc1 = self.move_global_ret_inside_func(df.values.tolist()[0])
+        # rej = self.move_global_ret_inside_func(df.values.tolist()[1])
+        # acc2 = df_acc_other.values.tolist()[0]
 
         df_testcase = self.df_testcases[self.df_testcases["problems_id"] == problem_id]
         test_cases = df_testcase[["inputdata"]].to_dict("records")
@@ -311,8 +314,9 @@ print(output_code)
 
             for i in result:
                 acc1, _, rej, existing_test = self.prepare_data(i[1], i[0])
+                check_test_result = self.check_test(acc1, rej, existing_test, i[1], i[0])
                 logging.info(
-                    f"###CHECK_TEST###:\n{self.check_test(acc1, rej, existing_test, i[1], i[0])}")
+                    f"###CHECK_TEST###:\n{check_test_result}")
         elif self.is_qb:
             
             program_names = os.listdir('quixbugs/python_programs/')

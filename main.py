@@ -73,19 +73,28 @@ def get_args():
         type=float,
     )
 
+    parser.add_argument(
+        "-md",
+        "--model",
+        default="gpt-3.5-turbo",
+        help="The model",
+        required=False,
+        type=str,
+    )
+
     args = parser.parse_args()
 
-    return args.is_func, args.is_qb, args.iteration_count, args.meta_data_config, args.generated_tests_dir, args.number_of_samples, args.temperature
+    return args.is_func, args.is_qb, args.iteration_count, args.meta_data_config, args.generated_tests_dir, args.number_of_samples, args.temperature, args.model
 
 
 def main() -> None:
 
-    (is_func, is_qb, iteration_count, meta_data_config, generated_tests_dir, number_of_samples, temperature) = get_args()
+    (is_func, is_qb, iteration_count, meta_data_config, generated_tests_dir, number_of_samples, temperature, model) = get_args()
 
     logging.info(f"Running with is_func: {is_func}, is_qb: {is_qb}, iteration_count: {iteration_count}, meta_data_config: {meta_data_config}" +
-                 f"generated_tests_dir: {generated_tests_dir}, number_of_samples: {number_of_samples}, temperature: {temperature}")
+                 f"generated_tests_dir: {generated_tests_dir}, number_of_samples: {number_of_samples}, temperature: {temperature}, model: {model}")
 
-    code_runner = CodeRunner(is_func, is_qb, iteration_count, meta_data_config, generated_tests_dir, number_of_samples, temperature)
+    code_runner = CodeRunner(is_func, is_qb, iteration_count, meta_data_config, generated_tests_dir, number_of_samples, temperature, model)
     code_runner.run()
 
 

@@ -1,21 +1,30 @@
-from src.chatgpt import ChatGPT_2
+from src.chatgpt import *
 import re
 import logging
 
 
 class TestGenerator:
-    def __init__(self, config, number_of_samples, temperature, is_qb):
+    def __init__(self, config, number_of_samples, temperature, is_qb, model):
         self.config = config
-        self.chatgpt = ChatGPT_2(
-            default_instruction="As a software testing expert, your task involves generating a test input that can distinguish between two versions of a program. These are versions 'original' and 'patched'.",
-            cache_file_path="cache.json",
-            default_temp=temperature,
-            default_n=number_of_samples
-        )
+        if model == "gpt-3.5-turbo":
+            self.llm = ChatGPT_2(
+                default_instruction="As a software testing expert, your task involves generating a test input that can distinguish between two versions of a program. These are versions 'original' and 'patched'.",
+                cache_file_path="cache.json",
+                default_temp=temperature,
+                default_n=number_of_samples
+            )
+        elif model == "deepseek-r1":
+            self.llm = DeepseekR1(
+                default_instruction="As a software testing expert, your task involves generating a test input that can distinguish between two versions of a program. These are versions 'original' and 'patched'.",
+                cache_file_path="cache.json",
+                default_temp=temperature,
+                default_n=number_of_samples
+            )
         self.number_of_samples = number_of_samples
         self.temperature = temperature
         self.test_format = "{'inputdata': <inputdata>}"
         self.is_qb = is_qb
+        self.model = model
         self.prompt_history = []
 
     def extract_code_blocks(self, text):
@@ -34,7 +43,7 @@ class TestGenerator:
 
     def code_description(self, accepted_code):
         description_prompt = f"What is the intention of this code?  {accepted_code}"
-        chatgpt_resp = self.chatgpt.get_response(new_question=description_prompt, temp=0, n=1, 
+        chatgpt_resp = self.llm.get_response(new_question=description_prompt, temp=0, n=1, 
                                          instruction="You are an intelligent software bot that describes python code. You are given a python code snippet.")
         return chatgpt_resp
 
@@ -61,7 +70,7 @@ Both versions produce an identical output for your generated test input.""" + f"
             else:
                 prompt = "Both versions produce an identical output for your generated test input."
             prompt += " The output should be different. Please generate another test input."
-            chatgpt_resp = self.chatgpt.get_response(
+            chatgpt_resp = self.llm.get_response(
                 new_question=prompt, previous_questions_and_answers=self.prompt_history, author_id=author_id, problem_id=problem_id
             )
             
@@ -176,7 +185,7 @@ original(inputdata) != patched(inputdata)
 Please note that your output should not contain any explanation or newline ('\n') characters. Create a 'difference exposing test' input as per the Python dict format above.
 """
 
-            chatgpt_resp = self.chatgpt.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
+            chatgpt_resp = self.llm.get_response(new_question=prompt, author_id=author_id, problem_id=problem_id)
             for i in range(len(chatgpt_resp)):
                 responses.append(chatgpt_resp[i])
             
