@@ -312,7 +312,9 @@ print(output_code)
                 ["author", "problems_id"]
             ].values.tolist()
 
-            for i in result:
+            for ind, i in enumerate(result):
+                # if ind == 0:
+                #     continue
                 acc1, _, rej, existing_test = self.prepare_data(i[1], i[0])
                 check_test_result = self.check_test(acc1, rej, existing_test, i[1], i[0])
                 logging.info(

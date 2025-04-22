@@ -170,6 +170,7 @@ c4b_data/
 .coverage
 
 #./temp*.py
+generated_tests/
 
 log*.txt
 

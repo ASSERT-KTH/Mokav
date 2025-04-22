@@ -59,7 +59,7 @@ class LLM():
         if prompt in self.cache:
             return self.cache[prompt]
 
-        completion = get_completion(messages, temp, n=n)
+        completion = self.get_completion(messages, temp, n=n)
 
         responses = [choice.message.content for choice in completion.choices]
         self.cache[prompt] = responses
@@ -76,11 +76,13 @@ class ChatGPT_2(LLM):
             n=n if n else self.default_n,
         )
 
-class DeepseekR1(LLM):
+class GeminiFlashThiknig(LLM):
     def get_completion(self, messages, temp=None, n=None):
         return client.chat.completions.create(
-            model="deepseek/deepseek-r1:free",
+            model="google/gemini-2.0-flash-thinking-exp:free",
             messages=messages,
             temperature=temp if temp else self.default_temp,
             n=n if n else self.default_n,
+            max_tokens=MAX_LENGTH*2,
+            reasoning_effort="low",
         )
