@@ -13,8 +13,8 @@ class TestGenerator:
                 default_temp=temperature,
                 default_n=number_of_samples
             )
-        elif model == "gemini-2.5-flash-thinking":
-            self.llm = GeminiFlashThiknig(
+        elif model == "gemini-2.5-pro":
+            self.llm = GeminiPro(
                 default_instruction="As a software testing expert, your task involves generating a test input that can distinguish between two versions of a program. These are versions 'original' and 'patched'.",
                 cache_file_path="cache.json",
                 default_temp=temperature,

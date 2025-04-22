@@ -76,10 +76,10 @@ class ChatGPT_2(LLM):
             n=n if n else self.default_n,
         )
 
-class GeminiFlashThiknig(LLM):
+class GeminiPro(LLM):
     def get_completion(self, messages, temp=None, n=None):
         return client.chat.completions.create(
-            model="google/gemini-2.0-flash-thinking-exp:free",
+            model="google/gemini-2.5-pro-exp-03-25:free",
             messages=messages,
             temperature=temp if temp else self.default_temp,
             n=n if n else self.default_n,
