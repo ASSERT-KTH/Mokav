@@ -76,13 +76,14 @@ class ChatGPT_2(LLM):
             n=n if n else self.default_n,
         )
 
-class GeminiPro(LLM):
+class Codestral(LLM):
     def get_completion(self, messages, temp=None, n=None):
         return client.chat.completions.create(
-            model="google/gemini-2.5-pro-exp-03-25:free",
+            model="mistralai/codestral-2501",
             messages=messages,
             temperature=temp if temp else self.default_temp,
             n=n if n else self.default_n,
-            max_tokens=MAX_LENGTH*2,
-            reasoning_effort="low",
+            # max_tokens=MAX_LENGTH*2,
+            # reasoning_effort="low",
+            # max_completion_tokens=10000
         )
