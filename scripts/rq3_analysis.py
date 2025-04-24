@@ -1,19 +1,36 @@
 import sys
 import os
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
 import json
-import scipy as sp
 from Levenshtein import ratio
 import gpt3_tokenizer
 from statistics import median
+import os.path
+import ast
+import scipy as sp
+from radon.complexity import cc_visit, SCORE
 
 PAIR_CNT = 1535
+def compute_complexity(source):
+    """
+    Compute the cyclomatic complexity of a given source code.
+    """
+    # Parse the source code and compute complexity
+    tree = ast.parse(source)
+    methods = [n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)]
+    # compute complexity for each method
+    complexities = []
+    for method in methods:
+        cc_per_block = cc_visit(ast.get_source_segment(source, method))
+        complexity = sum([b.complexity for b in cc_per_block])
+        complexities.append(complexity)
+    # return sum of complexities
+    return sum(complexities)
 
 def get_valid_pairs():
     valid_pairs = set()
-    with open('tmp/tmp/valid_pairs.txt', 'r') as file:
+    with open('../valid_pairs.csv', 'r') as file:
         lines = file.readlines()
         for l in lines:
             l = l.strip()
@@ -68,6 +85,9 @@ def compute_sdet_r_cor(submissions_df_file, tests_df_file, generated_tests_dir, 
             sorting_val = gpt3_tokenizer.count_tokens(test_case)
             if sorting_val > longest_test:
                 longest_test = sorting_val
+        elif sorting_val_type == 'cyclomatic_complexity':
+            source_code = tdf[0]['func_sourceCode_list_2']
+            sorting_val = compute_complexity(source_code)
         else:
             raise ValueError(f'Invalid sorting_val_type: {sorting_val_type}')
 
@@ -111,14 +131,15 @@ def compute_sdet_r_cor(submissions_df_file, tests_df_file, generated_tests_dir, 
     print(f"COMPUTING CORRELATION BETWEEN SDET_R AND {sorting_val_type} FINISHED...")
 
 def main(argv):
-    submissions_df_file = 'DET-Gen/c4b_data/cb_submission_res_v_0_3.csv'
-    tests_df_file = 'DET-Gen/c4b_data/cb_testcase_res_2acc.csv'
-    generated_tests_dir = 'tmp/tmp/generated_tests'
+    submissions_df_file = 'c4b_data/cb_submission.csv'
+    tests_df_file = 'c4b_data/cb_testcase.csv'
+    generated_tests_dir = '../tmp/generated_tests'
     subset_cnt = 10
 
     # compute_sdet_r_cor(submissions_df_file, tests_df_file, generated_tests_dir, subset_cnt, 'src_tokens')
     # compute_sdet_r_cor(submissions_df_file, tests_df_file, generated_tests_dir, subset_cnt, 'test_tokens')
-    compute_sdet_r_cor(submissions_df_file, tests_df_file, generated_tests_dir, subset_cnt, 'diff_ratio')
+    # compute_sdet_r_cor(submissions_df_file, tests_df_file, generated_tests_dir, subset_cnt, 'diff_ratio')
+    compute_sdet_r_cor(submissions_df_file, tests_df_file, generated_tests_dir, subset_cnt, 'cyclomatic_complexity')
 
 if __name__ == "__main__":
     main(sys.argv[1:])
