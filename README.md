@@ -2,16 +2,15 @@
 
 This project introduces an innovative approach for iterative test generation using large language models (LLMs). Instead of relying on traditional techniques, our approach leverages the power of LLMs to generate test cases that target behavioral differences between a buggy program version and an accepted/patched program version. By engaging in interactive conversations with the LLM, our method provides feedback to steer the generation process iteratively until a fault-inducing test is found.
 
-[Mokav: Execution-driven Differential Testing with LLMs](http://arxiv.org/pdf/2406.10375) (Khashayar Etemadi, Bardia Mohammadi, Zhendong Su and Martin Monperrus), Technical report 2406.10375, arXiv, 2024.
+[Mokav: Execution-driven Differential Testing with LLMs](http://arxiv.org/pdf/2406.10375) (Khashayar Etemadi, Bardia Mohammadi, Zhendong Su and Martin Monperrus), Journal of Systems and Software, 2025.
 
 ```bibtex
-techreport{2406.10375,
+article{mokav,
  title = {Mokav: Execution-driven Differential Testing with LLMs},
- year = {2024},
+ year = {2025},
  author = {Khashayar Etemadi and Bardia Mohammadi and Zhendong Su and Martin Monperrus},
- url = {http://arxiv.org/pdf/2406.10375},
- number = {2406.10375},
- institution = {arXiv},
+ journal = {Journal of Systems and Software},
+ doi = {10.1016/j.jss.2025.112571},
 }
 ```
 
